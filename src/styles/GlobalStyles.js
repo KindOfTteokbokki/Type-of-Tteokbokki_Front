@@ -1,8 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+// import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
-    ${reset}
 
     @font-face {
         font-family: 'Pretendard-Regular';
@@ -68,6 +67,7 @@ const GlobalStyles = createGlobalStyle`
 
     #root {
         width: 390px;
+        height : 844px;
         margin: 0 auto;
         background-color: white;
     }

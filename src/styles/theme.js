@@ -15,9 +15,10 @@ export const theme = {
 	},
 
 	fontSize: {
-		lv1: '16px',
-		lv2: '18px',
-		lv3: '20px',
-		lv4: '24px',
+		lv1: '14px',
+		lv2: '16px',
+		lv3: '18px',
+		lv4: '20px',
+		lv5: '24px',
 	},
 };
