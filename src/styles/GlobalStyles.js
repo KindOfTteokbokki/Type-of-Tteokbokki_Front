@@ -55,14 +55,9 @@ const GlobalStyles = createGlobalStyle`
     *, *::before, *::after {
         box-sizing: border-box;
     }
-    
-    body {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-
-    body::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera*/
+  
+    html{
+        background-color : Gray;
     }
 
     #root {
