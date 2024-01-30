@@ -31,7 +31,7 @@ export const Header = styled.header`
 
 export const HeadText = styled.h1`
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 800;
 `;
 
 export const Main = styled.main`
@@ -53,12 +53,12 @@ export const MessageLayout = styled.p`
 export const FlexLayout = styled.ul`
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 28px;
 `;
 
 export const PickQuestion = styled.h2`
 	font-size: ${(props) => props.theme.fontSize.lv3};
-	font-weight: 700;
+	font-weight: 800;
 	margin-bottom: 8px;
 `;
 
@@ -81,4 +81,22 @@ export const PickButton = styled(UnPickButton)`
 export const ButtonLayout = styled.div`
 	max-width: 390px;
 	margin: 0 auto;
+`;
+
+export const ResultLayout = styled.section`
+	padding: 24px 15px 0;
+	border-top: 1px solid ${(props) => props.theme.color.gray};
+`;
+
+export const AddIcon = styled.img`
+	width: 9.15px;
+	height: 9.15px;
+	margin-left: 15.5px;
+	cursor: pointer;
+`;
+
+export const ResultButtonLayout = styled.div`
+	width: 100%;
+	text-align: center;
+	padding: 37px 0 41px;
 `;

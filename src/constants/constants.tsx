@@ -1,15 +1,5 @@
 import PickTypes from '../pages/PickTypes/PickTypes';
 
-// interface Question {
-// 	Q1: string;
-// 	Q2: string;
-// 	Q3: string;
-// 	Q4: string;
-// 	Q5: string;
-// 	Q6: string;
-// 	Q7: string;
-// }
-
 export const constants = {
 	QUESTION: [
 		'쌀떡파 VS 밀떡파',
@@ -20,5 +10,13 @@ export const constants = {
 		'얼마나 매운거 좋아해?',
 		'토핑 있는건 어때?',
 	],
-	ANSWER: ['쌀떡', '밀떡', '아무거나', '달달한', '매운', '토핑없음'],
+	ANSWER: [
+		['쌀떡', '밀떡', '다른거'],
+		['감자떡', '분모자', '통가래떡', '우동같은 밀떡'],
+		['쫄깃쫄깃', '말랑말랑'],
+		['빨간', '간장', '로제', '마라', '바질크림', '마라로제'],
+		['매운거', '달달한거'],
+		['습(기본맛)', '스으읍(매운맛)', '스으으읍하(아주 매운맛)'],
+		['없음', '차돌', '오징어', '치즈많이', '페퍼로니'],
+	],
 };

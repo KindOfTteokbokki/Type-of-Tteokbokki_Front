@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import BigRedButton from '../../components/Button/BigRedButton/BigRedButton';
+import BigRedShadowButton from '../../components/Button/BigRedShadowButton/BigRedShadowButton';
 
 export interface Props {
 	text: string;
@@ -10,7 +10,7 @@ export interface Props {
 export default function SplashView(props: Props) {
 	return (
 		<S.Layout>
-			<BigRedButton text={props.text} onclick={props.onClickMove} />
+			<BigRedShadowButton text={props.text} onclick={props.onClickMove} />
 		</S.Layout>
 	);
 }
