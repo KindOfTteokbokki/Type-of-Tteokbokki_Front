@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import food from '../../assets/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png';
 
 export const LoadCont = styled.figure`
 	width: 360px;
@@ -10,9 +11,13 @@ export const LoadCont = styled.figure`
 	position: relative;
 `;
 
+export const LoadImg = styled.img`
+	width: 100%;
+	height: 100%;
+`;
+
 export const LoadText = styled.figcaption`
 	width: 348px;
-	height: 144px;
 	margin: 6px;
 	padding: 16px;
 	display: flex;
@@ -27,14 +32,67 @@ export const LoadText = styled.figcaption`
 	right: 0;
 `;
 
+export const TextCont = styled.div`
+	line-height: 22px;
+	display: flex;
+	gap: 16px;
+`;
+
 export const Icon = styled.img`
 	width: 18.44px;
 	height: 16px;
+	position: relative;
+	top: 3px;
 `;
 
 export const Text = styled.p`
 	font-size: ${(props) => props.theme.fontSize.lv2};
 	display: inline-block;
-	margin-left: 16px;
 	word-break: keep-all;
+`;
+
+export const ButtonLayout = styled.div`
+	width: 100%;
+	display: flex;
+	gap: 20px;
+`;
+
+export const ModalCont = styled.article`
+	width: 284px;
+	height: 180px;
+	margin: 0 auto;
+	padding: 48px 0 32px;
+	background-color: #fff;
+	border-radius: ${(props) => props.theme.borderRadius.lv4};
+`;
+
+export const ModalText = styled.p`
+	font-size: ${(props) => props.theme.fontSize.lv2};
+	font-weight: 500;
+	margin-bottom: 32px;
+`;
+
+export const ModalIcon = styled.img`
+	width: 32px;
+	height: 32px;
+	margin-right: 9px;
+`;
+
+export const ModalButtonLayout = styled(ButtonLayout)`
+	padding: 0 57px;
+`;
+
+export const ModalWhiteButton = styled.button`
+	display: inline-block;
+	width: 75px;
+	height: 36px;
+	color: ${(props) => props.theme.color.main};
+	border: 1px solid ${(props) => props.theme.color.main};
+	border-radius: ${(props) => props.theme.borderRadius.lv3};
+`;
+
+export const ModalRedButton = styled(ModalWhiteButton)`
+	color: ${(props) => props.theme.color.white};
+	background-color: ${(props) => props.theme.color.main};
+	border: none;
 `;

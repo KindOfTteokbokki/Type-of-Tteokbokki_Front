@@ -5,6 +5,7 @@ import { addPickType, deletePickType } from '../../slice/userPickSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useAxios, { baseUrl } from '../../api/useAxios';
+import axios from 'axios';
 
 export interface Props {
 	headerText: string;
@@ -23,7 +24,7 @@ export default function PickTypes() {
 
 	const { response, loading, error, sendData } = useAxios({
 		method: 'GET',
-		url: 'http://localhost:8080/api/getQA',
+		url: 'http://118.67.132.171:8080/api/getQA',
 		headers: {
 			accept: '*/*',
 		},
