@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import * as S from './style';
 import { Props } from './PickTypes';
 import PickTypesList from './PickTypesList';
@@ -44,9 +45,8 @@ export default function PickTypesView(props: Props) {
 						const key = 'question' + questionIndex;
 						return (
 							<>
-								{questionIndex === 1 && selector[key] !== '다른거' ? null : 
-									questionIndex === 5 && selector[key] !== '매운거' ? null :
-								(
+								{questionIndex === 1 && selector[key] !== '다른거' ? null : questionIndex === 5 &&
+								  selector[key] !== '매운거' ? null : (
 									<PickTypesList
 										question={question}
 										questionIndex={questionIndex}

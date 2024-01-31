@@ -4,6 +4,7 @@ import { constants } from '../../constants/constants';
 import { addPickType, deletePickType } from '../../slice/userPickSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import useAxios, { baseUrl } from '../../api/useAxios';
 
 export interface Props {
 	headerText: string;
@@ -20,6 +21,16 @@ export default function PickTypes() {
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
 
+	const { response, loading, error, sendData } = useAxios({
+		method: 'GET',
+		url: 'http://localhost:8080/api/getQA',
+		headers: {
+			accept: '*/*',
+		},
+	});
+
+	console.log(response);
+
 	const onClickAdd = (type: string[]) => {
 		dispatch(addPickType(type));
 	};
@@ -31,6 +42,7 @@ export default function PickTypes() {
 	const onClickDelete = (type: string[]) => {
 		dispatch(deletePickType(type));
 	};
+
 	return (
 		<PickTypesView
 			headerText="같이 떡볶이 고르는 중"

@@ -1,5 +1,3 @@
-import PickTypes from '../pages/PickTypes/PickTypes';
-
 export const constants = {
 	QUESTION: [
 		'쌀떡파 VS 밀떡파',
