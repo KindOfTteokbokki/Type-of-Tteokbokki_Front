@@ -21,8 +21,9 @@ export const Header = styled.h1`
 	position: relative;
 `;
 
-export const Text = styled.div`
+export const Text = styled.p`
 	text-align: center;
+	line-height: 20px;
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	font-weight: ${(props) => props.theme.fontWeight.regular};
 `;
