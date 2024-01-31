@@ -33,8 +33,12 @@ export default function PickTypesView(props: Props) {
 		return render;
 	};
 
+	const onClickScroll = (index: number) => {
+		document.getElementById('pickType')?.scrollTo(0, index);
+	};
+
 	return (
-		<S.Layout>
+		<S.Layout id="pickType">
 			<S.Header>
 				<S.HeadText>{props.headerText}</S.HeadText>
 			</S.Header>
@@ -53,6 +57,7 @@ export default function PickTypesView(props: Props) {
 										answerList={props.answerList}
 										onClickAdd={props.onClickAdd}
 										onClickDelete={props.onClickDelete}
+										onClickScroll={onClickScroll}
 									/>
 								)}
 							</>

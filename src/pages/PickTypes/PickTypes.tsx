@@ -36,7 +36,7 @@ export default function PickTypes() {
 	};
 
 	const onClickMove = () => {
-		navigator('/recommend');
+		navigator('/loading');
 	};
 
 	const onClickDelete = (type: string[]) => {

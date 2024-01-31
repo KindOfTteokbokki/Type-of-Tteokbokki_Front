@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-// import reset from 'styled-reset';
+import reset from 'styled-reset';
 
 const GlobalStyles = createGlobalStyle`
+    ${reset}
 
     @font-face {
         font-family: 'Pretendard-Regular';
@@ -75,6 +76,7 @@ const GlobalStyles = createGlobalStyle`
         margin : 0 auto;
         box-sizing: border-box;
     }
+   
     html, body, div, span, h1, h2, h3, h4, h5, h6, p, 
     a, dl, dt, dd, ol, ul, li, form, label, table, button, input{
         margin: 0;
