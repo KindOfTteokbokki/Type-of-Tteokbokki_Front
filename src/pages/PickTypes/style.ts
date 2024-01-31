@@ -31,7 +31,7 @@ export const Header = styled.header`
 
 export const HeadText = styled.h1`
 	font-size: 20px;
-	font-weight: 800;
+	font-weight: 600;
 `;
 
 export const Main = styled.main`
@@ -58,7 +58,7 @@ export const FlexLayout = styled.ul`
 
 export const PickQuestion = styled.h2`
 	font-size: ${(props) => props.theme.fontSize.lv3};
-	font-weight: 800;
+	font-weight: 600;
 	margin-bottom: 8px;
 `;
 

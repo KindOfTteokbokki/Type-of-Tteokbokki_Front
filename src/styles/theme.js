@@ -21,4 +21,9 @@ export const theme = {
 		lv4: '20px',
 		lv5: '24px',
 	},
+
+	fontWeight: {
+		regular: 400,
+		semiBold: 600,
+	},
 };
