@@ -8,6 +8,7 @@ interface Props {
 	answerList: string[][];
 	onClickAdd: (type: string[]) => void;
 	onClickDelete: (type: string[]) => void;
+	onClickScroll: (index: number) => void;
 }
 
 export default function PickTypesList(props: Props) {
@@ -33,6 +34,7 @@ export default function PickTypesList(props: Props) {
 										onClickSelect={onClickSelect}
 										onClickAdd={props.onClickAdd}
 										onClickDelete={props.onClickDelete}
+										onClickScroll={props.onClickScroll}
 										questionIndex={props.questionIndex}
 									/>
 								</S.ButtonLayout>
@@ -44,6 +46,7 @@ export default function PickTypesList(props: Props) {
 									onClickSelect={onClickSelect}
 									onClickAdd={props.onClickAdd}
 									onClickDelete={props.onClickDelete}
+									onClickScroll={props.onClickScroll}
 									questionIndex={props.questionIndex}
 								/>
 							)}
