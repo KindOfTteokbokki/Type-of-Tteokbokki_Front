@@ -16,7 +16,7 @@ export const Icon = styled.img`
 
 export const Header = styled.h1`
 	font-size: 24px;
-	font-weight: ${(props) => props.theme.fontWeight.semiBold};
+	font-weight: bold;
 	text-align: center;
 	margin-bottom: 8px;
 	position: relative;
@@ -27,6 +27,7 @@ export const Text = styled.p`
 	line-height: 20px;
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	font-weight: ${(props) => props.theme.fontWeight.regular};
+	word-break: keep-all;
 `;
 
 export const RedText = styled(Text)`
