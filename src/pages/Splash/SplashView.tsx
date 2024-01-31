@@ -1,11 +1,16 @@
 import React from 'react';
 import * as S from './style';
-import BigRedButton from '../../components/Button/BigRedButton/BigRedButton';
+import BigRedShadowButton from '../../components/Button/BigRedShadowButton/BigRedShadowButton';
 
-export default function SplashView() {
+export interface Props {
+	text: string;
+	onClickMove(): void;
+}
+
+export default function SplashView(props: Props) {
 	return (
 		<S.Layout>
-			<BigRedButton text="시작하기" />
+			<BigRedShadowButton text={props.text} onclick={props.onClickMove} />
 		</S.Layout>
 	);
 }
