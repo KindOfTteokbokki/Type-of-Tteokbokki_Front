@@ -3,6 +3,7 @@ import { Layout } from '../Splash/style';
 
 export const Main = styled(Layout)`
 	background-color: #fff;
+	height: 100%;
 `;
 
 export const Icon = styled.img`

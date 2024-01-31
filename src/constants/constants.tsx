@@ -17,7 +17,13 @@ export const constants = {
 		['습(기본맛)', '스으읍(매운맛)', '스으으읍하(아주 매운맛)'],
 		['없음', '차돌', '오징어', '치즈많이', '페퍼로니'],
 	],
-	LOADING_HEADER: '취향 분석 중...',
-	LOADING_MESSAGE: '잠시만 기다려 줘!',
-	LOADING_MESSAGE_2: '오징어 올려진 떡볶이도 맛있다더라(속닥)',
+	LOADING: {
+		header: '취향 분석 중...',
+		message: '잠시만 기다려 줘!',
+		messageBottom: '오징어 올려진 떡볶이도 맛있다더라(속닥)',
+	},
+	LOADED: {
+		header: '찾았다!',
+		message: '이런 떡볶이는 어때?',
+	},
 };
