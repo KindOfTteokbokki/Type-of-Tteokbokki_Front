@@ -35,4 +35,8 @@ export const constants = {
 		ANSWER_1: '그래!',
 		ANSWER_2: '좋아!',
 	},
+	POPUP: {
+		header: '칭호를 획득했어!',
+		message: '당신은',
+	},
 };

@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const Layout = styled.section`
-	width: 390px;
-	height: 100%;
+export const Cont = styled.div`
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
 
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -10,15 +11,18 @@ export const Layout = styled.section`
 	}
 
 	&::-webkit-scrollbar-thumb {
-		max-height: 40px;
+		height: 40px;
 		background-color: ${(props) => props.theme.color.gray};
 	}
 
 	&::-webkit-scrollbar-track {
 		background-color: ${(props) => props.theme.color.white};
 	}
+`;
 
-	overflow-y: scroll;
+export const Layout = styled.section`
+	width: 390px;
+	background-color: #fff;
 `;
 
 export const Header = styled.header`

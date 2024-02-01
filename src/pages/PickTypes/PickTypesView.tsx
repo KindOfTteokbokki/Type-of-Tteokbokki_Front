@@ -38,39 +38,41 @@ export default function PickTypesView(props: Props) {
 	};
 
 	return (
-		<S.Layout id="pickType">
-			<S.Header>
-				<S.HeadText>{props.headerText}</S.HeadText>
-			</S.Header>
-			<S.Main>
-				<S.MessageLayout>{props.alertText}</S.MessageLayout>
-				<S.FlexLayout>
-					{props.questionList?.map((question, questionIndex) => {
-						const key = 'question' + questionIndex;
-						return (
-							<>
-								{questionIndex === 1 && selector[key] !== '다른거' ? null : questionIndex === 5 &&
-								  selector[key] !== '매운거' ? null : (
-									<PickTypesList
-										question={question}
-										questionIndex={questionIndex}
-										answerList={props.answerList}
-										onClickAdd={props.onClickAdd}
-										onClickDelete={props.onClickDelete}
-										onClickScroll={onClickScroll}
-									/>
-								)}
-							</>
-						);
-					})}
-				</S.FlexLayout>
-			</S.Main>
-			<S.ResultLayout>
-				{renderButton()}
-				<S.ResultButtonLayout>
-					<BigRedButton text={props.selectText} onclick={props.onClickMove} />
-				</S.ResultButtonLayout>
-			</S.ResultLayout>
-		</S.Layout>
+		<S.Cont>
+			<S.Layout id="pickType">
+				<S.Header>
+					<S.HeadText>{props.headerText}</S.HeadText>
+				</S.Header>
+				<S.Main>
+					<S.MessageLayout>{props.alertText}</S.MessageLayout>
+					<S.FlexLayout>
+						{props.questionList?.map((question, questionIndex) => {
+							const key = 'question' + questionIndex;
+							return (
+								<>
+									{questionIndex === 1 && selector[key] !== '다른거' ? null : questionIndex === 5 &&
+									  selector[key] !== '매운거' ? null : (
+										<PickTypesList
+											question={question}
+											questionIndex={questionIndex}
+											answerList={props.answerList}
+											onClickAdd={props.onClickAdd}
+											onClickDelete={props.onClickDelete}
+											onClickScroll={onClickScroll}
+										/>
+									)}
+								</>
+							);
+						})}
+					</S.FlexLayout>
+				</S.Main>
+				<S.ResultLayout>
+					{renderButton()}
+					<S.ResultButtonLayout>
+						<BigRedButton text={props.selectText} onclick={props.onClickMove} />
+					</S.ResultButtonLayout>
+				</S.ResultLayout>
+			</S.Layout>
+		</S.Cont>
 	);
 }

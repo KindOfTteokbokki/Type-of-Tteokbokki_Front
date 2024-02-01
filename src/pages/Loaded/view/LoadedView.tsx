@@ -9,7 +9,7 @@ import ChainStoreView from './ChainStoreView';
 
 export default function LoadedView(props: Props) {
 	return (
-		<Main>
+		<S.Main>
 			<Header>
 				<Icon src={icon} alt="밥그릇 아이콘" />
 				{props.loadedHeader}
@@ -23,6 +23,6 @@ export default function LoadedView(props: Props) {
 				<BigRedButton text="완료하기" onclick={props.onClickModal} />
 			</S.ButtonLayout>
 			{props.renderModal()}
-		</Main>
+		</S.Main>
 	);
 }

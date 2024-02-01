@@ -9,6 +9,7 @@ interface Props {
 	modalAnswerWhite: string;
 	modalAnswerRed: string;
 	onClickModal(): void;
+	onClickPopUp(): void;
 }
 
 export default function Modal(props: Props) {
@@ -36,20 +37,8 @@ export default function Modal(props: Props) {
 					{props.modalHeader}
 				</S.ModalText>
 				<S.ModalButtonLayout>
-					<S.ModalWhiteButton
-						onClick={() => {
-							navigator('/recommend');
-						}}
-					>
-						{props.modalAnswerWhite}
-					</S.ModalWhiteButton>
-					<S.ModalRedButton
-						onClick={() => {
-							navigator('/recommend');
-						}}
-					>
-						{props.modalAnswerRed}
-					</S.ModalRedButton>
+					<S.ModalWhiteButton onClick={props.onClickPopUp}>{props.modalAnswerWhite}</S.ModalWhiteButton>
+					<S.ModalRedButton onClick={props.onClickPopUp}>{props.modalAnswerRed}</S.ModalRedButton>
 				</S.ModalButtonLayout>
 			</S.ModalCont>
 		</DropBack>
