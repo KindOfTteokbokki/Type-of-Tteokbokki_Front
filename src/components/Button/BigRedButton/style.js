@@ -7,6 +7,4 @@ export const Button = styled.button`
 	background-color: ${(props) => props.theme.color.main};
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
-	position: relative;
-	top: 100%;
 `;

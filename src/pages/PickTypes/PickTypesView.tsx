@@ -4,7 +4,7 @@ import * as S from './style';
 import { Props } from './PickTypes';
 import PickTypesList from './PickTypesList';
 import deleteIcon from '../../assets/close_small_red.svg';
-import BigRedButton from '../../components/Button/BigRedButton/BigRedButon';
+import BigRedButton from '../../components/Button/BigRedButton/BigRedButton';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { JSX } from 'react/jsx-runtime';
@@ -45,7 +45,7 @@ export default function PickTypesView(props: Props) {
 			<S.Main>
 				<S.MessageLayout>{props.alertText}</S.MessageLayout>
 				<S.FlexLayout>
-					{props.questionList.map((question, questionIndex) => {
+					{props.questionList?.map((question, questionIndex) => {
 						const key = 'question' + questionIndex;
 						return (
 							<>

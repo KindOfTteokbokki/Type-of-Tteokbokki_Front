@@ -30,4 +30,9 @@ export const constants = {
 		LOCATION: '경기도 용인시',
 		REVIEW: '떡이 하얘보여도 한입 먹어보면 반전 매력이 있는 국물떡볶이야! 달달하고 매콤하고 다해',
 	},
+	MODAL: {
+		QUESTION: '오늘은 이 떡볶이를 먹어볼까?',
+		ANSWER_1: '그래!',
+		ANSWER_2: '좋아!',
+	},
 };

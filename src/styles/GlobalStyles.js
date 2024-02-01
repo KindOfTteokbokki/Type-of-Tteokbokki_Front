@@ -12,11 +12,19 @@ const GlobalStyles = createGlobalStyle`
     }
 
     @font-face {
+        font-family: 'Pretendard-Medium';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
         font-family: 'Pretendard-SemiBold';
         src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
         font-weight: 600;
         font-style: normal;
     }
+    
 
     *, *::before, *::after {
         box-sizing: border-box;
