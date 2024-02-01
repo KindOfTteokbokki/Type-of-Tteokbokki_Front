@@ -6,6 +6,17 @@ export const PopupHeader = styled(Header)`
 	margin-bottom: 0;
 `;
 
+export const HeadText = styled.p`
+	text-align: initial;
+	font-size: ${(props) => props.theme.fontSize.lv3};
+	font-weight: ${(props) => props.theme.fontWeight.semiBold};
+`;
+
+export const Text = styled(HeadText)`
+	font-size: ${(props) => props.theme.fontSize.lv2};
+	margin-bottom: 12px;
+`;
+
 export const Cont = styled.main`
 	margin: 0 auto;
 	margin-top: 32px;
