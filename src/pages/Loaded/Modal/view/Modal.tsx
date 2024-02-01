@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { ReactEventHandler, useEffect, useRef } from 'react';
 import * as S from '../../style';
 import icon from '../../../../assets/modalIcon.svg';
 import { DropBack } from '../style';
@@ -8,27 +8,29 @@ interface Props {
 	modalHeader: string;
 	modalAnswerWhite: string;
 	modalAnswerRed: string;
+	onClickModal(): void;
 }
 
 export default function Modal(props: Props) {
 	const navigator = useNavigate();
+	const modalRef = useRef<HTMLInputElement>(null);
 
-	// useEffect(() => {
-	// 	const handler = (e: Document) => {
-	// 		if (modalRef.current && !modalRef.current.contains(e.target)) {
-	// 			props.setModal(false);
-	// 		}
-	// 	};
-	// 	document.addEventListener('mousedown', handler);
+	useEffect(() => {
+		const handler = (e: any) => {
+			if (modalRef.current && !modalRef.current.contains(e.target)) {
+				props.onClickModal();
+			}
+		};
+		document.addEventListener('mousedown', handler);
 
-	// 	return () => {
-	// 		document.removeEventListener('mousedown', handler);
-	// 	};
-	// });
+		return () => {
+			document.removeEventListener('mousedown', handler);
+		};
+	});
 
 	return (
 		<DropBack>
-			<S.ModalCont>
+			<S.ModalCont ref={modalRef}>
 				<S.ModalText>
 					<S.ModalIcon src={icon} alt="접시,포크 아이콘" />
 					{props.modalHeader}

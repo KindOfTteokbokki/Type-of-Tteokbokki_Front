@@ -22,7 +22,7 @@ export default function Loaded() {
 	};
 
 	const onClickModal = () => {
-		setModal(true);
+		setModal(!modal);
 	};
 
 	const renderModal = () => {
@@ -32,6 +32,7 @@ export default function Loaded() {
 					modalHeader={constants.MODAL.QUESTION}
 					modalAnswerWhite={constants.MODAL.ANSWER_1}
 					modalAnswerRed={constants.MODAL.ANSWER_2}
+					onClickModal={onClickModal}
 				/>
 			);
 		}
