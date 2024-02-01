@@ -5,24 +5,29 @@ import { addPickType, deletePickType } from '../../slice/userPickSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useAxios, { baseUrl } from '../../api/useAxios';
-import axios from 'axios';
+import axios, { AxiosPromise } from 'axios';
 
 export interface Props {
 	headerText: string;
 	alertText: string;
 	selectText: string;
-	questionList: string[];
-	answerList: string[][];
+	questionList: Object[];
+	answerList: Answer[];
 	onClickAdd: (type: string[]) => void;
 	onClickMove(): void;
 	onClickDelete: (type: string[]) => void;
 }
 
+export type Answer = {
+	code: string;
+	name_ko: string;
+};
+
 export default function PickTypes() {
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
 
-	const { response, loading, error, sendData } = useAxios({
+	const { response, error, loading, sendData } = useAxios({
 		method: 'GET',
 		url: 'http://118.67.132.171:8080/api/getQA',
 		headers: {
@@ -30,7 +35,10 @@ export default function PickTypes() {
 		},
 	});
 
-	console.log(response);
+	console.log(response?.data.answer);
+
+	const questionList = response?.data.question;
+	const answerList = response?.data.answer;
 
 	const onClickAdd = (type: string[]) => {
 		dispatch(addPickType(type));
@@ -45,15 +53,18 @@ export default function PickTypes() {
 	};
 
 	return (
-		<PickTypesView
-			headerText="같이 떡볶이 고르는 중"
-			alertText="좋아하는 거 골라봐! 일부만 선택해도 돼."
-			selectText="선택하기"
-			questionList={constants.QUESTION}
-			answerList={constants.ANSWER}
-			onClickAdd={onClickAdd}
-			onClickMove={onClickMove}
-			onClickDelete={onClickDelete}
-		/>
+		<>
+			<div>{}</div>
+			<PickTypesView
+				headerText="같이 떡볶이 고르는 중"
+				alertText="좋아하는 거 골라봐! 일부만 선택해도 돼."
+				selectText="선택하기"
+				questionList={questionList}
+				answerList={answerList}
+				onClickAdd={onClickAdd}
+				onClickMove={onClickMove}
+				onClickDelete={onClickDelete}
+			/>
+		</>
 	);
 }

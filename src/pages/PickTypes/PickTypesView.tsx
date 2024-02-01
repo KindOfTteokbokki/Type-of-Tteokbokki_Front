@@ -45,7 +45,7 @@ export default function PickTypesView(props: Props) {
 			<S.Main>
 				<S.MessageLayout>{props.alertText}</S.MessageLayout>
 				<S.FlexLayout>
-					{props.questionList.map((question, questionIndex) => {
+					{props.questionList?.map((question, questionIndex) => {
 						const key = 'question' + questionIndex;
 						return (
 							<>

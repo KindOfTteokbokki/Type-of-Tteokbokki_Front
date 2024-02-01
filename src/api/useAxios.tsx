@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
-import axios, { AxiosError, RawAxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-export const baseUrl = 'http://localhost:8080//api/';
+export const baseUrl = 'http://118.67.132.171:8080/api/';
 
 interface Request {
 	method: string;
 	url: string;
 	headers: Object;
+}
+interface RawAxiosRequestConfig<T = any> extends AxiosRequestConfig {
+	data?: T;
 }
 
 const useAxios = (axiosParams: RawAxiosRequestConfig<Request>) => {
