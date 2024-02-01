@@ -12,7 +12,6 @@ interface Props {
 
 export default function Modal(props: Props) {
 	const navigator = useNavigate();
-	const modalRef = useRef();
 
 	// useEffect(() => {
 	// 	const handler = (e: Document) => {
