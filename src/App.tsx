@@ -5,7 +5,7 @@ import Splash from './pages/Splash/Splash';
 import PickTypes from './pages/PickTypes/PickTypes';
 import Loading from './pages/Loading/Loading';
 import Loaded from './pages/Loaded/Loaded';
-import Popup from './pages/Popup/Popup';
+import Home from './pages/Home/Home';
 
 function App() {
 	return (
@@ -13,10 +13,8 @@ function App() {
 			<Route path="/" element={<Splash />} />
 			<Route path="/pickTypes" element={<PickTypes />} />
 			<Route path="/loading" element={<Loading />} />
-			<Route element={<MainLayout />}>
-				<Route path="/loaded" element={<Loaded />} />
-			</Route>
-			<Route path="/recommend" element={<Popup />} />
+			<Route path="/loaded" element={<Loaded />} />
+			<Route path="/home" element={<Home />} />
 		</Routes>
 	);
 }
