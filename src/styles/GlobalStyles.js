@@ -25,7 +25,6 @@ const GlobalStyles = createGlobalStyle`
         font-style: normal;
     }
     
-
     *, *::before, *::after {
         box-sizing: border-box;
     }
