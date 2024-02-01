@@ -19,12 +19,6 @@ export default function PickTypesList(props: Props) {
 		setClickedIndex(answerIdx);
 	};
 
-	console.log(props.answerList[0].code);
-
-	// const array = props.answerList.filter((data) => {
-	// 	Number(data.code[2]) === props.questionIndex
-	// });
-
 	return (
 		<li>
 			<S.PickQuestion>{props.question.name_ko}</S.PickQuestion>

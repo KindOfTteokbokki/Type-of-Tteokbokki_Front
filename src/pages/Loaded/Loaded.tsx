@@ -1,37 +1,66 @@
-import React from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import LoadedView from './view/LoadedView';
 import { constants } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
-import Modal from './view/Modal';
+import Modal from './Modal/view/Modal';
 
 export interface Props {
 	loadedHeader: string;
 	loadedMessage: string;
-	onClickMove(): void;
 	onClickReturn(): void;
-	modalHeader: string;
-	modalAnswerWhite: string;
-	modalAnswerRed: string;
+	onClickModal(): void;
+	renderModal(): ReactNode;
+	modal: boolean;
 }
 
 export default function Loaded() {
 	const navigator = useNavigate();
-
-	const onClickMove = () => {};
+	let [modal, setModal] = useState(false);
 
 	const onClickReturn = () => {
 		navigator('/pickTypes');
 	};
 
+	const onClickModal = () => {
+		setModal(true);
+	};
+
+	const renderModal = () => {
+		if (modal) {
+			return (
+				<Modal
+					modalHeader={constants.MODAL.QUESTION}
+					modalAnswerWhite={constants.MODAL.ANSWER_1}
+					modalAnswerRed={constants.MODAL.ANSWER_2}
+				/>
+			);
+		}
+	};
+
+	// useEffect(()=>{
+	// 	const handler = (e:Document)=>{
+	// 		if (modalRef.current && !modalRef.current.contains(){
+	// 			setModal(false);
+	// 		})
+	// 	}
+
+	// 	document.addEventListener('mousedown', handler);
+
+	// 	return () => {
+	// 				document.removeEventListener('mousedown', handler);
+	// 			};
+	// })
+
 	return (
-		<LoadedView
-			loadedHeader={constants.LOADED.header}
-			loadedMessage={constants.LOADED.message}
-			onClickMove={onClickMove}
-			onClickReturn={onClickReturn}
-			modalHeader={constants.MODAL.QUESTION}
-			modalAnswerWhite={constants.MODAL.ANSWER_1}
-			modalAnswerRed={constants.MODAL.ANSWER_2}
-		/>
+		<>
+			<LoadedView
+				loadedHeader={constants.LOADED.header}
+				loadedMessage={constants.LOADED.message}
+				onClickReturn={onClickReturn}
+				onClickModal={onClickModal}
+				renderModal={renderModal}
+				modal={modal}
+			/>
+		</>
 	);
 }

@@ -67,8 +67,10 @@ export const ModalCont = styled.article`
 `;
 
 export const ModalText = styled.p`
-	font-size: ${(props) => props.theme.fontSize.lv2};
+	font-size: ${(props) => props.theme.fontSize.lv3};
 	font-weight: 500;
+	height: 32px;
+	line-height: 32px;
 	margin-bottom: 32px;
 `;
 
@@ -76,6 +78,7 @@ export const ModalIcon = styled.img`
 	width: 32px;
 	height: 32px;
 	margin-right: 9px;
+	vertical-align: top;
 `;
 
 export const ModalButtonLayout = styled(ButtonLayout)`
@@ -89,6 +92,7 @@ export const ModalWhiteButton = styled.button`
 	color: ${(props) => props.theme.color.main};
 	border: 1px solid ${(props) => props.theme.color.main};
 	border-radius: ${(props) => props.theme.borderRadius.lv3};
+	font-size: ${(props) => props.theme.fontSize.lv1};
 `;
 
 export const ModalRedButton = styled(ModalWhiteButton)`
