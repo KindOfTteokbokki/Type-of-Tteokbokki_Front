@@ -31,9 +31,7 @@ export default function PickTypes() {
 		method: 'GET',
 		url: 'http://118.67.132.171:8080/api/getQA',
 		headers: {
-			'Access-Control-Allow-Headers': 'Content-Type',
-			'Access-Control-Allow-Origin': 'http://118.67.132.171:8080',
-			'Access-Control-Allow-Methods': 'OPTIONS,POST,GET',
+			accept: '*/*',
 		},
 	});
 
