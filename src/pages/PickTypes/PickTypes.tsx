@@ -31,11 +31,11 @@ export default function PickTypes() {
 		method: 'GET',
 		url: 'http://118.67.132.171:8080/api/getQA',
 		headers: {
-			accept: '*/*',
+			'Access-Control-Allow-Headers': 'Content-Type',
+			'Access-Control-Allow-Origin': 'http://118.67.132.171:8080',
+			'Access-Control-Allow-Methods': 'OPTIONS,POST,GET',
 		},
 	});
-
-	console.log(response?.data.answer);
 
 	const questionList = response?.data.question;
 	const answerList = response?.data.answer;
@@ -54,7 +54,6 @@ export default function PickTypes() {
 
 	return (
 		<>
-			<div>{}</div>
 			<PickTypesView
 				headerText="같이 떡볶이 고르는 중"
 				alertText="좋아하는 거 골라봐! 일부만 선택해도 돼."

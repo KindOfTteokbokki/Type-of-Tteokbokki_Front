@@ -38,20 +38,6 @@ export default function Loaded() {
 		}
 	};
 
-	// useEffect(()=>{
-	// 	const handler = (e:Document)=>{
-	// 		if (modalRef.current && !modalRef.current.contains(){
-	// 			setModal(false);
-	// 		})
-	// 	}
-
-	// 	document.addEventListener('mousedown', handler);
-
-	// 	return () => {
-	// 				document.removeEventListener('mousedown', handler);
-	// 			};
-	// })
-
 	return (
 		<>
 			<LoadedView
