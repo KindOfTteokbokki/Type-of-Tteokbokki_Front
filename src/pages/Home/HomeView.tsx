@@ -5,8 +5,16 @@ import food from '../../assets/tteokbokki.png';
 import food1 from '../../assets/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png';
 import icon from '../../assets/Hot face.svg';
 
+interface Img {
+	file_masking_name: string;
+	file_original_name: string;
+	file_path: string;
+}
+
 interface Props {
 	onClickMove(): void;
+	combiImgList: Img[];
+	nickName: string;
 }
 
 export default function HomeView(props: Props) {
@@ -42,12 +50,15 @@ export default function HomeView(props: Props) {
 				</S.FlexCont>
 			</S.Cont>
 			<S.Cont>
-				<S.Text>제이드가 추천하는 꿀조합</S.Text>
+				<S.Text>{props.nickName}가 추천하는 꿀조합</S.Text>
 				<S.FlexCont>
-					<S.CombiImg src={food} />
-					<S.CombiImg src={food} />
-					<S.CombiImg src={food} />
-					<S.CombiImg src={food} />
+					{props.combiImgList
+						? props.combiImgList.map((imageFile) => {
+								return <S.CombiImg src={imageFile.file_path + imageFile.file_masking_name} />;
+						  })
+						: [1, 2, 3, 4].map(() => {
+								return <S.CombiImg />;
+						  })}
 				</S.FlexCont>
 			</S.Cont>
 		</S.Section>
