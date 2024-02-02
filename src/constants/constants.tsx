@@ -39,4 +39,7 @@ export const constants = {
 		header: '칭호를 획득했어!',
 		message: '당신은',
 	},
+	HOME: {
+		NICK_NAME: ['제이드', '만두', '개구리', '빵태'],
+	},
 };

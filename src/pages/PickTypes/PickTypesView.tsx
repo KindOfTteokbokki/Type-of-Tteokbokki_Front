@@ -10,6 +10,7 @@ import { RootStateType } from '../../store';
 import { JSX } from 'react/jsx-runtime';
 import { Response } from './PickTypes';
 import useAxios from '../../api/useAxios';
+import axios from 'axios';
 
 export default function PickTypesView(props: Props) {
 	const selector = useSelector((state: RootStateType) => {
@@ -51,7 +52,7 @@ export default function PickTypesView(props: Props) {
 		return filteredList;
 	};
 
-	const jsonData = JSON.stringify({
+	const jsonData = {
 		question1: 'CH102',
 		question2: 'CH200',
 		question3: 'CH301',
@@ -59,18 +60,17 @@ export default function PickTypesView(props: Props) {
 		question5: 'CH502',
 		question6: 'CH600',
 		question7: 'CH700',
-	});
+	};
 
 	const { response, error, loading, sendData } = useAxios({
-		method: 'GET',
+		method: 'POST',
 		url: 'http://118.67.132.171:8080/api/findTitle',
 		headers: {
-			'Content-Type': 'application/json',
+			accept: '*/*',
 		},
 		data: jsonData,
 	});
 
-	console.log(response);
 	return (
 		<S.Cont>
 			<S.Layout id="pickType">
