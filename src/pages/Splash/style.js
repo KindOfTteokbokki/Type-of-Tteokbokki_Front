@@ -9,3 +9,7 @@ export const Layout = styled.section`
 	padding: 152px 0;
 	position: relative;
 `;
+
+export const Logo = styled.img`
+	width: 184px;
+`;

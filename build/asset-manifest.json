@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.2bb3f7ac.js",
+    "main.js": "/static/js/main.2326d334.js",
     "static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png": "/static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.425feb7cc06c4d3031fa.png",
     "static/media/lock.svg": "/static/media/lock.3a3007ee1cc71f6cc9b16530db5f56d7.svg",
-    "static/media/tteokbokki.png": "/static/media/tteokbokki.a62e2c2b8e451c4d58c9.png",
     "static/media/Hot face.svg": "/static/media/Hot face.235b3abc0143665282be9a71dd83a527.svg",
     "static/media/modalIcon.svg": "/static/media/modalIcon.c0568c3cb30c61a5224f4f32a433dd25.svg",
     "static/media/Food-1.svg": "/static/media/Food-1.b0a372a7afa9138541b3c7a70332e428.svg",
@@ -12,9 +11,9 @@
     "static/media/close_small_red.svg": "/static/media/close_small_red.1521eba830cc13cab8cac8f63981f4f1.svg",
     "static/media/Food.svg": "/static/media/Food.695e2d9d2600a8d67db0f35e2ab3ff87.svg",
     "index.html": "/index.html",
-    "main.2bb3f7ac.js.map": "/static/js/main.2bb3f7ac.js.map"
+    "main.2326d334.js.map": "/static/js/main.2326d334.js.map"
   },
   "entrypoints": [
-    "static/js/main.2bb3f7ac.js"
+    "static/js/main.2326d334.js"
   ]
 }
