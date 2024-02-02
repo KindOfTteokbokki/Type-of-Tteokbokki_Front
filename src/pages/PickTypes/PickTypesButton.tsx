@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { PickButton, UnPickButton } from './style';
-import { Answer } from './PickTypes';
+import { Response } from './PickTypes';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 interface Props {
-	answer: Answer;
+	answer: Response;
 	clickedIndex: number;
 	answerIndex: number;
-	onClickAdd: (type: string[]) => void;
+	onClickAdd: (type: [string, Response]) => void;
 	onClickSelect: (answerIdx: number) => void;
-	onClickDelete: (type: string[]) => void;
+	onClickDelete: (type: string) => void;
 	onClickScroll: (index: number) => void;
 	questionIndex: number;
 }
@@ -22,7 +24,7 @@ export default function PickTypesButton(props: Props) {
 				<PickButton
 					id="button"
 					onClick={() => {
-						props.onClickDelete([`question${(props.questionIndex + 1).toString()}`]);
+						props.onClickDelete(`${(props.questionIndex + 1).toString()}`);
 						setPick(false);
 						props.onClickScroll(100 * props.questionIndex);
 					}}
@@ -34,7 +36,7 @@ export default function PickTypesButton(props: Props) {
 					id="button"
 					onClick={() => {
 						props.onClickSelect(props.answerIndex);
-						props.onClickAdd([(props.questionIndex + 1).toString(), props.answer.name_ko]);
+						props.onClickAdd([(props.questionIndex + 1).toString(), props.answer]);
 						setPick(true);
 						props.onClickScroll(50 * props.questionIndex);
 					}}
