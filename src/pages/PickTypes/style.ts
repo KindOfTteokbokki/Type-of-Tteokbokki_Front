@@ -62,7 +62,7 @@ export const FlexLayout = styled.ul`
 
 export const PickQuestion = styled.h2`
 	font-size: ${(props) => props.theme.fontSize.lv3};
-	font-weight: 600;
+	font-weight: ${(props) => props.theme.fontWeight.semiBold};
 	margin-bottom: 8px;
 `;
 

@@ -11,14 +11,14 @@ export interface Props {
 	headerText: string;
 	alertText: string;
 	selectText: string;
-	questionList: Object[];
-	answerList: Answer[];
-	onClickAdd: (type: string[]) => void;
+	questionList: Response[];
+	answerList: Response[];
+	onClickAdd: (type: [string, Response]) => void;
 	onClickMove(): void;
-	onClickDelete: (type: string[]) => void;
+	onClickDelete: (type: string) => void;
 }
 
-export type Answer = {
+export type Response = {
 	code: string;
 	name_ko: string;
 };
@@ -38,7 +38,7 @@ export default function PickTypes() {
 	const questionList = response?.data.question;
 	const answerList = response?.data.answer;
 
-	const onClickAdd = (type: string[]) => {
+	const onClickAdd = (type: [string, Response]) => {
 		dispatch(addPickType(type));
 	};
 
@@ -46,7 +46,7 @@ export default function PickTypes() {
 		navigator('/loading');
 	};
 
-	const onClickDelete = (type: string[]) => {
+	const onClickDelete = (type: string) => {
 		dispatch(deletePickType(type));
 	};
 

@@ -11,7 +11,7 @@ export default function LoadingView(props: Props) {
 				{props.loadingHeader}
 			</S.Header>
 			<S.Text>{props.loadingMessage}</S.Text>
-			<S.Img />
+			<S.Img src={props.loadingImgUrl} alt="떡볶이 사진" />
 			<S.RedText>{props.loadingMessageBottom}</S.RedText>
 		</S.Main>
 	);

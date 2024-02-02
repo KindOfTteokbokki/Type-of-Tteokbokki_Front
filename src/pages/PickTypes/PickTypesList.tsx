@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import * as S from './style';
 import PickTypesButton from './PickTypesButton';
-import { Answer } from './PickTypes';
+import { Response } from './PickTypes';
+import { constants } from '../../constants/constants';
 
 interface Props {
-	question: any;
+	question: Response;
 	questionIndex: number;
-	answerList: Answer[];
-	onClickAdd: (type: string[]) => void;
-	onClickDelete: (type: string[]) => void;
+	answerList: Response[];
+	onClickAdd: (type: [string, Response]) => void;
+	onClickDelete: (type: string) => void;
 	onClickScroll: (index: number) => void;
 }
 
@@ -26,7 +27,7 @@ export default function PickTypesList(props: Props) {
 				{props.answerList.map((answer, answerIndex) => {
 					return (
 						<>
-							{props.questionIndex === 5 && Number(answer.code[2]) === props.questionIndex + 1 ? (
+							{props.questionIndex === 5 ? (
 								<S.ButtonLayout>
 									<PickTypesButton
 										answer={answer}
@@ -39,7 +40,7 @@ export default function PickTypesList(props: Props) {
 										questionIndex={props.questionIndex}
 									/>
 								</S.ButtonLayout>
-							) : Number(answer.code[2]) === props.questionIndex + 1 ? (
+							) : (
 								<PickTypesButton
 									answer={answer}
 									clickedIndex={clickedIndex}
@@ -50,7 +51,7 @@ export default function PickTypesList(props: Props) {
 									onClickScroll={props.onClickScroll}
 									questionIndex={props.questionIndex}
 								/>
-							) : null}
+							)}
 						</>
 					);
 				})}
