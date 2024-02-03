@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import HomeView from './HomeView';
 import { useNavigate } from 'react-router-dom';
 import useAxios from '../../api/useAxios';
 import { constants } from '../../constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import { initialState, initializeType } from '../../slice/userPickSlice';
 
 export default function Home() {
 	const navigator = useNavigate();
+	const dispatch = useDispatch();
+	const [data, setData] = useState();
 
 	const onClickMove = () => {
+		dispatch(initializeType(initialState));
 		navigator('/pickTypes');
 	};
 
@@ -21,7 +25,7 @@ export default function Home() {
 		},
 	});
 
-	const combiImgList = response?.data;
+	let combiImgList = response?.data;
 	const randIndex = Math.floor(Math.random() * 4);
 
 	return (

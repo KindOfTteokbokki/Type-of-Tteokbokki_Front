@@ -10,11 +10,11 @@ export const Main = styled(Layout)`
 export const LoadCont = styled.figure`
 	width: 360px;
 	height: 400px;
-	padding: 6px;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	box-shadow: 0 3px 12px rgba(0, 0, 0, 18%);
 	margin: 32px 0 102px;
 	position: relative;
+	z-index: 30;
 `;
 
 export const LoadImg = styled.img`
@@ -33,12 +33,14 @@ export const LoadText = styled.figcaption`
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 30;
 `;
 
 export const TextCont = styled.div`
 	line-height: 22px;
 	display: flex;
 	gap: 16px;
+	z-index: 30;
 `;
 
 export const Icon = styled.img`
@@ -67,6 +69,7 @@ export const ModalCont = styled.article`
 	padding: 48px 0 32px;
 	background-color: #fff;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
+	z-index: 50;
 `;
 
 export const ModalText = styled.p`
