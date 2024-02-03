@@ -16,14 +16,16 @@ export const PopupHeader = styled(Header)`
 `;
 
 export const HeadText = styled.p`
-	padding-left: 24px;
+	padding: 0 24px;
 	margin-bottom: 40px;
+	line-height: 25px;
 	text-align: initial;
 	font-size: ${(props) => props.theme.fontSize.lv4};
 	font-weight: ${(props) => props.theme.fontWeight.semiBold};
 `;
 
 export const Text = styled(HeadText)`
+	line-height: 28px;
 	font-size: ${(props) => props.theme.fontSize.lv3};
 	margin-bottom: 12px;
 	padding: 24px 0 0 24px;
@@ -50,4 +52,5 @@ export const Img = styled.img`
 	background-color: gray;
 	width: 100%;
 	height: 248px;
+	border-radius: 0 0 ${(props) => props.theme.borderRadius.lv4} ${(props) => props.theme.borderRadius.lv4};
 `;

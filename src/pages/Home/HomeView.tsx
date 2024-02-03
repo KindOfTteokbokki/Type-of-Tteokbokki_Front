@@ -2,26 +2,23 @@ import React from 'react';
 import * as S from './style';
 import lock from '../../assets/아이콘/자물쇠.svg';
 import food from '../../assets/tteokbokki.png';
-import food1 from '../../assets/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png';
 import icon from '../../assets/Hot face.svg';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 
-interface Img {
-	file_masking_name: string;
-	file_original_name: string;
-	file_path: string;
-}
-
 interface Props {
 	onClickMove(): void;
-	combiImgList: Img[];
+	combiImgList: any;
 	nickName: string;
 }
 
 export default function HomeView(props: Props) {
 	const titleStore = useSelector((state: RootStateType) => {
 		return state.title;
+	});
+
+	const store = useSelector((state: RootStateType) => {
+		return state.store.value.file_path + state.store.value.file_masking_name;
 	});
 
 	return (
@@ -38,7 +35,7 @@ export default function HomeView(props: Props) {
 			<S.Cont>
 				<S.Text>내 입맛</S.Text>
 				<S.FlexCont>
-					<S.MyTypeImg src={food1} alt="떡볶이 사진" />
+					<S.MyTypeImg src={store} alt="떡볶이 사진" />
 					<S.LockCont>
 						<S.LockImg src={lock} />
 					</S.LockCont>
@@ -60,7 +57,7 @@ export default function HomeView(props: Props) {
 				<S.Text>{props.nickName}가 추천하는 꿀조합</S.Text>
 				<S.FlexCont>
 					{props.combiImgList
-						? props.combiImgList.map((imageFile) => {
+						? props.combiImgList.map((imageFile: any) => {
 								return <S.CombiImg src={imageFile.file_path + imageFile.file_masking_name} />;
 						  })
 						: [1, 2, 3, 4].map(() => {

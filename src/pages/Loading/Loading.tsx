@@ -31,23 +31,11 @@ export default function Loading() {
 			accept: '*/*',
 		},
 	});
-
-	const imgUrl = response?.data[0].file_path + response?.data[0].file_masking_name;
-
 	const postData: any = {};
 
 	for (const [key, value] of Object.entries(selector)) {
 		postData[key] = value.code;
 	}
-
-	const params = {
-		method: 'POST',
-		url: 'http://118.67.132.171:8080/api/findStore',
-		headers: {
-			accept: '*/*',
-		},
-		data: postData,
-	};
 
 	setTimeout(async () => {
 		// await axios.request(params).then((response) => {
@@ -62,7 +50,7 @@ export default function Loading() {
 			loadingHeader={constants.LOADING.header}
 			loadingMessage={constants.LOADING.message}
 			loadingMessageBottom={response?.data[0].phrases}
-			loadingImgUrl={imgUrl}
+			loadingImgUrl={loading}
 		/>
 	);
 }

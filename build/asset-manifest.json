@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.483f8127.js",
-    "static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png": "/static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.425feb7cc06c4d3031fa.png",
+    "main.js": "/static/js/main.28a30004.js",
     "static/media/스플래시배경.svg": "/static/media/스플래시배경.22c3735951dfeb8ce946a47b7ee8b185.svg",
+    "static/media/loading.gif": "/static/media/loading.16665a0edf00c04185d6.gif",
     "static/media/로고_스플래시1.svg": "/static/media/로고_스플래시1.e6efe2f65d62c05f4a0e55181b1629eb.svg",
     "static/media/가게명.svg": "/static/media/가게명.76655fd1216cf9eea4d1cf7d52cffeb1.svg",
     "static/media/한줄평.svg": "/static/media/한줄평.6f7c6d556e30681eb4a63f98032ea159.svg",
@@ -15,9 +15,9 @@
     "static/media/close_small_red.svg": "/static/media/close_small_red.1521eba830cc13cab8cac8f63981f4f1.svg",
     "static/media/Food.svg": "/static/media/Food.695e2d9d2600a8d67db0f35e2ab3ff87.svg",
     "index.html": "/index.html",
-    "main.483f8127.js.map": "/static/js/main.483f8127.js.map"
+    "main.28a30004.js.map": "/static/js/main.28a30004.js.map"
   },
   "entrypoints": [
-    "static/js/main.483f8127.js"
+    "static/js/main.28a30004.js"
   ]
 }
