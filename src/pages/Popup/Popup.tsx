@@ -27,6 +27,7 @@ export default function Popup(props: Props) {
 
 	const navigator = useNavigate();
 	const postData: any = {};
+	const dispatch = useDispatch();
 
 	for (const [key, value] of Object.entries(selector)) {
 		postData[key] = value.code;
@@ -49,6 +50,7 @@ export default function Popup(props: Props) {
 		postFunc(postData).then((res: any) => {
 			console.log(res);
 			setData(res.data);
+			dispatch(addTitle(res.data));
 		});
 	}, []);
 
