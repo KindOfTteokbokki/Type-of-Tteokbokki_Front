@@ -6,6 +6,7 @@ import { Action } from '../../../slice/findStoreSlice';
 
 interface Props {
 	storeData: Action;
+	response: any;
 }
 
 export default function ChainStoreView(props: any) {
@@ -13,15 +14,15 @@ export default function ChainStoreView(props: any) {
 		<S.LoadText>
 			<S.TextCont>
 				<S.Icon src={house} alt="가게명" />
-				<S.Text>{props.storeData.store_name}</S.Text>
+				<S.Text>{props.response?.store_name}</S.Text>
 			</S.TextCont>
 			<S.TextCont>
 				<S.Icon src={house} alt="메뉴명" />
-				<S.Text>{props.storeData.menu_name}</S.Text>
+				<S.Text>{props.response?.menu_name}</S.Text>
 			</S.TextCont>
 			<S.TextCont>
 				<S.Icon src={house} alt="한줄평" />
-				<S.Text>{props.storeData.review}</S.Text>
+				<S.Text>{props.response?.review}</S.Text>
 			</S.TextCont>
 		</S.LoadText>
 	);

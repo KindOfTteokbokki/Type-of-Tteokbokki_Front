@@ -6,7 +6,7 @@ interface State {
 	[quesiton1: string]: Response;
 }
 
-const initialState: State = {
+export const initialState: State = {
 	question1: { code: constants.ANSWER_INIT.QUESTION1, name_ko: '' },
 	question2: { code: constants.ANSWER_INIT.QUESTION2, name_ko: '' },
 	question3: { code: constants.ANSWER_INIT.QUESTION3, name_ko: '' },
@@ -32,7 +32,10 @@ export const userPickSlice = createSlice({
 				name_ko: '',
 			};
 		},
+		initializeType(state, action: PayloadAction<State>) {
+			state = action.payload;
+		},
 	},
 });
 
-export let { addPickType, deletePickType } = userPickSlice.actions;
+export let { addPickType, deletePickType, initializeType } = userPickSlice.actions;

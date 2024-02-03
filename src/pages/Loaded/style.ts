@@ -23,8 +23,6 @@ export const LoadImg = styled.img`
 `;
 
 export const LoadText = styled.figcaption`
-	width: 348px;
-	margin: 6px;
 	padding: 16px;
 	display: flex;
 	flex-direction: column;
