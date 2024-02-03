@@ -19,6 +19,7 @@ export const LoadCont = styled.figure`
 
 export const LoadImg = styled.img`
 	width: 100%;
+	height: 300px;
 `;
 
 export const LoadText = styled.figcaption`

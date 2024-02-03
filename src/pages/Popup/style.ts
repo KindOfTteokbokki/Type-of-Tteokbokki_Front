@@ -49,7 +49,6 @@ export const Button = styled.button`
 `;
 
 export const Img = styled.img`
-	background-color: gray;
 	width: 100%;
 	height: 248px;
 	border-radius: 0 0 ${(props) => props.theme.borderRadius.lv4} ${(props) => props.theme.borderRadius.lv4};
