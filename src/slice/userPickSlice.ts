@@ -33,7 +33,21 @@ export const userPickSlice = createSlice({
 			};
 		},
 		initializeType(state, action: PayloadAction<any>) {
-			state = action.payload;
+			state.question1.code = constants.ANSWER_INIT.QUESTION1;
+			state.question2.code = constants.ANSWER_INIT.QUESTION2;
+			state.question3.code = constants.ANSWER_INIT.QUESTION3;
+			state.question4.code = constants.ANSWER_INIT.QUESTION4;
+			state.question5.code = constants.ANSWER_INIT.QUESTION5;
+			state.question6.code = constants.ANSWER_INIT.QUESTION6;
+			state.question7.code = constants.ANSWER_INIT.QUESTION7;
+
+			state.question1.name_ko = '';
+			state.question2.name_ko = '';
+			state.question3.name_ko = '';
+			state.question4.name_ko = '';
+			state.question5.name_ko = '';
+			state.question6.name_ko = '';
+			state.question7.name_ko = '';
 		},
 	},
 });

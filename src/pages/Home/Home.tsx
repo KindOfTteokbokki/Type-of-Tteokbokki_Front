@@ -5,12 +5,15 @@ import useAxios from '../../api/useAxios';
 import { constants } from '../../constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import { initialState, initializeType } from '../../slice/userPickSlice';
 
 export default function Home() {
 	const navigator = useNavigate();
+	const dispatch = useDispatch();
 	const [data, setData] = useState();
 
 	const onClickMove = () => {
+		dispatch(initializeType(initialState));
 		navigator('/pickTypes');
 	};
 

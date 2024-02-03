@@ -10,7 +10,6 @@ export const Main = styled(Layout)`
 export const LoadCont = styled.figure`
 	width: 360px;
 	height: 400px;
-	padding: 6px;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	box-shadow: 0 3px 12px rgba(0, 0, 0, 18%);
 	margin: 32px 0 102px;

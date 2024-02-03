@@ -43,6 +43,7 @@ export default function Loaded() {
 	console.log(storeData);
 
 	const onClickReturn = () => {
+		dispatch(initializeType(initialState));
 		navigator('/pickTypes');
 	};
 
@@ -85,6 +86,7 @@ export default function Loaded() {
 
 	useEffect(() => {
 		postFunc(postData).then((res: any) => {
+			console.log(res);
 			setData(res.data);
 		});
 	}, []);
