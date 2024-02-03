@@ -34,6 +34,10 @@ export default function PickTypes() {
 		return state.userPick;
 	});
 
+	useEffect(() => {
+		dispatch(initializeType(initialState));
+	}, []);
+
 	console.log(selector);
 	const store = useSelector((state: RootStateType) => {
 		return state.store.value;

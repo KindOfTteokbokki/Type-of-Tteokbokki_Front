@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-import { Layout } from '../Splash/style';
 
-export const Main = styled(Layout)`
+export const Main = styled.section`
 	background-color: #fff;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 152px 0;
 	height: 100%;
 `;
 

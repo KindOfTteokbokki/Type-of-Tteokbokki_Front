@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import food from '../../assets/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png';
 import { Layout } from '../Splash/style';
 
 export const Main = styled(Layout)`
 	background-color: #fff;
 	padding: 152px 15px;
+	background-image: none;
 `;
 
 export const LoadCont = styled.figure`

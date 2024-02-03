@@ -9,6 +9,8 @@ import { RootStateType } from '../../store';
 import { deletePickType, initializeType } from '../../slice/userPickSlice';
 import useAxios from '../../api/useAxios';
 import { addStore, initialState } from '../../slice/findStoreSlice';
+import axios from 'axios';
+import { usePost } from '../../api/useFetch';
 
 export interface Props {
 	loadedHeader: string;
@@ -23,6 +25,7 @@ export interface Props {
 }
 
 export default function Loaded() {
+	const [data, setData] = useState();
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
 	let [modal, setModal] = useState(false);
@@ -30,6 +33,7 @@ export default function Loaded() {
 	const selector = useSelector((state: RootStateType) => {
 		return state.userPick;
 	});
+	const postFunc = usePost('http://118.67.132.171:8080/api/findStore');
 
 	const storeData = useSelector((state: RootStateType) => {
 		return state.store.value;
@@ -65,30 +69,24 @@ export default function Loaded() {
 
 	const postData: any = {};
 
-	type Type = {
-		store_name: string;
-		store_address: string;
-		menu_name: string;
-		review: string;
-		file_path: string;
-		file_masking_name: string;
-	};
-	const store = initialState;
-
 	for (const [key, value] of Object.entries(selector)) {
 		postData[key] = value.code;
 	}
 
-	const { response, error, loading, sendData } = useAxios({
+	const params = {
 		method: 'POST',
 		url: 'http://118.67.132.171:8080/api/findStore',
 		headers: {
 			accept: '*/*',
 		},
 		data: postData,
-	});
+	};
 
-	console.log(response);
+	useEffect(() => {
+		postFunc(postData).then((res: any) => {
+			setData(res.data);
+		});
+	}, []);
 
 	return (
 		<>
@@ -103,8 +101,7 @@ export default function Loaded() {
 					renderModal={renderModal}
 					modal={modal}
 					onClickPopUp={onClickPopUp}
-					storeData={storeData}
-					response={response?.data}
+					data={data}
 				/>
 			)}
 		</>
