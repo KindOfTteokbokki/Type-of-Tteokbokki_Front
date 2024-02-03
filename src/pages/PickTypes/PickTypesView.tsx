@@ -52,25 +52,6 @@ export default function PickTypesView(props: Props) {
 		return filteredList;
 	};
 
-	const jsonData = {
-		question1: 'CH102',
-		question2: 'CH200',
-		question3: 'CH301',
-		question4: 'CH401',
-		question5: 'CH502',
-		question6: 'CH600',
-		question7: 'CH700',
-	};
-
-	const { response, error, loading, sendData } = useAxios({
-		method: 'POST',
-		url: 'http://118.67.132.171:8080/api/findTitle',
-		headers: {
-			accept: '*/*',
-		},
-		data: jsonData,
-	});
-
 	return (
 		<S.Cont>
 			<S.Layout id="pickType">
