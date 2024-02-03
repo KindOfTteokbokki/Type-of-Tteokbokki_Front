@@ -4,6 +4,8 @@ import { constants } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
 import Modal from './Modal/view/Modal';
 import Popup from '../Popup/Popup';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 export interface Props {
 	loadedHeader: string;
@@ -13,12 +15,19 @@ export interface Props {
 	renderModal(): ReactNode;
 	modal: boolean;
 	onClickPopUp(): void;
+	storeData: object;
 }
 
 export default function Loaded() {
 	const navigator = useNavigate();
 	let [modal, setModal] = useState(false);
 	let [popUp, setPopUp] = useState(false);
+
+	const storeData = useSelector((state: RootStateType) => {
+		return state.store.value;
+	});
+
+	console.log(storeData);
 
 	const onClickReturn = () => {
 		navigator('/pickTypes');
@@ -59,6 +68,7 @@ export default function Loaded() {
 					renderModal={renderModal}
 					modal={modal}
 					onClickPopUp={onClickPopUp}
+					storeData={storeData}
 				/>
 			)}
 		</>

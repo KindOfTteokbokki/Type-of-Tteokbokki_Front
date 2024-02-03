@@ -3,6 +3,7 @@ import LoadingView from './LoadingView';
 import { constants } from '../../constants/constants';
 import useAxios from '../../api/useAxios';
 import { useNavigate } from 'react-router-dom';
+import loading from '../../assets/loading.gif';
 
 export interface Props {
 	loadingHeader: string;
@@ -33,7 +34,7 @@ export default function Loading() {
 			loadingHeader={constants.LOADING.header}
 			loadingMessage={constants.LOADING.message}
 			loadingMessageBottom={response?.data[0].phrases}
-			loadingImgUrl={imgUrl}
+			loadingImgUrl={loading}
 		/>
 	);
 }
