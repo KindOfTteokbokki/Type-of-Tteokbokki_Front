@@ -17,8 +17,6 @@ export default function PickTypesView(props: Props) {
 		return state.userPick;
 	});
 
-	const [pick, setPick] = useState(true);
-
 	const renderButton = () => {
 		const render: JSX.Element[] = [];
 		const filteredArray = Object.values(selector).filter((value) => value.code[4] !== '0');

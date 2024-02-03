@@ -7,14 +7,17 @@ export const PopupHeader = styled(Header)`
 `;
 
 export const HeadText = styled.p`
+	padding-left: 24px;
+	margin-bottom: 40px;
 	text-align: initial;
-	font-size: ${(props) => props.theme.fontSize.lv3};
+	font-size: ${(props) => props.theme.fontSize.lv4};
 	font-weight: ${(props) => props.theme.fontWeight.semiBold};
 `;
 
 export const Text = styled(HeadText)`
-	font-size: ${(props) => props.theme.fontSize.lv2};
+	font-size: ${(props) => props.theme.fontSize.lv3};
 	margin-bottom: 12px;
+	padding: 24px 0 0 24px;
 `;
 
 export const Cont = styled.main`
@@ -24,7 +27,6 @@ export const Cont = styled.main`
 	width: 284px;
 	height: 377px;
 	background-color: #fff;
-	padding: 24px 0 0 24px;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	box-shadow: 0 3px 16px rgba(0, 0, 0, 0.25);
 `;
@@ -33,4 +35,10 @@ export const Button = styled.button`
 	width: 56px;
 	height: 56px;
 	background-image: url(${checkIcon});
+`;
+
+export const Img = styled.img`
+	background-color: gray;
+	width: 100%;
+	height: 248px;
 `;

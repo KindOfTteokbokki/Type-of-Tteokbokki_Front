@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PickTypesView from './PickTypesView';
 import { constants } from '../../constants/constants';
-import { addPickType, deletePickType } from '../../slice/userPickSlice';
+import { addPickType, deletePickType, initialState, initializeType } from '../../slice/userPickSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import useAxios, { baseUrl } from '../../api/useAxios';
 import axios, { AxiosPromise } from 'axios';
 import { RootStateType } from '../../store';
-import { addStore, initialState } from '../../slice/findStoreSlice';
+import { addStore } from '../../slice/findStoreSlice';
+import { addTitle, titleInitialState } from '../../slice/findTitleSlice';
 
 export interface Props {
 	headerText: string;
@@ -33,11 +34,11 @@ export default function PickTypes() {
 		return state.userPick;
 	});
 
+	console.log(selector);
 	const store = useSelector((state: RootStateType) => {
 		return state.store.value;
 	});
 
-	console.log(store);
 	const { response, error, loading, sendData } = useAxios({
 		method: 'GET',
 		url: 'http://118.67.132.171:8080/api/getQA',
@@ -54,31 +55,6 @@ export default function PickTypes() {
 	};
 
 	const onClickMove = () => {
-		const postData = [];
-		const storeData: any = {};
-
-		for (let key in selector) {
-			postData.push({ key: selector[key].code });
-		}
-
-		axios
-			.post('http://118.67.132.171:8080/api/findStore', {
-				headers: {
-					accept: '*/*',
-				},
-				data: postData,
-			})
-			.then((response) => {
-				for (const [key, value] of Object.entries(response.data)) {
-					console.log(key);
-					if (initialState.hasOwnProperty(key)) {
-						storeData[key] = value;
-					}
-				}
-				console.log(storeData);
-				dispatch(addStore(storeData));
-			});
-
 		navigator('/loading');
 	};
 

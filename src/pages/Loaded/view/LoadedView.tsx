@@ -16,7 +16,7 @@ export default function LoadedView(props: Props) {
 			</Header>
 			<Text>{props.loadedMessage}</Text>
 			<S.LoadCont>
-				<ChainStoreView storeData={props.storeData} />
+				<ChainStoreView storeData={props.storeData} response={props.response} />
 			</S.LoadCont>
 			<S.ButtonLayout>
 				<BigWhiteButton text="다시 고르기" onclick={props.onClickReturn} />

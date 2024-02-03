@@ -22,7 +22,7 @@ export const findStoreSlice = createSlice({
 	name: 'findStore',
 	initialState: { value: initialState },
 	reducers: {
-		addStore(state, action: PayloadAction<Action>) {
+		addStore(state, action: any) {
 			state.value = action.payload;
 		},
 	},

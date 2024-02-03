@@ -4,8 +4,11 @@ import { constants } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
 import Modal from './Modal/view/Modal';
 import Popup from '../Popup/Popup';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootStateType } from '../../store';
+import { deletePickType, initializeType } from '../../slice/userPickSlice';
+import useAxios from '../../api/useAxios';
+import { addStore, initialState } from '../../slice/findStoreSlice';
 
 export interface Props {
 	loadedHeader: string;
@@ -16,12 +19,17 @@ export interface Props {
 	modal: boolean;
 	onClickPopUp(): void;
 	storeData: object;
+	response: any;
 }
 
 export default function Loaded() {
 	const navigator = useNavigate();
+	const dispatch = useDispatch();
 	let [modal, setModal] = useState(false);
 	let [popUp, setPopUp] = useState(false);
+	const selector = useSelector((state: RootStateType) => {
+		return state.userPick;
+	});
 
 	const storeData = useSelector((state: RootStateType) => {
 		return state.store.value;
@@ -55,6 +63,33 @@ export default function Loaded() {
 		}
 	};
 
+	const postData: any = {};
+
+	type Type = {
+		store_name: string;
+		store_address: string;
+		menu_name: string;
+		review: string;
+		file_path: string;
+		file_masking_name: string;
+	};
+	const store = initialState;
+
+	for (const [key, value] of Object.entries(selector)) {
+		postData[key] = value.code;
+	}
+
+	const { response, error, loading, sendData } = useAxios({
+		method: 'POST',
+		url: 'http://118.67.132.171:8080/api/findStore',
+		headers: {
+			accept: '*/*',
+		},
+		data: postData,
+	});
+
+	console.log(response);
+
 	return (
 		<>
 			{popUp ? (
@@ -69,6 +104,7 @@ export default function Loaded() {
 					modal={modal}
 					onClickPopUp={onClickPopUp}
 					storeData={storeData}
+					response={response?.data}
 				/>
 			)}
 		</>

@@ -7,14 +7,18 @@ export interface Props {
 	popUpHeader: string;
 	popUpMessage: string;
 	onClickMove(): void;
+	response?: any;
 }
+
 export default function PopupView(props: Props) {
+	console.log(props.response?.data);
 	return (
 		<Layout>
 			<PopupHeader>{props.popUpHeader}</PopupHeader>
 			<S.Cont>
 				<S.Text>{props.popUpMessage}</S.Text>
-				<S.HeadText>이 구역 순둥이</S.HeadText>
+				<S.HeadText>{props.response?.data.title_name}</S.HeadText>
+				<S.Img src={props.response?.data.img_file_path + props.response?.data.img_file_masking_name} />
 			</S.Cont>
 			<S.Button onClick={props.onClickMove} />
 		</Layout>
