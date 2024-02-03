@@ -5,6 +5,7 @@ import food from '../../assets/tteokbokki.png';
 import icon from '../../assets/Hot face.svg';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import character from '../../assets/캐릭터.svg';
 
 interface Props {
 	onClickMove(): void;
@@ -32,7 +33,7 @@ export default function HomeView(props: Props) {
 			</S.Title>
 			<S.MainCont>
 				<S.MainText>어떤 떡볶이가 먹고싶어?</S.MainText>
-				<S.MainImg />
+				<S.MainImg src={character} />
 				<S.PickButton onClick={props.onClickMove}>고르러 가기!</S.PickButton>
 			</S.MainCont>
 			<S.Cont>

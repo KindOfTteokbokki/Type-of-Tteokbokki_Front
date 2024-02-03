@@ -49,9 +49,10 @@ export const Title = styled.p`
 
 export const MainImg = styled.img`
 	width: 100%;
-	background-color: gray;
 	height: 98px;
+
 	margin: 8px 0;
+	border: none;
 `;
 
 export const PickButton = styled.button`
