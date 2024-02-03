@@ -32,7 +32,7 @@ export const userPickSlice = createSlice({
 				name_ko: '',
 			};
 		},
-		initializeType(state, action: PayloadAction<State>) {
+		initializeType(state, action: PayloadAction<any>) {
 			state = action.payload;
 		},
 	},

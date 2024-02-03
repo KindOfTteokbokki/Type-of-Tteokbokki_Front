@@ -3,6 +3,8 @@ import HomeView from './HomeView';
 import { useNavigate } from 'react-router-dom';
 import useAxios from '../../api/useAxios';
 import { constants } from '../../constants/constants';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 export default function Home() {
 	const navigator = useNavigate();

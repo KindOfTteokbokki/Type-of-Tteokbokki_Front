@@ -16,7 +16,7 @@ export const findTitleSlice = createSlice({
 	name: 'title',
 	initialState: { value: titleInitialState },
 	reducers: {
-		addTitle(state, action: PayloadAction<Action>) {
+		addTitle(state, action: any) {
 			state.value = action.payload;
 		},
 	},

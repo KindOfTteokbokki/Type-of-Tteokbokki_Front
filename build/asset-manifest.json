@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.js": "/static/js/main.48c262c6.js",
+    "main.js": "/static/js/main.81798e91.js",
     "static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png": "/static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.425feb7cc06c4d3031fa.png",
-    "static/media/loading.gif": "/static/media/loading.16665a0edf00c04185d6.gif",
-    "static/media/lock.svg": "/static/media/lock.3a3007ee1cc71f6cc9b16530db5f56d7.svg",
-    "static/media/Hot face.svg": "/static/media/Hot face.235b3abc0143665282be9a71dd83a527.svg",
+    "static/media/스플래시배경.svg": "/static/media/스플래시배경.22c3735951dfeb8ce946a47b7ee8b185.svg",
+    "static/media/로고_스플래시1.svg": "/static/media/로고_스플래시1.e6efe2f65d62c05f4a0e55181b1629eb.svg",
+    "static/media/가게명.svg": "/static/media/가게명.76655fd1216cf9eea4d1cf7d52cffeb1.svg",
+    "static/media/한줄평.svg": "/static/media/한줄평.6f7c6d556e30681eb4a63f98032ea159.svg",
     "static/media/modalIcon.svg": "/static/media/modalIcon.c0568c3cb30c61a5224f4f32a433dd25.svg",
+    "static/media/자물쇠.svg": "/static/media/자물쇠.d47f29ba79c314c5efb22eb4cc0a960e.svg",
+    "static/media/위치.svg": "/static/media/위치.15584d0206f862e24664553e43a75386.svg",
     "static/media/Food-1.svg": "/static/media/Food-1.b0a372a7afa9138541b3c7a70332e428.svg",
-    "static/media/House.svg": "/static/media/House.8ef65971f25eb0b8deb8487516526abd.svg",
+    "static/media/메뉴명.svg": "/static/media/메뉴명.4425e622aea982e20a7950cf2f0410d6.svg",
     "static/media/btn_check.svg": "/static/media/btn_check.891d4aebef0a3008ced5b2b57618edf4.svg",
     "static/media/close_small_red.svg": "/static/media/close_small_red.1521eba830cc13cab8cac8f63981f4f1.svg",
     "static/media/Food.svg": "/static/media/Food.695e2d9d2600a8d67db0f35e2ab3ff87.svg",
     "index.html": "/index.html",
-    "main.48c262c6.js.map": "/static/js/main.48c262c6.js.map"
+    "main.81798e91.js.map": "/static/js/main.81798e91.js.map"
   },
   "entrypoints": [
-    "static/js/main.48c262c6.js"
+    "static/js/main.81798e91.js"
   ]
 }

@@ -6,8 +6,16 @@ import { Props } from '../Loaded';
 import BigWhiteButton from '../../../components/Button/BigWhiteButton/BigWhiteButton';
 import BigRedButton from '../../../components/Button/BigRedButton/BigRedButton';
 import ChainStoreView from './ChainStoreView';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../../store';
+import NonChainStore from './NonChainStore';
 
-export default function LoadedView(props: Props) {
+export default function LoadedView(props: any) {
+	// const storeData = useSelector((state: any) => {
+	// 	return state.store.value;
+	// });
+
+	console.log(props.data);
 	return (
 		<S.Main>
 			<Header>
@@ -16,7 +24,7 @@ export default function LoadedView(props: Props) {
 			</Header>
 			<Text>{props.loadedMessage}</Text>
 			<S.LoadCont>
-				<ChainStoreView storeData={props.storeData} response={props.response} />
+				{props.data?.location ? <NonChainStore storeData={props.data} /> : <ChainStoreView storeData={props.data} />}
 			</S.LoadCont>
 			<S.ButtonLayout>
 				<BigWhiteButton text="다시 고르기" onclick={props.onClickReturn} />

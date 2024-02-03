@@ -2,6 +2,15 @@ import styled from 'styled-components';
 import { Header } from '../Loading/style';
 import checkIcon from '../../assets/btn_check.svg';
 
+export const Layout = styled.section`
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 152px 0;
+	background-color: #faf5e2;
+	height: 100%;
+`;
+
 export const PopupHeader = styled(Header)`
 	margin-bottom: 0;
 `;
