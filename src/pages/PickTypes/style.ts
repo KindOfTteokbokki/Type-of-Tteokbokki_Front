@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Cont = styled.div`
 	width: 100%;
+	height: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
 
@@ -99,8 +100,32 @@ export const AddIcon = styled.img`
 	cursor: pointer;
 `;
 
+export const ResultChipLayout = styled.div`
+	width: 100%;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 30px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		height: 40px;
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: ${(props) => props.theme.color.white};
+	}
+`;
+
 export const ResultButtonLayout = styled.div`
 	width: 100%;
+	backdrop-filter: opacity(0.5);
 	text-align: center;
+	padding: 37px 0 41px;
+	-webkit-backdrop-filter: blur(50px);
+	backdrop-filter: blur(50px);
+	height: 100px;
 	padding: 37px 0 41px;
 `;

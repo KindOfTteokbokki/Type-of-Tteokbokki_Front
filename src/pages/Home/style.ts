@@ -2,15 +2,31 @@ import styled from 'styled-components';
 
 export const Section = styled.section`
 	width: 100%;
-	padding: 72px 15px 24px;
+	height: 100%;
+	padding: 32px 15px 24px;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
 	background-color: ${(props) => props.theme.color.lightGray};
+	overflow-y: scroll;
+	&::-webkit-scrollbar {
+		width: 5px;
+		height: 100%;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		height: 10%;
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: ${(props) => props.theme.color.white};
+	}
 `;
 
 export const MainCont = styled.section`
 	width: 100%;
+	height: 100%;
 	padding: 16px 0;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	background-color: #fff;
@@ -90,6 +106,14 @@ export const MyRecommedImg = styled.img`
 `;
 
 export const CombiImg = styled.img`
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: ${(props) => props.theme.color.lightGray};
+	margin-top: 14px;
+`;
+
+export const EmptyCombiImg = styled.div`
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;

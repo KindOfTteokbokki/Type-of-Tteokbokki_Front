@@ -17,9 +17,14 @@ export const LoadCont = styled.figure`
 	z-index: 30;
 `;
 
-export const LoadImg = styled.img`
+export const ChainImg = styled.img`
 	width: 100%;
-	height: 300px;
+	height: 286px;
+`;
+
+export const NonChainImg = styled.img`
+	width: 100%;
+	height: 278px;
 `;
 
 export const LoadText = styled.figcaption`
