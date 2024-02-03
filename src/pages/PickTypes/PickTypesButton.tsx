@@ -17,10 +17,21 @@ interface Props {
 
 export default function PickTypesButton(props: Props) {
 	const [pick, setPick] = useState(true);
+	const userPick = useSelector((state: any) => {
+		return state.userPick;
+	});
 
+	function checkIn(code: any): any {
+		for (const [key, value] of Object.entries(userPick)) {
+			if (userPick[key].code === code) {
+				return true;
+			}
+		}
+		return false;
+	}
 	return (
 		<>
-			{props.clickedIndex === props.answerIndex && pick ? (
+			{props.clickedIndex === props.answerIndex && pick && checkIn(props.answer.code) ? (
 				<PickButton
 					id="button"
 					onClick={() => {
