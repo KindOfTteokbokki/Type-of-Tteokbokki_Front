@@ -11,6 +11,7 @@ import useAxios from '../../api/useAxios';
 import { addStore, initialState } from '../../slice/findStoreSlice';
 import axios from 'axios';
 import { usePost } from '../../api/useFetch';
+import { addTitle } from '../../slice/findTitleSlice';
 
 export interface Props {
 	loadedHeader: string;

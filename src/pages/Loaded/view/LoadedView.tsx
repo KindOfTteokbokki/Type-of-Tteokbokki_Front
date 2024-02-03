@@ -24,6 +24,7 @@ export default function LoadedView(props: any) {
 			</Header>
 			<Text>{props.loadedMessage}</Text>
 			<S.LoadCont>
+				<S.LoadImg src={props.data?.file_path + props.data?.file_masking_name} />
 				{props.data?.location ? <NonChainStore storeData={props.data} /> : <ChainStoreView storeData={props.data} />}
 			</S.LoadCont>
 			<S.ButtonLayout>
