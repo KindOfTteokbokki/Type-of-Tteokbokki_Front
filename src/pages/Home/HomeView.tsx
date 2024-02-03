@@ -61,7 +61,7 @@ export default function HomeView(props: Props) {
 				<S.FlexCont>
 					{props.combiImgList
 						? props.combiImgList.map((imageFile: any) => {
-								return <S.CombiImg src={imageFile.file_path + imageFile.file_masking_name} />;
+								return <S.CombiImg src={imageFile?.file_path + imageFile?.file_masking_name} />;
 						  })
 						: [1, 2, 3, 4].map(() => {
 								return <S.CombiImg />;
