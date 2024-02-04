@@ -134,3 +134,9 @@ export const LockImg = styled.img`
 	width: 32px;
 	height: 32px;
 `;
+
+export const Alter = styled.h1`
+	padding: 40px 76px 45px;
+	font-size: 18px;
+	font-weight: 600;
+`;
