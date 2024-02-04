@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as S from './style';
 import { HeadText, MessageLayout } from '../PickTypes/style';
 import RecommendWrite from './RecommendWrite';
 
 export default function RecommendView() {
-	const [text, setText] = useState('');
+	const [keyboard, setKeyBoard] = useState(false);
 
 	const renderWrite = () => {
-		return <RecommendWrite />;
+		if (keyboard) {
+			return <RecommendWrite setKeyBoard={setKeyBoard} />;
+		}
 	};
 
 	return (
@@ -31,7 +33,12 @@ export default function RecommendView() {
 					})}
 				</S.RecommCont>
 			</S.Main>
-			<S.Button onClick={renderWrite} />
+			<S.Button
+				onClick={() => {
+					setKeyBoard(true);
+				}}
+			/>
+			{renderWrite()}
 		</S.Layout>
 	);
 }

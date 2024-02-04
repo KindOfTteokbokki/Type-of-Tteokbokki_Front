@@ -56,15 +56,7 @@ export default function HomeView(props: Props) {
 					</S.LockCont>
 				</S.FlexCont>
 			</S.Cont>
-			<S.Cont>
-				<S.Text>나도 추천할래</S.Text>
-				<S.FlexCont>
-					<S.MyRecommedImg />
-					<S.MyRecommedImg />
-					<S.MyRecommedImg />
-					<S.MyRecommedImg />
-				</S.FlexCont>
-			</S.Cont>
+
 			<S.Cont>
 				<S.Text>{props.nickName}가 추천하는 꿀조합</S.Text>
 				<S.FlexCont>
@@ -75,6 +67,16 @@ export default function HomeView(props: Props) {
 						: [1, 2, 3, 4].map(() => {
 								return <S.EmptyCombiImg />;
 						  })}
+				</S.FlexCont>
+			</S.Cont>
+			<S.Cont>
+				<S.Text>나도 추천할래</S.Text>
+				<S.FlexCont>
+					<S.Alter>서비스 준비 중입니다!</S.Alter>
+					{/* <S.MyRecommedImg />
+					<S.MyRecommedImg />
+					<S.MyRecommedImg />
+					<S.MyRecommedImg /> */}
 				</S.FlexCont>
 			</S.Cont>
 		</S.Section>

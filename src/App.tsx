@@ -16,7 +16,7 @@ function App() {
 			<Route path="/loading" element={<Loading />} />
 			<Route path="/loaded" element={<Loaded />} />
 			<Route path="/home" element={<Home />} />
-			<Route path="/recommend" element={<Recommend />} />
+			{/* <Route path="/recommend" element={<Recommend />} /> */}
 		</Routes>
 	);
 }

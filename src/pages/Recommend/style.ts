@@ -115,6 +115,8 @@ export const CameraIcon = styled.button`
 	background-image: url(${camera});
 	float: right;
 	margin-right: 22px;
+	position: relative;
+	bottom: 10px;
 `;
 
 export const UploadIcon = styled.button`
@@ -122,4 +124,6 @@ export const UploadIcon = styled.button`
 	height: 28px;
 	background-image: url(${upload});
 	float: right;
+	position: relative;
+	bottom: 10px;
 `;
