@@ -17,7 +17,7 @@ export default function PopupView(props: Props) {
 			<S.Cont>
 				<S.Text>{props?.popUpMessage}</S.Text>
 				<S.HeadText>{props.data?.title_name}</S.HeadText>
-				<S.Img src={props.data?.img_file_path + props.data?.img_file_masking_name} />
+				{props.data ? <S.Img src={props.data?.img_file_path + props.data?.img_file_masking_name} /> : null}
 			</S.Cont>
 			<S.Button onClick={props.onClickMove} />
 		</S.Layout>

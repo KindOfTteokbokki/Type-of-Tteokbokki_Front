@@ -28,9 +28,9 @@ export default function HomeView(props: Props) {
 	return (
 		<S.Section>
 			<S.Title>
-				<S.Icon
-					src={titleStore.value ? titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name : ''}
-				/>
+				{titleStore.value ? (
+					<S.Icon src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name} />
+				) : null}
 				{titleStore.value.title_name}
 			</S.Title>
 			<S.MainCont>
@@ -41,7 +41,13 @@ export default function HomeView(props: Props) {
 			<S.Cont>
 				<S.Text>내 입맛</S.Text>
 				<S.FlexCont>
-					<S.MyTypeImg src={store ? store : lock} alt="떡볶이 사진" />
+					{store ? (
+						<S.MyTypeImg src={store} alt="떡볶이 사진" />
+					) : (
+						<S.LockCont>
+							<S.LockImg src={lock} />
+						</S.LockCont>
+					)}
 					<S.LockCont>
 						<S.LockImg src={lock} />
 					</S.LockCont>
@@ -67,7 +73,7 @@ export default function HomeView(props: Props) {
 								return <S.CombiImg src={imageFile?.file_path + imageFile?.file_masking_name} />;
 						  })
 						: [1, 2, 3, 4].map(() => {
-								return <S.CombiImg />;
+								return <S.EmptyCombiImg />;
 						  })}
 				</S.FlexCont>
 			</S.Cont>

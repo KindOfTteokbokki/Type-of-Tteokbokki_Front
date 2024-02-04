@@ -89,8 +89,8 @@ export const ButtonLayout = styled.div`
 `;
 
 export const ResultLayout = styled.section`
-	padding: 24px 15px 0;
 	border-top: 1px solid ${(props) => props.theme.color.gray};
+	padding: 24px 15px 0;
 `;
 
 export const AddIcon = styled.img`
@@ -126,6 +126,5 @@ export const ResultButtonLayout = styled.div`
 	padding: 37px 0 41px;
 	-webkit-backdrop-filter: blur(50px);
 	backdrop-filter: blur(50px);
-	height: 100px;
-	padding: 37px 0 41px;
+	height: 100%;
 `;
