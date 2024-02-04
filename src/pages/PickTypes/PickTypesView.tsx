@@ -39,7 +39,7 @@ export default function PickTypesView(props: Props) {
 	};
 
 	const onClickScroll = (index: number) => {
-		document.getElementById('pickType')?.scrollTo(0, index);
+		window.scrollTo(0, index);
 	};
 
 	const setConstants = (list: Response[], questionIndex: number) => {

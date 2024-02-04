@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.72782cd2.js",
+    "main.js": "/static/js/main.2e355ab0.js",
     "static/media/캐릭터.svg": "/static/media/캐릭터.34c43b095604ea0af95bd2c122fc682c.svg",
     "static/media/스플래시배경.svg": "/static/media/스플래시배경.22c3735951dfeb8ce946a47b7ee8b185.svg",
     "static/media/loading.gif": "/static/media/loading.16665a0edf00c04185d6.gif",
@@ -20,9 +20,9 @@
     "static/media/arrow_back_ios_new.svg": "/static/media/arrow_back_ios_new.5685b38e42cca63370a3105ccdd6a2a6.svg",
     "static/media/Food.svg": "/static/media/Food.695e2d9d2600a8d67db0f35e2ab3ff87.svg",
     "index.html": "/index.html",
-    "main.72782cd2.js.map": "/static/js/main.72782cd2.js.map"
+    "main.2e355ab0.js.map": "/static/js/main.2e355ab0.js.map"
   },
   "entrypoints": [
-    "static/js/main.72782cd2.js"
+    "static/js/main.2e355ab0.js"
   ]
 }

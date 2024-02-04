@@ -26,9 +26,10 @@ export default function LoadedView(props: any) {
 			<S.LoadCont>
 				{props.data?.store_address ? (
 					<S.NonChainImg src={props.data?.file_path + props.data?.file_masking_name} />
-				) : (
+				) : props.data?.review ? (
 					<S.ChainImg src={props.data?.file_path + props.data?.file_masking_name} />
-				)}
+				) : null}
+
 				{props.data?.store_address ? (
 					<NonChainStore storeData={props.data} />
 				) : (
