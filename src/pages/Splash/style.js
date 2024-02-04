@@ -3,10 +3,10 @@ import Background from '../../assets/스플래시배경.svg';
 
 export const Layout = styled.section`
 	width: 100%;
-	height: 884px;
+	height: 844px;
 	margin: 0 auto;
 	text-align: center;
-	padding: 307px 0 152px;
+	padding: 267px 0 152px;
 	background-image: url(${Background});
 `;
 

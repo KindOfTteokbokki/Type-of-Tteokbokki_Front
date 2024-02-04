@@ -6,6 +6,7 @@ import PickTypes from './pages/PickTypes/PickTypes';
 import Loading from './pages/Loading/Loading';
 import Loaded from './pages/Loaded/Loaded';
 import Home from './pages/Home/Home';
+import Recommend from './pages/Recommend/Recommend';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 			<Route path="/loading" element={<Loading />} />
 			<Route path="/loaded" element={<Loaded />} />
 			<Route path="/home" element={<Home />} />
+			<Route path="/recommend" element={<Recommend />} />
 		</Routes>
 	);
 }

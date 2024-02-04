@@ -15,11 +15,11 @@ export default function NonChainStore(props: any) {
 			</S.TextCont>
 			<S.TextCont>
 				<S.Icon src={menu} alt="메뉴명" />
-				<S.Text>{props.storeData?.menu}</S.Text>
+				<S.Text>{props.storeData?.menu_name}</S.Text>
 			</S.TextCont>
 			<S.TextCont>
 				<S.Icon src={location} alt="위치" />
-				<S.Text>{props.storeData?.location}</S.Text>
+				<S.Text>{props.storeData?.store_address}</S.Text>
 			</S.TextCont>
 			<S.TextCont>
 				<S.Icon src={review} alt="한줄평" />

@@ -24,8 +24,16 @@ export default function LoadedView(props: any) {
 			</Header>
 			<Text>{props.loadedMessage}</Text>
 			<S.LoadCont>
-				<S.LoadImg src={props.data?.file_path + props.data?.file_masking_name} />
-				{props.data?.location ? <NonChainStore storeData={props.data} /> : <ChainStoreView storeData={props.data} />}
+				{props.data?.store_address ? (
+					<S.NonChainImg src={props.data?.file_path + props.data?.file_masking_name} />
+				) : (
+					<S.ChainImg src={props.data?.file_path + props.data?.file_masking_name} />
+				)}
+				{props.data?.store_address ? (
+					<NonChainStore storeData={props.data} />
+				) : (
+					<ChainStoreView storeData={props.data} />
+				)}
 			</S.LoadCont>
 			<S.ButtonLayout>
 				<BigWhiteButton text="다시 고르기" onclick={props.onClickReturn} />
