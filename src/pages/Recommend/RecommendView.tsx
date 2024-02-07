@@ -45,8 +45,8 @@ export default function RecommendView() {
 									<S.ReCommOnlyText>{data.content}</S.ReCommOnlyText>
 								) : (
 									<>
-										<S.RecommImg src={data.file_path + data.file_masking_name} />
-										<S.RecommText />
+										<S.RecommImg src={data?.file_path + data?.file_masking_name} />
+										<S.RecommText>{data?.content}</S.RecommText>
 									</>
 								)}
 							</S.RecommList>

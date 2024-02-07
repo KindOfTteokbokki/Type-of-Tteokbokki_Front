@@ -38,7 +38,7 @@ export default function Home() {
 					return;
 				}
 				if (data.file_masking_name) {
-					filteredData.push(res.data.file_path + res.data.file_masking_name);
+					filteredData.push(data.file_path + data.file_masking_name);
 				}
 			});
 			setMyRecommData([...filteredData]);
