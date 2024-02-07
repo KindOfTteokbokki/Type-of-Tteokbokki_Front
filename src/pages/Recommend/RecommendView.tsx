@@ -39,6 +39,7 @@ export default function RecommendView() {
 				</S.Message>
 				<S.RecommCont>
 					{reviewData.map((data: any) => {
+						console.log(data.content);
 						return (
 							<S.RecommList>
 								{data?.file_masking_name === null ? (
@@ -46,7 +47,7 @@ export default function RecommendView() {
 								) : (
 									<>
 										<S.RecommImg src={data?.file_path + data?.file_masking_name} />
-										<S.RecommText>{data.content}</S.RecommText>
+										<S.RecommText>{data?.content}</S.RecommText>
 									</>
 								)}
 							</S.RecommList>
