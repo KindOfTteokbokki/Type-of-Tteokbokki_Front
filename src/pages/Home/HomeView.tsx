@@ -6,14 +6,17 @@ import icon from '../../assets/Hot face.svg';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import character from '../../assets/캐릭터.svg';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
 	onClickMove(): void;
 	combiImgList: any;
 	nickName: string;
+	myRecommData: string[];
 }
 
 export default function HomeView(props: Props) {
+	const navigator = useNavigate();
 	const titleStore = useSelector((state: RootStateType) => {
 		return state.title;
 	});
@@ -56,7 +59,21 @@ export default function HomeView(props: Props) {
 					</S.LockCont>
 				</S.FlexCont>
 			</S.Cont>
-
+			<S.Cont>
+				<S.MyRecommendCont>
+					<S.Text>나도 추천할래</S.Text>
+					<S.PlusIcon
+						onClick={() => {
+							navigator('/recommend');
+						}}
+					/>
+				</S.MyRecommendCont>
+				<S.FlexCont>
+					{props.myRecommData.map((url) => {
+						return <S.MyRecommedImg src={url} />;
+					})}
+				</S.FlexCont>
+			</S.Cont>
 			<S.Cont>
 				<S.Text>{props.nickName}가 추천하는 꿀조합</S.Text>
 				<S.FlexCont>
@@ -67,16 +84,6 @@ export default function HomeView(props: Props) {
 						: [1, 2, 3, 4].map(() => {
 								return <S.EmptyCombiImg />;
 						  })}
-				</S.FlexCont>
-			</S.Cont>
-			<S.Cont>
-				<S.Text>나도 추천할래</S.Text>
-				<S.FlexCont>
-					<S.Alter>서비스 준비 중입니다!</S.Alter>
-					{/* <S.MyRecommedImg />
-					<S.MyRecommedImg />
-					<S.MyRecommedImg />
-					<S.MyRecommedImg /> */}
 				</S.FlexCont>
 			</S.Cont>
 		</S.Section>

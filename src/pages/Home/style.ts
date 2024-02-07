@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import plus from '../../assets/add.svg';
 
 export const Section = styled.section`
 	width: 100%;
@@ -133,6 +134,18 @@ export const LockCont = styled.div`
 export const LockImg = styled.img`
 	width: 32px;
 	height: 32px;
+`;
+
+export const PlusIcon = styled.button`
+	background-image: url(${plus});
+	width: 24px;
+	height: 24px;
+`;
+
+export const MyRecommendCont = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 `;
 
 export const Alter = styled.h1`
