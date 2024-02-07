@@ -27,6 +27,7 @@ export default function HomeView(props: Props) {
 
 	console.log(titleStore);
 	console.log(store);
+	console.log(props.myRecommData);
 
 	return (
 		<S.Section>
