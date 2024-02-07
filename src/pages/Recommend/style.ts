@@ -41,17 +41,16 @@ export const Main = styled.main`
 `;
 
 export const Message = styled(MessageLayout)`
-	width: 100%;
+	width: 360px;
 	height: 56px;
 	padding: 8px 70px;
 	font-weight: 400;
-	word-break: keep-all;
 	line-height: 21px;
 `;
 
 export const BoldText = styled.span`
 	font-size: ${(props) => props.theme.fontSize.lv1};
-	font-weight: ${(props) => props.theme.fontWeight.lv3};
+	font-weight: ${(props) => props.theme.fontWeight.semiBold};
 `;
 
 export const RecommCont = styled.ul`
