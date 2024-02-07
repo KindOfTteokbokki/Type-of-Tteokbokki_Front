@@ -33,22 +33,12 @@ export default function Popup(props: Props) {
 		postData[key] = value.code;
 	}
 
-	// const { response, sendData } = useAxios({
-	// 	method: 'POST',
-	// 	url: 'http://118.67.132.171:8080/api/findTitle',
-	// 	headers: {
-	// 		accept: '*/*',
-	// 	},
-	// 	data: postData,
-	// });
-
 	const onClickMove = () => {
 		navigator('/home');
 	};
 
 	useEffect(() => {
 		postFunc(postData).then((res: any) => {
-			console.log(res);
 			setData(res.data);
 			dispatch(addTitle(res.data));
 		});

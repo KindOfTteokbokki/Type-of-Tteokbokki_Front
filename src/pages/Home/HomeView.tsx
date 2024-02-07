@@ -25,16 +25,14 @@ export default function HomeView(props: Props) {
 		return state.store.value.file_path + state.store.value.file_masking_name;
 	});
 
-	console.log(titleStore);
-	console.log(store);
-	console.log(props.myRecommData);
-
 	return (
 		<S.Section>
 			<S.Title>
-				{titleStore.value ? (
+				{titleStore.value.title_name ? (
 					<S.Icon src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name} />
-				) : null}
+				) : (
+					<S.Icon />
+				)}
 				{titleStore.value.title_name}
 			</S.Title>
 			<S.MainCont>

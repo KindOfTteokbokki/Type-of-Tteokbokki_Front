@@ -5,7 +5,7 @@ import { usePost, useGet } from '../../api/useFetch';
 
 export default function RecommendWrite(props: any) {
 	const [text, setText] = useState('');
-	const [imgUrl, setImgUrl] = useState('');
+	const [imgUrl, setImgUrl] = useState<any>('');
 	const formData = new FormData();
 	const writeRef = useRef<any>(null);
 	const postFunc = usePost('http://118.67.132.171:8080/api/saveRecommend');
@@ -47,7 +47,7 @@ export default function RecommendWrite(props: any) {
 							}
 						}}
 					></S.TextArea>
-					{imgUrl ? <S.PreloadImg src={imgUrl} /> : <S.PreloadImg />}
+					{imgUrl ? <S.PreloadImg src={URL.createObjectURL(imgUrl)} /> : <S.PreloadImg />}
 					<S.UploadIcon
 						onClick={() => {
 							saveReview();
