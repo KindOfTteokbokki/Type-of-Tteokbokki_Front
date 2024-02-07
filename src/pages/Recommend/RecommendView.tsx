@@ -35,7 +35,7 @@ export default function RecommendView() {
 			</S.Head>
 			<S.Main>
 				<S.Message>
-					어떡 이용자들이 <S.BoldText>먹어보고</S.BoldText> 추천하는 <S.BoldText>내돈내산</S.BoldText> 후기들이야!
+					어떡 이용자들이 <S.BoldText>직접 먹어보고 추천</S.BoldText>하는 <S.BoldText>내돈내산</S.BoldText> 후기들이야!
 				</S.Message>
 				<S.RecommCont>
 					{reviewData.map((data: any) => {
@@ -46,7 +46,7 @@ export default function RecommendView() {
 								) : (
 									<>
 										<S.RecommImg src={data?.file_path + data?.file_masking_name} />
-										<S.RecommText>{data?.content}</S.RecommText>
+										<S.RecommText>{data.content}</S.RecommText>
 									</>
 								)}
 							</S.RecommList>

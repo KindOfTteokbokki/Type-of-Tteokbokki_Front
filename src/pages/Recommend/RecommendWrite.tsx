@@ -40,7 +40,7 @@ export default function RecommendWrite(props: any) {
 				<S.TextField ref={writeRef}>
 					<S.TextArea
 						placeholder="본인만의 꿀조합을 추천해줘!(40자)"
-						onKeyDown={(e: any) => {
+						onKeyUp={(e: any) => {
 							setText(e.target.value);
 							if (text.length >= 40) {
 								alert('글자는 40자를 초과할 수 없어');
