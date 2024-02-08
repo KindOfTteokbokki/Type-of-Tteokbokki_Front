@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { PickButton, UnPickButton } from './style';
 import { Response } from './PickTypes';
 import { useSelector } from 'react-redux';
-import { RootStateType } from '../../store';
 
 interface Props {
 	answer: Response;
@@ -23,7 +22,7 @@ export default function PickTypesButton(props: Props) {
 
 	function checkIn(code: any): any {
 		for (const [key, value] of Object.entries(userPick)) {
-			if (userPick[key].code === code) {
+			if (userPick[key][code] === code) {
 				return true;
 			}
 		}
@@ -49,7 +48,7 @@ export default function PickTypesButton(props: Props) {
 						props.onClickSelect(props.answerIndex);
 						props.onClickAdd([(props.questionIndex + 1).toString(), props.answer]);
 						setPick(true);
-						props.onClickScroll(50 * props.questionIndex);
+						props.onClickScroll(100 * props.questionIndex);
 					}}
 				>
 					{props.answer.name_ko}

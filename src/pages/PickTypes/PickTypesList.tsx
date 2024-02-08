@@ -3,8 +3,9 @@ import * as S from './style';
 import PickTypesButton from './PickTypesButton';
 import { Response } from './PickTypes';
 import { constants } from '../../constants/constants';
+import PickTypesListView from './PickTypesListView';
 
-interface Props {
+export interface Props {
 	question: Response;
 	questionIndex: number;
 	answerList: Response[];
@@ -21,41 +22,15 @@ export default function PickTypesList(props: Props) {
 	};
 
 	return (
-		<li>
-			<S.PickQuestion>{props.question.name_ko}</S.PickQuestion>
-			<S.ButtonLayout>
-				{props.answerList.map((answer, answerIndex) => {
-					return (
-						<>
-							{props.questionIndex === 5 ? (
-								<S.ButtonLayout>
-									<PickTypesButton
-										answer={answer}
-										clickedIndex={clickedIndex}
-										answerIndex={answerIndex}
-										onClickSelect={onClickSelect}
-										onClickAdd={props.onClickAdd}
-										onClickDelete={props.onClickDelete}
-										onClickScroll={props.onClickScroll}
-										questionIndex={props.questionIndex}
-									/>
-								</S.ButtonLayout>
-							) : (
-								<PickTypesButton
-									answer={answer}
-									clickedIndex={clickedIndex}
-									answerIndex={answerIndex}
-									onClickSelect={onClickSelect}
-									onClickAdd={props.onClickAdd}
-									onClickDelete={props.onClickDelete}
-									onClickScroll={props.onClickScroll}
-									questionIndex={props.questionIndex}
-								/>
-							)}
-						</>
-					);
-				})}
-			</S.ButtonLayout>
-		</li>
+		<PickTypesListView
+			question={props.question}
+			answerList={props.answerList}
+			clickedIndex={clickedIndex}
+			onClickSelect={onClickSelect}
+			onClickAdd={props.onClickAdd}
+			onClickDelete={props.onClickDelete}
+			onClickScroll={props.onClickScroll}
+			questionIndex={props.questionIndex}
+		/>
 	);
 }

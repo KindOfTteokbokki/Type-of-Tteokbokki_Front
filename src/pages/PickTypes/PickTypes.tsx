@@ -12,7 +12,6 @@ import { addTitle, titleInitialState } from '../../slice/findTitleSlice';
 
 export interface Props {
 	headerText: string;
-
 	alertText: string;
 	selectText: string;
 	questionList: Response[];
@@ -30,20 +29,12 @@ export type Response = {
 export default function PickTypes() {
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
-	const selector = useSelector((state: RootStateType) => {
-		return state.userPick;
-	});
 
 	useEffect(() => {
 		dispatch(initializeType(initialState));
 	}, []);
 
-	console.log(selector);
-	const store = useSelector((state: RootStateType) => {
-		return state.store.value;
-	});
-
-	const { response, error, loading, sendData } = useAxios({
+	const { response } = useAxios({
 		method: 'GET',
 		url: 'http://118.67.132.171:8080/api/getQA',
 		headers: {
