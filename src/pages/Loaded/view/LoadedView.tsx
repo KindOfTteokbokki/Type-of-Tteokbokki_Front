@@ -11,11 +11,6 @@ import { RootStateType } from '../../../store';
 import NonChainStore from './NonChainStore';
 
 export default function LoadedView(props: any) {
-	// const storeData = useSelector((state: any) => {
-	// 	return state.store.value;
-	// });
-
-	console.log(props.data);
 	return (
 		<S.Main>
 			<Header>
