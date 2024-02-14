@@ -1,13 +1,9 @@
 export const constants = {
-	QUESTION: [
-		'쌀떡파 VS 밀떡파',
-		'오호~다른 거 어떤 걸 원해?',
-		'식감은 어땠으면 좋겠어?',
-		'어떤 맛이 좋아?',
-		'매운거 VS 달달한거?',
-		'얼마나 매운거 좋아해?',
-		'토핑 있는건 어때?',
-	],
+	PICK_TYPES: {
+		header: '같이 떡볶이 고르는 중',
+		message: '좋아하는 거 골라봐! 일부만 선택해도 돼.',
+		select: '선택하기',
+	},
 	ANSWER_INIT: {
 		QUESTION1: 'ch100',
 		QUESTION2: 'ch200',

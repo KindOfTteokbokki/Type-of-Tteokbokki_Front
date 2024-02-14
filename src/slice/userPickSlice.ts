@@ -20,7 +20,7 @@ export const userPickSlice = createSlice({
 	name: 'userPick',
 	initialState: initialState,
 	reducers: {
-		addPickType(state, action: PayloadAction<[string, Response]>) {
+		addPickType(state, action: PayloadAction<[number, Response]>) {
 			const key: string = `question${action.payload[0]}`;
 			state[key].code = action.payload[1].code;
 			state[key].name_ko = action.payload[1].name_ko;
