@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './style';
-import { DropBack } from '../Loaded/Modal/style';
 import { usePost, useGet } from '../../api/useFetch';
 
 export default function RecommendWrite(props: any) {

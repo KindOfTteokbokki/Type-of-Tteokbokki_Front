@@ -4,10 +4,6 @@ import { constants } from '../../constants/constants';
 import useAxios from '../../api/useAxios';
 import { useNavigate } from 'react-router-dom';
 import loading from '../../assets/loading.gif';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootStateType } from '../../store';
-import { addStore } from '../../slice/findStoreSlice';
 
 export interface Props {
 	loadingHeader: string;
@@ -17,11 +13,6 @@ export interface Props {
 }
 
 export default function Loading() {
-	const dispatch = useDispatch();
-
-	const selector = useSelector((state: RootStateType) => {
-		return state.userPick;
-	});
 	const navigator = useNavigate();
 
 	const { response } = useAxios({
@@ -31,17 +22,8 @@ export default function Loading() {
 			accept: '*/*',
 		},
 	});
-	const postData: any = {};
 
-	for (const [key, value] of Object.entries(selector)) {
-		postData[key] = value.code;
-	}
-
-	setTimeout(async () => {
-		// await axios.request(params).then((response) => {
-		// 	dispatch(addStore(response.data));
-		// });
-
+	setTimeout(() => {
 		navigator('/loaded');
 	}, 3000);
 
