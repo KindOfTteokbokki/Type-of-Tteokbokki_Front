@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export const initialState = {
+export const initialState: Action = {
 	store_name: '',
-	store_address: '',
+	store_address: '' || undefined,
 	menu_name: '',
 	review: '',
 	file_path: '',
@@ -11,7 +11,7 @@ export const initialState = {
 
 export interface Action {
 	store_name: string;
-	store_address: string;
+	store_address?: string;
 	menu_name: string;
 	review: string;
 	file_path: string;
@@ -22,7 +22,7 @@ export const findStoreSlice = createSlice({
 	name: 'findStore',
 	initialState: { value: initialState },
 	reducers: {
-		addStore(state, action: any) {
+		addStore(state, action: PayloadAction<Action>) {
 			state.value = action.payload;
 		},
 	},

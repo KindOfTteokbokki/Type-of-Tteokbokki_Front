@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Cont, Header, MessageLayout, HeadText } from '../PickTypes/style';
-import { DropBack } from '../Loaded/Modal/style';
 import icon from '../../assets/아이콘_나도추천할래/FAB.svg';
 import back from '../../assets/아이콘_나도추천할래/뒤로가기.svg';
 import camera from '../../assets/아이콘_나도추천할래/카메라.svg';
 import upload from '../../assets/아이콘_나도추천할래/업로드.svg';
 import Delete from '../../assets/아이콘_나도추천할래/닫기.svg';
+import { DropBack } from '../../components/Modal/style';
 
 export const RecommDropBack = styled(DropBack)`
 	display: initial;
