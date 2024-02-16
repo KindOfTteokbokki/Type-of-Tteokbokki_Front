@@ -5,6 +5,9 @@ export const theme = {
 		white: '#fff',
 		lightGray: '#F5F5F5',
 		gray: '#D9D9D9',
+		login: '#666666',
+		kakao: '#FEE500',
+		naver: '#03C75A',
 	},
 
 	borderRadius: {
