@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Background from '../../assets/스플래시배경.svg';
+import { Link } from 'react-router-dom';
 
 export const Layout = styled.section`
 	width: 100%;
@@ -39,7 +40,7 @@ export const LoginButtonCont = styled.section`
 	flex-direction: column;
 `;
 
-export const LoginButton = styled.button<{ bgColor: any }>`
+export const LoginButton = styled(Link)<{ bgColor: any }>`
 	width: 345px;
 	height: 40px;
 	display: flex;

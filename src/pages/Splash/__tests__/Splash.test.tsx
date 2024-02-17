@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
-import SplashView from '../SplashView';
+import SplashView from '../view/SplashView';
 import { constants } from '../../../constants/constants';
 
 const onClickMove = () => {

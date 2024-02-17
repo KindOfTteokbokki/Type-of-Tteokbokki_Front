@@ -1,5 +1,6 @@
 export const constants = {
 	SPLASH: {
+		header :['말만해,','내가 다 골라줄게!'],
 		KAKAO: '카카오로 시작하기',
 		NAVER: '네이버로 시작하기',
 		GOOGLE: '구글로 시작하기',

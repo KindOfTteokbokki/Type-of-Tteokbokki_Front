@@ -7,6 +7,8 @@ import Loading from './pages/Loading/Loading';
 import Loaded from './pages/Loaded/Loaded';
 import Home from './pages/Home/Home';
 import Recommend from './pages/Recommend/Recommend';
+import { KAKAO_AUTH_URL } from './components/Auth/OAuth';
+import KakaoRedirectView from './pages/Splash/KakaoRedirectView';
 
 function App() {
 	return (
@@ -17,6 +19,7 @@ function App() {
 			<Route path="/loaded" element={<Loaded />} />
 			<Route path="/home" element={<Home />} />
 			<Route path="/recommend" element={<Recommend />} />
+			<Route path="/auth/kakao" element={<KakaoRedirectView />} />
 		</Routes>
 	);
 }
