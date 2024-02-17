@@ -1,14 +1,9 @@
 import styled from 'styled-components';
 import plus from '../../assets/아이콘_나도추천할래/나도추천할래플러스.svg';
 
-export const Section = styled.section`
+export const Layout = styled.section`
 	width: 100%;
-	height: 100%;
-	padding: 48px 15px 21px;
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	background-color: ${(props) => props.theme.color.lightGray};
+	height: 884px;
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -23,6 +18,16 @@ export const Section = styled.section`
 	&::-webkit-scrollbar-track {
 		background-color: ${(props) => props.theme.color.white};
 	}
+`;
+
+export const Section = styled.section`
+	width: 100%;
+	height: 100%;
+	padding: 48px 15px 21px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background-color: ${(props) => props.theme.color.lightGray};
 `;
 
 export const MainCont = styled.section`
@@ -155,18 +160,26 @@ export const Alter = styled.h1`
 `;
 
 export const NavBar = styled.nav`
-	width: 100%;
+	width: 390px;
 	height: 88px;
 	background-color: ${(props) => props.theme.color.white};
 	padding: 0 32px 23px 33px;
 	display: flex;
 	gap: 57px;
+	box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+	position: sticky;
+	bottom: 0;
 `;
 
 type NavICon = {
 	size: string;
 	margin: string;
 };
+
+export const Figure = styled.figure`
+	width: 100%;
+	position: relative;
+`;
 
 export const NavIcon = styled.img<NavICon>`
 	width: ${(props) => props.size};
@@ -179,4 +192,10 @@ export const NavText = styled.figcaption`
 	font-weight: ${(props) => props.theme.fontWeight.regular};
 	text-align: center;
 	overflow: display;
+`;
+
+export const ReviewText = styled(NavText)`
+	width: 45px;
+	position: absolute;
+	left: -3px;
 `;

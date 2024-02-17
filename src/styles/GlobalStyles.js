@@ -69,6 +69,11 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1;
         font-family : 'Spoqa Han Sans Neo' ,sans-serif;
         font-weight : 400;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
     }
     ol, ul{
         list-style: none;
