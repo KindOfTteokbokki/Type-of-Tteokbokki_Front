@@ -1,32 +1,36 @@
 {
   "files": {
-    "main.js": "/static/js/main.849a2220.js",
+    "main.js": "/static/js/main.f76df231.js",
     "static/media/Logo.svg": "/static/media/Logo.ea3c920e31f0e162a465515b97ebbde6.svg",
     "static/media/캐릭터.svg": "/static/media/캐릭터.34c43b095604ea0af95bd2c122fc682c.svg",
     "static/media/스플래시배경.svg": "/static/media/스플래시배경.22c3735951dfeb8ce946a47b7ee8b185.svg",
     "static/media/loading.gif": "/static/media/loading.16665a0edf00c04185d6.gif",
     "static/media/가게명.svg": "/static/media/가게명.76655fd1216cf9eea4d1cf7d52cffeb1.svg",
     "static/media/한줄평.svg": "/static/media/한줄평.6f7c6d556e30681eb4a63f98032ea159.svg",
+    "static/media/하단내비_후기.svg": "/static/media/하단내비_후기.061e8f1fb9d2fe511fe0dfa0cbd21fe7.svg",
     "static/media/modalIcon.svg": "/static/media/modalIcon.c0568c3cb30c61a5224f4f32a433dd25.svg",
     "static/media/카메라.svg": "/static/media/카메라.8584eda1bdfe0463482ad5df96046575.svg",
+    "static/media/하단내비_칭호.svg": "/static/media/하단내비_칭호.e08e82fca41800ce51724b7656545a37.svg",
+    "static/media/하단내비_내정보.svg": "/static/media/하단내비_내정보.20328566498ee6bb57d256a18eafc0bf.svg",
     "static/media/자물쇠.svg": "/static/media/자물쇠.d47f29ba79c314c5efb22eb4cc0a960e.svg",
     "static/media/위치.svg": "/static/media/위치.15584d0206f862e24664553e43a75386.svg",
+    "static/media/나도추천할래플러스.svg": "/static/media/나도추천할래플러스.5c99f01b2965c8f0b15e955df3140e77.svg",
+    "static/media/하단내비_홈.svg": "/static/media/하단내비_홈.cce536e6986ce10508e1ad794ef756dd.svg",
     "static/media/Food-1.svg": "/static/media/Food-1.b0a372a7afa9138541b3c7a70332e428.svg",
     "static/media/메뉴명.svg": "/static/media/메뉴명.4425e622aea982e20a7950cf2f0410d6.svg",
     "static/media/FAB.svg": "/static/media/FAB.b44872f8bab57b9babd730fbd6a1d97a.svg",
     "static/media/닫기.svg": "/static/media/닫기.f18a1c483cd86e038f1070499fabbae5.svg",
     "static/media/btn_check.svg": "/static/media/btn_check.891d4aebef0a3008ced5b2b57618edf4.svg",
     "static/media/업로드.svg": "/static/media/업로드.08a526168dff96d4b3ee86cd3f33a8a9.svg",
-    "static/media/add.svg": "/static/media/add.473f832bf534b1f65ced33d56655b3b6.svg",
     "static/media/close_small_red.svg": "/static/media/close_small_red.1521eba830cc13cab8cac8f63981f4f1.svg",
     "static/media/뒤로가기.svg": "/static/media/뒤로가기.a5c61a2d38be85132c7d2a83521f5cc3.svg",
     "static/media/Food.svg": "/static/media/Food.695e2d9d2600a8d67db0f35e2ab3ff87.svg",
     "index.html": "/index.html",
     "static/media/카카오 로고.svg": "/static/media/카카오 로고.a865e3f030b2c7c52f2593ba0542c542.svg",
     "static/media/네이버 로고.svg": "/static/media/네이버 로고.ed0ff840228ab1332b90634b85050e05.svg",
-    "main.849a2220.js.map": "/static/js/main.849a2220.js.map"
+    "main.f76df231.js.map": "/static/js/main.f76df231.js.map"
   },
   "entrypoints": [
-    "static/js/main.849a2220.js"
+    "static/js/main.f76df231.js"
   ]
 }
