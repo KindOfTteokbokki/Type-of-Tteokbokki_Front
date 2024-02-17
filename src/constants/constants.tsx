@@ -1,4 +1,11 @@
 export const constants = {
+	SPLASH: {
+		header :['말만해,','내가 다 골라줄게!'],
+		KAKAO: '카카오로 시작하기',
+		NAVER: '네이버로 시작하기',
+		GOOGLE: '구글로 시작하기',
+		GUEST: '로그인 없이 둘러보기',
+	},
 	PICK_TYPES: {
 		header: '같이 떡볶이 고르는 중',
 		message: '좋아하는 거 골라봐! 일부만 선택해도 돼.',

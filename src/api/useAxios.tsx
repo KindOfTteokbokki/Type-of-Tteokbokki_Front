@@ -7,7 +7,8 @@ interface Request {
 	method: string;
 	url: string;
 	headers: Object;
-	data: any;
+	data?: any;
+	params?: any;
 }
 
 interface RawAxiosRequestConfig<T = any> extends AxiosRequestConfig {
