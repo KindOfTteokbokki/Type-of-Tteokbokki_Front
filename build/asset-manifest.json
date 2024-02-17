@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.f76df231.js",
+    "main.js": "/static/js/main.3021b11a.js",
     "static/media/Logo.svg": "/static/media/Logo.ea3c920e31f0e162a465515b97ebbde6.svg",
     "static/media/캐릭터.svg": "/static/media/캐릭터.34c43b095604ea0af95bd2c122fc682c.svg",
     "static/media/스플래시배경.svg": "/static/media/스플래시배경.22c3735951dfeb8ce946a47b7ee8b185.svg",
@@ -8,6 +8,7 @@
     "static/media/가게명.svg": "/static/media/가게명.76655fd1216cf9eea4d1cf7d52cffeb1.svg",
     "static/media/한줄평.svg": "/static/media/한줄평.6f7c6d556e30681eb4a63f98032ea159.svg",
     "static/media/하단내비_후기.svg": "/static/media/하단내비_후기.061e8f1fb9d2fe511fe0dfa0cbd21fe7.svg",
+    "static/media/사진삭제.svg": "/static/media/사진삭제.4a2607f86270551d4f77e2beef760b41.svg",
     "static/media/modalIcon.svg": "/static/media/modalIcon.c0568c3cb30c61a5224f4f32a433dd25.svg",
     "static/media/카메라.svg": "/static/media/카메라.8584eda1bdfe0463482ad5df96046575.svg",
     "static/media/하단내비_칭호.svg": "/static/media/하단내비_칭호.e08e82fca41800ce51724b7656545a37.svg",
@@ -28,9 +29,9 @@
     "index.html": "/index.html",
     "static/media/카카오 로고.svg": "/static/media/카카오 로고.a865e3f030b2c7c52f2593ba0542c542.svg",
     "static/media/네이버 로고.svg": "/static/media/네이버 로고.ed0ff840228ab1332b90634b85050e05.svg",
-    "main.f76df231.js.map": "/static/js/main.f76df231.js.map"
+    "main.3021b11a.js.map": "/static/js/main.3021b11a.js.map"
   },
   "entrypoints": [
-    "static/js/main.f76df231.js"
+    "static/js/main.3021b11a.js"
   ]
 }

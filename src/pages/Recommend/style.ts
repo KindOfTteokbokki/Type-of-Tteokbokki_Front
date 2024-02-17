@@ -6,6 +6,7 @@ import camera from '../../assets/아이콘_나도추천할래/카메라.svg';
 import upload from '../../assets/아이콘_나도추천할래/업로드.svg';
 import Delete from '../../assets/아이콘_나도추천할래/닫기.svg';
 import { DropBack } from '../../components/Modal/style';
+import PreloadDelete from '../../assets/아이콘_나도추천할래/사진삭제.svg';
 
 export const RecommDropBack = styled(DropBack)`
 	display: initial;
@@ -105,11 +106,12 @@ export const Button = styled.button`
 export const TextField = styled.div`
 	background-color: #fff;
 	width: 360px;
-	height: 148px;
+	height: 241px;
 	border-radius: 16px;
 	padding: 24px;
 	margin: auto;
 	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+	position: relative;
 `;
 
 export const TextArea = styled.textarea`
@@ -117,32 +119,41 @@ export const TextArea = styled.textarea`
 	font-family: 'Pretendard-Regular';
 	font-weight: 400;
 	width: 312px;
-	height: 60px;
+	height: 44px;
 	overflow: visible;
 	margin: 0 auto;
+	padding: 0;
 	border: none;
 	outline: none;
 	resize: none;
-	margin-bottom: 28px;
+	margin-bottom: 16px;
+`;
+
+export const CountText = styled.div`
+	font-size: ${(props) => props.theme.fontSize.lv2};
+	text-align: right;
 `;
 
 export const PreloadImg = styled.img`
-	width: 65px;
-	height: 65px;
-	border-radius: ${(props) => props.theme.borderRadius.lv3};
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
 	background-color: ${(props) => props.theme.color.gray};
-	position: relative;
-	bottom: 50px;
+`;
+
+export const PreloadDeleteIcon = styled.button`
+	width: 20px;
+	height: 20px;
+	background-image: url(${PreloadDelete});
 `;
 
 export const CameraIcon = styled.label`
 	width: 28px;
 	height: 28px;
 	background-image: url(${camera});
-	float: right;
-	margin-right: 22px;
-	position: relative;
-	bottom: 10px;
+	position: absolute;
+	bottom: 24px;
+	right: 76px;
 	cursor: pointer;
 `;
 
@@ -154,9 +165,9 @@ export const UploadIcon = styled.button`
 	width: 28px;
 	height: 28px;
 	background-image: url(${upload});
-	float: right;
-	position: relative;
-	bottom: 10px;
+	position: absolute;
+	bottom: 24px;
+	right: 24px;
 `;
 
 export const DeleteIcon = styled.button`

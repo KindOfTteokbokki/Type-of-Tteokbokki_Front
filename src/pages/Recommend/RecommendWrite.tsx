@@ -38,15 +38,23 @@ export default function RecommendWrite(props: any) {
 				<S.DeleteIcon />
 				<S.TextField ref={writeRef}>
 					<S.TextArea
-						placeholder="본인만의 꿀조합을 추천해줘!(40자)"
+						placeholder="본인만의 꿀조합을 추천해줘!(30자)"
 						onKeyUp={(e: any) => {
 							setText(e.target.value);
-							if (text.length >= 40) {
-								alert('글자는 40자를 초과할 수 없어');
+							if (text.length >= 30) {
+								alert('글자는 30자를 초과할 수 없어');
 							}
 						}}
 					></S.TextArea>
-					{imgUrl ? <S.PreloadImg src={URL.createObjectURL(imgUrl)} /> : <S.PreloadImg />}
+					{text.length > 0 ? <S.CountText>{`(${text.length}/30자)`}</S.CountText> : null}
+					{imgUrl ? (
+						<div>
+							<S.PreloadImg src={URL.createObjectURL(imgUrl)} />
+							<S.PreloadDeleteIcon />
+						</div>
+					) : (
+						<S.PreloadImg />
+					)}
 					<S.UploadIcon
 						onClick={() => {
 							saveReview();

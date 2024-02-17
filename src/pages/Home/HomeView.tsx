@@ -92,22 +92,22 @@ export default function HomeView(props: Props) {
 				</S.Cont>
 			</S.Section>
 			<S.NavBar>
-				<figure>
+				<S.Figure>
 					<S.NavIcon src={homeIcon} alt="홈 아이콘" size="40px" margin="6px 0 2px" />
 					<S.NavText>홈</S.NavText>
-				</figure>
-				<figure>
+				</S.Figure>
+				<S.Figure>
 					<S.NavIcon src={recommIcon} alt="추천 후기 아이콘" size="36px" margin="8px 0 4px" />
-					<S.NavText>추천 후기</S.NavText>
-				</figure>
-				<figure>
+					<S.ReviewText>추천 후기</S.ReviewText>
+				</S.Figure>
+				<S.Figure>
 					<S.NavIcon src={titleIcon} alt="칭호 아이콘" size="36px" margin="6px 0 4px" />
 					<S.NavText>칭호</S.NavText>
-				</figure>
-				<figure>
+				</S.Figure>
+				<S.Figure>
 					<S.NavIcon src={myPageIcon} alt="내 정보 아이콘" size="40px" margin="6px 0 2px" />
 					<S.NavText>내 정보</S.NavText>
-				</figure>
+				</S.Figure>
 			</S.NavBar>
 		</>
 	);
