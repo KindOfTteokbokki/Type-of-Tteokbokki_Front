@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import plus from '../../assets/add.svg';
+import plus from '../../assets/아이콘_나도추천할래/나도추천할래플러스.svg';
 
 export const Section = styled.section`
 	width: 100%;
 	height: 100%;
-	padding: 32px 15px 24px;
+	padding: 48px 15px 21px;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
@@ -152,4 +152,31 @@ export const Alter = styled.h1`
 	padding: 40px 76px 45px;
 	font-size: 18px;
 	font-weight: 600;
+`;
+
+export const NavBar = styled.nav`
+	width: 100%;
+	height: 88px;
+	background-color: ${(props) => props.theme.color.white};
+	padding: 0 32px 23px 33px;
+	display: flex;
+	gap: 57px;
+`;
+
+type NavICon = {
+	size: string;
+	margin: string;
+};
+
+export const NavIcon = styled.img<NavICon>`
+	width: ${(props) => props.size};
+	height: ${(props) => props.size};
+	margin: ${(props) => props.margin};
+`;
+
+export const NavText = styled.figcaption`
+	font-size: 12px;
+	font-weight: ${(props) => props.theme.fontWeight.regular};
+	text-align: center;
+	overflow: display;
 `;
