@@ -20,9 +20,9 @@ export default function WriteModal() {
 		onClickModal();
 	};
 
-	// const onClickAgreement = () => {
-	// 	saveReview();
-	// };
+	const onClickAgreement = () => {
+		// saveReview();
+	};
 
 	useEffect(() => {
 		document.addEventListener('mousedown', handler);
