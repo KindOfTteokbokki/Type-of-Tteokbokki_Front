@@ -8,6 +8,7 @@ interface WriteModalProps {
 	modalAnswerWhite: string;
 	modalAnswerRed: string;
 	onClickModal(): void;
+	onClickAgreement(): void;
 }
 
 export default function WriteModalView(props: WriteModalProps) {
@@ -18,6 +19,7 @@ export default function WriteModalView(props: WriteModalProps) {
 			modalAnswerWhite={props.modalAnswerWhite}
 			modalAnswerRed={props.modalAnswerRed}
 			onClickModal={props.onClickModal}
+			onClickAgreement={props.onClickAgreement}
 		/>
 	);
 }
