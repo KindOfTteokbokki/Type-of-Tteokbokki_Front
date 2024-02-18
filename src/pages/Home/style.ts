@@ -4,20 +4,6 @@ import plus from '../../assets/아이콘_나도추천할래/나도추천할래�
 export const Layout = styled.section`
 	width: 100%;
 	height: 884px;
-	overflow-y: scroll;
-	&::-webkit-scrollbar {
-		width: 5px;
-		height: 100%;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		height: 10%;
-		background-color: ${(props) => props.theme.color.gray};
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: ${(props) => props.theme.color.white};
-	}
 `;
 
 export const Section = styled.section`
@@ -28,6 +14,23 @@ export const Section = styled.section`
 	flex-direction: column;
 	gap: 16px;
 	background-color: ${(props) => props.theme.color.lightGray};
+
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		display: block;
+		width: 5px;
+		height: 100px;
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #000;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: ${(props) => props.theme.color.gray};
+	}
 `;
 
 export const MainCont = styled.section`

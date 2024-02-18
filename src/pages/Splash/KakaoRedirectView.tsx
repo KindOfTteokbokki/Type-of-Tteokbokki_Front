@@ -9,8 +9,8 @@ export default function KakaoRedirectView() {
 	const code = new URL(window.location.href).searchParams.get('code');
 
 	useEffect(() => {
-		postFunc(code).then((res) => {
-			console.log(res);
+		postFunc(code).then((res: any) => {
+			console.log(res.data);
 		});
 	}, []);
 

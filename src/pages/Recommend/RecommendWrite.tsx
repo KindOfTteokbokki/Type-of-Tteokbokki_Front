@@ -9,6 +9,10 @@ export default function RecommendWrite(props: any) {
 	const writeRef = useRef<any>(null);
 	const postFunc = usePost('http://118.67.132.171:8080/api/saveRecommend');
 
+	const onClickDelete = () => {
+		setImgUrl('');
+	};
+
 	useEffect(() => {
 		const handler = (e: any) => {
 			if (writeRef.current && !writeRef.current.contains(e.target)) {
@@ -47,27 +51,27 @@ export default function RecommendWrite(props: any) {
 						}}
 					></S.TextArea>
 					{text.length > 0 ? <S.CountText>{`(${text.length}/30자)`}</S.CountText> : null}
-					{imgUrl ? (
-						<div>
-							<S.PreloadImg src={URL.createObjectURL(imgUrl)} />
-							<S.PreloadDeleteIcon />
-						</div>
-					) : (
-						<S.PreloadImg />
-					)}
+
 					<S.UploadIcon
 						onClick={() => {
 							saveReview();
 						}}
 					/>
-					<S.CameraIcon>
-						<S.CameraInput
-							type="file"
-							onChange={(e: any) => {
-								setImgUrl(e.target.files[0]);
-							}}
-						/>
-					</S.CameraIcon>
+					{imgUrl ? (
+						<S.PreloadCont onClick={onClickDelete}>
+							<S.PreloadImg src={URL.createObjectURL(imgUrl)} />
+							<S.PreloadDeleteIcon />
+						</S.PreloadCont>
+					) : (
+						<S.CameraIcon>
+							<S.CameraInput
+								type="file"
+								onChange={(e: any) => {
+									setImgUrl(e.target.files[0]);
+								}}
+							/>
+						</S.CameraIcon>
+					)}
 				</S.TextField>
 			</S.WriteCont>
 		</S.RecommDropBack>
