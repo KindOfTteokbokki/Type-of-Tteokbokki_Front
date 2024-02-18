@@ -20,8 +20,8 @@ export default function ModalView(props: ModalViewProps) {
 					{props.modalHeader}
 				</S.ModalText>
 				<S.ModalButtonLayout>
-					<S.ModalWhiteButton onClick={props.onClickPopUp}>{props.modalAnswerWhite}</S.ModalWhiteButton>
-					<S.ModalRedButton onClick={props.onClickPopUp}>{props.modalAnswerRed}</S.ModalRedButton>
+					<S.ModalWhiteButton onClick={props.onClickAgreement}>{props.modalAnswerWhite}</S.ModalWhiteButton>
+					<S.ModalRedButton onClick={props.onClickAgreement}>{props.modalAnswerRed}</S.ModalRedButton>
 				</S.ModalButtonLayout>
 			</S.ModalCont>
 		</DropBack>

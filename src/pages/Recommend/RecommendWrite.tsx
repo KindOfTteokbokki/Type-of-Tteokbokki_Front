@@ -36,6 +36,8 @@ export default function RecommendWrite(props: any) {
 		});
 	};
 
+	const onOpenModal = () => {};
+
 	return (
 		<S.RecommDropBack>
 			<S.WriteCont>
@@ -53,10 +55,11 @@ export default function RecommendWrite(props: any) {
 					{text.length > 0 ? <S.CountText>{`(${text.length}/30자)`}</S.CountText> : null}
 
 					<S.UploadIcon
-						onClick={() => {
-							saveReview();
-						}}
+					// onClick={() => {
+					// 	saveReview();
+					// }}
 					/>
+					{}
 					{imgUrl ? (
 						<S.PreloadCont onClick={onClickDelete}>
 							<S.PreloadImg src={URL.createObjectURL(imgUrl)} />
