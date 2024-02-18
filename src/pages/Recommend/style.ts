@@ -30,7 +30,7 @@ export const backButton = styled.button`
 	height: 24px;
 	background-image: url(${back});
 	position: absolute;
-	left: 24px;
+	left: 15px;
 `;
 
 export const RecommHeadText = styled(HeadText)`
@@ -134,6 +134,12 @@ export const CountText = styled.div`
 	text-align: right;
 `;
 
+export const PreloadCont = styled.div`
+	position: absolute;
+	bottom: 24px;
+	right: 76px;
+`;
+
 export const PreloadImg = styled.img`
 	width: 60px;
 	height: 60px;
@@ -145,6 +151,7 @@ export const PreloadDeleteIcon = styled.button`
 	width: 20px;
 	height: 20px;
 	background-image: url(${PreloadDelete});
+	vertical-align: top;
 `;
 
 export const CameraIcon = styled.label`
@@ -184,5 +191,5 @@ export const WriteCont = styled.div`
 	width: 390px;
 	position: relative;
 	margin: 0 auto;
-	padding: 148px 15px;
+	padding: 164px 15px;
 `;

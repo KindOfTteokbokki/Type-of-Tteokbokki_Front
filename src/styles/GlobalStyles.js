@@ -65,15 +65,18 @@ const GlobalStyles = createGlobalStyle`
         font-size: 10px;
         vertical-align: baseline;
     }
+
+    html{
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    html::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
     body{
         line-height: 1;
         font-family : 'Spoqa Han Sans Neo' ,sans-serif;
         font-weight : 400;
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-    body::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera*/
     }
     ol, ul{
         list-style: none;
