@@ -1,6 +1,6 @@
 export const constants = {
 	SPLASH: {
-		header :['말만해,','내가 다 골라줄게!'],
+		header: ['말만해,', '내가 다 골라줄게!'],
 		KAKAO: '카카오로 시작하기',
 		NAVER: '네이버로 시작하기',
 		GOOGLE: '구글로 시작하기',
@@ -28,10 +28,11 @@ export const constants = {
 	LOADED: {
 		header: '찾았다!',
 		message: '이런 떡볶이는 어때?',
-		NAME: '우리할매떡볶이',
-		MENU: '가래떡 떡볶이',
-		LOCATION: '경기도 용인시',
-		REVIEW: '떡이 하얘보여도 한입 먹어보면 반전 매력이 있는 국물떡볶이야! 달달하고 매콤하고 다해',
+	},
+	REVIEW_MODAL: {
+		QUESTION: '내 후기를 공유할까?',
+		ANSWER_1: '아니!',
+		ANSWER_2: '좋아!',
 	},
 	MODAL: {
 		QUESTION: '오늘은 이 떡볶이를 먹어볼까?',

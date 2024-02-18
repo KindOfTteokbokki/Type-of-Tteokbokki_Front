@@ -9,7 +9,7 @@ export const Layout = styled.section`
 export const Section = styled.section`
 	width: 100%;
 	height: 100%;
-	padding: 48px 15px 21px;
+	padding: 8px 15px 21px;
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
@@ -75,7 +75,6 @@ export const Title = styled.p`
 export const MainImg = styled.img`
 	width: 100%;
 	height: 98px;
-
 	margin: 8px 0;
 	border: none;
 `;

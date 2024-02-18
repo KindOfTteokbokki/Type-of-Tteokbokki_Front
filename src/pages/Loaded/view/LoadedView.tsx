@@ -15,7 +15,7 @@ export interface LoadedProps {
 	onClickReturn(): void;
 	onClickModal(): void;
 	renderModal(): boolean;
-	onClickPopUp(): void;
+	onClickAgreement(): void;
 	data: Action;
 	isNonChainStore(): boolean;
 	isNonData(): boolean;
@@ -42,7 +42,9 @@ export default function LoadedView(props: LoadedProps) {
 				<BigWhiteButton text="다시 고르기" onclick={props.onClickReturn} />
 				<BigRedButton text="완료하기" onclick={props.onClickModal} />
 			</S.ButtonLayout>
-			{props.renderModal() ? <Modal onClickModal={props.onClickModal} onClickPopUp={props.onClickPopUp} /> : null}
+			{props.renderModal() ? (
+				<Modal onClickModal={props.onClickModal} onClickAgreement={props.onClickAgreement} />
+			) : null}
 		</S.Main>
 	);
 }

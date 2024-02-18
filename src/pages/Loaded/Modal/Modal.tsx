@@ -5,18 +5,18 @@ import ModalView from './view/ModalView';
 
 export interface ModalProps {
 	onClickModal(): void;
-	onClickPopUp(): void;
+	onClickAgreement(): void;
 }
 
 export default function Modal(props: ModalProps) {
 	const modalRef = useRef<HTMLElement>(null);
+	const handler = (e: any) => {
+		if (modalRef.current && !modalRef.current.contains(e.target)) {
+			props.onClickModal();
+		}
+	};
 
 	useEffect(() => {
-		const handler = (e: any) => {
-			if (modalRef.current && !modalRef.current.contains(e.target)) {
-				props.onClickModal();
-			}
-		};
 		document.addEventListener('mousedown', handler);
 
 		return () => {
@@ -31,7 +31,7 @@ export default function Modal(props: ModalProps) {
 			modalAnswerWhite={constants.MODAL.ANSWER_1}
 			modalAnswerRed={constants.MODAL.ANSWER_2}
 			onClickModal={props.onClickModal}
-			onClickPopUp={props.onClickPopUp}
+			onClickAgreement={props.onClickAgreement}
 		/>
 	);
 }
