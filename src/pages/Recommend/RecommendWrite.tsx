@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './style';
 import { usePost, useGet } from '../../api/useFetch';
+import WriteModal from './WriteModal';
+import { baseUrl } from '../../api/useAxios';
 
 export default function RecommendWrite(props: any) {
 	const [text, setText] = useState('');
 	const [imgUrl, setImgUrl] = useState<any>('');
+	const [modal, setModal] = useState(false);
 	const formData = new FormData();
 	const writeRef = useRef<any>(null);
-	const postFunc = usePost('http://118.67.132.171:8080/api/saveRecommend');
+	const postFunc = usePost(`${baseUrl}/saveRecommend`);
 
 	const onClickDelete = () => {
 		setImgUrl('');
@@ -55,9 +58,9 @@ export default function RecommendWrite(props: any) {
 					{text.length > 0 ? <S.CountText>{`(${text.length}/30자)`}</S.CountText> : null}
 
 					<S.UploadIcon
-					// onClick={() => {
-					// 	saveReview();
-					// }}
+						onClick={() => {
+							setModal(true);
+						}}
 					/>
 					{}
 					{imgUrl ? (
@@ -77,6 +80,7 @@ export default function RecommendWrite(props: any) {
 					)}
 				</S.TextField>
 			</S.WriteCont>
+			{modal ? <WriteModal modal={modal} setModal={setModal} /> : null}
 		</S.RecommDropBack>
 	);
 }

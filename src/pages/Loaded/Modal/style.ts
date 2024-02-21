@@ -12,6 +12,7 @@ export const ModalCont = styled.article`
 `;
 
 export const ModalText = styled.p`
+	text-align: center;
 	font-size: ${(props) => props.theme.fontSize.lv3};
 	font-weight: 500;
 	height: 32px;

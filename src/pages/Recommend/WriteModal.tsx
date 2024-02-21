@@ -3,11 +3,14 @@ import WriteModalView from './WriteModalView';
 import { constants } from '../../constants/constants';
 import saveReview from './RecommendWrite';
 
-export default function WriteModal() {
-	const [modal, setModal] = useState(true);
+interface WriteModalProps {
+	modal: boolean;
+	setModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
+export default function WriteModal(props: WriteModalProps) {
 	function onClickModal() {
-		setModal(!modal);
+		props.setModal(!props.modal);
 	}
 
 	const modalRef = useRef<HTMLElement>(null);

@@ -9,6 +9,7 @@ import { initializeType } from '../../slice/userPickSlice';
 import { addStore, initialState } from '../../slice/findStoreSlice';
 import { usePost } from '../../api/useFetch';
 import { Action } from '../../slice/findStoreSlice';
+import { baseUrl } from '../../api/useAxios';
 
 export default function Loaded() {
 	const [data, setData] = useState<Action>(initialState);
@@ -20,7 +21,7 @@ export default function Loaded() {
 	const selector = useSelector((state: RootStateType) => {
 		return state.userPick;
 	});
-	const postFunc = usePost('http://118.67.132.171:8080/api/findStore');
+	const postFunc = usePost(`${baseUrl}/findStore`);
 
 	const onClickReturn = () => {
 		dispatch(initializeType(initialState));

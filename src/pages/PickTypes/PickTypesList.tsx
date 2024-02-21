@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Response } from './PickTypes';
 import PickTypesListView from './view/PickTypesListView';
-import useAxios from '../../api/useAxios';
+import useAxios, { baseUrl } from '../../api/useAxios';
 
 export interface Props {
 	onClickScroll: (index: number) => void;
@@ -13,7 +13,7 @@ export default function PickTypesList(props: Props) {
 
 	const { response } = useAxios({
 		method: 'GET',
-		url: 'http://118.67.132.171:8080/api/getQA',
+		url: `${baseUrl}/getQA`,
 		headers: {
 			accept: '*/*',
 		},

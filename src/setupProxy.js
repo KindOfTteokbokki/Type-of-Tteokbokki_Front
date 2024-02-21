@@ -4,7 +4,7 @@ module.exports = function (app) {
 	app.use(
 		'/api',
 		createProxyMiddleware({
-			target: 'http://118.67.132.171:8080',
+			target: 'http://www.utteok.com/',
 			changeOrigin: true,
 		})
 	);

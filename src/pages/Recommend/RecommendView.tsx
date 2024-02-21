@@ -4,9 +4,10 @@ import { HeadText, MessageLayout } from '../PickTypes/style';
 import RecommendWrite from './RecommendWrite';
 import { useGet } from '../../api/useFetch';
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from '../../api/useAxios';
 
 export default function RecommendView() {
-	const getFunc = useGet('http://118.67.132.171:8080/api/getRecommendToMain');
+	const getFunc = useGet(`${baseUrl}/getRecommendToMain`);
 	const [keyboard, setKeyBoard] = useState(false);
 	const [reviewData, setReviewData] = useState([]);
 	const navigator = useNavigate();
