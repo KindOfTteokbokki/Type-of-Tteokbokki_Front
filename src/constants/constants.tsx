@@ -23,7 +23,6 @@ export const constants = {
 	LOADING: {
 		header: '취향 분석 중...',
 		message: '잠시만 기다려 줘!',
-		messageBottom: '오징어 올려진 떡볶이도 맛있다더라(속닥)',
 	},
 	LOADED: {
 		header: '찾았다!',
@@ -45,5 +44,9 @@ export const constants = {
 	},
 	HOME: {
 		NICK_NAME: ['제이드', '만두', '개구리', '빵태'],
+		NAVIGATION: ['홈', '추천 후기', '칭호', '내 정보'],
+	},
+	RECOMMEND_DETAIL: {
+		header: '이렇게 먹어도 맛있대!',
 	},
 };
