@@ -6,7 +6,7 @@ import icon from '../../assets/Hot face.svg';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import character from '../../assets/캐릭터.svg';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import homeIcon from '../../assets/아이콘/하단내비_홈.svg';
 import recommIcon from '../../assets/아이콘/하단내비_후기.svg';
 import titleIcon from '../../assets/아이콘/하단내비_칭호.svg';
@@ -92,21 +92,41 @@ export default function HomeView(props: Props) {
 				</S.Cont>
 			</S.Section>
 			<S.NavBar>
-				<S.Figure>
+				<S.Figure
+					onClick={() => {
+						navigator('/home');
+					}}
+				>
 					<S.NavIcon src={homeIcon} alt="홈 아이콘" size="40px" margin="6px 0 2px" />
 					<S.NavText>홈</S.NavText>
 				</S.Figure>
-				<S.Figure>
+				<S.Figure
+					onClick={() => {
+						navigator('/recommend');
+					}}
+				>
 					<S.NavIcon src={recommIcon} alt="추천 후기 아이콘" size="36px" margin="8px 0 4px" />
 					<S.ReviewText>추천 후기</S.ReviewText>
 				</S.Figure>
 				<S.Figure>
 					<S.NavIcon src={titleIcon} alt="칭호 아이콘" size="36px" margin="6px 0 4px" />
-					<S.NavText>칭호</S.NavText>
+					<S.NavText
+						onClick={() => {
+							navigator('/title');
+						}}
+					>
+						칭호
+					</S.NavText>
 				</S.Figure>
 				<S.Figure>
 					<S.NavIcon src={myPageIcon} alt="내 정보 아이콘" size="40px" margin="6px 0 2px" />
-					<S.NavText>내 정보</S.NavText>
+					<S.NavText
+						onClick={() => {
+							navigator('/mypage');
+						}}
+					>
+						내 정보
+					</S.NavText>
 				</S.Figure>
 			</S.NavBar>
 		</>

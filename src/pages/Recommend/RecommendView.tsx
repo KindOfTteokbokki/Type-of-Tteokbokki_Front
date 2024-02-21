@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as S from './style';
 import { HeadText, MessageLayout } from '../PickTypes/style';
 import RecommendWrite from './RecommendWrite';
-import { useGet } from '../../api/useFetch';
+import { usePost } from '../../api/useFetch';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl } from '../../api/useAxios';
 
 export default function RecommendView() {
-	const getFunc = useGet(`${baseUrl}/getRecommendToMain`);
+	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
 	const [keyboard, setKeyBoard] = useState(false);
 	const [reviewData, setReviewData] = useState([]);
 	const navigator = useNavigate();
@@ -18,8 +18,13 @@ export default function RecommendView() {
 		}
 	};
 
+	const postData = {
+		pageNum: 0,
+		size: 15,
+	};
+
 	useEffect(() => {
-		getFunc().then((res) => {
+		postFunc(postData).then((res) => {
 			setReviewData(res?.data);
 		});
 	}, []);

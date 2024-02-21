@@ -112,6 +112,7 @@ export const TextField = styled.div`
 	margin: auto;
 	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
 	position: relative;
+	z-index: 10;
 `;
 
 export const TextArea = styled.textarea`

@@ -9,6 +9,7 @@ interface WriteModalProps {
 	modalAnswerRed: string;
 	onClickModal(): void;
 	onClickAgreement(): void;
+	onClickDisagree(): void;
 }
 
 export default function WriteModalView(props: WriteModalProps) {
@@ -20,6 +21,7 @@ export default function WriteModalView(props: WriteModalProps) {
 			modalAnswerRed={props.modalAnswerRed}
 			onClickModal={props.onClickModal}
 			onClickAgreement={props.onClickAgreement}
+			onClickDisagree={props.onClickDisagree}
 		/>
 	);
 }
