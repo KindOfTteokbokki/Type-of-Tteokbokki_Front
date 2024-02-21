@@ -9,6 +9,7 @@ interface ModalViewProps extends ModalProps {
 	modalAnswerWhite: string;
 	modalAnswerRed: string;
 	modalRef: React.RefObject<HTMLElement>;
+	onClickDisagree?: () => void;
 }
 
 export default function ModalView(props: ModalViewProps) {
@@ -20,7 +21,9 @@ export default function ModalView(props: ModalViewProps) {
 					{props.modalHeader}
 				</S.ModalText>
 				<S.ModalButtonLayout>
-					<S.ModalWhiteButton onClick={props.onClickAgreement}>{props.modalAnswerWhite}</S.ModalWhiteButton>
+					<S.ModalWhiteButton onClick={props.onClickDisagree ? props.onClickDisagree : props.onClickAgreement}>
+						{props.modalAnswerWhite}
+					</S.ModalWhiteButton>
 					<S.ModalRedButton onClick={props.onClickAgreement}>{props.modalAnswerRed}</S.ModalRedButton>
 				</S.ModalButtonLayout>
 			</S.ModalCont>

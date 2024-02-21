@@ -8,6 +8,7 @@ export const ModalCont = styled.article`
 	padding: 48px 0 32px;
 	background-color: #fff;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
+	box-shadow: 0 3px 16px rgba(0, 0, 0, 0.25);
 	z-index: 50;
 `;
 

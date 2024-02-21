@@ -39,8 +39,6 @@ export default function RecommendWrite(props: any) {
 		});
 	};
 
-	const onOpenModal = () => {};
-
 	return (
 		<S.RecommDropBack>
 			<S.WriteCont>
@@ -62,7 +60,6 @@ export default function RecommendWrite(props: any) {
 							setModal(true);
 						}}
 					/>
-					{}
 					{imgUrl ? (
 						<S.PreloadCont onClick={onClickDelete}>
 							<S.PreloadImg src={URL.createObjectURL(imgUrl)} />
@@ -78,9 +75,9 @@ export default function RecommendWrite(props: any) {
 							/>
 						</S.CameraIcon>
 					)}
+					{modal ? <WriteModal modal={modal} setModal={setModal} saveReview={saveReview} /> : null}
 				</S.TextField>
 			</S.WriteCont>
-			{modal ? <WriteModal modal={modal} setModal={setModal} /> : null}
 		</S.RecommDropBack>
 	);
 }

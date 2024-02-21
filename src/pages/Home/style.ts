@@ -181,6 +181,7 @@ type NavICon = {
 export const Figure = styled.figure`
 	width: 100%;
 	position: relative;
+	cursor: pointer;
 `;
 
 export const NavIcon = styled.img<NavICon>`

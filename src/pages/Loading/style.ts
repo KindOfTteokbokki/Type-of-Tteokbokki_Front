@@ -19,7 +19,7 @@ export const Icon = styled.img`
 
 export const Header = styled.h1`
 	font-size: 24px;
-	font-weight: bold;
+	font-weight: ${(props) => props.theme.fontWeight.semiBold};
 	text-align: center;
 	margin-bottom: 8px;
 	position: relative;

@@ -6,6 +6,7 @@ import saveReview from './RecommendWrite';
 interface WriteModalProps {
 	modal: boolean;
 	setModal: React.Dispatch<React.SetStateAction<boolean>>;
+	saveReview(): void;
 }
 
 export default function WriteModal(props: WriteModalProps) {
@@ -14,17 +15,19 @@ export default function WriteModal(props: WriteModalProps) {
 	}
 
 	const modalRef = useRef<HTMLElement>(null);
+
 	const handler = (e: any) => {
 		if (modalRef.current && !modalRef.current.contains(e.target)) {
 			onClickModal();
 		}
 	};
-	const onClickNonAgree = () => {
+
+	const onClickDisagree = () => {
 		onClickModal();
 	};
 
 	const onClickAgreement = () => {
-		// saveReview();
+		props.saveReview();
 	};
 
 	useEffect(() => {
@@ -43,6 +46,7 @@ export default function WriteModal(props: WriteModalProps) {
 			modalAnswerRed={constants.REVIEW_MODAL.ANSWER_2}
 			onClickModal={onClickModal}
 			onClickAgreement={onClickAgreement}
+			onClickDisagree={onClickDisagree}
 		/>
 	);
 }

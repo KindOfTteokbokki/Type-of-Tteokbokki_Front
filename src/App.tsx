@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import Recommend from './pages/Recommend/Recommend';
 import KakaoRedirectView from './pages/Splash/KakaoRedirectView';
 import NaverRedirectView from './pages/Splash/NaverRedirectView';
+import RecommendDetail from './pages/RecommendDetail.tsx/RecommendDetail';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 			<Route path="/recommend" element={<Recommend />} />
 			<Route path="/auth/kakao" element={<KakaoRedirectView />} />
 			<Route path="/auth/naver" element={<NaverRedirectView />} />
+			<Route path="/recommend/:id" element={<RecommendDetail />} />
 		</Routes>
 	);
 }
