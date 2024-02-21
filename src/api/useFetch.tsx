@@ -6,7 +6,7 @@ const usePost = (url: any) => {
 
 		if (header) {
 			response = await axios({
-				headers: { 'Content-Type': 'multipart/form-data' },
+				headers: { 'Content-Type': 'Application/json' },
 				method: 'post',
 				url: url,
 				data: postData,

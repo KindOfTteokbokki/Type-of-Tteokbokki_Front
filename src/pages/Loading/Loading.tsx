@@ -1,7 +1,7 @@
 import React from 'react';
 import LoadingView from './LoadingView';
 import { constants } from '../../constants/constants';
-import useAxios from '../../api/useAxios';
+import useAxios, { baseUrl } from '../../api/useAxios';
 import { useNavigate } from 'react-router-dom';
 import loading from '../../assets/loading.gif';
 
@@ -17,7 +17,7 @@ export default function Loading() {
 
 	const { response } = useAxios({
 		method: 'GET',
-		url: 'http://118.67.132.171:8080/api/loading',
+		url: `${baseUrl}/loading`,
 		headers: {
 			accept: '*/*',
 		},
