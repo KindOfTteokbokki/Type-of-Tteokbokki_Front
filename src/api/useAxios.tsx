@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
 export const baseUrl = 'http://www.utteok.com/api';
-console.log(baseUrl);
 
 interface Request {
 	method: string;
