@@ -7,6 +7,7 @@ import Loaded from './pages/Loaded/Loaded';
 import Home from './pages/Home/Home';
 import Recommend from './pages/Recommend/Recommend';
 import KakaoRedirectView from './pages/Splash/KakaoRedirectView';
+import NaverRedirectView from './pages/Splash/NaverRedirectView';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 			<Route path="/home" element={<Home />} />
 			<Route path="/recommend" element={<Recommend />} />
 			<Route path="/auth/kakao" element={<KakaoRedirectView />} />
+			<Route path="/auth/naver" element={<NaverRedirectView />} />
 		</Routes>
 	);
 }
