@@ -22,6 +22,8 @@ export interface LoadedProps {
 }
 
 export default function LoadedView(props: LoadedProps) {
+	console.log(props.data);
+	console.log(props.isNonData());
 	return (
 		<S.Main>
 			<Header>
@@ -32,11 +34,15 @@ export default function LoadedView(props: LoadedProps) {
 			<S.LoadCont>
 				{props.isNonChainStore() ? (
 					<S.NonChainImg src={props.data.file_path + props.data.file_masking_name} />
-				) : props.isNonData() ? (
+				) : props.isNonData() ? null : (
 					<S.ChainImg src={props.data.file_path + props.data.file_masking_name} />
-				) : null}
+				)}
 
-				{props.isNonChainStore() ? <NonChainStore storeData={props.data} /> : <ChainStoreView storeData={props.data} />}
+				{props.isNonChainStore() ? (
+					<NonChainStore storeData={props.data} borderRadius="12px" />
+				) : (
+					<ChainStoreView storeData={props.data} borderRadius="12px" />
+				)}
 			</S.LoadCont>
 			<S.ButtonLayout>
 				<BigWhiteButton text="다시 고르기" onclick={props.onClickReturn} />

@@ -1,22 +1,22 @@
 import styled from 'styled-components';
-import { Header } from '../Loading/style';
-import { LoadCont } from '../Loaded/style';
-import { Layout } from '../Popup/style';
+import { Header } from '../../pages/Loading/style';
+import { LoadCont } from '../../pages/Loaded/style';
+import { Layout } from '../../pages/Popup/style';
 
-export const RecommendDetailLayout = styled(Layout)`
+export const DetailLayout = styled(Layout)`
 	background-color: #fff;
 `;
 
-export const RecommendDetailHeader = styled(Header)`
+export const DetailHeader = styled(Header)`
 	margin-bottom: 60px;
 `;
 
-export const RecommendLoadCont = styled(LoadCont)`
+export const DetailLoadCont = styled(LoadCont)`
 	margin: 0 auto;
 	margin-bottom: 60px;
 `;
 
-export const RecommendImg = styled.img`
+export const DetailImg = styled.img`
 	width: 100%;
 	height: 286px;
 	border-radius: ${(props) => props.theme.borderRadius.lv4} ${(props) => props.theme.borderRadius.lv4} 0 0;
@@ -29,7 +29,7 @@ export const EmptyImg = styled.div`
 	background-color: ${(props) => props.theme.color.gray};
 `;
 
-export const RecommendText = styled.div`
+export const DetailText = styled.div`
 	width: 100%;
 	height: 114px;
 	padding: 16px;
@@ -39,12 +39,13 @@ export const RecommendText = styled.div`
 	z-index: 10;
 `;
 
-export const RecommendIcon = styled.img`
+export const DetailIcon = styled.img`
 	width: 20px;
 	height: 20px;
+	display: block;
 `;
 
-export const RecommendContent = styled.p`
+export const DetailContent = styled.p`
 	font-size: ${(props) => props.theme.fontSize.lv2};
 	line-height: 20px;
 	text-align: initial;

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import DetailView from '../../components/DetailView/DetailView';
-import { constants } from '../../constants/constants';
+import { DetailProps } from '../../components/DetailView/DetailView';
 
-export default function CombinationView() {
-	const [data, setData] = useState(['']);
-	const header = constants.HOME.COMBINATION;
-	// return <DetailView data={data} />;
-	<></>;
+export default function CombinationView(props: DetailProps) {
+	return <DetailView data={props.data} header={props.header} onClickBack={props.onClickBack} iconImg={props.iconImg} />;
 }

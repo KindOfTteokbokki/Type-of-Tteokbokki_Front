@@ -1,28 +1,27 @@
 import React from 'react';
-import * as S from '../../pages/RecommendDetail.tsx/style';
+import * as S from './style';
 import { Button, Layout } from '../../pages/Popup/style';
 import { constants } from '../../constants/constants';
 
-interface RecommendDetailProps {
+export interface DetailProps {
 	onClickBack: () => void;
 	data: any;
-	altText: string;
 	header: string;
 	iconImg: string;
 }
 
-export default function DetailView(props: RecommendDetailProps) {
+export default function DetailView(props: DetailProps) {
 	return (
-		<S.RecommendDetailLayout>
-			<S.RecommendDetailHeader>{props.header}</S.RecommendDetailHeader>
-			<S.RecommendLoadCont>
-				{props.data ? <S.RecommendImg /> : <S.EmptyImg />}
-				<S.RecommendText>
-					<S.RecommendIcon src={props.iconImg} alt={props.altText} />
-					<S.RecommendContent></S.RecommendContent>
-				</S.RecommendText>
-			</S.RecommendLoadCont>
+		<S.DetailLayout>
+			<S.DetailHeader>{props.header}</S.DetailHeader>
+			<S.DetailLoadCont>
+				{props.data ? <S.DetailImg /> : <S.EmptyImg />}
+				<S.DetailText>
+					<S.DetailIcon src={props.iconImg} alt="아이콘 사진" />
+					<S.DetailContent></S.DetailContent>
+				</S.DetailText>
+			</S.DetailLoadCont>
 			<Button onClick={props.onClickBack} />
-		</S.RecommendDetailLayout>
+		</S.DetailLayout>
 	);
 }

@@ -10,6 +10,7 @@ import KakaoRedirectView from './pages/Splash/KakaoRedirectView';
 import NaverRedirectView from './pages/Splash/NaverRedirectView';
 import RecommendDetail from './pages/RecommendDetail.tsx/RecommendDetail';
 import Combination from './pages/Combination/Combination';
+import MyTaste from './pages/MyTaste/MyTaste';
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 			<Route path="/auth/naver" element={<NaverRedirectView />} />
 			<Route path="/recommend/:id" element={<RecommendDetail />} />
 			<Route path="/combination" element={<Combination />} />
+			<Route path="/mytaste" element={<MyTaste />} />
 		</Routes>
 	);
 }

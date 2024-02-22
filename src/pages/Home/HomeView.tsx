@@ -86,13 +86,19 @@ export default function HomeView(props: Props) {
 										<S.CombiImg
 											src={imageFile?.file_path + imageFile?.file_masking_name}
 											onClick={() => {
-												navigator('/combination');
+												navigator('/combination', { state: { nickName: props.nickName } });
 											}}
 										/>
 									);
 							  })
 							: [1, 2, 3, 4].map(() => {
-									return <S.EmptyCombiImg />;
+									return (
+										<S.EmptyCombiImg
+											onClick={() => {
+												navigator('/combination', { state: { nickName: props.nickName } });
+											}}
+										/>
+									);
 							  })}
 					</S.FlexCont>
 				</S.Cont>
