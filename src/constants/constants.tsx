@@ -45,6 +45,7 @@ export const constants = {
 	HOME: {
 		NICK_NAME: ['제이드', '만두', '개구리', '빵태'],
 		NAVIGATION: ['홈', '추천 후기', '칭호', '내 정보'],
+		COMBINATION: '가 추천하는 꿀조합',
 	},
 	RECOMMEND_DETAIL: {
 		header: '이렇게 먹어도 맛있대!',

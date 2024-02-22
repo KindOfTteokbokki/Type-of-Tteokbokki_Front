@@ -1,13 +1,12 @@
 import React from 'react';
 import * as S from './style';
 import lock from '../../assets/아이콘/자물쇠.svg';
-import food from '../../assets/tteokbokki.png';
-import icon from '../../assets/Hot face.svg';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import character from '../../assets/캐릭터.svg';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navigation from './Navigation';
+import { constants } from '../../constants/constants';
 
 interface Props {
 	onClickMove(): void;
@@ -76,11 +75,21 @@ export default function HomeView(props: Props) {
 					</S.FlexCont>
 				</S.Cont>
 				<S.Cont>
-					<S.Text>{props.nickName}가 추천하는 꿀조합</S.Text>
+					<S.Text>
+						{props.nickName}
+						{constants.HOME.COMBINATION}
+					</S.Text>
 					<S.FlexCont>
 						{props.combiImgList
 							? props.combiImgList.map((imageFile: any) => {
-									return <S.CombiImg src={imageFile?.file_path + imageFile?.file_masking_name} />;
+									return (
+										<S.CombiImg
+											src={imageFile?.file_path + imageFile?.file_masking_name}
+											onClick={() => {
+												navigator('/combination');
+											}}
+										/>
+									);
 							  })
 							: [1, 2, 3, 4].map(() => {
 									return <S.EmptyCombiImg />;

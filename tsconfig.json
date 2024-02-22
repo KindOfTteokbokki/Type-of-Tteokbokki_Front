@@ -16,7 +16,7 @@
 		"noEmit": true,
 		"jsx": "react-jsxdev"
 	},
-	"include": ["src"],
+	"include": ["src", "setupTest.js"],
 	"typeRoots": ["src/types"],
 	"types": ["jest"]
 }
