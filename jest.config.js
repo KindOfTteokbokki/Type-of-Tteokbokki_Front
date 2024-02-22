@@ -1,21 +1,11 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
 	preset: 'ts-jest',
-	testEnvironment: 'jsdom',
+	testEnvironment: 'jsdom', // jsdom으로 수정
+	setupFilesAfterEnv: ['<rootDir>/setupTest.js'], // setupTest를 이용하여 환경 설정
 	globals: {
-		//추가
 		'ts-jest': {
-			isolatedModules: true,
+			tsconfig: 'tsconfig.jest.json', // tsconfig.jest.json 사용 설정
 		},
 	},
-	transform: {
-		'^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
-	},
-	// setupFiles: ['<rootDir>/setupTests.js'], // jest mocking 세팅
-	// setupFilesAfterEnv: ['./jest.setup.ts'], // 국제화 관련 세팅
-	// moduleNameMapper: {
-	// 	'^@/(.*)$': '<rootDir>/src/$1',
-	// },
-	// testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
-	// testMatch: ['<rootDir>/src/**/*.test.tsx'], // 테스트 파일 제한
 };

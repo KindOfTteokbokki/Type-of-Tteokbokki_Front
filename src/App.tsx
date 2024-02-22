@@ -9,6 +9,7 @@ import Recommend from './pages/Recommend/Recommend';
 import KakaoRedirectView from './pages/Splash/KakaoRedirectView';
 import NaverRedirectView from './pages/Splash/NaverRedirectView';
 import RecommendDetail from './pages/RecommendDetail.tsx/RecommendDetail';
+import Combination from './pages/Combination/Combination';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 			<Route path="/auth/kakao" element={<KakaoRedirectView />} />
 			<Route path="/auth/naver" element={<NaverRedirectView />} />
 			<Route path="/recommend/:id" element={<RecommendDetail />} />
+			<Route path="/combination" element={<Combination />} />
 		</Routes>
 	);
 }
