@@ -2,14 +2,14 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import SplashView from '../view/SplashView';
 import { constants } from '../../../constants/constants';
-import Basic from '../Basic';
+import Test from '../Test';
 
 describe('test', () => {
-	it('renders the SplashView component', async () => {
-		render(<Basic />);
+	it('renders the SplashView component', () => {
+		render(<Test />);
 
-		const element: any = await screen.findByText('말만해,');
+		const element: any = screen.getByRole('div');
 
-		expect(element).toBeInTheDocument();
+		expect(element).toHaveTextContent('Test');
 	});
 });

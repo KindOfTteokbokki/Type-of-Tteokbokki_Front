@@ -50,4 +50,7 @@ export const constants = {
 	RECOMMEND_DETAIL: {
 		header: '이렇게 먹어도 맛있대!',
 	},
+	MY_TASTE: {
+		header: '완전 내 입맛이야!',
+	},
 };

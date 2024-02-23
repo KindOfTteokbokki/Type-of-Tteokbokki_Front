@@ -30,14 +30,14 @@ export const NonChainImg = styled.img`
 	border-radius: 16px 16px 0 0;
 `;
 
-export const LoadText = styled.figcaption`
+export const LoadText = styled.figcaption<{ borderRadius: string | undefined }>`
 	padding: 16px;
 	display: flex;
 	flex-direction: column;
 	text-align: initial;
 	gap: 8px;
 	box-shadow: 0 3px 16px rgba(0, 0, 0, 25%);
-	border-radius: ${(props) => props.theme.borderRadius.lv3};
+	border-radius: ${(props) => props.borderRadius};
 	background-color: #fff;
 	position: absolute;
 	bottom: 0;

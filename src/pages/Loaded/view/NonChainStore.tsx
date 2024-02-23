@@ -8,7 +8,7 @@ import review from '../../../assets/아이콘/한줄평.svg';
 
 export default function NonChainStore(props: StoreProps) {
 	return (
-		<S.LoadText>
+		<S.LoadText borderRadius={props.borderRadius}>
 			<S.TextCont>
 				<S.Icon src={store} alt="가게명" />
 				<S.Text>{props.storeData.store_name}</S.Text>

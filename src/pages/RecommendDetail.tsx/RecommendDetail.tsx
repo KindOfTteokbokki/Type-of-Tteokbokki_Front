@@ -14,13 +14,5 @@ export default function RecommendDetail() {
 
 	const header = constants.RECOMMEND_DETAIL.header;
 
-	return (
-		<RecommendDetailView
-			onClickBack={onClickBack}
-			data={data}
-			altText={'리뷰 아이콘'}
-			header={header}
-			iconImg={review}
-		/>
-	);
+	return <RecommendDetailView onClickBack={onClickBack} data={data} header={header} iconImg={review} />;
 }
