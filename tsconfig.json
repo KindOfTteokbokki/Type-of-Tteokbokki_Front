@@ -14,9 +14,10 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react-jsxdev"
+		"jsx": "react-jsxdev",
+		"noUnusedLocals": false
 	},
-	"include": ["src", "setupTest.js"],
+	"include": ["src", "setupTest.js", "svgTransformer.js"],
 	"typeRoots": ["src/types"],
 	"types": ["jest"]
 }

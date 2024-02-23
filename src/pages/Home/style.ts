@@ -164,7 +164,7 @@ export const Alter = styled.h1`
 export const NavBar = styled.nav`
 	width: 390px;
 	height: 88px;
-	background-color: ${(props) => props.theme.color.white};
+	background-color: #fff;
 	padding: 0 32px 23px 33px;
 	display: flex;
 	gap: 57px;
@@ -192,7 +192,7 @@ export const NavIcon = styled.img<NavICon>`
 
 export const NavText = styled.figcaption`
 	font-size: 12px;
-	font-weight: ${(props) => props.theme.fontWeight.regular};
+	font-weight: 400;
 	text-align: center;
 	overflow: display;
 `;

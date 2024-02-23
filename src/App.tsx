@@ -11,6 +11,7 @@ import NaverRedirectView from './pages/Splash/NaverRedirectView';
 import RecommendDetail from './pages/RecommendDetail.tsx/RecommendDetail';
 import Combination from './pages/Combination/Combination';
 import MyTaste from './pages/MyTaste/MyTaste';
+import Title from './pages/Title/Title';
 
 function App() {
 	return (
@@ -26,6 +27,7 @@ function App() {
 			<Route path="/recommend/:id" element={<RecommendDetail />} />
 			<Route path="/combination" element={<Combination />} />
 			<Route path="/mytaste" element={<MyTaste />} />
+			<Route path="/title" element={<Title />} />
 		</Routes>
 	);
 }
