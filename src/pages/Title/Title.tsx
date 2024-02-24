@@ -7,7 +7,9 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Title() {
 	const navigator = useNavigate();
-	const onClickMoveBack = () => {};
+	const onClickMoveBack = () => {
+		navigator(-1);
+	};
 
 	const name = '개구리';
 	const count = 6;

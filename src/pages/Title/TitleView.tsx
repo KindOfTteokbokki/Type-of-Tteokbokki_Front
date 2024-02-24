@@ -21,7 +21,7 @@ export default function TitleView(props: TitleProps) {
 	return (
 		<>
 			<NavLayout>
-				<S.Icon src={Back} role="back" />
+				<S.Icon src={Back} role="back" onClick={props.onClickMoveBack} />
 				<S.Header>
 					<S.H1>{`${props.name}가 모은`}</S.H1>
 					<S.H1>{`칭호는 ${props.count}개야!`}</S.H1>
