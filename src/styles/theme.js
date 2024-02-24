@@ -8,6 +8,7 @@ export const theme = {
 		login: '#666666',
 		kakao: '#FEE500',
 		naver: '#03C75A',
+		TITLE: { PINK: '#F7DACC', SKY: '#CCEBE0', YELLOW: '#FDF2CC' },
 	},
 
 	borderRadius: {
