@@ -12,7 +12,7 @@ const mockNavigate = jest.fn();
 (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
 
 const onClickMoveBack = jest.fn();
-const list = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+const list = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 describe('LockedTitle test', () => {
 	it('헤더 텍스트 렌더링 테스트', () => {
@@ -36,8 +36,8 @@ describe('LockedTitle test', () => {
 	it('입력받은 칭호 수만큼 렌더링되는지 테스트', () => {
 		render(<LockedTitleView onClickMoveBack={onClickMoveBack} list={list} />);
 
-		const element = screen.getByRole('list');
+		const element = screen.getAllByRole('list');
 
-		expect(element).toHaveLength(list.length);
+		expect(element).toHaveLength(list.length + 1);
 	});
 });

@@ -14,8 +14,8 @@ interface Props {
 export default function LockedTitleView(props: Props) {
 	return (
 		<>
-			<NavLayout>
-				<Icon src={lock} onClick={props.onClickMoveBack} />
+			<S.Layout>
+				<S.BackIcon src={lock} onClick={props.onClickMoveBack} />
 				<S.Header>
 					<div>
 						<S.H1>{constants.LOCKED_TITLE.header[0]}</S.H1>
@@ -23,7 +23,23 @@ export default function LockedTitleView(props: Props) {
 					</div>
 					<S.Button>{constants.LOCKED_TITLE.button}</S.Button>
 				</S.Header>
-			</NavLayout>
+
+				<S.Ul>
+					{props.list.map((content, index) => {
+						return (
+							<>
+								<S.Li role="list" key={index}>
+									<Icon />
+									<div>
+										<S.H2>{content}</S.H2>
+										<S.P>{Number(13948).toLocaleString() + '명이 받았어'}</S.P>
+									</div>
+								</S.Li>
+							</>
+						);
+					})}
+				</S.Ul>
+			</S.Layout>
 			<Navigation />
 		</>
 	);
