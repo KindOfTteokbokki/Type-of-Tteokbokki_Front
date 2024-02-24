@@ -15,6 +15,7 @@ interface TitleProps {
 	role: string[];
 	moveText: string;
 	onClickMoveBack?: () => void;
+	onClickMoveLock?: () => void;
 }
 
 export default function TitleView(props: TitleProps) {

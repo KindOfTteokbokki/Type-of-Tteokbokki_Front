@@ -89,4 +89,31 @@ describe('Title Test', () => {
 		const element = screen.getByText('아직 못 받은 칭호도 구경해봐!');
 		expect(element).toBeInTheDocument();
 	});
+
+	it('locked 칭호 페이지로 이동하는 버튼의 동작 테스트', () => {
+		const mockNavigate = jest.fn();
+		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
+
+		const navigator = useNavigate();
+		const onClickMoveLock = () => {
+			navigator('/lock-title');
+		};
+
+		render(
+			<TitleView
+				name="개구리"
+				count={5}
+				text={text}
+				bgcolor={bgcolor}
+				role={role}
+				moveText={constants.TITLE.MOVE}
+				onClickMoveLock={onClickMoveLock}
+			/>
+		);
+
+		const element = screen.getByRole('move');
+
+		fireEvent.click(element);
+		expect(mockNavigate).toBeCalledWith('/lock-title');
+	});
 });
