@@ -1,9 +1,9 @@
 import React from 'react';
 // import { render } from '../../../utils/customJestRender';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import TitleView from '../TitleView';
 import { theme } from '../../../styles/theme';
-import { useNavigate } from 'react-router-dom';
+import { MemoryRouter, useNavigate } from 'react-router-dom';
 import { constants } from '../../../constants/constants';
 
 const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
@@ -17,6 +17,33 @@ jest.mock('react-router-dom', () => ({
 }));
 
 describe('Title Test', () => {
+	it('뒤로가기 버튼 동작 테스트', () => {
+		const mockNavigate = jest.fn();
+		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
+
+		const navigator = useNavigate();
+		const onClickMoveBack = () => {
+			navigator(-1);
+		};
+
+		render(
+			<TitleView
+				name="개구리"
+				count={5}
+				text={text}
+				bgcolor={bgcolor}
+				role={role}
+				moveText={constants.TITLE.MOVE}
+				onClickMoveBack={onClickMoveBack}
+			/>
+		);
+
+		const element = screen.getByRole('back');
+
+		fireEvent.click(element);
+		expect(mockNavigate).toBeCalledWith(-1);
+	});
+
 	it('헤더 텍스트가 잘 나오는지 테스트', () => {
 		const mockNavigate = jest.fn();
 		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);

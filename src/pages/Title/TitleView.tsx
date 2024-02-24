@@ -14,13 +14,14 @@ interface TitleProps {
 	bgcolor: string[];
 	role: string[];
 	moveText: string;
+	onClickMoveBack?: () => void;
 }
 
 export default function TitleView(props: TitleProps) {
 	return (
 		<>
 			<NavLayout>
-				<S.Icon src={Back} />
+				<S.Icon src={Back} role="back" />
 				<S.Header>
 					<S.H1>{`${props.name}가 모은`}</S.H1>
 					<S.H1>{`칭호는 ${props.count}개야!`}</S.H1>
@@ -46,7 +47,7 @@ export default function TitleView(props: TitleProps) {
 			<S.Button>
 				<S.Icon src={lock} alt="자물쇠 아이콘" />
 				<S.Span>{props.moveText}</S.Span>
-				<S.Icon src={move} alt="이동 아이콘" />
+				<S.Icon src={move} alt="이동 아이콘" role="move" />
 			</S.Button>
 			<Navigation />
 		</>

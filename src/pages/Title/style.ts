@@ -4,6 +4,7 @@ import { theme } from '../../styles/theme';
 export const Icon = styled.img`
 	width: 24px;
 	height: 24px;
+	cursor: pointer;
 `;
 
 export const Header = styled.header`

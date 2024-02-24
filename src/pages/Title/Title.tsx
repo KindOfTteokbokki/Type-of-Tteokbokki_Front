@@ -3,8 +3,12 @@ import TitleView from './TitleView';
 import { useGet } from '../../api/useFetch';
 import { theme } from '../../styles/theme';
 import { constants } from '../../constants/constants';
+import { useNavigate } from 'react-router-dom';
 
 export default function Title() {
+	const navigator = useNavigate();
+	const onClickMoveBack = () => {};
+
 	const name = '개구리';
 	const count = 6;
 	const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
@@ -12,6 +16,14 @@ export default function Title() {
 	const role = ['firstList', 'secondList', 'thirdList'];
 
 	return (
-		<TitleView name={name} count={count} text={text} bgcolor={bgcolor} role={role} moveText={constants.TITLE.MOVE} />
+		<TitleView
+			name={name}
+			count={count}
+			text={text}
+			bgcolor={bgcolor}
+			role={role}
+			moveText={constants.TITLE.MOVE}
+			onClickMoveBack={onClickMoveBack}
+		/>
 	);
 }
