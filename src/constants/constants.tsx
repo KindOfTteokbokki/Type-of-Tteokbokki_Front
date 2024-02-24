@@ -53,4 +53,8 @@ export const constants = {
 	MY_TASTE: {
 		header: '완전 내 입맛이야!',
 	},
+	TITLE: {
+		header: ['가 모은 칭호는', '개야!'],
+		MOVE: '아직 못 받은 칭호도 구경해봐!',
+	},
 };

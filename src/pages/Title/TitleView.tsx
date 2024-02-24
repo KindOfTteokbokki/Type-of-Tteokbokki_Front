@@ -4,6 +4,8 @@ import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import * as S from './style';
 import Back from '../../assets/아이콘_나도추천할래/뒤로가기.svg';
 import { theme } from '../../styles/theme';
+import lock from '../../assets/아이콘/자물쇠.svg';
+import move from '../../assets/칭호추가획득유도.svg';
 
 interface TitleProps {
 	name: string;
@@ -11,6 +13,7 @@ interface TitleProps {
 	text: string[];
 	bgcolor: string[];
 	role: string[];
+	moveText: string;
 }
 
 export default function TitleView(props: TitleProps) {
@@ -18,8 +21,10 @@ export default function TitleView(props: TitleProps) {
 		<>
 			<NavLayout>
 				<S.Icon src={Back} />
-				<S.Header>{`${props.name}가 모은`}</S.Header>
-				<S.Header>{`칭호는 ${props.count}개야!`}</S.Header>
+				<S.Header>
+					<S.H1>{`${props.name}가 모은`}</S.H1>
+					<S.H1>{`칭호는 ${props.count}개야!`}</S.H1>
+				</S.Header>
 
 				<S.Ul>
 					{props.text.map((title, index) => {
@@ -38,7 +43,11 @@ export default function TitleView(props: TitleProps) {
 					})}
 				</S.Ul>
 			</NavLayout>
-			<S.Button></S.Button>
+			<S.Button>
+				<S.Icon src={lock} alt="자물쇠 아이콘" />
+				<S.Span>{props.moveText}</S.Span>
+				<S.Icon src={move} alt="이동 아이콘" />
+			</S.Button>
 			<Navigation />
 		</>
 	);

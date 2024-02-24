@@ -34,7 +34,7 @@ export const Li = styled.li<{ bgcolor: string }>`
 	background-color: ${(props) => props.bgcolor};
 	border-radius: 16px;
 	font-weight: 600;
-	font-size: 20px;
+	font-size: ${theme.fontSize.lv4};
 	align-items: center;
 `;
 
@@ -52,11 +52,11 @@ export const Button = styled.button`
 	display: flex;
 	align-items: center;
 	position: sticky;
-	bottom: 0;
+	bottom: 88px;
 `;
 
 export const Span = styled.span`
-	font-weight: ${theme.fontWeight.semiBold};
+	font-family: Pretendard-SemiBold;
 	font-size: ${theme.fontSize.lv4};
-	margin: 0 45px 16px;
+	margin: 0 45px 0 16px;
 `;
