@@ -10,4 +10,5 @@ export const Header = styled.header`
 	font-size: 32px;
 	margin-top: 72px;
 	font-weight: 600;
+	line-height: 140%;
 `;

@@ -4,12 +4,21 @@ import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import * as S from './style';
 import Back from '../../assets/아이콘_나도추천할래/뒤로가기.svg';
 
-export default function TitleView() {
+interface TitleProps {
+	name: string;
+	count: number;
+}
+
+export default function TitleView(props: TitleProps) {
 	return (
 		<>
 			<NavLayout>
 				<S.Icon src={Back} />
-				<S.Header></S.Header>
+				<S.Header>
+					{`${props.name}가 모은`}
+					<br />
+					{`칭호는 ${props.count}개야!`}
+				</S.Header>
 			</NavLayout>
 
 			<Navigation />

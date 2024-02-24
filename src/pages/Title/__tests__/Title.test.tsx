@@ -1,7 +1,7 @@
 import React from 'react';
 // import { render } from '../../../utils/customJestRender';
 import { render, screen } from '@testing-library/react';
-import Title from '../Title';
+import TitleView from '../TitleView';
 import { theme } from '../../../styles/theme';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,9 +15,9 @@ describe('Title Test', () => {
 	it('헤더 텍스트가 잘 나오는지 테스트', () => {
 		const mockNavigate = jest.fn();
 		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
-		render(<Title />);
+		render(<TitleView name="개구리" count={5} />);
 
-		const element = screen.getByText('Name가 모은 칭호는 N개야!');
+		const element = screen.getByText('개구리가 모은 칭호는 5개야!');
 		expect(element).toBeInTheDocument();
 	});
 });
