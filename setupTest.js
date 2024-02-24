@@ -1,3 +1,3 @@
-import '@testing-library/jest-dom';
-import '@testing-library/react/cleanup-after-each';
+import 'jest-environment-jsdom';
+import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';

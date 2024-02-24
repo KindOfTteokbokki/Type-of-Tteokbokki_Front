@@ -1,18 +1,13 @@
 import React, { useEffect } from 'react';
-import { usePost } from '../../api/useFetch';
+import { useGet } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 
 export default function NaverRedirectView() {
-	const postFunc = usePost(`${baseUrl}/auth/naver`);
-
 	const code = new URL(window.location.href).searchParams.get('code');
-
-	const postData = {
-		authorizationCode: code,
-	};
+	const getFunc = useGet(`${baseUrl}/auth/naver/?code=${code}`);
 
 	useEffect(() => {
-		postFunc(postData, { 'Content-type': 'application/json' }).then((res: any) => {
+		getFunc().then((res: any) => {
 			console.log(res.data);
 		});
 	}, []);
