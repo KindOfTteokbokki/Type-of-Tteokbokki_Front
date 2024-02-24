@@ -8,5 +8,7 @@ export default function LockedTitle() {
 		navigator(-1);
 	};
 
-	return <LockedTitleView onClickMoveBack={onClickMoveBack} />;
+	const list = [''];
+
+	return <LockedTitleView onClickMoveBack={onClickMoveBack} list={list} />;
 }

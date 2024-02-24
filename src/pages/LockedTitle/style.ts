@@ -3,7 +3,7 @@ import { theme } from '../../styles/theme';
 
 export const Header = styled.header`
 	width: 100%;
-	margin-top: 30px;
+	margin: 30px 0 40px;
 	display: flex;
 	gap: 92px;
 	position: relative;

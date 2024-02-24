@@ -8,6 +8,7 @@ import { constants } from '../../constants/constants';
 
 interface Props {
 	onClickMoveBack: () => void;
+	list: string[];
 }
 
 export default function LockedTitleView(props: Props) {
