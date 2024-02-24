@@ -35,6 +35,11 @@ describe('LockedTitle test', () => {
 	});
 
 	it('버튼 클릭 시 pick-types 페이지로 이동', () => {
+		const navigator = useNavigate();
+		const onClickMoveReturn = () => {
+			navigator('/pick-types');
+		};
+
 		render(<LockedTitleView onClickMoveBack={onClickMoveBack} list={list} onClickMoveReturn={onClickMoveReturn} />);
 
 		const element = screen.getByRole('button');
