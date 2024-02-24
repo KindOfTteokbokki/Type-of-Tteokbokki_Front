@@ -8,7 +8,9 @@ export default function LockedTitle() {
 		navigator(-1);
 	};
 
+	const onClickMoveReturn = () => {};
+
 	const list = ['맛도리', '맛도리', '맛도리', '맛도리', '맛도리', '맛도리', '맛도리', '맛도리', '맛도리', '맛도리'];
 
-	return <LockedTitleView onClickMoveBack={onClickMoveBack} list={list} />;
+	return <LockedTitleView onClickMoveBack={onClickMoveBack} list={list} onClickMoveReturn={onClickMoveReturn} />;
 }

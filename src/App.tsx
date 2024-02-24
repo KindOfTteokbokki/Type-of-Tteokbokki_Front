@@ -18,7 +18,7 @@ function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<Splash />} />
-			<Route path="/pickTypes" element={<PickTypes />} />
+			<Route path="/pick-types" element={<PickTypes />} />
 			<Route path="/loading" element={<Loading />} />
 			<Route path="/loaded" element={<Loaded />} />
 			<Route path="/home" element={<Home />} />

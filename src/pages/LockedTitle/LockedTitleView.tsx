@@ -8,6 +8,7 @@ import { constants } from '../../constants/constants';
 
 interface Props {
 	onClickMoveBack: () => void;
+	onClickMoveReturn: () => void;
 	list: string[];
 }
 
@@ -21,7 +22,7 @@ export default function LockedTitleView(props: Props) {
 						<S.H1>{constants.LOCKED_TITLE.header[0]}</S.H1>
 						<S.H1>{constants.LOCKED_TITLE.header[1]}</S.H1>
 					</div>
-					<S.Button>{constants.LOCKED_TITLE.button}</S.Button>
+					<S.Button onClick={props.onClickMoveReturn}>{constants.LOCKED_TITLE.button}</S.Button>
 				</S.Header>
 
 				<S.Ul>
