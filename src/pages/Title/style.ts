@@ -12,3 +12,10 @@ export const Header = styled.header`
 	font-weight: 600;
 	line-height: 140%;
 `;
+
+export const Ul = styled.ul`
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+`;

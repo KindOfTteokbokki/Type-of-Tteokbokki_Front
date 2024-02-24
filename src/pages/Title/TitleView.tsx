@@ -14,11 +14,8 @@ export default function TitleView(props: TitleProps) {
 		<>
 			<NavLayout>
 				<S.Icon src={Back} />
-				<S.Header>
-					{`${props.name}가 모은`}
-					<br />
-					{`칭호는 ${props.count}개야!`}
-				</S.Header>
+				<S.Header>{`${props.name}가 모은`}</S.Header>
+				<S.Header>{`칭호는 ${props.count}개야!`}</S.Header>
 			</NavLayout>
 
 			<Navigation />

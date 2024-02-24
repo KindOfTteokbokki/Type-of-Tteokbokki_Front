@@ -17,7 +17,17 @@ describe('Title Test', () => {
 		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
 		render(<TitleView name="개구리" count={5} />);
 
-		const element = screen.getByText('개구리가 모은 칭호는 5개야!');
-		expect(element).toBeInTheDocument();
+		const elementFirst = screen.getByText('개구리가 모은');
+		const elementSecond = screen.getByText('칭호는 5개야!');
+
+		expect(elementFirst).toBeInTheDocument();
+		expect(elementSecond).toBeInTheDocument();
+	});
+
+	it('칭호 리스트 background-color가 반복해서 맞게 나오는지 테스트', () => {
+		render(<TitleView name="개구리" count={6} />);
+
+		const element = screen.getByRole('firstList');
+		expect(element).toHaveStyle({ backgroundColor: 'F7DACC' });
 	});
 });
