@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from '../Home/Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import * as S from './style';
 import Back from '../../assets/아이콘_나도추천할래/뒤로가기.svg';

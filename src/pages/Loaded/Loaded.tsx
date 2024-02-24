@@ -25,7 +25,7 @@ export default function Loaded() {
 
 	const onClickReturn = () => {
 		dispatch(initializeType(initialState));
-		navigator('/pickTypes');
+		navigator('/pick-types');
 	};
 
 	const onClickModal = () => {

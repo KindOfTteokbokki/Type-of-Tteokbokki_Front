@@ -12,7 +12,6 @@ export const Header = styled.header`
 `;
 
 export const H1 = styled.h1`
-	width: 214px;
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 140%;

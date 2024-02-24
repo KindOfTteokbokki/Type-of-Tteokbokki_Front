@@ -12,7 +12,7 @@ export default function Title() {
 	};
 
 	const onClickMoveLock = () => {
-		navigator('/lock-title');
+		navigator('/locked-title');
 	};
 
 	const name = '개구리';

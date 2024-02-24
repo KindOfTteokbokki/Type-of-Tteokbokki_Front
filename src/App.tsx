@@ -12,12 +12,13 @@ import RecommendDetail from './pages/RecommendDetail.tsx/RecommendDetail';
 import Combination from './pages/Combination/Combination';
 import MyTaste from './pages/MyTaste/MyTaste';
 import Title from './pages/Title/Title';
+import LockedTitle from './pages/LockedTitle/LockedTitle';
 
 function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<Splash />} />
-			<Route path="/pickTypes" element={<PickTypes />} />
+			<Route path="/pick-types" element={<PickTypes />} />
 			<Route path="/loading" element={<Loading />} />
 			<Route path="/loaded" element={<Loaded />} />
 			<Route path="/home" element={<Home />} />
@@ -28,6 +29,7 @@ function App() {
 			<Route path="/combination" element={<Combination />} />
 			<Route path="/mytaste" element={<MyTaste />} />
 			<Route path="/title" element={<Title />} />
+			<Route path="/locked-title" element={<LockedTitle />} />
 		</Routes>
 	);
 }

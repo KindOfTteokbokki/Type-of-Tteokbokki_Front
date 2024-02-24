@@ -16,7 +16,7 @@ export default function Home() {
 
 	const onClickMove = () => {
 		dispatch(initializeType(initialState));
-		navigator('/pickTypes');
+		navigator('/pick-types');
 	};
 
 	const { response } = useAxios({
