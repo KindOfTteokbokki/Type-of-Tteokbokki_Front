@@ -17,7 +17,7 @@ export default function TitleView(props: TitleProps) {
 	return (
 		<>
 			<NavLayout>
-				<S.DeleteIcon src={Back} marginbottom="72px" />
+				<S.Icon src={Back} />
 				<S.Header>{`${props.name}가 모은`}</S.Header>
 				<S.Header>{`칭호는 ${props.count}개야!`}</S.Header>
 
@@ -38,7 +38,7 @@ export default function TitleView(props: TitleProps) {
 					})}
 				</S.Ul>
 			</NavLayout>
-
+			<S.Button></S.Button>
 			<Navigation />
 		</>
 	);

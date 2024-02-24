@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
-export const DeleteIcon = styled.img<{ marginbottom: string }>`
+export const Icon = styled.img`
 	width: 24px;
 	height: 24px;
-	margin-bottom: 72px;
 `;
 
 export const Header = styled.header`
+	margin-top: 72px;
+`;
+
+export const H1 = styled.h1`
 	width: 214px;
 	font-size: 32px;
 	font-weight: 600;
@@ -48,4 +51,12 @@ export const Button = styled.button`
 	padding: 0 24px;
 	display: flex;
 	align-items: center;
+	position: sticky;
+	bottom: 0;
+`;
+
+export const Span = styled.span`
+	font-weight: ${theme.fontWeight.semiBold};
+	font-size: ${theme.fontSize.lv4};
+	margin: 0 45px 16px;
 `;

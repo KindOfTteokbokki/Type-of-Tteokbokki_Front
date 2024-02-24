@@ -48,4 +48,11 @@ describe('Title Test', () => {
 			expect(element).toHaveStyle({ backgroundColor: `${theme.color.TITLE.YELLOW}` });
 		});
 	});
+
+	it('locked 칭호 페이지로 이동하는 버튼의 텍스트 렌더링 테스트', () => {
+		render(<TitleView name="개구리" count={6} text={text} bgcolor={bgcolor} role={role} />);
+
+		const element = screen.getByText('아직 못 받은 칭호도 구경해봐!');
+		expect(element).toBeInTheDocument();
+	});
 });
