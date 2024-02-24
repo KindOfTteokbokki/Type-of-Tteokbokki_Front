@@ -16,8 +16,11 @@ export default function LockedTitleView(props: Props) {
 			<NavLayout>
 				<Icon src={lock} onClick={props.onClickMoveBack} />
 				<S.Header>
-					<S.H1>{constants.LOCKED_TITLE.header[0]}</S.H1>
-					<S.H1>{constants.LOCKED_TITLE.header[1]}</S.H1>
+					<div>
+						<S.H1>{constants.LOCKED_TITLE.header[0]}</S.H1>
+						<S.H1>{constants.LOCKED_TITLE.header[1]}</S.H1>
+					</div>
+					<S.Button>{constants.LOCKED_TITLE.button}</S.Button>
 				</S.Header>
 			</NavLayout>
 			<Navigation />

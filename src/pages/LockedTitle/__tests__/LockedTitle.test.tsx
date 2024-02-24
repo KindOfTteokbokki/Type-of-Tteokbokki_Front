@@ -27,7 +27,7 @@ describe('LockedTitle test', () => {
 	it('받으러 가기 버튼 렌더링 테스트', () => {
 		render(<LockedTitleView onClickMoveBack={onClickMoveBack} />);
 
-		const element = screen.getByText('받으러 가기!');
+		const element = screen.getByText('받으러 가기');
 
 		expect(element).toBeInTheDocument();
 	});
