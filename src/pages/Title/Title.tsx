@@ -11,6 +11,10 @@ export default function Title() {
 		navigator(-1);
 	};
 
+	const onClickMoveLock = () => {
+		navigator('/lock-title');
+	};
+
 	const name = '개구리';
 	const count = 6;
 	const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
@@ -26,6 +30,7 @@ export default function Title() {
 			role={role}
 			moveText={constants.TITLE.MOVE}
 			onClickMoveBack={onClickMoveBack}
+			onClickMoveLock={onClickMoveLock}
 		/>
 	);
 }

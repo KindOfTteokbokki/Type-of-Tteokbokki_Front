@@ -16,11 +16,11 @@ jest.mock('react-router-dom', () => ({
 	useNavigate: jest.fn(), // useNavigate를 jest mock 함수로 대체
 }));
 
+const mockNavigate = jest.fn();
+(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
+
 describe('Title Test', () => {
 	it('뒤로가기 버튼 동작 테스트', () => {
-		const mockNavigate = jest.fn();
-		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
-
 		const navigator = useNavigate();
 		const onClickMoveBack = () => {
 			navigator(-1);
@@ -45,9 +45,6 @@ describe('Title Test', () => {
 	});
 
 	it('헤더 텍스트가 잘 나오는지 테스트', () => {
-		const mockNavigate = jest.fn();
-		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
-
 		render(
 			<TitleView name="개구리" count={5} text={text} bgcolor={bgcolor} role={role} moveText={constants.TITLE.MOVE} />
 		);
@@ -91,9 +88,6 @@ describe('Title Test', () => {
 	});
 
 	it('locked 칭호 페이지로 이동하는 버튼의 동작 테스트', () => {
-		const mockNavigate = jest.fn();
-		(useNavigate as jest.Mock).mockReturnValue(mockNavigate);
-
 		const navigator = useNavigate();
 		const onClickMoveLock = () => {
 			navigator('/lock-title');

@@ -45,10 +45,10 @@ export default function TitleView(props: TitleProps) {
 					})}
 				</S.Ul>
 			</NavLayout>
-			<S.Button>
+			<S.Button role="move" onClick={props.onClickMoveLock}>
 				<S.Icon src={lock} alt="자물쇠 아이콘" />
 				<S.Span>{props.moveText}</S.Span>
-				<S.Icon src={move} alt="이동 아이콘" role="move" />
+				<S.Icon src={move} alt="이동 아이콘" />
 			</S.Button>
 			<Navigation />
 		</>
