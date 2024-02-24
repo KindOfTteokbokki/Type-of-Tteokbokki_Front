@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import character from '../../assets/캐릭터.svg';
 import { useNavigate } from 'react-router-dom';
-import Navigation from './Navigation';
+import Navigation from '../../components/Navigation/Navigation';
 import { constants } from '../../constants/constants';
 
 interface Props {

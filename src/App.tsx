@@ -12,6 +12,7 @@ import RecommendDetail from './pages/RecommendDetail.tsx/RecommendDetail';
 import Combination from './pages/Combination/Combination';
 import MyTaste from './pages/MyTaste/MyTaste';
 import Title from './pages/Title/Title';
+import LockedTitle from './pages/LockedTitle/LockedTitle';
 
 function App() {
 	return (
@@ -28,6 +29,7 @@ function App() {
 			<Route path="/combination" element={<Combination />} />
 			<Route path="/mytaste" element={<MyTaste />} />
 			<Route path="/title" element={<Title />} />
+			<Route path="/locked-title" element={<LockedTitle />} />
 		</Routes>
 	);
 }

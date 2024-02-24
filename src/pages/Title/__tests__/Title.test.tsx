@@ -90,7 +90,7 @@ describe('Title Test', () => {
 	it('locked 칭호 페이지로 이동하는 버튼의 동작 테스트', () => {
 		const navigator = useNavigate();
 		const onClickMoveLock = () => {
-			navigator('/lock-title');
+			navigator('/locked-title');
 		};
 
 		render(
@@ -108,6 +108,6 @@ describe('Title Test', () => {
 		const element = screen.getByRole('move');
 
 		fireEvent.click(element);
-		expect(mockNavigate).toBeCalledWith('/lock-title');
+		expect(mockNavigate).toBeCalledWith('/locked-title');
 	});
 });
