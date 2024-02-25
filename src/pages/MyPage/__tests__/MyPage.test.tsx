@@ -17,8 +17,20 @@ describe('MyPage Test', () => {
 	it('Header text is rendered', () => {
 		render(<MyPageView header={header} />);
 
-		const element = screen.getByRole('heading');
+		const element = screen.getByRole('header');
 
 		expect(element).toBeInTheDocument();
+	});
+
+	it('Icon text is rendered', () => {
+		render(<MyPageView header={header} />);
+
+		const iconFirst = screen.getByText(constants.MYPAGE.ICON[0]);
+		const iconSecond = screen.getByText(constants.MYPAGE.ICON[1]);
+		const iconThird = screen.getByText(constants.MYPAGE.ICON[2]);
+
+		expect(iconFirst).toBeInTheDocument();
+		expect(iconSecond).toBeInTheDocument();
+		expect(iconThird).toBeInTheDocument();
 	});
 });
