@@ -4,6 +4,7 @@ import { constants } from '../../../constants/constants';
 import { useNavigate } from 'react-router-dom';
 
 const header = constants.MYPAGE.header;
+const iconText = constants.MYPAGE.ICON;
 
 jest.mock('react-router-dom', () => ({
 	...jest.requireActual('react-router-dom'),
@@ -15,7 +16,7 @@ const mockNavigate = jest.fn();
 
 describe('MyPage Test', () => {
 	it('Header text is rendered', () => {
-		render(<MyPageView header={header} />);
+		render(<MyPageView header={header} iconText={iconText} />);
 
 		const element = screen.getByRole('header');
 
@@ -23,7 +24,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('Icon text is rendered', () => {
-		render(<MyPageView header={header} />);
+		render(<MyPageView header={header} iconText={iconText} />);
 
 		const iconFirst = screen.getByText(constants.MYPAGE.ICON[0]);
 		const iconSecond = screen.getByText(constants.MYPAGE.ICON[1]);

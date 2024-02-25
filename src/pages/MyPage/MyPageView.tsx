@@ -1,11 +1,11 @@
 import React from 'react';
 import * as S from './style';
-import { Icon } from '../Title/style';
-import { BackButton } from '../Recommend/style';
 import Navigation from '../../components/Navigation/Navigation';
+import { constants } from '../../constants/constants';
 
 interface MyPageProps {
 	header: string;
+	iconText: string[];
 }
 
 export default function MyPageView(props: MyPageProps) {
@@ -25,14 +25,17 @@ export default function MyPageView(props: MyPageProps) {
 						<S.IconCont>
 							<S.Li>
 								<S.Img />
+								<S.Span>{props.iconText[0]}</S.Span>
 							</S.Li>
 							<S.Border margin="0 30px 0 32px" />
 							<S.Li>
 								<S.Img />
+								<S.Span>{props.iconText[1]}</S.Span>
 							</S.Li>
 							<S.Border margin="0 32px 0 30px" />
 							<S.Li>
 								<S.Img />
+								<S.Span>{props.iconText[2]}</S.Span>
 							</S.Li>
 						</S.IconCont>
 					</S.MyInfoAndReviewCont>
