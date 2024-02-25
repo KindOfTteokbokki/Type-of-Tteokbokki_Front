@@ -13,6 +13,8 @@ import Combination from './pages/Combination/Combination';
 import MyTaste from './pages/MyTaste/MyTaste';
 import Title from './pages/Title/Title';
 import LockedTitle from './pages/LockedTitle/LockedTitle';
+import NavigationLayout from './components/Layout/NavigationLayout/NavigationLayout';
+import MyPage from './pages/MyPage/MyPage';
 
 function App() {
 	return (
@@ -30,6 +32,7 @@ function App() {
 			<Route path="/mytaste" element={<MyTaste />} />
 			<Route path="/title" element={<Title />} />
 			<Route path="/locked-title" element={<LockedTitle />} />
+			<Route path="/mypage" element={<MyPage />} />
 		</Routes>
 	);
 }

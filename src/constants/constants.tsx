@@ -61,4 +61,7 @@ export const constants = {
 		header: ['아직 못 받은', '칭호를 받아봐!'],
 		button: '받으러 가기',
 	},
+	MYPAGE: {
+		header: '내 정보',
+	},
 };
