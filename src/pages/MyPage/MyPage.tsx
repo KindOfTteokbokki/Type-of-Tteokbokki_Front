@@ -1,6 +1,7 @@
 import React from 'react';
 import MyPageView from './MyPageView';
+import { constants } from '../../constants/constants';
 
 export default function MyPage() {
-	return <MyPageView />;
+	return <MyPageView header={constants.MYPAGE.header} />;
 }
