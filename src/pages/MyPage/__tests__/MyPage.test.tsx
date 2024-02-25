@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const header = constants.MYPAGE.header;
 const iconText = constants.MYPAGE.ICON;
+const button = constants.MYPAGE.button;
 
 jest.mock('react-router-dom', () => ({
 	...jest.requireActual('react-router-dom'),
@@ -16,7 +17,7 @@ const mockNavigate = jest.fn();
 
 describe('MyPage Test', () => {
 	it('Header text is rendered', () => {
-		render(<MyPageView header={header} iconText={iconText} />);
+		render(<MyPageView header={header} iconText={iconText} button={button} />);
 
 		const element = screen.getByRole('header');
 
@@ -24,7 +25,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('Icon text is rendered', () => {
-		render(<MyPageView header={header} iconText={iconText} />);
+		render(<MyPageView header={header} iconText={iconText} button={button} />);
 
 		const iconFirst = screen.getByText(constants.MYPAGE.ICON[0]);
 		const iconSecond = screen.getByText(constants.MYPAGE.ICON[1]);
@@ -33,5 +34,13 @@ describe('MyPage Test', () => {
 		expect(iconFirst).toBeInTheDocument();
 		expect(iconSecond).toBeInTheDocument();
 		expect(iconThird).toBeInTheDocument();
+	});
+
+	it('My review header is rendered', () => {
+		render(<MyPageView header={header} iconText={iconText} button={button} />);
+
+		const element = screen.getByText(constants.MYPAGE.REVIEW);
+
+		expect(element).toBeInTheDocument();
 	});
 });

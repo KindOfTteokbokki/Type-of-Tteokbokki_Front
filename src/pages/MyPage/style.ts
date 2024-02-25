@@ -27,6 +27,9 @@ export const Button = styled(BackButton)`
 export const Main = styled.main`
 	width: 100%;
 	padding: 16px 15px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 `;
 
 export const MyInfoAndReviewCont = styled.section`
@@ -59,10 +62,12 @@ export const editButton = styled.button`
 	border-radius: ${theme.borderRadius.lv1};
 	background-color: ${theme.color.gray};
 	color: ${theme.color.white};
+	font-size: 12px;
+	font-family: 'Pretendard-Regular';
 `;
 
 export const IconCont = styled.div`
-	width: 280px;
+	width: 282px;
 	height: 88px;
 	margin: 0 auto;
 	display: flex;
@@ -83,15 +88,23 @@ export const Img = styled.img`
 	margin-bottom: 8px;
 `;
 
-export const Span = styled.span`
+export const Span = styled.span<{ color?: string }>`
 	font-size: ${theme.fontSize.lv1};
 	font-weight: ${theme.fontWeight.semiBold};
 	line-height: 140%;
+	word-break: keep-all;
+	color: ${(props) => (props.color ? props.color : theme.color.black)};
 `;
 
 export const Border = styled.div<{ margin: string }>`
-	width: 1px;
+	width: 0;
 	height: 70px;
 	border-right: 0.5px solid ${theme.color.gray};
 	margin: ${(props) => props.margin};
+`;
+
+export const MyReviewTitle = styled.h2`
+	margin-bottom: 40px;
+	font-size: ${theme.fontSize.lv2};
+	font-weight: ${theme.fontWeight.semiBold};
 `;
