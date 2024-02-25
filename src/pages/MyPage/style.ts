@@ -107,4 +107,5 @@ export const MyReviewTitle = styled.h2`
 	margin-bottom: 40px;
 	font-size: ${theme.fontSize.lv2};
 	font-weight: ${theme.fontWeight.semiBold};
+	padding-left: 16px;
 `;

@@ -10,6 +10,7 @@ interface MyPageProps {
 	header: string;
 	iconText: string[];
 	button: string;
+	review: string;
 }
 
 export default function MyPageView(props: MyPageProps) {
@@ -46,6 +47,7 @@ export default function MyPageView(props: MyPageProps) {
 						</S.IconCont>
 					</S.MyInfoAndReviewCont>
 					<S.MyInfoAndReviewCont>
+						<S.MyReviewTitle>{props.review}</S.MyReviewTitle>
 					</S.MyInfoAndReviewCont>
 				</S.Main>
 			</S.Section>
