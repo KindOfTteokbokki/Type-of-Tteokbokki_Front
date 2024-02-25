@@ -3,5 +3,5 @@ import MyPageView from './MyPageView';
 import { constants } from '../../constants/constants';
 
 export default function MyPage() {
-	return <MyPageView header={constants.MYPAGE.header} />;
+	return <MyPageView header={constants.MYPAGE.header} iconText={constants.MYPAGE.ICON} />;
 }

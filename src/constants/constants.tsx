@@ -63,5 +63,8 @@ export const constants = {
 	},
 	MYPAGE: {
 		header: '내 정보',
+		button: '프로필 수정',
+		ICON: ['내 칭호', '좋아요 준비 중', '맛집 제안 준비 중'],
+		REVIEW: '내 후기',
 	},
 };
