@@ -32,7 +32,7 @@ export default function RecommendView() {
 	return (
 		<S.Layout>
 			<S.Head>
-				<S.backButton
+				<S.BackButton
 					onClick={() => {
 						navigator(-1);
 					}}

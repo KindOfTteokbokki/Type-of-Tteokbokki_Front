@@ -11,8 +11,10 @@ export const Section = styled.section`
 
 export const Header = styled.header`
 	width: 100%;
-	font-size: ${theme.fontSize.lv3};
+	font-size: ${theme.fontSize.lv4};
 	font-weight: ${theme.fontWeight.semiBold};
 	padding: 50px 0 24px;
 	border-bottom: 1px solid ${theme.color.gray};
+	text-align: center;
+	position: relative;
 `;

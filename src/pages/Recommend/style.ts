@@ -25,7 +25,7 @@ export const Head = styled(Header)`
 	position: relative;
 `;
 
-export const backButton = styled.button`
+export const BackButton = styled.button`
 	width: 24px;
 	height: 24px;
 	background-image: url(${back});
