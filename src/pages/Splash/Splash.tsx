@@ -7,7 +7,7 @@ export default function Splash() {
 	const navigator = useNavigate();
 
 	const onClickMove = () => {
-		navigator('/pickTypes');
+		navigator('/pick-types');
 	};
 
 	return <SplashView onClickMove={onClickMove} guestText={constants.SPLASH.GUEST} header={constants.SPLASH.header} />;

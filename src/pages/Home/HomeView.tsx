@@ -7,6 +7,7 @@ import character from '../../assets/캐릭터.svg';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import { constants } from '../../constants/constants';
+import { RedButton } from '../../components/Button/RedButton/style';
 
 interface Props {
 	onClickMove(): void;
@@ -39,7 +40,7 @@ export default function HomeView(props: Props) {
 				<S.MainCont>
 					<S.MainText>어떤 떡볶이가 먹고싶어?</S.MainText>
 					<S.MainImg src={character} />
-					<S.PickButton onClick={props.onClickMove}>고르러 가기!</S.PickButton>
+					<RedButton onClick={props.onClickMove}>고르러 가기!</RedButton>
 				</S.MainCont>
 				<S.Cont>
 					<S.Text>내 입맛</S.Text>

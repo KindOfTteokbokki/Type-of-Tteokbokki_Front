@@ -104,8 +104,13 @@ export const Border = styled.div<{ margin: string }>`
 `;
 
 export const MyReviewTitle = styled.h2`
-	margin-bottom: 40px;
 	font-size: ${theme.fontSize.lv2};
 	font-weight: ${theme.fontWeight.semiBold};
 	padding-left: 16px;
+`;
+
+export const EmptyText = styled.p`
+	margin: 40px 0;
+	font-size: ${theme.fontSize.lv2};
+	text-align: center;
 `;

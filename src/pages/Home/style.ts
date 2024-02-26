@@ -79,19 +79,6 @@ export const MainImg = styled.img`
 	border: none;
 `;
 
-export const PickButton = styled.button`
-	width: 130px;
-	height: 46px;
-	text-align: center;
-	line-height: 36px;
-	font-size: ${(props) => props.theme.fontSize.lv1};
-	color: ${(props) => props.theme.color.main};
-	border: 1px solid ${(props) => props.theme.color.main};
-	border-radius: ${(props) => props.theme.borderRadius.lv4};
-	display: block;
-	margin: 0 auto;
-`;
-
 export const FlexCont = styled.section`
 	display: flex;
 	justify-content: space-between;

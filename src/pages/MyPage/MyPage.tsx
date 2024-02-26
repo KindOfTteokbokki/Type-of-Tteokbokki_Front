@@ -1,14 +1,12 @@
 import React from 'react';
-import MyPageView from './MyPageView';
+import MyPageView from './view/MyPageView';
 import { constants } from '../../constants/constants';
+import { useNavigate } from 'react-router-dom';
 
 export default function MyPage() {
-	return (
-		<MyPageView
-			header={constants.MYPAGE.header}
-			iconText={constants.MYPAGE.ICON}
-			button={constants.MYPAGE.button}
-			review={constants.MYPAGE.REVIEW}
-		/>
-	);
+	const navigate = useNavigate();
+
+	const onClickMoveRecommend = () => {};
+
+	return <MyPageView text={constants.MYPAGE} onClickMoveRecommend={onClickMoveRecommend} />;
 }

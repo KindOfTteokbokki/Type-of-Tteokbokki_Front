@@ -1,7 +1,7 @@
 import 'jest-styled-components';
 import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
-import theme from '../styles/theme.js';
+import { theme } from '../styles/theme.js';
 import React from 'react';
 
 const Wrapper = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>;
