@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import { BackButton } from '../Recommend/style';
+import Icon from '../../assets/내후기관리.svg';
 
 export const Section = styled.section`
 	width: 100%;
@@ -32,9 +33,9 @@ export const Main = styled.main`
 	gap: 16px;
 `;
 
-export const MyInfoAndReviewCont = styled.section`
+export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
-	padding: 16px 0 24px;
+	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
 	background-color: ${theme.color.white};
 	border-radius: ${theme.borderRadius.lv4};
 	margin: 0 auto;
@@ -113,4 +114,37 @@ export const EmptyText = styled.p`
 	margin: 40px 0;
 	font-size: ${theme.fontSize.lv2};
 	text-align: center;
+`;
+
+export const MyReviewCont = styled.ul`
+	width: 100%;
+	border-top: 3px solid ${(props) => props.theme.color.gray};
+	margin-top: 16px;
+`;
+
+export const MyReviewList = styled.li<{ border?: string | undefined }>`
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	border-bottom: ${(props) => (props.border ? `0.3px solid ${props.border}` : null)};
+`;
+
+export const ReviewImg = styled.img`
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
+`;
+
+export const ReviewText = styled.p`
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	line-height: 140%;
+	margin: 0 8px 0 16px;
+`;
+
+export const ReviewIcon = styled.button`
+	width: 24px;
+	height: 24px;
+	background-image: url(${Icon});
 `;

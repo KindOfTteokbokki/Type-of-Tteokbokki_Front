@@ -7,6 +7,7 @@ import NonDataView from '../view/NonDataView';
 
 const text = constants.MYPAGE;
 const onClickMoveRecommend = () => {};
+const data = [''];
 
 jest.mock('react-router-dom', () => ({
 	...jest.requireActual('react-router-dom'),
@@ -18,7 +19,7 @@ const mockNavigate = jest.fn();
 
 describe('MyPage Test', () => {
 	it('Header text is rendered', () => {
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} />);
+		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
 
 		const element = screen.getByRole('header');
 
@@ -26,7 +27,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('Icon text is rendered', () => {
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} />);
+		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
 
 		const iconFirst = screen.getByText(constants.MYPAGE.ICON[0]);
 		const iconSecond = screen.getByText(constants.MYPAGE.ICON[1]);
@@ -38,7 +39,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('My review header is rendered', () => {
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} />);
+		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
 
 		const element = screen.getByText(constants.MYPAGE.REVIEW);
 
@@ -57,5 +58,15 @@ describe('MyPage Test', () => {
 
 		fireEvent.click(button);
 		expect(mockNavigate).toBeCalledWith('/recommend');
+	});
+
+	it('When review is none, empty text is rendered', () => {
+		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
+
+		const emptyText = screen.getByText(constants.MYPAGE.NON_DATA);
+		const button = screen.getByText(constants.MYPAGE.RECOMMEND_BUTTON);
+
+		expect(emptyText).toBeInTheDocument();
+		expect(button).toBeInTheDocument();
 	});
 });

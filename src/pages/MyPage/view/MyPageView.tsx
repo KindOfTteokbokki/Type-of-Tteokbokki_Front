@@ -3,6 +3,7 @@ import * as S from '../style';
 import Navigation from '../../../components/Navigation/Navigation';
 import IconView from './IconView';
 import NonDataView from './NonDataView';
+import ReviewList from '../ReviewList';
 
 export interface MyPageProps {
 	text: {
@@ -14,6 +15,7 @@ export interface MyPageProps {
 		RECOMMEND_BUTTON: string;
 	};
 	onClickMoveRecommend: () => void;
+	data: string[];
 }
 
 export default function MyPageView(props: MyPageProps) {
@@ -32,9 +34,10 @@ export default function MyPageView(props: MyPageProps) {
 						</S.MyNameAndButtonCont>
 						<IconView text={props.text} />
 					</S.MyInfoAndReviewCont>
-					<S.MyInfoAndReviewCont>
+					<S.MyInfoAndReviewCont padding={props.data.length ? '16px 0' : undefined}>
 						<S.MyReviewTitle>{props.text.REVIEW}</S.MyReviewTitle>
-						<NonDataView text={props.text} onClickMoveRecommend={props.onClickMoveRecommend} />
+						{/* <NonDataView text={props.text} onClickMoveRecommend={props.onClickMoveRecommend} /> */}
+						<ReviewList data={props.data} />
 					</S.MyInfoAndReviewCont>
 				</S.Main>
 			</S.Section>
