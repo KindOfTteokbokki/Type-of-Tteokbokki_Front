@@ -6,7 +6,9 @@ import { useNavigate } from 'react-router-dom';
 export default function MyPage() {
 	const navigate = useNavigate();
 
-	const onClickMoveRecommend = () => {};
+	const onClickMoveRecommend = () => {
+		navigate('/recommend');
+	};
 
 	return <MyPageView text={constants.MYPAGE} onClickMoveRecommend={onClickMoveRecommend} />;
 }

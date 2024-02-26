@@ -46,6 +46,11 @@ describe('MyPage Test', () => {
 	});
 
 	it('When is clicked red button, move to recommend page', () => {
+		const navigate = useNavigate();
+		const onClickMoveRecommend = () => {
+			navigate('/recommend');
+		};
+
 		render(<NonDataView text={text} onClickMoveRecommend={onClickMoveRecommend} />);
 
 		const button = screen.getByRole('button');
