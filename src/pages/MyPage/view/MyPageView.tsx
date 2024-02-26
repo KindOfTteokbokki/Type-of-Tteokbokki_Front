@@ -36,8 +36,11 @@ export default function MyPageView(props: MyPageProps) {
 					</S.MyInfoAndReviewCont>
 					<S.MyInfoAndReviewCont padding={props.data.length ? '16px 0' : undefined}>
 						<S.MyReviewTitle>{props.text.REVIEW}</S.MyReviewTitle>
-						{/* <NonDataView text={props.text} onClickMoveRecommend={props.onClickMoveRecommend} /> */}
-						<ReviewList data={props.data} />
+						{props.data.length ? (
+							<ReviewList data={props.data} />
+						) : (
+							<NonDataView text={props.text} onClickMoveRecommend={props.onClickMoveRecommend} />
+						)}
 					</S.MyInfoAndReviewCont>
 				</S.Main>
 			</S.Section>

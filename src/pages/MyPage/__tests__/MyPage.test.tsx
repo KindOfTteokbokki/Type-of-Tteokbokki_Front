@@ -7,7 +7,7 @@ import NonDataView from '../view/NonDataView';
 
 const text = constants.MYPAGE;
 const onClickMoveRecommend = () => {};
-const data = [''];
+const data = ['후기', '후기', '후기'];
 
 jest.mock('react-router-dom', () => ({
 	...jest.requireActual('react-router-dom'),
@@ -61,6 +61,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('When review is none, empty text is rendered', () => {
+		const data: any = [];
 		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
 
 		const emptyText = screen.getByText(constants.MYPAGE.NON_DATA);
