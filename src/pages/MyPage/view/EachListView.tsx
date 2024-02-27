@@ -11,6 +11,7 @@ interface EachListProps {
 	onClickEdit: () => void;
 	listRef: React.RefObject<HTMLDivElement>;
 	keyboard: boolean;
+	item: string;
 }
 
 export default function EachListView(props: EachListProps) {
@@ -19,14 +20,16 @@ export default function EachListView(props: EachListProps) {
 			<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
 				<S.ReviewImg />
 				<S.ReviewText>린ㅁ리ㅏㅁ리ㅏ거느ㅏㅣ라니니갸재기ㅡ핕</S.ReviewText>
-				<S.ReviewIcon onClick={props.onClickButton} />
+				<S.ReviewIcon onClick={props.onClickButton} role="moreIcon" />
 				{props.editAndRemoveButton ? (
 					<S.EditAndRemoveBtnCont ref={props.listRef}>
 						<S.RemoveButton>삭제</S.RemoveButton>
-						<S.EditButton>수정</S.EditButton>
+						<S.EditButton onClick={props.onClickEdit}>수정</S.EditButton>
 					</S.EditAndRemoveBtnCont>
 				) : null}
-				{props.keyboard ? <RecommendWrite /> : null}
+				{props.keyboard ? (
+					<RecommendWrite setKeyBoard={props.onClickEdit} originText={props.item} onClickButton={props.onClickButton} />
+				) : null}
 			</S.MyReviewList>
 		</>
 	);

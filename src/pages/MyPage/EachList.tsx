@@ -29,7 +29,7 @@ export default function EachList(props: EachListProps) {
 	const listRef = useRef<HTMLDivElement>(null);
 
 	const handler = (e: any) => {
-		if (listRef.current && !listRef.current.contains(e.target)) {
+		if (listRef.current && !listRef.current.contains(e.target) && !keyBoard) {
 			onClickButton();
 		}
 	};
@@ -50,6 +50,7 @@ export default function EachList(props: EachListProps) {
 			onClickEdit={onClickEdit}
 			listRef={listRef}
 			keyboard={keyBoard}
+			item={props.item}
 		/>
 	);
 }

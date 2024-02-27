@@ -20,6 +20,7 @@ export default function RecommendWrite(props: any) {
 		const handler = (e: any) => {
 			if (writeRef.current && !writeRef.current.contains(e.target)) {
 				props.setKeyBoard(false);
+				props.onClickButton();
 			}
 		};
 		document.addEventListener('mousedown', handler);
@@ -28,6 +29,12 @@ export default function RecommendWrite(props: any) {
 			document.removeEventListener('mousedown', handler);
 		};
 	});
+
+	useEffect(() => {
+		if (props.originText) {
+			setText(props.originText);
+		}
+	}, [props.originText]);
 
 	const saveReview = async () => {
 		formData.append('content', text);
@@ -46,6 +53,7 @@ export default function RecommendWrite(props: any) {
 				<S.TextField ref={writeRef}>
 					<S.TextArea
 						placeholder="본인만의 꿀조합을 추천해줘!(30자)"
+						defaultValue={text}
 						onKeyUp={(e: any) => {
 							setText(e.target.value);
 							if (text.length >= 30) {
@@ -53,6 +61,7 @@ export default function RecommendWrite(props: any) {
 							}
 						}}
 					></S.TextArea>
+
 					{text.length > 0 ? <S.CountText>{`(${text.length}/30자)`}</S.CountText> : null}
 
 					<S.UploadIcon
