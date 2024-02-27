@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const NavBar = styled.nav`
 	width: 390px;
@@ -10,6 +10,7 @@ export const NavBar = styled.nav`
 	box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
 	position: sticky;
 	bottom: 0;
+	z-index: 20;
 `;
 
 type NavICon = {

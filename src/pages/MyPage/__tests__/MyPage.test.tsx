@@ -4,6 +4,8 @@ import MyPageView from '../view/MyPageView';
 import { constants } from '../../../constants/constants';
 import { useNavigate } from 'react-router-dom';
 import NonDataView from '../view/NonDataView';
+import EachList from '../EachList';
+import RecommendWrite from '../../Recommend/RecommendWrite';
 
 const text = constants.MYPAGE;
 const onClickMoveRecommend = () => {};
@@ -69,5 +71,15 @@ describe('MyPage Test', () => {
 
 		expect(emptyText).toBeInTheDocument();
 		expect(button).toBeInTheDocument();
+	});
+
+	it('When edit button pressed, open the edit box', () => {
+		render(<EachList item={'후기입니다아라닐ㄴ'} index={1} length={3} />);
+
+		const editButton = screen.getByText('수정');
+		fireEvent.click(editButton);
+		const dropBack = screen.getByRole('dropBack');
+
+		expect(dropBack).toBeInTheDocument();
 	});
 });

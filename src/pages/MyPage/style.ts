@@ -129,6 +129,7 @@ export const MyReviewList = styled.li<{ border?: string | undefined }>`
 	align-items: center;
 	padding: 0 16px;
 	border-bottom: ${(props) => (props.border ? `0.3px solid ${props.border}` : null)};
+	position: relative;
 `;
 
 export const ReviewImg = styled.img`
@@ -147,4 +148,31 @@ export const ReviewIcon = styled.button`
 	width: 24px;
 	height: 24px;
 	background-image: url(${Icon});
+`;
+
+export const EditAndRemoveBtnCont = styled.div`
+	width: 91px;
+	height: 70px;
+	border-radius: 8px;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+	position: absolute;
+	right: 16px;
+	top: 60px;
+	background-color: ${(props) => props.theme.color.white};
+	z-index: 10;
+`;
+
+export const RemoveButton = styled.button`
+	width: 100%;
+	height: 35px;
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	font-family: 'Pretendard-Regular';
+	border-bottom: 0.5px solid ${(props) => props.theme.color.gray};
+`;
+
+export const EditButton = styled.button`
+	width: 100%;
+	height: 35px;
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	font-family: 'Pretendard-Regular';
 `;

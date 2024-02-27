@@ -40,7 +40,7 @@ export default function RecommendWrite(props: any) {
 	};
 
 	return (
-		<S.RecommDropBack>
+		<S.RecommDropBack role="dropBack">
 			<S.WriteCont>
 				<S.DeleteIcon />
 				<S.TextField ref={writeRef}>
