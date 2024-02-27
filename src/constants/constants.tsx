@@ -80,6 +80,7 @@ export const constants = {
 	},
 	PROFILE_EDIT: {
 		header: '내 정보 수정',
+		button: '완료',
 		NICK_NAME: '닉네임',
 		VALIDATION: {
 			TRUE: '사용 가능한 닉네임이야!',
