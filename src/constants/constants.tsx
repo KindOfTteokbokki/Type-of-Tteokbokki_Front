@@ -68,5 +68,14 @@ export const constants = {
 		REVIEW: '내 후기',
 		NON_DATA: '아직 작성된 후기가 없네...',
 		RECOMMEND_BUTTON: '나도 추천할래',
+		MORE_BUTTON: {
+			REMOVE: '삭제',
+			EDIT: '수정',
+		},
+		REMOVE_MODAL: {
+			header: '후기 삭제할거야?',
+			ANSWER_1: '응!',
+			ANSWER_2: '아니!',
+		},
 	},
 };

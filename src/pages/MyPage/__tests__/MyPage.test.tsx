@@ -78,12 +78,26 @@ describe('MyPage Test', () => {
 
 		const moreIcon = screen.getByRole('moreIcon');
 		fireEvent.click(moreIcon);
-		const editButton = screen.getByText('수정');
+		const editButton = screen.getByText(constants.MYPAGE.MORE_BUTTON.EDIT);
 		expect(editButton).toBeInTheDocument();
 
 		fireEvent.click(editButton);
 		const dropBack = screen.getByRole('dropBack');
 
 		expect(dropBack).toBeInTheDocument();
+	});
+
+	it('When moreIcon is pressed, open the more button. When remove button is pressed, open the modal.', () => {
+		render(<EachList item={'후기입니다아라닐ㄴ'} index={1} length={3} />);
+
+		const moreIcon = screen.getByRole('moreIcon');
+		fireEvent.click(moreIcon);
+		const removeButton = screen.getByText(constants.MYPAGE.MORE_BUTTON.REMOVE);
+		expect(removeButton).toBeInTheDocument();
+
+		fireEvent.click(removeButton);
+		const modalHeader = screen.getByText(constants.MYPAGE.REMOVE_MODAL.header);
+
+		expect(modalHeader).toBeInTheDocument();
 	});
 });
