@@ -15,6 +15,7 @@ import Title from './pages/Title/Title';
 import LockedTitle from './pages/LockedTitle/LockedTitle';
 import NavigationLayout from './components/Layout/NavigationLayout/NavigationLayout';
 import MyPage from './pages/MyPage/MyPage';
+import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
 
 function App() {
 	return (
@@ -33,6 +34,7 @@ function App() {
 			<Route path="/title" element={<Title />} />
 			<Route path="/locked-title" element={<LockedTitle />} />
 			<Route path="/mypage" element={<MyPage />} />
+			<Route path="/profile-edit" element={<ProfileEdit />} />
 		</Routes>
 	);
 }
