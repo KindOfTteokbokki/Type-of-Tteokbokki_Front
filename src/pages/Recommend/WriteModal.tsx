@@ -22,11 +22,11 @@ export default function WriteModal(props: WriteModalProps) {
 		}
 	};
 
-	const onClickDisagree = () => {
+	const onClickWhiteBtn = () => {
 		onClickModal();
 	};
 
-	const onClickAgreement = () => {
+	const onClickRedBtn = () => {
 		props.saveReview();
 	};
 
@@ -45,8 +45,8 @@ export default function WriteModal(props: WriteModalProps) {
 			modalAnswerWhite={constants.REVIEW_MODAL.ANSWER_1}
 			modalAnswerRed={constants.REVIEW_MODAL.ANSWER_2}
 			onClickModal={onClickModal}
-			onClickAgreement={onClickAgreement}
-			onClickDisagree={onClickDisagree}
+			onClickWhiteBtn={onClickWhiteBtn}
+			onClickRedBtn={onClickRedBtn}
 		/>
 	);
 }

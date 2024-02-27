@@ -32,7 +32,7 @@ export default function Loaded() {
 		setModal(!modal);
 	};
 
-	const onClickAgreement = () => {
+	const onClickRedBtn = () => {
 		setPopUp(true);
 	};
 
@@ -80,7 +80,7 @@ export default function Loaded() {
 					loadedMessage={constants.LOADED.message}
 					onClickReturn={onClickReturn}
 					onClickModal={onClickModal}
-					onClickAgreement={onClickAgreement}
+					onClickRedBtn={onClickRedBtn}
 					data={data}
 					renderModal={renderModal}
 					isNonChainStore={isNonChainStore}
