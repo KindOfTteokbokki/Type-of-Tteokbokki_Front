@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import { BackButton } from '../Recommend/style';
+import Icon from '../../assets/내후기관리.svg';
 
 export const Section = styled.section`
 	width: 100%;
@@ -27,11 +28,14 @@ export const Button = styled(BackButton)`
 export const Main = styled.main`
 	width: 100%;
 	padding: 16px 15px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 `;
 
-export const MyInfoAndReviewCont = styled.section`
+export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
-	padding: 16px 0 24px;
+	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
 	background-color: ${theme.color.white};
 	border-radius: ${theme.borderRadius.lv4};
 	margin: 0 auto;
@@ -59,10 +63,12 @@ export const editButton = styled.button`
 	border-radius: ${theme.borderRadius.lv1};
 	background-color: ${theme.color.gray};
 	color: ${theme.color.white};
+	font-size: 12px;
+	font-family: 'Pretendard-Regular';
 `;
 
 export const IconCont = styled.div`
-	width: 280px;
+	width: 282px;
 	height: 88px;
 	margin: 0 auto;
 	display: flex;
@@ -83,15 +89,90 @@ export const Img = styled.img`
 	margin-bottom: 8px;
 `;
 
-export const Span = styled.span`
+export const Span = styled.span<{ color?: string }>`
 	font-size: ${theme.fontSize.lv1};
 	font-weight: ${theme.fontWeight.semiBold};
 	line-height: 140%;
+	word-break: keep-all;
+	color: ${(props) => (props.color ? props.color : theme.color.black)};
 `;
 
 export const Border = styled.div<{ margin: string }>`
-	width: 1px;
+	width: 0;
 	height: 70px;
 	border-right: 0.5px solid ${theme.color.gray};
 	margin: ${(props) => props.margin};
+`;
+
+export const MyReviewTitle = styled.h2`
+	font-size: ${theme.fontSize.lv2};
+	font-weight: ${theme.fontWeight.semiBold};
+	padding-left: 16px;
+`;
+
+export const EmptyText = styled.p`
+	margin: 40px 0;
+	font-size: ${theme.fontSize.lv2};
+	text-align: center;
+`;
+
+export const MyReviewCont = styled.ul`
+	width: 100%;
+	border-top: 3px solid ${(props) => props.theme.color.gray};
+	margin-top: 16px;
+`;
+
+export const MyReviewList = styled.li<{ border?: string | undefined }>`
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	border-bottom: ${(props) => (props.border ? `0.3px solid ${props.border}` : null)};
+	position: relative;
+`;
+
+export const ReviewImg = styled.img`
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
+`;
+
+export const ReviewText = styled.p`
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	line-height: 140%;
+	margin: 0 8px 0 16px;
+`;
+
+export const ReviewIcon = styled.button`
+	width: 24px;
+	height: 24px;
+	background-image: url(${Icon});
+`;
+
+export const EditAndRemoveBtnCont = styled.div`
+	width: 91px;
+	height: 70px;
+	border-radius: 8px;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+	position: absolute;
+	right: 16px;
+	top: 60px;
+	background-color: ${(props) => props.theme.color.white};
+	z-index: 10;
+`;
+
+export const RemoveButton = styled.button`
+	width: 100%;
+	height: 35px;
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	font-family: 'Pretendard-Regular';
+	border-bottom: 0.5px solid ${(props) => props.theme.color.gray};
+`;
+
+export const EditButton = styled.button`
+	width: 100%;
+	height: 35px;
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	font-family: 'Pretendard-Regular';
 `;

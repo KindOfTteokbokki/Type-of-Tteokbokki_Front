@@ -9,7 +9,8 @@ interface ModalViewProps extends ModalProps {
 	modalAnswerWhite: string;
 	modalAnswerRed: string;
 	modalRef: React.RefObject<HTMLElement>;
-	onClickDisagree?: () => void;
+	onClickWhiteBtn?: () => void;
+	modalIcon?: string;
 }
 
 export default function ModalView(props: ModalViewProps) {
@@ -17,14 +18,17 @@ export default function ModalView(props: ModalViewProps) {
 		<DropBack>
 			<S.ModalCont ref={props.modalRef}>
 				<S.ModalText>
-					<S.ModalIcon src={icon} alt="접시,포크 아이콘" />
+					<S.ModalIcon
+						src={props.modalIcon ? props.modalIcon : icon}
+						alt={props.modalIcon ? '우는 표정 아이콘' : '접시,포크 아이콘'}
+					/>
 					{props.modalHeader}
 				</S.ModalText>
 				<S.ModalButtonLayout>
-					<S.ModalWhiteButton onClick={props.onClickDisagree ? props.onClickDisagree : props.onClickAgreement}>
+					<S.ModalWhiteButton onClick={props.onClickWhiteBtn ? props.onClickWhiteBtn : props.onClickRedBtn}>
 						{props.modalAnswerWhite}
 					</S.ModalWhiteButton>
-					<S.ModalRedButton onClick={props.onClickAgreement}>{props.modalAnswerRed}</S.ModalRedButton>
+					<S.ModalRedButton onClick={props.onClickRedBtn}>{props.modalAnswerRed}</S.ModalRedButton>
 				</S.ModalButtonLayout>
 			</S.ModalCont>
 		</DropBack>

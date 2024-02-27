@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
   
     html{
         background-color : Gray;
+        
     }
 
     #root {

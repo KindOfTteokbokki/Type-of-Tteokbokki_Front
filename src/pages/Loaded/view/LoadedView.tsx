@@ -15,15 +15,13 @@ export interface LoadedProps {
 	onClickReturn(): void;
 	onClickModal(): void;
 	renderModal(): boolean;
-	onClickAgreement(): void;
+	onClickRedBtn(): void;
 	data: Action;
 	isNonChainStore(): boolean;
 	isNonData(): boolean;
 }
 
 export default function LoadedView(props: LoadedProps) {
-	console.log(props.data);
-	console.log(props.isNonData());
 	return (
 		<S.Main>
 			<Header>
@@ -48,9 +46,7 @@ export default function LoadedView(props: LoadedProps) {
 				<BigWhiteButton text="다시 고르기" onclick={props.onClickReturn} />
 				<BigRedButton text="완료하기" onclick={props.onClickModal} />
 			</S.ButtonLayout>
-			{props.renderModal() ? (
-				<Modal onClickModal={props.onClickModal} onClickAgreement={props.onClickAgreement} />
-			) : null}
+			{props.renderModal() ? <Modal onClickModal={props.onClickModal} onClickRedBtn={props.onClickRedBtn} /> : null}
 		</S.Main>
 	);
 }

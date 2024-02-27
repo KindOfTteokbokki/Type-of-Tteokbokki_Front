@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
-export const baseUrl = 'http://www.utteok.com/api';
+export const baseUrl = 'http://dev.utteok.com/api';
 
 interface Request {
 	method: string;

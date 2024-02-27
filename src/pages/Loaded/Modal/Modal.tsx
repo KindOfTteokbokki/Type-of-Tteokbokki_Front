@@ -5,7 +5,7 @@ import ModalView from './view/ModalView';
 
 export interface ModalProps {
 	onClickModal(): void;
-	onClickAgreement(): void;
+	onClickRedBtn(): void;
 }
 
 export default function Modal(props: ModalProps) {
@@ -31,7 +31,7 @@ export default function Modal(props: ModalProps) {
 			modalAnswerWhite={constants.MODAL.ANSWER_1}
 			modalAnswerRed={constants.MODAL.ANSWER_2}
 			onClickModal={props.onClickModal}
-			onClickAgreement={props.onClickAgreement}
+			onClickRedBtn={props.onClickRedBtn}
 		/>
 	);
 }
