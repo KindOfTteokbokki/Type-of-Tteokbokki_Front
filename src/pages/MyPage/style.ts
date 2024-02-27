@@ -36,8 +36,8 @@ export const Main = styled.main`
 export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
 	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
-	background-color: ${theme.color.white};
-	border-radius: ${theme.borderRadius.lv4};
+	background-color: ${(props) => props.theme.color.white};
+	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	margin: 0 auto;
 `;
 
