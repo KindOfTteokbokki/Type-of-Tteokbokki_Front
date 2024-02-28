@@ -25,9 +25,9 @@ function App() {
 			<Route path="/loading" element={<Loading />} />
 			<Route path="/loaded" element={<Loaded />} />
 			<Route path="/home" element={<Home />} />
+			<Route path="/auth/kakao" element={<KakaoRedirectView />} />
+			<Route path="/auth/naver" element={<NaverRedirectView />} />
 			<Route path="/recommend" element={<Recommend />} />
-			{/* <Route path="http://dev.utteok.com/auth/kakao" element={<KakaoRedirectView />} />
-			<Route path="/auth/naver" element={<NaverRedirectView />} /> */}
 			<Route path="/recommend/:id" element={<RecommendDetail />} />
 			<Route path="/combination" element={<Combination />} />
 			<Route path="/mytaste" element={<MyTaste />} />

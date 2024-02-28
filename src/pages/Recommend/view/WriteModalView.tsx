@@ -1,6 +1,6 @@
 import React from 'react';
-import { DropBack } from '../../components/Modal/style';
-import ModalView from '../Loaded/Modal/view/ModalView';
+import { DropBack } from '../../../components/Modal/style';
+import ModalView from '../../Loaded/Modal/view/ModalView';
 
 interface WriteModalProps {
 	modalRef: React.RefObject<HTMLElement>;

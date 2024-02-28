@@ -40,7 +40,7 @@ export const LoginButtonCont = styled.section`
 	flex-direction: column;
 `;
 
-export const LoginButton = styled.a<{ bgColor: any }>`
+export const LoginButton = styled(Link)<{ bgColor: any }>`
 	width: 345px;
 	height: 40px;
 	display: flex;
