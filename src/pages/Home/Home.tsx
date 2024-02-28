@@ -12,7 +12,7 @@ export default function Home() {
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
 	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
-	const myTasteFunc = useGet(`${baseUrl}/myTaste`);
+	const getFunc = useGet(`${baseUrl}/myTaste`);
 
 	const [myTaste, setMyTaste] = useState([]);
 	const [myRecommData, setMyRecommData]: any = useState([]);
@@ -55,11 +55,9 @@ export default function Home() {
 			setMyRecommData([...filteredData]);
 		});
 
-		if (token !== '') {
-			myTasteFunc({ Authorization: token }).then((res) => {
-				console.log(res);
-			});
-		}
+		getFunc({ Authorization: token }).then((res) => {
+			console.log(res);
+		});
 	}, []);
 
 	return (
