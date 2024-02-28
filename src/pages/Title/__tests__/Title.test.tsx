@@ -1,9 +1,9 @@
 import React from 'react';
-// import { render } from '../../../utils/customJestRender';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render } from '../../../utils/customJestRender';
+import { fireEvent, screen } from '@testing-library/react';
 import TitleView from '../TitleView';
 import { theme } from '../../../styles/theme';
-import { MemoryRouter, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { constants } from '../../../constants/constants';
 
 const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];

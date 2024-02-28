@@ -8,6 +8,8 @@ import EachList from '../EachList';
 
 const text = constants.MYPAGE;
 const onClickMoveRecommend = () => {};
+const onClickBack = () => {};
+const onClickMoveProfileEdit = () => {};
 const data = ['후기', '후기', '후기'];
 
 jest.mock('react-router-dom', () => ({
@@ -20,7 +22,15 @@ const mockNavigate = jest.fn();
 
 describe('MyPage Test', () => {
 	it('Header text is rendered', () => {
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
+		render(
+			<MyPageView
+				text={text}
+				onClickMoveRecommend={onClickMoveRecommend}
+				data={data}
+				onClickBack={onClickBack}
+				onClickMoveProfileEdit={onClickMoveProfileEdit}
+			/>
+		);
 
 		const element = screen.getByRole('header');
 
@@ -28,7 +38,15 @@ describe('MyPage Test', () => {
 	});
 
 	it('Icon text is rendered', () => {
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
+		render(
+			<MyPageView
+				text={text}
+				onClickMoveRecommend={onClickMoveRecommend}
+				data={data}
+				onClickBack={onClickBack}
+				onClickMoveProfileEdit={onClickMoveProfileEdit}
+			/>
+		);
 
 		const iconFirst = screen.getByText(constants.MYPAGE.ICON[0]);
 		const iconSecond = screen.getByText(constants.MYPAGE.ICON[1]);
@@ -40,7 +58,15 @@ describe('MyPage Test', () => {
 	});
 
 	it('My review header is rendered', () => {
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
+		render(
+			<MyPageView
+				text={text}
+				onClickMoveRecommend={onClickMoveRecommend}
+				data={data}
+				onClickBack={onClickBack}
+				onClickMoveProfileEdit={onClickMoveProfileEdit}
+			/>
+		);
 
 		const element = screen.getByText(constants.MYPAGE.REVIEW);
 
@@ -63,7 +89,15 @@ describe('MyPage Test', () => {
 
 	it('When review is none, empty text is rendered', () => {
 		const data: any = [];
-		render(<MyPageView text={text} onClickMoveRecommend={onClickMoveRecommend} data={data} />);
+		render(
+			<MyPageView
+				text={text}
+				onClickMoveRecommend={onClickMoveRecommend}
+				data={data}
+				onClickBack={onClickBack}
+				onClickMoveProfileEdit={onClickMoveProfileEdit}
+			/>
+		);
 
 		const emptyText = screen.getByText(constants.MYPAGE.NON_DATA);
 		const button = screen.getByText(constants.MYPAGE.RECOMMEND_BUTTON);

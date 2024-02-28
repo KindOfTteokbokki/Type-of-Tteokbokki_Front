@@ -48,7 +48,7 @@ export default function RecommendView() {
 					{reviewData.map((data: any) => {
 						console.log(data.content);
 						return (
-							<S.RecommList>
+							<S.RecommList role="review">
 								{data?.file_masking_name === null ? (
 									<S.ReCommOnlyText>{data.content}</S.ReCommOnlyText>
 								) : (
