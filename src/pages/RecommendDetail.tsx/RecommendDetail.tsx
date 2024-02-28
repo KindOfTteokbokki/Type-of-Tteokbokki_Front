@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import RecommendDetailView from '../../components/DetailView/DetailView';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { constants } from '../../constants/constants';
 import review from '../../assets/아이콘/하단내비_후기.svg';
+import { usePost } from '../../api/useFetch';
+import { baseUrl } from '../../api/useAxios';
 
 export default function RecommendDetail() {
+	const postFunc = usePost(`${baseUrl}/ViewOneFromRecommend`);
+	const { id } = useParams();
 	const [data, setData] = useState({});
 	const navigator = useNavigate();
 
@@ -13,6 +17,12 @@ export default function RecommendDetail() {
 	};
 
 	const header = constants.RECOMMEND_DETAIL.header;
+
+	useEffect(() => {
+		postFunc({ review_seq: id }).then((res: any) => {
+			console.log(res);
+		});
+	}, []);
 
 	return <RecommendDetailView onClickBack={onClickBack} data={data} header={header} iconImg={review} />;
 }

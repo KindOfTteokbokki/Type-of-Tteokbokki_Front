@@ -3,8 +3,13 @@ import * as S from './style';
 import { usePost, useGet } from '../../api/useFetch';
 import WriteModal from './WriteModal';
 import { baseUrl } from '../../api/useAxios';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 export default function RecommendWrite(props: any) {
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
 	const [text, setText] = useState('');
 	const [imgUrl, setImgUrl] = useState<any>('');
 	const [modal, setModal] = useState(false);
@@ -40,7 +45,7 @@ export default function RecommendWrite(props: any) {
 		formData.append('content', text);
 		formData.append('file', imgUrl);
 
-		await postFunc(formData, { 'Content-Type': 'multipart/form-data' }).then((response) => {
+		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: token }).then((response) => {
 			window.alert('등록되었어!');
 			window.location.reload();
 		});
