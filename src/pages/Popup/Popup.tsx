@@ -22,8 +22,8 @@ export default function Popup(props: Props) {
 		return state.userPick;
 	});
 
-	const titleStore = useSelector((state: RootStateType) => {
-		return state.store;
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
 	});
 
 	const navigator = useNavigate();
@@ -39,10 +39,18 @@ export default function Popup(props: Props) {
 	};
 
 	useEffect(() => {
-		postFunc(postData).then((res: any) => {
-			setData(res.data);
-			dispatch(addTitle(res.data));
-		});
+		if (token) {
+			postFunc(postData, { Authorization: token }).then((res: any) => {
+				setData(res.data);
+				dispatch(addTitle(res.data));
+				console.log(res.data);
+			});
+		} else {
+			postFunc(postData).then((res: any) => {
+				setData(res.data);
+				dispatch(addTitle(res.data));
+			});
+		}
 	}, []);
 
 	return (

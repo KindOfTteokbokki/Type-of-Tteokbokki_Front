@@ -6,13 +6,18 @@ import { constants } from '../../constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { initialState, initializeType } from '../../slice/userPickSlice';
-import { usePost } from '../../api/useFetch';
+import { usePost, useGet } from '../../api/useFetch';
 
 export default function Home() {
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
 	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
+	const myTasteFunc = useGet(`${baseUrl}/myTaste`);
+
 	const [myRecommData, setMyRecommData]: any = useState([]);
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
 
 	const onClickMove = () => {
 		dispatch(initializeType(initialState));
@@ -49,6 +54,12 @@ export default function Home() {
 			});
 			setMyRecommData([...filteredData]);
 		});
+
+		if (token) {
+			myTasteFunc({ Authorization: token }).then((res) => {
+				console.log(res.data);
+			});
+		}
 	}, []);
 
 	return (

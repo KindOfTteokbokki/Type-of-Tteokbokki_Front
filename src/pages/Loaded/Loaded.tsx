@@ -21,6 +21,9 @@ export default function Loaded() {
 	const selector = useSelector((state: RootStateType) => {
 		return state.userPick;
 	});
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
 	const postFunc = usePost(`${baseUrl}/findStore`);
 
 	const onClickReturn = () => {
@@ -43,10 +46,18 @@ export default function Loaded() {
 	}
 
 	useEffect(() => {
-		postFunc(postData).then((res: any) => {
-			setData(res.data);
-			dispatch(addStore(res.data));
-		});
+		if (token) {
+			postFunc(postData, { Authorization: token }).then((res: any) => {
+				setData(res.data);
+				dispatch(addStore(res.data));
+				console.log(res.data);
+			});
+		} else {
+			postFunc(postData).then((res: any) => {
+				setData(res.data);
+				dispatch(addStore(res.data));
+			});
+		}
 	}, []);
 
 	const renderModal = () => {
