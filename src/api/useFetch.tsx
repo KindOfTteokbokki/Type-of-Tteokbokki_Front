@@ -33,18 +33,26 @@ const usePost = (url: any) => {
 };
 
 const useGet = (url: any) => {
-	const getFunc = async () => {
-		const headers = {
-			accept: '*/*',
-		};
+	const getFunc = async (header?: any) => {
+		if (header) {
+			const response = await axios({
+				headers: header,
+				method: 'get',
+				url: url,
+			});
 
-		const response = await axios({
-			headers: headers,
-			method: 'get',
-			url: url,
-		});
+			return response;
+		} else {
+			const headers = {
+				accept: '*/*',
+			};
 
-		if (response) {
+			const response = await axios({
+				headers: headers,
+				method: 'get',
+				url: url,
+			});
+
 			return response;
 		}
 	};

@@ -25,6 +25,7 @@ export default function RecommendView() {
 
 	useEffect(() => {
 		postFunc(postData).then((res) => {
+			console.log(res?.data);
 			setReviewData(res?.data);
 		});
 	}, []);
