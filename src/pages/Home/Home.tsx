@@ -14,6 +14,7 @@ export default function Home() {
 	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
 	const myTasteFunc = useGet(`${baseUrl}/myTaste`);
 
+	const [myTaste, setMyTaste] = useState([]);
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
@@ -43,7 +44,6 @@ export default function Home() {
 	useEffect(() => {
 		const filteredData: any = [];
 		postFunc(postData).then((res: any) => {
-			console.log(res.data);
 			res.data.map((data: any) => {
 				if (filteredData.length >= 4) {
 					return;
@@ -55,9 +55,9 @@ export default function Home() {
 			setMyRecommData([...filteredData]);
 		});
 
-		if (token) {
+		if (token !== '') {
 			myTasteFunc({ Authorization: token }).then((res) => {
-				console.log(res.data);
+				console.log(res);
 			});
 		}
 	}, []);

@@ -39,11 +39,10 @@ export default function Popup(props: Props) {
 	};
 
 	useEffect(() => {
-		if (token) {
+		if (token !== '') {
 			postFunc(postData, { Authorization: token }).then((res: any) => {
 				setData(res.data);
 				dispatch(addTitle(res.data));
-				console.log(res.data);
 			});
 		} else {
 			postFunc(postData).then((res: any) => {

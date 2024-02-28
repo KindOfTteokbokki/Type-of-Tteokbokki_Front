@@ -46,11 +46,10 @@ export default function Loaded() {
 	}
 
 	useEffect(() => {
-		if (token) {
+		if (token !== '') {
 			postFunc(postData, { Authorization: token }).then((res: any) => {
 				setData(res.data);
 				dispatch(addStore(res.data));
-				console.log(res.data);
 			});
 		} else {
 			postFunc(postData).then((res: any) => {
