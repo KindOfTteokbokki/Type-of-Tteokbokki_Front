@@ -14,6 +14,7 @@ interface ProfileEdit {
 		};
 		button: string;
 	};
+	onClickBack: () => void;
 }
 
 export default function ProfileEditView(props: ProfileEdit) {
@@ -21,7 +22,7 @@ export default function ProfileEditView(props: ProfileEdit) {
 		<>
 			<Section>
 				<Header role="header">
-					<Button />
+					<Button onClick={props.onClickBack} />
 					{props.text.header}
 					<S.Span>{props.text.button}</S.Span>
 				</Header>
