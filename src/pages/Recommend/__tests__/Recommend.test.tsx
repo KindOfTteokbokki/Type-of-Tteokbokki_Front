@@ -2,6 +2,8 @@ import { render } from '../../../utils/customJestRender';
 import { screen, fireEvent } from '@testing-library/react';
 import EachList from '../EachList';
 import { useNavigate } from 'react-router-dom';
+import { usePost } from '../../../api/useFetch';
+import { baseUrl } from '../../../api/useAxios';
 
 jest.mock('react-router-dom', () => ({
 	...jest.requireActual('react-router-dom'),
