@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 export default function NaverRedirectView() {
 	const dispatch = useDispatch();
 	const code = new URL(window.location.href).searchParams.get('code');
+
+	console.log(code);
 	const getFunc = useGet(`${baseUrl}/auth/naver/?code=${code}`);
 
 	useEffect(() => {

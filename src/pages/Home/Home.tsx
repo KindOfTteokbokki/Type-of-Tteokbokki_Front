@@ -6,12 +6,12 @@ import { constants } from '../../constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { initialState, initializeType } from '../../slice/userPickSlice';
-import { useGet } from '../../api/useFetch';
+import { usePost } from '../../api/useFetch';
 
 export default function Home() {
 	const navigator = useNavigate();
 	const dispatch = useDispatch();
-	const getFunc = useGet(`${baseUrl}/getRecommendToMain`);
+	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
 	const [myRecommData, setMyRecommData]: any = useState([]);
 
 	const onClickMove = () => {
@@ -30,9 +30,15 @@ export default function Home() {
 	let combiImgList = response?.data;
 	const randIndex = Math.floor(Math.random() * 4);
 
+	const postData = {
+		pageNum: 0,
+		size: 4,
+	};
+
 	useEffect(() => {
 		const filteredData: any = [];
-		getFunc().then((res: any) => {
+		postFunc(postData).then((res: any) => {
+			console.log(res.data);
 			res.data.map((data: any) => {
 				if (filteredData.length >= 4) {
 					return;
