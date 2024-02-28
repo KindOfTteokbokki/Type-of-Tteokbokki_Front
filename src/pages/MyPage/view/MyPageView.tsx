@@ -14,6 +14,8 @@ export interface MyPageProps {
 		NON_DATA: string;
 		RECOMMEND_BUTTON: string;
 	};
+	onClickBack: () => void;
+	onClickMoveProfileEdit: () => void;
 	onClickMoveRecommend: () => void;
 	data: string[];
 }
@@ -23,14 +25,14 @@ export default function MyPageView(props: MyPageProps) {
 		<>
 			<S.Section>
 				<S.Header role="header">
-					<S.Button />
+					<S.Button onClick={props.onClickBack} />
 					{props.text.header}
 				</S.Header>
 				<S.Main>
 					<S.MyInfoAndReviewCont>
 						<S.MyNameAndButtonCont>
 							<S.Name>개구리</S.Name>
-							<S.editButton>{props.text.EDIT_BUTTON}</S.editButton>
+							<S.editButton onClick={props.onClickMoveProfileEdit}>{props.text.EDIT_BUTTON}</S.editButton>
 						</S.MyNameAndButtonCont>
 						<IconView text={props.text} />
 					</S.MyInfoAndReviewCont>
