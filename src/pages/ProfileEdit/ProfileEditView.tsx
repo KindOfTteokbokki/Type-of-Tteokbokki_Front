@@ -15,6 +15,7 @@ interface ProfileEdit {
 		button: string;
 	};
 	onClickBack: () => void;
+	sendNickName: any;
 }
 
 export default function ProfileEditView(props: ProfileEdit) {
@@ -31,7 +32,13 @@ export default function ProfileEditView(props: ProfileEdit) {
 						<S.Profile src={profile} alt=" 기본 프로필" />
 						<S.Label>
 							{props.text.NICK_NAME}
-							<S.Input defaultValue={'기본닉네임'} />
+							<S.Input
+								defaultValue={'기본닉네임'}
+								onKeyDown={() => {
+									props.sendNickName();
+								}}
+							/>
+
 							<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
 						</S.Label>
 					</MyInfoAndReviewCont>
