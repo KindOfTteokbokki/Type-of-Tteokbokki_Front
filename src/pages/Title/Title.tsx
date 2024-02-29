@@ -11,7 +11,7 @@ import { baseUrl } from '../../api/useAxios';
 export default function Title() {
 	const getFunc = useGet(`${baseUrl}/haveTitle`);
 	const token = useSelector((state: RootStateType) => {
-		return state.persistedReducer.token.value;
+		return JSON.parse(state.persistedReducer.token.value);
 	});
 
 	const navigator = useNavigate();
@@ -37,7 +37,10 @@ export default function Title() {
 	const role = ['firstList', 'secondList', 'thirdList'];
 
 	useEffect(() => {
-		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
+		getFunc({
+			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
+		}).then((res) => {
 			console.log(res);
 			setTitle(res.data);
 		});
