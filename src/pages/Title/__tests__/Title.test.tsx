@@ -5,6 +5,10 @@ import TitleView from '../TitleView';
 import { theme } from '../../../styles/theme';
 import { useNavigate } from 'react-router-dom';
 import { constants } from '../../../constants/constants';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { useGet } from '../../../api/useFetch';
+import { RootStateType } from '../../../store';
 
 const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
 const text = ['역시 근본', '주는대로 먹을게', '파인애플 극혐', '맛도리', '돌고 돌아 순정', '역시 근본'];
@@ -109,5 +113,15 @@ describe('Title Test', () => {
 
 		fireEvent.click(element);
 		expect(mockNavigate).toBeCalledWith('/locked-title');
+	});
+
+	it('HaveTitle api returns what axios get returns', async () => {
+		const token = useSelector((state: RootStateType) => {
+			return state.persistedReducer.token.value;
+		});
+
+		axios.get = jest.fn().mockResolvedValue({
+			Authorization: token
+		});
 	});
 });

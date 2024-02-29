@@ -25,7 +25,7 @@ export default function RecommendWrite(props: any) {
 		const handler = (e: any) => {
 			if (writeRef.current && !writeRef.current.contains(e.target)) {
 				props.setKeyBoard(false);
-				props.onClickButton();
+				props?.onClickButton();
 			}
 		};
 		document.addEventListener('mousedown', handler);
