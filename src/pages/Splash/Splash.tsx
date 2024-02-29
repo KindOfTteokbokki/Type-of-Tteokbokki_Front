@@ -11,10 +11,5 @@ export default function Splash() {
 		navigator('/pick-types');
 	};
 
-	const selector = useSelector((state) => {
-		return state;
-	});
-	console.log(selector);
-
 	return <SplashView onClickMove={onClickMove} guestText={constants.SPLASH.GUEST} header={constants.SPLASH.header} />;
 }
