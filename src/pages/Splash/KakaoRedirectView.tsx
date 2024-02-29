@@ -15,7 +15,7 @@ export default function KakaoRedirectView() {
 		getFunc().then((res: any) => {
 			console.log(res.data);
 			dispatch(setUserToken(res.data.accessToken));
-			// navigate('/home');
+			navigate('/home');
 		});
 	}, []);
 
