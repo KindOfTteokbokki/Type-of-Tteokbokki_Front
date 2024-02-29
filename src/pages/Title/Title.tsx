@@ -11,7 +11,7 @@ import { baseUrl } from '../../api/useAxios';
 export default function Title() {
 	const getFunc = useGet(`${baseUrl}/haveTitle`);
 	const token = useSelector((state: RootStateType) => {
-		return JSON.parse(state.persistedReducer.token.value);
+		return state.persistedReducer.token.value;
 	});
 
 	const navigator = useNavigate();

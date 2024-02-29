@@ -26,7 +26,7 @@ export default function LockedTitleView(props: Props) {
 				</S.Header>
 
 				<S.Ul>
-					{props.lockedTitle.map((content, index) => {
+					{props.lockedTitle?.map((content, index) => {
 						return (
 							<>
 								<S.Li role="list" key={index}>
