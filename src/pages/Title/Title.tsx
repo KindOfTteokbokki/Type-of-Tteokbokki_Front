@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import TitleView from './TitleView';
 import { useGet } from '../../api/useFetch';
 import { theme } from '../../styles/theme';
@@ -26,12 +26,20 @@ export default function Title() {
 	const name = '개구리';
 	const count = 6;
 	const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
-	const text = ['역시 근본', '주는대로 먹을게', '파인애플 극혐', '맛도리', '돌고 돌아 순정', '역시 근본'];
+	const [title, setTitle] = useState([
+		'역시 근본',
+		'주는대로 먹을게',
+		'파인애플 극혐',
+		'맛도리',
+		'돌고 돌아 순정',
+		'역시 근본',
+	]);
 	const role = ['firstList', 'secondList', 'thirdList'];
 
 	useEffect(() => {
-		getFunc({ Authorization: token }).then((res) => {
+		getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
 			console.log(res);
+			setTitle(res.data);
 		});
 	}, []);
 
@@ -39,7 +47,7 @@ export default function Title() {
 		<TitleView
 			name={name}
 			count={count}
-			text={text}
+			title={title}
 			bgcolor={bgcolor}
 			role={role}
 			moveText={constants.TITLE.MOVE}
