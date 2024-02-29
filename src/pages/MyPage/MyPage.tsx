@@ -11,6 +11,8 @@ export default function MyPage() {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
+
+	console.log(token);
 	const getFunc = useGet(`${baseUrl}/myInfo`);
 	const [data, setData] = useState(['후기', '후기', '후기']);
 	const navigate = useNavigate();
@@ -27,7 +29,7 @@ export default function MyPage() {
 	};
 
 	useEffect(() => {
-		getFunc(`Bearer ${token}`).then((res) => {
+		getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
 			console.log(res);
 		});
 	}, []);
