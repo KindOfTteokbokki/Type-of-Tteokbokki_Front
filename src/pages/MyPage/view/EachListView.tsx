@@ -5,6 +5,10 @@ import Icon from '../../../assets/내후기관리.svg';
 import RecommendWrite from '../../Recommend/RecommendWrite';
 import ModalView from '../../Loaded/Modal/view/ModalView';
 import modalIcon from '../../../assets/후기삭제우는얼굴.svg';
+import { usePost } from '../../../api/useFetch';
+import { baseUrl } from '../../../api/useAxios';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../../store';
 
 interface EachListProps {
 	isLastIndex: () => boolean;
@@ -25,6 +29,21 @@ interface EachListProps {
 }
 
 export default function EachListView(props: EachListProps) {
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
+	const postFunc = usePost(`${baseUrl}/deleteRecommend`);
+	const postData = {
+		user_id: 1,
+		review_seq: 26,
+	};
+
+	const deletePost = async () => {
+		await postFunc(postData, { Authorization: `Bearer ${token}` }).then((res) => {
+			console.log(res);
+		});
+	};
+
 	return (
 		<>
 			<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
@@ -48,7 +67,7 @@ export default function EachListView(props: EachListProps) {
 						modalAnswerRed={props.modalText.ANSWER_2}
 						onClickModal={props.onClickRemoveModal}
 						onClickRedBtn={props.onClickRemoveModal}
-						onClickWhiteBtn={() => {}}
+						onClickWhiteBtn={deletePost}
 						modalIcon={modalIcon}
 					/>
 				) : null}

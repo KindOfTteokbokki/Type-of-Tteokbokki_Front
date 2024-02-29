@@ -13,6 +13,7 @@ export default function MyPage() {
 	});
 
 	console.log(token);
+
 	const getFunc = useGet(`${baseUrl}/myInfo`);
 	const [data, setData] = useState(['후기', '후기', '후기']);
 	const navigate = useNavigate();
@@ -29,7 +30,7 @@ export default function MyPage() {
 	};
 
 	useEffect(() => {
-		getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
+		getFunc({ Authorization: `Bearer ${token}`, accept: '*/*' }).then((res) => {
 			console.log(res);
 		});
 	}, []);
