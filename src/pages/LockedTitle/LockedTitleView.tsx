@@ -9,7 +9,7 @@ import { constants } from '../../constants/constants';
 interface Props {
 	onClickMoveBack: () => void;
 	onClickMoveReturn: () => void;
-	list: string[];
+	lockedTitle: string[];
 }
 
 export default function LockedTitleView(props: Props) {
@@ -26,7 +26,7 @@ export default function LockedTitleView(props: Props) {
 				</S.Header>
 
 				<S.Ul>
-					{props.list.map((content, index) => {
+					{props.lockedTitle.map((content, index) => {
 						return (
 							<>
 								<S.Li role="list" key={index}>

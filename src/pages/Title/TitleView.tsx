@@ -10,7 +10,7 @@ import move from '../../assets/칭호추가획득유도.svg';
 interface TitleProps {
 	name: string;
 	count: number;
-	text: string[];
+	title: string[];
 	bgcolor: string[];
 	role: string[];
 	moveText: string;
@@ -29,7 +29,7 @@ export default function TitleView(props: TitleProps) {
 				</S.Header>
 
 				<S.Ul>
-					{props.text.map((title, index) => {
+					{props.title.map((title, index) => {
 						return (
 							<>
 								<S.Li

@@ -40,7 +40,7 @@ export default function Popup(props: Props) {
 
 	useEffect(() => {
 		if (token !== '') {
-			postFunc(postData, { Authorization: token }).then((res: any) => {
+			postFunc(postData, { Authorization: `Bearer ${token}` }).then((res: any) => {
 				setData(res.data);
 				dispatch(addTitle(res.data));
 			});

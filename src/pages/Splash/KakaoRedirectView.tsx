@@ -14,8 +14,9 @@ export default function KakaoRedirectView() {
 	useEffect(() => {
 		getFunc().then((res: any) => {
 			console.log(res.data);
+			localStorage.setItem('token', res.data.accessToken);
 			dispatch(setUserToken(res.data.accessToken));
-			navigate('/home');
+			navigate(-1);
 		});
 	}, []);
 

@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyPageView from './view/MyPageView';
 import { constants } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
+import { useGet } from '../../api/useFetch';
+import { baseUrl } from '../../api/useAxios';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 export default function MyPage() {
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
+
+	console.log(token);
+
+	const getFunc = useGet(`${baseUrl}/myInfo`);
 	const [data, setData] = useState(['후기', '후기', '후기']);
 	const navigate = useNavigate();
 
@@ -17,6 +28,12 @@ export default function MyPage() {
 	const onClickMoveRecommend = () => {
 		navigate('/recommend');
 	};
+
+	useEffect(() => {
+		getFunc({ Authorization: `Bearer ${token}`, accept: '*/*' }).then((res) => {
+			console.log(res);
+		});
+	}, []);
 
 	return (
 		<MyPageView

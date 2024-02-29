@@ -45,10 +45,13 @@ export default function RecommendWrite(props: any) {
 		formData.append('content', text);
 		formData.append('file', imgUrl);
 
-		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: token }).then((response) => {
-			window.alert('등록되었어!');
-			window.location.reload();
-		});
+		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
+			(response) => {
+				window.alert('등록되었어!');
+				console.log(response);
+				// window.location.reload();
+			}
+		);
 	};
 
 	return (
