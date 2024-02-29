@@ -3,7 +3,7 @@ import { userSlice } from './slice/userSlice';
 import { userPickSlice } from './slice/userPickSlice';
 import { findStoreSlice } from './slice/findStoreSlice';
 import { findTitleSlice } from './slice/findTitleSlice';
-import { persistReducer } from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
@@ -25,6 +25,8 @@ const store = configureStore({
 		title: findTitleSlice.reducer,
 	},
 });
+
+export const persistor = persistStore(store);
 
 export type RootStateType = ReturnType<typeof store.getState>;
 

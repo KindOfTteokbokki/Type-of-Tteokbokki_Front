@@ -13,10 +13,11 @@ export default function KakaoRedirectView() {
 
 	useEffect(() => {
 		getFunc().then((res: any) => {
+			console.log(res.data);
 			dispatch(setUserToken(res.data.accessToken));
-			navigate('/home');
+			// navigate('/home');
 		});
-	});
+	}, []);
 
 	return <h1></h1>;
 }
