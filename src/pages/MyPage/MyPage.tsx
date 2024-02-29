@@ -30,7 +30,7 @@ export default function MyPage() {
 	};
 
 	useEffect(() => {
-		getFunc({ Authorization: `Bearer ${token}`, accept: '*/*' }).then((res) => {
+		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			console.log(res);
 		});
 	}, []);

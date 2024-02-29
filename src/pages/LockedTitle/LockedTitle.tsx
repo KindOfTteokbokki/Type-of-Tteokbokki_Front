@@ -34,7 +34,7 @@ export default function LockedTitle() {
 	};
 
 	useEffect(() => {
-		getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
+		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			console.log(res);
 			setLockedTitle(res.data);
 		});

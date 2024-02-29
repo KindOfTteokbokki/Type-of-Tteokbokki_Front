@@ -37,7 +37,7 @@ export default function Title() {
 	const role = ['firstList', 'secondList', 'thirdList'];
 
 	useEffect(() => {
-		getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
+		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			console.log(res);
 			setTitle(res.data);
 		});

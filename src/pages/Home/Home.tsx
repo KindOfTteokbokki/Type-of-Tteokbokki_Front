@@ -56,7 +56,7 @@ export default function Home() {
 		});
 
 		if (token !== '') {
-			getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
+			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 				console.log(res.data);
 				setMyTaste(res.data);
 			});
