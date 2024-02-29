@@ -49,15 +49,18 @@ export default function Home() {
 					return;
 				}
 				if (data.file_masking_name) {
-					filteredData.push(data.file_path + data.file_masking_name);
+					filteredData.push(data);
 				}
 			});
 			setMyRecommData([...filteredData]);
 		});
 
-		getFunc({ Authorization: token }).then((res) => {
-			console.log(res);
-		});
+		if (token !== '') {
+			getFunc({ Authorization: `Bearer ${token}` }).then((res) => {
+				console.log(res.data);
+				setMyTaste(res.data);
+			});
+		}
 	}, []);
 
 	return (
@@ -66,6 +69,7 @@ export default function Home() {
 			combiImgList={combiImgList}
 			nickName={constants.HOME.NICK_NAME[randIndex]}
 			myRecommData={myRecommData}
+			myTaste={myTaste}
 		/>
 	);
 }

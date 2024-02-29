@@ -29,8 +29,8 @@ function App() {
 			<Route path="/auth/naver" element={<NaverRedirectView />} />
 			<Route path="/recommend" element={<Recommend />} />
 			<Route path="/recommend/:id" element={<RecommendDetail />} />
-			<Route path="/combination" element={<Combination />} />
-			<Route path="/mytaste" element={<MyTaste />} />
+			<Route path="/combination/:id" element={<Combination />} />
+			<Route path="/mytaste/:id" element={<MyTaste />} />
 			<Route path="/title" element={<Title />} />
 			<Route path="/locked-title" element={<LockedTitle />} />
 			<Route path="/mypage" element={<MyPage />} />

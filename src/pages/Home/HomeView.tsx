@@ -14,6 +14,7 @@ interface Props {
 	combiImgList: any;
 	nickName: string;
 	myRecommData: string[];
+	myTaste: string[];
 }
 
 export default function HomeView(props: Props) {
@@ -70,8 +71,15 @@ export default function HomeView(props: Props) {
 						/>
 					</S.MyRecommendCont>
 					<S.FlexCont>
-						{props.myRecommData.map((url) => {
-							return <S.MyRecommedImg src={url} />;
+						{props.myRecommData.map((data: any) => {
+							return (
+								<S.MyRecommedImg
+									src={data?.file_path + data?.file_masking_name}
+									onClick={() => {
+										navigator(`/recommend/${data.review_seq}`);
+									}}
+								/>
+							);
 						})}
 					</S.FlexCont>
 				</S.Cont>
@@ -87,7 +95,7 @@ export default function HomeView(props: Props) {
 										<S.CombiImg
 											src={imageFile?.file_path + imageFile?.file_masking_name}
 											onClick={() => {
-												navigator('/combination', { state: { nickName: props.nickName } });
+												navigator(`/combination/${imageFile.combination_seq}`, { state: { nickName: props.nickName } });
 											}}
 										/>
 									);
