@@ -29,7 +29,7 @@ export default function TitleView(props: TitleProps) {
 				</S.Header>
 
 				<S.Ul>
-					{props.title.map((title, index) => {
+					{props.title?.map((title, index) => {
 						return (
 							<>
 								<S.Li

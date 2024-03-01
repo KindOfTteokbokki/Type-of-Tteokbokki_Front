@@ -4,11 +4,11 @@ import { userPickSlice } from './slice/userPickSlice';
 import { findStoreSlice } from './slice/findStoreSlice';
 import { findTitleSlice } from './slice/findTitleSlice';
 import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import sessionStorage from 'redux-persist/es/storage/session';
 
 const persistConfig = {
 	key: 'root',
-	storage,
+	storage: sessionStorage,
 };
 
 const reducers = combineReducers({
