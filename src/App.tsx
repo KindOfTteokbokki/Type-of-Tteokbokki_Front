@@ -34,7 +34,7 @@ function App() {
 			<Route path="/title" element={<Title />} />
 			<Route path="/locked-title" element={<LockedTitle />} />
 			<Route path="/mypage" element={<MyPage />} />
-			<Route path="/profile-edit" element={<ProfileEdit />} />
+			<Route path="/profile-edit/:id" element={<ProfileEdit />} />
 		</Routes>
 	);
 }
