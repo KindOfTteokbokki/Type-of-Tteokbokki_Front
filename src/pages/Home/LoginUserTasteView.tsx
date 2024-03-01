@@ -5,6 +5,7 @@ import lock from '../../assets/아이콘/자물쇠.svg';
 interface LoginUserTasteProps {
 	myTaste: string[];
 	lockTaste: string[];
+	onClickMoveTaste: (id: number) => void;
 }
 
 export default function LoginUserTasteView(props: LoginUserTasteProps) {
@@ -12,7 +13,15 @@ export default function LoginUserTasteView(props: LoginUserTasteProps) {
 		<>
 			{props.myTaste.length
 				? props.myTaste.map((item: any) => {
-						return <S.MyTypeImg src={item?.file_path + item?.file_masking_name} alt="떡볶이 사진" />;
+						return (
+							<S.MyTypeImg
+								src={item?.file_path + item?.file_masking_name}
+								alt="떡볶이 사진"
+								onClick={() => {
+									props.onClickMoveTaste(item.store_seq);
+								}}
+							/>
+						);
 				  })
 				: null}
 			{props.lockTaste.length

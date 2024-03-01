@@ -17,6 +17,7 @@ interface Props {
 	myRecommData: string[];
 	myTaste: string[];
 	lockTaste: string[];
+	onClickMoveTaste: (id: number) => void;
 }
 
 export default function HomeView(props: Props) {
@@ -53,7 +54,11 @@ export default function HomeView(props: Props) {
 					<S.Text>내 입맛</S.Text>
 					<S.FlexCont>
 						{token ? (
-							<LoginUserTasteView myTaste={props.myTaste} lockTaste={props.lockTaste} />
+							<LoginUserTasteView
+								myTaste={props.myTaste}
+								lockTaste={props.lockTaste}
+								onClickMoveTaste={props.onClickMoveTaste}
+							/>
 						) : (
 							<NonLoginUserView store={store} />
 						)}

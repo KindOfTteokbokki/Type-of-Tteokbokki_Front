@@ -14,22 +14,21 @@ export const Section = styled.section`
 	flex-direction: column;
 	gap: 16px;
 	background-color: ${(props) => props.theme.color.lightGray};
-
+	overflow-x: hidden;
 	overflow-y: scroll;
 
 	&::-webkit-scrollbar {
 		display: block;
 		width: 5px;
-		height: 100px;
 		background-color: ${(props) => props.theme.color.gray};
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: #000;
+		background-color: ${(props) => props.theme.color.gray};
 	}
 
 	&::-webkit-scrollbar-track {
-		background-color: ${(props) => props.theme.color.gray};
+		background-color: ${(props) => props.theme.color.white};
 	}
 `;
 
