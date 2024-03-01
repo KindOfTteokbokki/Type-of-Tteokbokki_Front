@@ -3,7 +3,7 @@ import plus from '../../assets/아이콘_나도추천할래/나도추천할래�
 
 export const Layout = styled.section`
 	width: 100%;
-	height: 884px;
+	height: 844px;
 `;
 
 export const Section = styled.section`

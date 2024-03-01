@@ -3,10 +3,7 @@ import { useState } from 'react';
 
 export const clientData = new StompJs.Client({
 	brokerURL: 'ws://dev.utteok.com/ws',
-	connectHeaders: {
-		login: '',
-		passcode: 'password',
-	},
+	connectHeaders: {},
 	debug: function (str) {
 		console.log(str);
 	},
