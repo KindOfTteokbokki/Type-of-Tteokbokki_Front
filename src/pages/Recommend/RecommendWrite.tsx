@@ -16,6 +16,7 @@ export default function RecommendWrite(props: any) {
 	const formData = new FormData();
 	const writeRef = useRef<any>(null);
 	const postFunc = usePost(`${baseUrl}/saveRecommend`);
+	const editPostFunc = usePost(`${baseUrl}/modifyRecommend`);
 
 	const onClickDelete = () => {
 		setImgUrl('');
