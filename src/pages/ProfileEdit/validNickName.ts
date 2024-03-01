@@ -46,7 +46,9 @@ export const connect = (initializeClient: () => void) => {
 			clientData.subscribe('/sub/checkNickname', callback);
 		};
 
-		const callback = function () {};
+		const callback = function (body: StompJs.Message) {
+			console.log(JSON.parse(body.body));
+		};
 
 		clientData.activate();
 		initializeClient();

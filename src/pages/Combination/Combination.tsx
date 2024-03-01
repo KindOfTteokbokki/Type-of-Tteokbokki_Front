@@ -5,7 +5,6 @@ import icon from '../../assets/아이콘/한줄평.svg';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useGet, usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
-import { json } from 'stream/consumers';
 
 export default function Combination() {
 	const postFunc = usePost(`${baseUrl}/ViewOneFromCombination`);
