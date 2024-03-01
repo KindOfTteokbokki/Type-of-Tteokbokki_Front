@@ -36,12 +36,6 @@ export default function RecommendWrite(props: any) {
 		};
 	});
 
-	useEffect(() => {
-		if (props.originText) {
-			setText(props.originText);
-		}
-	}, [props.originText]);
-
 	const saveReview = async () => {
 		formData.append('content', text);
 		formData.append('file', imgUrl);
@@ -52,6 +46,21 @@ export default function RecommendWrite(props: any) {
 				window.location.reload();
 			}
 		);
+	};
+
+	const editReview = async () => {
+		formData.append('content', text);
+		formData.append('file', imgUrl);
+		formData.append('user_id', props.originData.user_id);
+		formData.append('file_path', props.originData.file_path);
+		formData.append('file_original_name', props.originData.file_original_name);
+		formData.append('file_masking_name', props.originData.file_masking_name);
+		formData.append('review_seq', props.originData.review_seq);
+
+		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(() => {
+			window.alert('수정되었어!');
+			window.location.reload();
+		});
 	};
 
 	return (
@@ -92,7 +101,9 @@ export default function RecommendWrite(props: any) {
 							/>
 						</S.CameraIcon>
 					)}
-					{modal ? <WriteModal modal={modal} setModal={setModal} saveReview={saveReview} /> : null}
+					{modal ? (
+						<WriteModal modal={modal} setModal={setModal} saveReview={props.originData ? editReview : saveReview} />
+					) : null}
 				</S.TextField>
 			</S.WriteCont>
 		</S.RecommDropBack>

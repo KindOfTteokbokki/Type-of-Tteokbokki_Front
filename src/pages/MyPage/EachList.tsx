@@ -57,8 +57,9 @@ export default function EachList(props: EachListProps) {
 		await postFunc(
 			{ user_id: props.item.user_id, review_seq: props.item.review_seq },
 			{ Authorization: `Bearer ${token}` }
-		).then((res) => {
-			console.log(res);
+		).then(() => {
+			window.alert('삭제되었어!');
+			window.location.reload();
 		});
 	};
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import WriteModalView from './view/WriteModalView';
 import { constants } from '../../constants/constants';
-import saveReview from './RecommendWrite';
 
 interface WriteModalProps {
 	modal: boolean;
