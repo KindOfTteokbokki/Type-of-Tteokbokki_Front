@@ -8,9 +8,10 @@ export const NavBar = styled.nav`
 	display: flex;
 	gap: 57px;
 	box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
-	position: fixed;
+	position: sticky;
 	bottom: 0;
 	z-index: 20;
+	box-sizing: border-box;
 `;
 
 type NavICon = {
