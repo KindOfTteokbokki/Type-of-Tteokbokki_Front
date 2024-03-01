@@ -63,10 +63,11 @@ export const RecommCont = styled.ul`
 	position: relative;
 `;
 
-export const RecommList = styled.li`
+export const RecommList = styled.li<{ border: string }>`
 	width: 170px;
 	height: 179px;
 	border-radius: 16px;
+	border: ${(props) => props.border};
 `;
 
 export const RecommText = styled.div`
@@ -79,11 +80,12 @@ export const RecommText = styled.div`
 	border-radius: 0 0 16px 16px;
 `;
 
-export const ReCommOnlyText = styled(RecommText)`
+export const ReCommOnlyText = styled(RecommText)<{ border: string }>`
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	line-height: 20px;
 	height: 100%;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
+	border: ${(props) => props.border};
 `;
 
 export const RecommImg = styled.img`

@@ -9,13 +9,16 @@ export interface EachListProps {
 export default function EachListView(props: EachListProps) {
 	return (
 		<S.RecommList
+			border={props.data.my_recommend ? `1px solid ${(props: any) => props.theme.color.main}` : ''}
 			role="review"
 			onClick={() => {
 				props.onClickMoveDetail(props.data);
 			}}
 		>
 			{props.data?.file_masking_name === null ? (
-				<S.ReCommOnlyText>{props.data.content}</S.ReCommOnlyText>
+				<S.ReCommOnlyText border={props.data.my_recommend ? `1px solid ${(props: any) => props.theme.color.main}` : ''}>
+					{props.data.content}
+				</S.ReCommOnlyText>
 			) : (
 				<>
 					<S.RecommImg src={props.data?.file_path + props.data?.file_masking_name} />
