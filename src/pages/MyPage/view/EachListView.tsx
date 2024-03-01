@@ -6,7 +6,7 @@ import RecommendWrite from '../../Recommend/RecommendWrite';
 import ModalView from '../../Loaded/Modal/view/ModalView';
 import modalIcon from '../../../assets/후기삭제우는얼굴.svg';
 import { ReviewData } from './ReviewListView';
-import basicReviewImg from '../../../assets/캐릭터.svg';
+import basicReviewImg from '../../../assets/기본이미지.svg';
 
 interface EachListProps {
 	isLastIndex: () => boolean;
