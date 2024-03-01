@@ -39,7 +39,7 @@ export default function Popup(props: Props) {
 	};
 
 	useEffect(() => {
-		if (token !== '') {
+		if (token) {
 			postFunc(postData, { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
 				setData(res.data);
 				dispatch(addTitle(res.data));

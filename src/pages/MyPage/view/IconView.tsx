@@ -8,6 +8,7 @@ import RecommendIcon from '../../../assets/내정보_매장제안_비활.svg';
 
 interface IconViewProps {
 	text: { ICON: string[] };
+	count: number;
 }
 
 export default function IconView(props: IconViewProps) {
@@ -17,7 +18,7 @@ export default function IconView(props: IconViewProps) {
 				<S.Img src={TitleIcon} alt="뱃지 모양 아이콘" />
 				<S.Span>{props.text.ICON[0]}</S.Span>
 				<br />
-				<S.Span>3</S.Span>
+				<S.Span>{props.count}</S.Span>
 			</S.Li>
 			<S.Border margin="0 30px 0 32px" />
 			<S.Li>

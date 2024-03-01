@@ -12,9 +12,10 @@ export default function MyPage() {
 		return state.persistedReducer.token.value;
 	});
 
-	console.log(token);
-
-	const getFunc = useGet(`${baseUrl}/myInfo`);
+	const getTitleFunc = useGet(`${baseUrl}/haveTitle`);
+	const getNameFunc = useGet(`${baseUrl}/myInfo`);
+	const [nickName, setNickName] = useState('');
+	const [count, setCount] = useState<number>(0);
 	const [data, setData] = useState(['후기', '후기', '후기']);
 	const navigate = useNavigate();
 
@@ -30,17 +31,26 @@ export default function MyPage() {
 	};
 
 	useEffect(() => {
-		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
-			console.log(res);
+		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
+			setNickName(res.data);
+		});
+
+		getTitleFunc({
+			Authorization: `Bearer ${token}`,
+			'Content-Type': 'application/json',
+		}).then((res) => {
+			setCount(res.data.countTitle.count);
 		});
 	}, []);
 
 	return (
 		<MyPageView
 			text={constants.MYPAGE}
+			data={data}
 			onClickBack={onClickBack}
 			onClickMoveRecommend={onClickMoveRecommend}
-			data={data}
+			nickName={nickName}
+			count={count}
 			onClickMoveProfileEdit={onClickMoveProfileEdit}
 		/>
 	);
