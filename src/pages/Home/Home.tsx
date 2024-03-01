@@ -16,6 +16,7 @@ export default function Home() {
 
 	const [myTaste, setMyTaste] = useState([]);
 	const [lockTaste, setLockTaste] = useState<any>([]);
+	const [homeTitle, setHomeTitle] = useState<string>('');
 
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
@@ -59,7 +60,10 @@ export default function Home() {
 
 		if (token) {
 			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
-				console.log(res.data);
+				if (res.data.haveTitle.length >= 1) {
+					setHomeTitle(res.data.heveTitle[0].title_name);
+				}
+
 				if (res.data.length > 3) {
 					setMyTaste(res.data.slice(res.data.length - 3));
 				} else {
@@ -77,6 +81,7 @@ export default function Home() {
 			onClickMove={onClickMove}
 			combiImgList={combiImgList}
 			nickName={constants.HOME.NICK_NAME[randIndex]}
+			homeTitle={homeTitle}
 			myRecommData={myRecommData}
 			myTaste={myTaste}
 			lockTaste={lockTaste}

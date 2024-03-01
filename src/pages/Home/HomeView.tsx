@@ -18,6 +18,7 @@ interface Props {
 	myTaste: string[];
 	lockTaste: string[];
 	onClickMoveTaste: (id: number) => void;
+	homeTitle: string;
 }
 
 export default function HomeView(props: Props) {
@@ -25,7 +26,6 @@ export default function HomeView(props: Props) {
 	const titleStore = useSelector((state: RootStateType) => {
 		return state.title;
 	});
-	const [count, setCount] = useState(0);
 
 	const store = useSelector((state: RootStateType) => {
 		return state.store.value.file_path + state.store.value.file_masking_name;
@@ -50,7 +50,7 @@ export default function HomeView(props: Props) {
 					) : (
 						<S.Icon />
 					)}
-					{titleStore.value.title_name}
+					{props.homeTitle !== '' ? props.homeTitle : titleStore.value.title_name}
 				</S.Title>
 				<S.MainCont>
 					<S.MainText>어떤 떡볶이가 먹고싶어?</S.MainText>

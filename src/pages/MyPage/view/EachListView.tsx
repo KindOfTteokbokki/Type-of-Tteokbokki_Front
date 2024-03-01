@@ -44,7 +44,7 @@ export default function EachListView(props: EachListProps) {
 					</S.EditAndRemoveBtnCont>
 				) : null}
 				{props.keyboard ? (
-					<RecommendWrite setKeyBoard={props.onClickEdit} originText={props.item} onClickButton={props.onClickButton} />
+					<RecommendWrite setKeyBoard={props.onClickEdit} originData={props.item} onClickButton={props.onClickButton} />
 				) : null}
 				{props.modal ? (
 					<ModalView
