@@ -3,8 +3,8 @@ import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import Navigation from '../../components/Navigation/Navigation';
 import * as S from './style';
 import { Icon } from '../Title/style';
-import lock from '../../assets/아이콘_나도추천할래/뒤로가기.svg';
-import { constants } from '../../constants/constants';
+import lock from '../../assets/아이콘/자물쇠.svg';
+import back from '../../assets/아이콘_나도추천할래/뒤로가기.svg';
 
 interface Props {
 	onClickMoveBack: () => void;
@@ -18,7 +18,7 @@ export default function LockedTitleView(props: Props) {
 	return (
 		<>
 			<S.Layout>
-				<S.BackIcon src={lock} onClick={props.onClickMoveBack} />
+				<S.BackIcon src={back} onClick={props.onClickMoveBack} />
 				<S.Header>
 					<div>
 						<S.H1>{props.header[0]}</S.H1>

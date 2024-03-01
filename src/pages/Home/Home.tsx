@@ -60,9 +60,9 @@ export default function Home() {
 		if (token) {
 			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
 				if (res.data.length > 3) {
-					setMyTaste(res.data.slice(0, 3));
+					setMyTaste(res.data.slice(res.data.length - 3).reverse());
 				} else {
-					setMyTaste(res.data);
+					setMyTaste(res.data.reverse());
 
 					const lockArray = new Array(3 - res.data.length);
 					setLockTaste([...lockArray]);

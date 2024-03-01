@@ -27,7 +27,7 @@ export default function LockedTitle() {
 		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			setLockedTitle(res.data);
 		});
-	});
+	}, []);
 
 	return (
 		<LockedTitleView
