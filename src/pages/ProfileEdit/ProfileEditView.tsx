@@ -40,9 +40,7 @@ export default function ProfileEditView(props: ProfileEdit) {
 									props.onChangeNickName(e.target.value);
 									props.sendNickName(e.target.value, () => {});
 								}}
-							>
-								{props.nickName}
-							</S.Input>
+							/>
 
 							<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
 						</S.Label>
