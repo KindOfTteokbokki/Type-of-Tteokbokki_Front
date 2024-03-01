@@ -12,13 +12,6 @@ export const clientData = new StompJs.Client({
 	heartbeatOutgoing: 4000,
 });
 
-const onMessageRecieved = (message: StompJs.Message) => {
-	const response = JSON.parse(message.body);
-
-	// 여기에서 응답을 확인하고 유효성을 검증하는 로직을 구현
-	console.log('Received response:', response);
-};
-
 export const sendNickName = (nickName: string, onMessageRecieved: any) => {
 	if (nickName === '') {
 		return;
@@ -47,7 +40,7 @@ export const connect = (initializeClient: () => void) => {
 		};
 
 		const callback = function (body: StompJs.Message) {
-			console.log(JSON.parse(body.body));
+			console.log('응답' + JSON.parse(body.body));
 		};
 
 		clientData.activate();
