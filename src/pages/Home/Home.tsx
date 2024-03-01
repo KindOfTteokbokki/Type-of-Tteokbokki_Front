@@ -57,7 +57,7 @@ export default function Home() {
 					return;
 				}
 				console.log(data.file_masking_name);
-				if (typeof data.file_masking_name === 'string') {
+				if (typeof data.file_path === 'string') {
 					filteredData.push(data);
 				}
 			});

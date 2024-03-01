@@ -77,7 +77,7 @@ export default function HomeView(props: Props) {
 						{props.myRecommData.map((data: any) => {
 							return (
 								<S.MyRecommedImg
-									src={data?.file_path + data?.file_masking_name}
+									src={data.file_path + data.file_masking_name}
 									onClick={() => {
 										navigator(`/recommend/${data.review_seq}`);
 									}}
