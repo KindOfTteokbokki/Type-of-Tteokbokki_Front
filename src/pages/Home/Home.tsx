@@ -15,7 +15,7 @@ export default function Home() {
 	const getFunc = useGet(`${baseUrl}/myTaste`);
 
 	const [myTaste, setMyTaste] = useState([]);
-	const [lockTaste, setLockTaste] = useState(['']);
+	const [lockTaste, setLockTaste] = useState<any>([]);
 
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
@@ -25,6 +25,10 @@ export default function Home() {
 	const onClickMove = () => {
 		dispatch(initializeType(initialState));
 		navigator('/pick-types');
+	};
+
+	const onClickMoveTaste = (id: number) => {
+		navigator(`/mytaste/${id}`);
 	};
 
 	const { response } = useAxios({
@@ -46,6 +50,7 @@ export default function Home() {
 	useEffect(() => {
 		const filteredData: any = [];
 		postFunc(postData).then((res: any) => {
+			console.log(res.data);
 			res.data.map((data: any) => {
 				if (filteredData.length >= 4) {
 					return;
@@ -79,6 +84,7 @@ export default function Home() {
 			myRecommData={myRecommData}
 			myTaste={myTaste}
 			lockTaste={lockTaste}
+			onClickMoveTaste={onClickMoveTaste}
 		/>
 	);
 }
