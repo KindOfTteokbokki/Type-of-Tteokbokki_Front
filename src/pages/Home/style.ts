@@ -4,11 +4,12 @@ import plus from '../../assets/아이콘_나도추천할래/나도추천할래�
 export const Layout = styled.section`
 	width: 100%;
 	height: 844px;
+	position: relative;
 `;
 
 export const Section = styled.section`
 	width: 100%;
-	height: 844px;
+	height: 756px;
 	padding: 8px 15px 21px;
 	display: flex;
 	flex-direction: column;
@@ -34,7 +35,7 @@ export const Section = styled.section`
 
 export const MainCont = styled.section`
 	width: 100%;
-	height: 100%;
+	height: 756px;
 	padding: 16px 0;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	background-color: #fff;

@@ -4,12 +4,13 @@ export const NavBar = styled.nav`
 	width: 390px;
 	height: 88px;
 	background-color: #fff;
-	padding: 0 32px 23px 33px;
+	padding: 0 32px 0 33px;
+
 	display: flex;
 	gap: 57px;
 	box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
 	position: sticky;
-	top: 756px;
+	bottom: 0;
 	z-index: 20;
 `;
 
@@ -21,6 +22,7 @@ type NavICon = {
 export const Figure = styled.figure`
 	width: 100%;
 	position: relative;
+	padding-bottom: 23px;
 	cursor: pointer;
 `;
 
