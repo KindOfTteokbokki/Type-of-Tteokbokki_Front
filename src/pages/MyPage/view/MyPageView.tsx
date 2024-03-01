@@ -18,6 +18,8 @@ export interface MyPageProps {
 	onClickMoveProfileEdit: () => void;
 	onClickMoveRecommend: () => void;
 	data: string[];
+	count: number;
+	nickName: string;
 }
 
 export default function MyPageView(props: MyPageProps) {
@@ -31,10 +33,10 @@ export default function MyPageView(props: MyPageProps) {
 				<S.Main>
 					<S.MyInfoAndReviewCont>
 						<S.MyNameAndButtonCont>
-							<S.Name>개구리</S.Name>
+							<S.Name>{props.nickName}</S.Name>
 							<S.editButton onClick={props.onClickMoveProfileEdit}>{props.text.EDIT_BUTTON}</S.editButton>
 						</S.MyNameAndButtonCont>
-						<IconView text={props.text} />
+						<IconView text={props.text} count={props.count} />
 					</S.MyInfoAndReviewCont>
 					<S.MyInfoAndReviewCont padding={props.data.length ? '16px 0' : undefined}>
 						<S.MyReviewTitle>{props.text.REVIEW}</S.MyReviewTitle>

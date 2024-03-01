@@ -22,7 +22,6 @@ export default function Combination() {
 
 	useEffect(() => {
 		postFunc({ combination_seq: id }).then((res: any) => {
-			console.log(res.data);
 			setData(res.data);
 		});
 	}, []);

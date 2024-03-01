@@ -9,7 +9,8 @@ import { RootStateType } from '../../store';
 import { baseUrl } from '../../api/useAxios';
 
 export default function Title() {
-	const getFunc = useGet(`${baseUrl}/haveTitle`);
+	const getTitleFunc = useGet(`${baseUrl}/haveTitle`);
+	const getNameFunc = useGet(`${baseUrl}/myInfo`);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
@@ -23,21 +24,17 @@ export default function Title() {
 		navigator('/locked-title');
 	};
 
-	const name = '개구리';
-	const count = 6;
 	const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
-	const [title, setTitle] = useState([
-		'역시 근본',
-		'주는대로 먹을게',
-		'파인애플 극혐',
-		'맛도리',
-		'돌고 돌아 순정',
-		'역시 근본',
-	]);
+	const [nickName, setNickName] = useState('');
+	const [title, setTitle] = useState<any>();
 	const role = ['firstList', 'secondList', 'thirdList'];
 
 	useEffect(() => {
-		getFunc({
+		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
+			setNickName(res.data);
+		});
+
+		getTitleFunc({
 			Authorization: `Bearer ${token}`,
 			'Content-Type': 'application/json',
 		}).then((res) => {
@@ -48,8 +45,7 @@ export default function Title() {
 
 	return (
 		<TitleView
-			name={name}
-			count={count}
+			nickName={nickName}
 			title={title}
 			bgcolor={bgcolor}
 			role={role}

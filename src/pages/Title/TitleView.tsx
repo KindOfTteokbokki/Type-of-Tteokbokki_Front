@@ -8,9 +8,15 @@ import lock from '../../assets/아이콘/자물쇠.svg';
 import move from '../../assets/칭호추가획득유도.svg';
 
 interface TitleProps {
-	name: string;
-	count: number;
-	title: string[];
+	nickName: string;
+	title: {
+		countTitle: {
+			count: number;
+			title_name: string;
+			user_id: number;
+		};
+		haveTitle: any[];
+	};
 	bgcolor: string[];
 	role: string[];
 	moveText: string;
@@ -24,12 +30,12 @@ export default function TitleView(props: TitleProps) {
 			<NavLayout>
 				<S.Icon src={Back} role="back" onClick={props.onClickMoveBack} />
 				<S.Header>
-					<S.H1>{`${props.name}가 모은`}</S.H1>
-					<S.H1>{`칭호는 ${props.count}개야!`}</S.H1>
+					<S.H1>{`${props.nickName}가 모은`}</S.H1>
+					<S.H1>{`칭호는 ${props.title?.countTitle.count}개야!`}</S.H1>
 				</S.Header>
 
 				<S.Ul>
-					{props.title?.map((title, index) => {
+					{props.title.haveTitle?.map((title, index) => {
 						return (
 							<>
 								<S.Li
@@ -37,8 +43,8 @@ export default function TitleView(props: TitleProps) {
 									role={props.role[index % props.role.length]}
 									key={index}
 								>
-									<S.TitleIcon />
-									{title}
+									<S.TitleIcon src={title.icorn_file_path + title.icorn_file_masking_name} alt="칭호 아이콘" />
+									{title.title_name}
 								</S.Li>
 							</>
 						);
