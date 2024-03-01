@@ -1,6 +1,5 @@
 import React from 'react';
 import * as S from './style';
-import lock from '../../assets/아이콘/자물쇠.svg';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import character from '../../assets/캐릭터.svg';
@@ -8,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import Navigation from '../../components/Navigation/Navigation';
 import { constants } from '../../constants/constants';
 import { RedButton } from '../../components/Button/RedButton/style';
+import LoginUserTasteView from './LoginUserTasteView';
+import NonLoginUserView from './NonLoginUserView';
 
 interface Props {
 	onClickMove(): void;
@@ -15,6 +16,7 @@ interface Props {
 	nickName: string;
 	myRecommData: string[];
 	myTaste: string[];
+	lockTaste: string[];
 }
 
 export default function HomeView(props: Props) {
@@ -25,6 +27,10 @@ export default function HomeView(props: Props) {
 
 	const store = useSelector((state: RootStateType) => {
 		return state.store.value.file_path + state.store.value.file_masking_name;
+	});
+
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
 	});
 
 	return (
@@ -46,19 +52,11 @@ export default function HomeView(props: Props) {
 				<S.Cont>
 					<S.Text>내 입맛</S.Text>
 					<S.FlexCont>
-						{store ? (
-							<S.MyTypeImg src={store} alt="떡볶이 사진" />
+						{token ? (
+							<LoginUserTasteView myTaste={props.myTaste} lockTaste={props.lockTaste} />
 						) : (
-							<S.LockCont>
-								<S.LockImg src={lock} />
-							</S.LockCont>
+							<NonLoginUserView store={store} />
 						)}
-						<S.LockCont>
-							<S.LockImg src={lock} />
-						</S.LockCont>
-						<S.LockCont>
-							<S.LockImg src={lock} />
-						</S.LockCont>
 					</S.FlexCont>
 				</S.Cont>
 				<S.Cont>

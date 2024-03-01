@@ -15,6 +15,8 @@ export default function Home() {
 	const getFunc = useGet(`${baseUrl}/myTaste`);
 
 	const [myTaste, setMyTaste] = useState([]);
+	const [lockTaste, setLockTaste] = useState(['']);
+
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
@@ -55,10 +57,16 @@ export default function Home() {
 			setMyRecommData([...filteredData]);
 		});
 
-		if (token !== '') {
-			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
-				console.log(res.data);
-				setMyTaste(res.data);
+		if (token) {
+			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
+				if (res.data.length > 3) {
+					setMyTaste(res.data.slice(0, 3));
+				} else {
+					setMyTaste(res.data);
+
+					const lockArray = new Array(3 - res.data.length);
+					setLockTaste([...lockArray]);
+				}
 			});
 		}
 	}, []);
@@ -70,6 +78,7 @@ export default function Home() {
 			nickName={constants.HOME.NICK_NAME[randIndex]}
 			myRecommData={myRecommData}
 			myTaste={myTaste}
+			lockTaste={lockTaste}
 		/>
 	);
 }

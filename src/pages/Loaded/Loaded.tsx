@@ -24,8 +24,6 @@ export default function Loaded() {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
-
-	console.log(token);
 	const postFunc = usePost(`${baseUrl}/findStore`);
 
 	const onClickReturn = () => {
@@ -48,7 +46,7 @@ export default function Loaded() {
 	}
 
 	useEffect(() => {
-		if (token !== '') {
+		if (token) {
 			postFunc(postData, { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
 				console.log(res);
 				setData(res.data);
