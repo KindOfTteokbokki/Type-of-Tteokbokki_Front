@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { initialState, initializeType } from '../../slice/userPickSlice';
 import { usePost, useGet } from '../../api/useFetch';
+import { isNull } from 'util';
 
 export default function Home() {
 	const navigator = useNavigate();
@@ -55,7 +56,7 @@ export default function Home() {
 				if (filteredData.length >= 4) {
 					return;
 				}
-				if (data.file_masking_name) {
+				if (data.file_masking_name !== null) {
 					filteredData.push(data);
 				}
 			});
@@ -67,7 +68,7 @@ export default function Home() {
 				if (res.data.length > 3) {
 					setMyTaste(res.data.slice(res.data.length - 3).reverse());
 				} else {
-					setMyTaste(res.data.reverse());
+					setMyTaste(res.data);
 
 					const lockArray = new Array(3 - res.data.length);
 					setLockTaste([...lockArray]);
