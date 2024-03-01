@@ -6,7 +6,7 @@ import Icon from '../../assets/내후기관리.svg';
 
 export const Section = styled.section`
 	width: 100%;
-	height: 100%;
+	height: 756px;
 	margin: 0 auto;
 	background-color: ${theme.color.lightGray};
 `;
