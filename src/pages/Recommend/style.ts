@@ -14,7 +14,7 @@ export const RecommDropBack = styled(DropBack)`
 
 export const Layout = styled(Cont)`
 	width: 100%;
-	height: 100%;
+	height: 884px;
 	background-color: ${(props) => props.theme.color.lightGray};
 `;
 
