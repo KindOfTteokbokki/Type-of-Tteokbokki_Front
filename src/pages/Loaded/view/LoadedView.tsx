@@ -16,7 +16,7 @@ export interface LoadedProps {
 	onClickModal(): void;
 	renderModal(): boolean;
 	onClickRedBtn(): void;
-	data: Action;
+	data: any;
 	isNonChainStore(): boolean;
 	isNonData(): boolean;
 }
