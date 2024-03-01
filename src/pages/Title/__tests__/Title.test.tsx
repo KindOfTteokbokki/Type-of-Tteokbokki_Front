@@ -11,8 +11,16 @@ import { useGet } from '../../../api/useFetch';
 import { RootStateType } from '../../../store';
 
 const bgcolor = [theme.color.TITLE.PINK, theme.color.TITLE.SKY, theme.color.TITLE.YELLOW];
-const title = ['역시 근본', '주는대로 먹을게', '파인애플 극혐', '맛도리', '돌고 돌아 순정', '역시 근본'];
+const title = {
+	countTitle: {
+		count: 6,
+		title_name: '',
+		user_id: 3,
+	},
+	haveTitle: ['역시 근본', '주는대로 먹을게', '파인애플 극혐', '맛도리', '돌고 돌아 순정', '역시 근본'],
+};
 const role = ['firstList', 'secondList', 'thirdList'];
+const hasLastConsonantLetter = () => true;
 
 // useNavigate 모킹
 jest.mock('react-router-dom', () => ({
@@ -32,13 +40,13 @@ describe('Title Test', () => {
 
 		render(
 			<TitleView
-				name="개구리"
-				count={5}
+				nickName="개구리"
 				title={title}
 				bgcolor={bgcolor}
 				role={role}
 				moveText={constants.TITLE.MOVE}
 				onClickMoveBack={onClickMoveBack}
+				hasLastConsonantLetter={hasLastConsonantLetter}
 			/>
 		);
 
@@ -50,7 +58,14 @@ describe('Title Test', () => {
 
 	it('헤더 텍스트가 잘 나오는지 테스트', () => {
 		render(
-			<TitleView name="개구리" count={5} title={title} bgcolor={bgcolor} role={role} moveText={constants.TITLE.MOVE} />
+			<TitleView
+				nickName="개구리"
+				title={title}
+				bgcolor={bgcolor}
+				role={role}
+				moveText={constants.TITLE.MOVE}
+				hasLastConsonantLetter={hasLastConsonantLetter}
+			/>
 		);
 
 		const elementFirst = screen.getByText('개구리가 모은');
@@ -62,7 +77,14 @@ describe('Title Test', () => {
 
 	it('칭호 리스트 background-color가 반복해서 맞게 나오는지 테스트', () => {
 		render(
-			<TitleView name="개구리" count={6} title={title} bgcolor={bgcolor} role={role} moveText={constants.TITLE.MOVE} />
+			<TitleView
+				nickName="개구리"
+				title={title}
+				bgcolor={bgcolor}
+				role={role}
+				moveText={constants.TITLE.MOVE}
+				hasLastConsonantLetter={hasLastConsonantLetter}
+			/>
 		);
 
 		const elementFirst = screen.getAllByRole('firstList');
@@ -84,7 +106,14 @@ describe('Title Test', () => {
 
 	it('locked 칭호 페이지로 이동하는 버튼의 텍스트 렌더링 테스트', () => {
 		render(
-			<TitleView name="개구리" count={6} title={title} bgcolor={bgcolor} role={role} moveText={constants.TITLE.MOVE} />
+			<TitleView
+				nickName="개구리"
+				title={title}
+				bgcolor={bgcolor}
+				role={role}
+				moveText={constants.TITLE.MOVE}
+				hasLastConsonantLetter={hasLastConsonantLetter}
+			/>
 		);
 
 		const element = screen.getByText('아직 못 받은 칭호도 구경해봐!');
@@ -99,13 +128,13 @@ describe('Title Test', () => {
 
 		render(
 			<TitleView
-				name="개구리"
-				count={5}
+				nickName="개구리"
 				title={title}
 				bgcolor={bgcolor}
 				role={role}
 				moveText={constants.TITLE.MOVE}
 				onClickMoveLock={onClickMoveLock}
+				hasLastConsonantLetter={hasLastConsonantLetter}
 			/>
 		);
 

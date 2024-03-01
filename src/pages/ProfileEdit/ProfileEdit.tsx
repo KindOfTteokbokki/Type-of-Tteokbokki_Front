@@ -29,5 +29,18 @@ export default function ProfileEdit() {
 		navigator(-1);
 	};
 
-	return <ProfileEditView text={text} onClickBack={onClickBack} sendNickName={sendNickName} />;
+	const onChangeNickName = (name: string) => {
+		setNickName(name);
+	};
+
+	return (
+		<ProfileEditView
+			text={text}
+			onClickBack={onClickBack}
+			sendNickName={sendNickName}
+			nickName={nickName}
+			onChangeNickName={onChangeNickName}
+			// initializeName={initializeName}
+		/>
+	);
 }

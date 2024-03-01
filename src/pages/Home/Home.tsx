@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { initialState, initializeType } from '../../slice/userPickSlice';
 import { usePost, useGet } from '../../api/useFetch';
-import { isNull } from 'util';
 
 export default function Home() {
 	const navigator = useNavigate();
@@ -56,8 +55,8 @@ export default function Home() {
 				if (filteredData.length >= 4) {
 					return;
 				}
-				console.log(data.file_masking_name);
-				if (typeof data.file_path === 'string') {
+				console.log(data.file_path);
+				if (data.file_path) {
 					filteredData.push(data);
 				}
 			});

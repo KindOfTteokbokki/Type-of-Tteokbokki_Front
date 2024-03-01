@@ -48,8 +48,7 @@ export default function RecommendWrite(props: any) {
 		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
 			(response) => {
 				window.alert('등록되었어!');
-				console.log(response);
-				// window.location.reload();
+				window.location.reload();
 			}
 		);
 	};

@@ -43,6 +43,10 @@ export default function Title() {
 		});
 	}, []);
 
+	function hasLastConsonantLetter(name: string) {
+		return (name.charCodeAt(name.length - 1) - '가'.charCodeAt(0)) % 28 !== 0;
+	}
+
 	return (
 		<TitleView
 			nickName={nickName}
@@ -52,6 +56,7 @@ export default function Title() {
 			moveText={constants.TITLE.MOVE}
 			onClickMoveBack={onClickMoveBack}
 			onClickMoveLock={onClickMoveLock}
+			hasLastConsonantLetter={hasLastConsonantLetter}
 		/>
 	);
 }
