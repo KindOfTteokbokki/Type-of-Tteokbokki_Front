@@ -20,5 +20,5 @@ export default function NaverRedirectView() {
 		});
 	}, []);
 
-	return <h1></h1>;
+	return <></>;
 }
