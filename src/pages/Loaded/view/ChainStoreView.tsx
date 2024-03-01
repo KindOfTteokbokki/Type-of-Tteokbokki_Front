@@ -7,7 +7,7 @@ import review from '../../../assets/아이콘/한줄평.svg';
 
 export interface StoreProps {
 	borderRadius?: string;
-	storeData: Action;
+	storeData: any;
 }
 
 export default function ChainStoreView(props: StoreProps) {

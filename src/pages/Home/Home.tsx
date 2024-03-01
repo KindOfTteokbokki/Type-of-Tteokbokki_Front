@@ -56,7 +56,8 @@ export default function Home() {
 				if (filteredData.length >= 4) {
 					return;
 				}
-				if (data.file_masking_name !== null) {
+				console.log(data.file_masking_name);
+				if (data.file_masking_name != null) {
 					filteredData.push(data);
 				}
 			});
