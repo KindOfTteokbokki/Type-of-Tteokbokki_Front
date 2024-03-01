@@ -52,13 +52,7 @@ export default function Home() {
 		postFunc(postData).then((res: any) => {
 			console.log(res.data);
 			res.data.map((data: any) => {
-				if (filteredData.length >= 4) {
-					return;
-				}
-				console.log(data.file_path);
-				if (data.file_path) {
-					filteredData.push(data);
-				}
+				filteredData.push(data);
 			});
 			setMyRecommData([...filteredData]);
 		});

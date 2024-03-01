@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
@@ -25,6 +25,7 @@ export default function HomeView(props: Props) {
 	const titleStore = useSelector((state: RootStateType) => {
 		return state.title;
 	});
+	const [count, setCount] = useState(0);
 
 	const store = useSelector((state: RootStateType) => {
 		return state.store.value.file_path + state.store.value.file_masking_name;
@@ -33,6 +34,12 @@ export default function HomeView(props: Props) {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
+
+	const newRecommArray = props.myRecommData
+		.filter((data: any) => {
+			return data.file_masking_name !== null;
+		})
+		.slice(0, 4);
 
 	return (
 		<>
@@ -74,7 +81,7 @@ export default function HomeView(props: Props) {
 						/>
 					</S.MyRecommendCont>
 					<S.FlexCont>
-						{props.myRecommData.map((data: any) => {
+						{newRecommArray.map((data: any) => {
 							return (
 								<S.MyRecommedImg
 									src={data.file_path + data.file_masking_name}

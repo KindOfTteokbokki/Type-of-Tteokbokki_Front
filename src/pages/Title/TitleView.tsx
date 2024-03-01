@@ -32,7 +32,7 @@ export default function TitleView(props: TitleProps) {
 				<S.Icon src={Back} role="back" onClick={props.onClickMoveBack} />
 				<S.Header>
 					<S.H1>
-						{props.hasLastConsonantLetter(props.nickName) ? `${props.nickName}가 모은` : `${props.nickName}이 모은`}
+						{props.hasLastConsonantLetter(props.nickName) ? `${props.nickName}이 모은` : `${props.nickName}가 모은`}
 					</S.H1>
 					<S.H1>{`칭호는 ${props.title?.countTitle.count}개야!`}</S.H1>
 				</S.Header>
