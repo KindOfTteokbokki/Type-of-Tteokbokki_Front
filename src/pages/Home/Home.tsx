@@ -44,7 +44,7 @@ export default function Home() {
 
 	const postData = {
 		pageNum: 0,
-		size: 4,
+		size: 20,
 	};
 
 	useEffect(() => {
