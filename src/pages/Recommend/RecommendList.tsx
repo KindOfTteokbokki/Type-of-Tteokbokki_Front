@@ -19,7 +19,7 @@ export default function RecommendList() {
 
 	useEffect(() => {
 		postFunc(postData, { Authorization: token }).then((res) => {
-			console.log(res?.data);
+			console.log(res);
 			setReviewData(res?.data);
 		});
 	}, []);
