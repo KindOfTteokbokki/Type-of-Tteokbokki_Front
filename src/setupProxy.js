@@ -9,4 +9,12 @@ module.exports = function (app) {
 			changeOrigin: true,
 		})
 	);
+	app.use(
+		'/we',
+		createProxyMiddleware({
+			target: 'we://dev.utteok.com/',
+			ws: true,
+			changeOrigin: true,
+		})
+	);
 };

@@ -16,6 +16,21 @@ export const Layout = styled(Cont)`
 	width: 100%;
 	height: 884px;
 	background-color: ${(props) => props.theme.color.lightGray};
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		display: block;
+		width: 5px;
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: ${(props) => props.theme.color.white};
+	}
 `;
 
 export const Head = styled(Header)`
