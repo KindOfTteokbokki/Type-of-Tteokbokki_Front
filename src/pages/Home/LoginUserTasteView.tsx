@@ -10,16 +10,20 @@ interface LoginUserTasteProps {
 export default function LoginUserTasteView(props: LoginUserTasteProps) {
 	return (
 		<>
-			{props.myTaste?.map((item: any) => {
-				return <S.MyTypeImg src={item?.file_path + item?.file_masking_name} alt="떡볶이 사진" />;
-			})}
-			{props.lockTaste?.map(() => {
-				return (
-					<S.LockCont>
-						<S.LockImg src={lock} />
-					</S.LockCont>
-				);
-			})}
+			{props.myTaste.length
+				? props.myTaste.map((item: any) => {
+						return <S.MyTypeImg src={item?.file_path + item?.file_masking_name} alt="떡볶이 사진" />;
+				  })
+				: null}
+			{props.lockTaste.length
+				? props.lockTaste.map(() => {
+						return (
+							<S.LockCont>
+								<S.LockImg src={lock} alt="자물쇠 아이콘" />
+							</S.LockCont>
+						);
+				  })
+				: null}
 		</>
 	);
 }
