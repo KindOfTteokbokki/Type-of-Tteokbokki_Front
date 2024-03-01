@@ -139,9 +139,11 @@ export const ReviewImg = styled.img`
 `;
 
 export const ReviewText = styled.p`
+	width: 220px;
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	line-height: 140%;
 	margin: 0 8px 0 16px;
+	flex-shrink: 0;
 `;
 
 export const ReviewIcon = styled.button`

@@ -57,10 +57,12 @@ export default function RecommendWrite(props: any) {
 		formData.append('file_masking_name', props.originData.file_masking_name);
 		formData.append('review_seq', props.originData.review_seq);
 
-		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(() => {
-			window.alert('수정되었어!');
-			window.location.reload();
-		});
+		await editPostFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
+			() => {
+				window.alert('수정되었어!');
+				window.location.reload();
+			}
+		);
 	};
 
 	return (

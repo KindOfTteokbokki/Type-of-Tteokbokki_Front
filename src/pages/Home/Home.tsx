@@ -61,7 +61,7 @@ export default function Home() {
 		if (token) {
 			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
 				if (res.data.haveTitle.length >= 1) {
-					setHomeTitle(res.data.heveTitle[0].title_name);
+					setHomeTitle(res.data.haveTitle[0].title_name);
 				}
 
 				if (res.data.length > 3) {
