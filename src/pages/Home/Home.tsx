@@ -57,7 +57,7 @@ export default function Home() {
 					return;
 				}
 				console.log(data.file_masking_name);
-				if (data.file_masking_name != null) {
+				if (typeof data.file_masking_name === 'string') {
 					filteredData.push(data);
 				}
 			});
@@ -66,8 +66,9 @@ export default function Home() {
 
 		if (token) {
 			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
+				console.log(res.data);
 				if (res.data.length > 3) {
-					setMyTaste(res.data.slice(res.data.length - 3).reverse());
+					setMyTaste(res.data.slice(res.data.length - 3));
 				} else {
 					setMyTaste(res.data);
 
