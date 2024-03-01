@@ -32,7 +32,7 @@ export default function LockedTitleView(props: Props) {
 						return (
 							<>
 								<S.Li role="list" key={index}>
-									<Icon />
+									<Icon src={lock} alt="자물쇠 아이콘" />
 									<div>
 										<S.H2>{content.title_name}</S.H2>
 										<S.P>{Number(content.count).toLocaleString() + '명이 받았어'}</S.P>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReviewListView from './view/ReviewListView';
 import { usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
@@ -10,21 +10,17 @@ export interface ReviewListProps {
 }
 
 export default function ReviewList(props: ReviewListProps) {
+	const [reviewData, setReviewData] = useState([]);
+
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
 	const postFunc = usePost(`${baseUrl}/getRecommendToPageInMyinfo`);
 	useEffect(() => {
-		postFunc(
-			{
-				pageNum: 0,
-				size: 15,
-			},
-			{ Authorization: `Bearer ${token}` }
-		).then((res) => {
-			console.log(res);
+		postFunc({ pageNum: 0, size: 15 }, { Authorization: `Bearer ${token}` }).then((res: any) => {
+			setReviewData(res.data);
 		});
 	}, []);
 
-	return <ReviewListView data={props.data} />;
+	return <ReviewListView reviewData={reviewData} />;
 }

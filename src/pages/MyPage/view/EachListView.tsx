@@ -5,10 +5,8 @@ import Icon from '../../../assets/내후기관리.svg';
 import RecommendWrite from '../../Recommend/RecommendWrite';
 import ModalView from '../../Loaded/Modal/view/ModalView';
 import modalIcon from '../../../assets/후기삭제우는얼굴.svg';
-import { usePost } from '../../../api/useFetch';
-import { baseUrl } from '../../../api/useAxios';
-import { useSelector } from 'react-redux';
-import { RootStateType } from '../../../store';
+import { ReviewData } from './ReviewListView';
+import basicReviewImg from '../../../assets/캐릭터.svg';
 
 interface EachListProps {
 	isLastIndex: () => boolean;
@@ -18,7 +16,7 @@ interface EachListProps {
 	onClickRemoveModal: () => void;
 	listRef: React.RefObject<HTMLDivElement>;
 	keyboard: boolean;
-	item: string;
+	item: ReviewData;
 	modal: boolean;
 	modalRef: React.RefObject<HTMLElement>;
 	modalText: {
@@ -26,29 +24,18 @@ interface EachListProps {
 		ANSWER_1: string;
 		ANSWER_2: string;
 	};
+	deletePost: () => void;
 }
 
 export default function EachListView(props: EachListProps) {
-	const token = useSelector((state: RootStateType) => {
-		return state.persistedReducer.token.value;
-	});
-	const postFunc = usePost(`${baseUrl}/deleteRecommend`);
-	const postData = {
-		user_id: 1,
-		review_seq: 26,
-	};
-
-	const deletePost = async () => {
-		await postFunc(postData, { Authorization: `Bearer ${token}` }).then((res) => {
-			console.log(res);
-		});
-	};
-
 	return (
 		<>
 			<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
-				<S.ReviewImg />
-				<S.ReviewText>린ㅁ리ㅏㅁ리ㅏ거느ㅏㅣ라니니갸재기ㅡ핕</S.ReviewText>
+				<S.ReviewImg
+					src={props.item.file_masking_name ? props.item.file_path + props.item.file_masking_name : basicReviewImg}
+					alt={props.item.file_masking_name ? '떡볶이 사진' : '떡볶이 캐릭터 아이콘 사진(기본 이미지)'}
+				/>
+				<S.ReviewText>{props.item.content}</S.ReviewText>
 				<S.ReviewIcon onClick={props.onClickButton} role="moreIcon" />
 				{props.editAndRemoveButton ? (
 					<S.EditAndRemoveBtnCont ref={props.listRef}>
@@ -67,7 +54,7 @@ export default function EachListView(props: EachListProps) {
 						modalAnswerRed={props.modalText.ANSWER_2}
 						onClickModal={props.onClickRemoveModal}
 						onClickRedBtn={props.onClickRemoveModal}
-						onClickWhiteBtn={deletePost}
+						onClickWhiteBtn={props.deletePost}
 						modalIcon={modalIcon}
 					/>
 				) : null}

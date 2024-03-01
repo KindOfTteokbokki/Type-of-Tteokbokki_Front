@@ -14,7 +14,7 @@ export default function RecommendList() {
 
 	const postData = {
 		pageNum: 0,
-		size: 15,
+		size: 100,
 	};
 
 	useEffect(() => {

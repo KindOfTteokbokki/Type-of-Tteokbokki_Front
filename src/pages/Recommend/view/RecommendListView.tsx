@@ -18,7 +18,7 @@ export interface RecommendListProps {
 export default function RecommendListView(props: RecommendListProps) {
 	return (
 		<S.RecommCont>
-			{props.reviewData?.map((data: any) => {
+			{props.reviewData?.reverse().map((data: any) => {
 				console.log(data);
 				return <EachList data={data} />;
 			})}
