@@ -19,7 +19,7 @@ export const sendNickName = (nickName: string, onMessageRecieved: any) => {
 	}
 
 	clientData.publish({
-		destination: '/pub/checkNickname',
+		destination: '/pub/checkNickname/',
 		body: JSON.stringify({
 			nickname: nickName,
 		}),
