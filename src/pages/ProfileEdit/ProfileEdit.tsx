@@ -16,7 +16,7 @@ export default function ProfileEdit() {
 
 	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
 	const getNameFunc = useGet(`${baseUrl}/myInfo`);
-	const editPostFunc = usePost(`${baseUrl}/regiNickName`);
+	const editPostFunc = usePost(`${baseUrl}/regiNickname`);
 
 	useEffect(() => {
 		getValidFunc().then((res: any) => {

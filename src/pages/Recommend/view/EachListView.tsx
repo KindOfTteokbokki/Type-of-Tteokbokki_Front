@@ -22,7 +22,7 @@ export default function EachListView(props: EachListProps) {
 			) : (
 				<>
 					<S.RecommImg src={props.data?.file_path + props.data?.file_masking_name} />
-					<S.RecommText>{props.data?.content}</S.RecommText>
+					<S.RecommText border="1px solid #D54400">{props.data?.content}</S.RecommText>
 				</>
 			)}
 		</S.RecommList>

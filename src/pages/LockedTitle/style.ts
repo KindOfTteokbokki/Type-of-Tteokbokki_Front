@@ -6,7 +6,7 @@ import { Icon } from '../Title/style';
 export const Layout = styled(NavLayout)`
 	padding: 50px 0 0;
 	width: 100%;
-	height: 656px;
+	height: 756px;
 	overflow-y: scroll;
 
 	-ms-overflow-style: none; /* IE and Edge */

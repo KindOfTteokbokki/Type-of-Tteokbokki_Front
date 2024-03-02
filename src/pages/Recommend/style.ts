@@ -85,7 +85,7 @@ export const RecommList = styled.li<{ border: string }>`
 	border: ${(props) => props.border};
 `;
 
-export const RecommText = styled.div`
+export const RecommText = styled.div<{ border: string }>`
 	width: 100%;
 	height: 92px;
 	font-size: 14px;
@@ -93,6 +93,7 @@ export const RecommText = styled.div`
 	padding: 16px;
 	background-color: #fff;
 	border-radius: 0 0 16px 16px;
+	border: ${(props) => props.border};
 `;
 
 export const ReCommOnlyText = styled(RecommText)<{ border: string }>`
