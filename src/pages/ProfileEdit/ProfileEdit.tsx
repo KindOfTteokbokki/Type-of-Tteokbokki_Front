@@ -1,35 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import ProfileEditView from './ProfileEditView';
 import { constants } from '../../constants/constants';
-import { useNavigate, useParams } from 'react-router-dom';
-import { clientData, connect, disConnect, sendNickName } from './validNickName';
+import { useNavigate } from 'react-router-dom';
+import { useGet } from '../../api/useFetch';
+import { baseUrl } from '../../api/useAxios';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 export default function ProfileEdit() {
 	const [nickName, setNickName] = useState('');
-	const [client, setClient] = useState(false);
+	const [validName, setValidName] = useState(true);
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
 
-	const initializeName = () => {
-		setNickName('');
-	};
-
-	const initializeClient = () => {
-		setClient(true);
-	};
-
-	const [chatList, setChatList] = useState([]); // 화면에 표시될 채팅 기록
-	const { apply_id } = useParams(); // 채널을 구분하는 식별자를 URL 파라미터로 받는다.
+	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
+	const getNameFunc = useGet(`${baseUrl}/myInfo`);
 
 	useEffect(() => {
-		clientData.subscribe('/sub/checkNickname/' + apply_id, (body) => {
-			const json_body = JSON.parse(body.body);
-			console.log(json_body);
-			setChatList(json_body);
-			// setChatList((_chat_list) => [..._chat_list, json_body]);
+		getValidFunc().then((res) => {
+			console.log(res);
 		});
+	}, [nickName]);
 
-		// connect(initializeClient);
-
-		return () => disConnect(client);
+	useEffect(() => {
+		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
+			setNickName(res.data);
+		});
 	}, []);
 
 	const navigator = useNavigate();
@@ -47,10 +44,9 @@ export default function ProfileEdit() {
 		<ProfileEditView
 			text={text}
 			onClickBack={onClickBack}
-			sendNickName={sendNickName}
 			nickName={nickName}
 			onChangeNickName={onChangeNickName}
-			// initializeName={initializeName}
+			validName={validName}
 		/>
 	);
 }

@@ -15,9 +15,9 @@ interface ProfileEdit {
 		button: string;
 	};
 	onClickBack: () => void;
-	sendNickName: any;
 	nickName: string;
 	onChangeNickName: (name: string) => void;
+	validName: boolean;
 }
 
 export default function ProfileEditView(props: ProfileEdit) {
@@ -38,11 +38,12 @@ export default function ProfileEditView(props: ProfileEdit) {
 								defaultValue={'기본닉네임'}
 								onChange={(e) => {
 									props.onChangeNickName(e.target.value);
-									props.sendNickName(e.target.value, () => {});
 								}}
 							/>
 
-							<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
+							<S.InvalidName>
+								{props.validName ? props.text.VALIDATION.TRUE : props.text.VALIDATION.FALSE}
+							</S.InvalidName>
 						</S.Label>
 					</MyInfoAndReviewCont>
 				</Main>
