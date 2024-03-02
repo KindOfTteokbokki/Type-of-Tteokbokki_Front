@@ -13,6 +13,7 @@ export default function Home() {
 	const dispatch = useDispatch();
 	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
 	const getFunc = useGet(`${baseUrl}/myTaste`);
+	const getTitleFunc = useGet(`${baseUrl}/haveTitle`);
 
 	const [myTaste, setMyTaste] = useState([]);
 	const [lockTaste, setLockTaste] = useState<any>([]);
@@ -60,11 +61,6 @@ export default function Home() {
 
 		if (token) {
 			getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
-				console.log(res);
-				if (res.data.haveTitle.length >= 1) {
-					setHomeTitle(res.data.haveTitle[0].title_name);
-				}
-
 				if (res.data.length > 3) {
 					setMyTaste(res.data.slice(res.data.length - 3));
 				} else {
@@ -72,6 +68,15 @@ export default function Home() {
 
 					const lockArray = new Array(3 - res.data.length);
 					setLockTaste([...lockArray]);
+				}
+			});
+
+			getTitleFunc({
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json',
+			}).then((res) => {
+				if (res.data.haveTitle.length >= 1) {
+					setHomeTitle(res.data.haveTitle[0].title_name);
 				}
 			});
 		}
