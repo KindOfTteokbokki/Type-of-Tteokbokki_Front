@@ -11,6 +11,7 @@ export default function RecommendWrite(props: any) {
 		return state.persistedReducer.token.value;
 	});
 	const [text, setText] = useState(props.originData ? props.originData.content : '');
+
 	const [imgUrl, setImgUrl] = useState<any>(
 		props.originData ? props.originData.file_path + props.originData.file_masking_name : undefined
 	);
@@ -92,7 +93,7 @@ export default function RecommendWrite(props: any) {
 					/>
 					{imgUrl ? (
 						<S.PreloadCont onClick={onClickDelete}>
-							<S.PreloadImg src={URL.createObjectURL(imgUrl)} />
+							<S.PreloadImg src={props.originData ? imgUrl : URL.createObjectURL(imgUrl)} />
 							<S.PreloadDeleteIcon />
 						</S.PreloadCont>
 					) : (
