@@ -29,7 +29,7 @@ export default function RecommendView() {
 				</S.Head>
 				<S.Main>
 					<S.Message>
-						어떡 이용자들이 <S.BoldText>직접 먹어보고 추천</S.BoldText>하는 <S.BoldText>내돈내산</S.BoldText>{' '}
+						어떡 이용자들이 <S.BoldText>직접 먹어보고 추천</S.BoldText>하는 <S.BoldText>내돈내산</S.BoldText>
 						후기들이야!
 					</S.Message>
 					<RecommendList />

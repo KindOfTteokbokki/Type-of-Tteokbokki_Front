@@ -10,8 +10,10 @@ export default function RecommendWrite(props: any) {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
-	const [text, setText] = useState('');
-	const [imgUrl, setImgUrl] = useState<any>('');
+	const [text, setText] = useState(props.originData ? props.originData.content : '');
+	const [imgUrl, setImgUrl] = useState<any>(
+		props.originData ? props.originData.file_path + props.originData.file_masking_name : undefined
+	);
 	const [modal, setModal] = useState(false);
 	const formData = new FormData();
 	const writeRef = useRef<any>(null);
@@ -72,7 +74,7 @@ export default function RecommendWrite(props: any) {
 				<S.TextField ref={writeRef}>
 					<S.TextArea
 						placeholder="본인만의 꿀조합을 추천해줘!(30자)"
-						defaultValue={text}
+						defaultValue={props.originData?.content}
 						onKeyUp={(e: any) => {
 							setText(e.target.value);
 							if (text.length >= 30) {
