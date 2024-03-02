@@ -15,6 +15,7 @@ interface ProfileEdit {
 		button: string;
 	};
 	onClickBack: () => void;
+	originName: string;
 	nickName: string;
 	onChangeNickName: (name: string) => void;
 	invalidName: boolean;
@@ -43,7 +44,11 @@ export default function ProfileEditView(props: ProfileEdit) {
 							/>
 
 							<S.InvalidName>
-								{props.invalidName ? props.text.VALIDATION.FALSE : props.text.VALIDATION.TRUE}
+								{props.originName !== props.nickName && props.invalidName ? (
+									<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
+								) : (
+									<S.ValidName>{props.text.VALIDATION.TRUE}</S.ValidName>
+								)}
 							</S.InvalidName>
 						</S.Label>
 					</MyInfoAndReviewCont>

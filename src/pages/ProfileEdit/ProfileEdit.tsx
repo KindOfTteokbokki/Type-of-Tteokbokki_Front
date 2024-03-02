@@ -9,6 +9,7 @@ import { RootStateType } from '../../store';
 
 export default function ProfileEdit() {
 	const [nickName, setNickName] = useState('');
+	const [originName, setOriginName] = useState('');
 	const [invalidName, setInValidName] = useState(false);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
@@ -27,6 +28,7 @@ export default function ProfileEdit() {
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			setNickName(res.data);
+			setOriginName(res.data);
 		});
 	}, []);
 
@@ -52,6 +54,7 @@ export default function ProfileEdit() {
 		<ProfileEditView
 			text={text}
 			onClickBack={onClickBack}
+			originName={originName}
 			nickName={nickName}
 			onChangeNickName={onChangeNickName}
 			invalidName={invalidName}
