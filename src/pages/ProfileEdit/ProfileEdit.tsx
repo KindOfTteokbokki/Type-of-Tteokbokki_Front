@@ -2,24 +2,25 @@ import React, { useEffect, useState } from 'react';
 import ProfileEditView from './ProfileEditView';
 import { constants } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
-import { useGet } from '../../api/useFetch';
+import { useGet, usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 
 export default function ProfileEdit() {
 	const [nickName, setNickName] = useState('');
-	const [validName, setValidName] = useState(true);
+	const [invalidName, setInValidName] = useState(false);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
 
 	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
 	const getNameFunc = useGet(`${baseUrl}/myInfo`);
+	const editPostFunc = usePost(`${baseUrl}/regiNickName`);
 
 	useEffect(() => {
-		getValidFunc().then((res) => {
-			console.log(res);
+		getValidFunc().then((res: any) => {
+			setInValidName(res.data);
 		});
 	}, [nickName]);
 
@@ -40,13 +41,21 @@ export default function ProfileEdit() {
 		setNickName(name);
 	};
 
+	const editNickName = async () => {
+		await editPostFunc({ utteok_nickname: nickName }, { Authorization: `Bearer ${token}` }).then(() => {
+			alert('수정되었어!');
+			window.location.reload();
+		});
+	};
+
 	return (
 		<ProfileEditView
 			text={text}
 			onClickBack={onClickBack}
 			nickName={nickName}
 			onChangeNickName={onChangeNickName}
-			validName={validName}
+			invalidName={invalidName}
+			editNickName={editNickName}
 		/>
 	);
 }
