@@ -76,7 +76,6 @@ export const RecommCont = styled.ul`
 	row-gap: 16px;
 	column-gap: 20px;
 	position: relative;
-	background-color: #fff;
 `;
 
 export const RecommList = styled.li<{ border: string }>`
@@ -84,6 +83,7 @@ export const RecommList = styled.li<{ border: string }>`
 	height: 179px;
 	border-radius: 16px;
 	border: ${(props) => props.border};
+	background-color: #fff;
 `;
 
 export const RecommText = styled.div`
@@ -93,6 +93,7 @@ export const RecommText = styled.div`
 	line-height: 20px;
 	padding: 16px;
 	border-radius: 0 0 16px 16px;
+	cursor: pointer;
 `;
 
 export const ReCommOnlyText = styled(RecommText)`
@@ -100,6 +101,7 @@ export const ReCommOnlyText = styled(RecommText)`
 	line-height: 20px;
 	height: 100%;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
+	cursor: pointer;
 `;
 
 export const RecommImg = styled.img`
@@ -107,6 +109,7 @@ export const RecommImg = styled.img`
 	height: 87px;
 	background-color: ${(props) => props.theme.color.gray};
 	border-radius: 16px 16px 0 0;
+	cursor: pointer;
 `;
 
 export const Button = styled.button`

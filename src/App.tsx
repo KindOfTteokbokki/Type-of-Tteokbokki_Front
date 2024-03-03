@@ -15,11 +15,13 @@ import Title from './pages/Title/Title';
 import LockedTitle from './pages/LockedTitle/LockedTitle';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
+import Setting from './pages/Setting/Setting';
 
 function App() {
 	return (
 		<Routes>
 			<Route path="/" element={<Splash />} />
+			<Route path="/setting" element={<Setting />} />
 			<Route path="/pick-types" element={<PickTypes />} />
 			<Route path="/loading" element={<Loading />} />
 			<Route path="/loaded" element={<Loaded />} />

@@ -24,6 +24,7 @@ export interface MyPageProps {
 }
 
 export default function MyPageView(props: MyPageProps) {
+	console.log(props.reviewData);
 	return (
 		<>
 			<S.Section>
@@ -41,7 +42,7 @@ export default function MyPageView(props: MyPageProps) {
 					</S.MyInfoAndReviewCont>
 					<S.MyInfoAndReviewCont padding={props.reviewData.length ? '16px 0' : undefined}>
 						<S.MyReviewTitle>{props.text.REVIEW}</S.MyReviewTitle>
-						{props.reviewData[0]?.content ? (
+						{props.reviewData[0] ? (
 							<ReviewList reviewData={props.reviewData} />
 						) : (
 							<NonDataView text={props.text} onClickMoveRecommend={props.onClickMoveRecommend} />
