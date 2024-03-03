@@ -91,7 +91,7 @@ export default function HomeView(props: Props) {
 						{newRecommArray.map((data: any) => {
 							return (
 								<S.MyRecommedImg
-									src={data.file_masking_name == false || 'null' ? BasicImg : data.file_path + data.file_masking_name}
+									src={data.file_masking_name == null || 'null' ? BasicImg : data.file_path + data.file_masking_name}
 									onClick={() => {
 										navigator(`/recommend/${data.review_seq}`);
 									}}

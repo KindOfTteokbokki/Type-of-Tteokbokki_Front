@@ -3,7 +3,7 @@ import * as S from '../style';
 
 export interface EachListProps {
 	data: any;
-	onClickMoveDetail: (id: string) => void;
+	onClickMoveDetail: () => void;
 }
 
 export default function EachListView(props: EachListProps) {
@@ -11,9 +11,7 @@ export default function EachListView(props: EachListProps) {
 		<S.RecommList
 			border={props.data.my_recommend ? '1px solid #D54400' : ''}
 			role="review"
-			onClick={() => {
-				props.onClickMoveDetail(props.data);
-			}}
+			onClick={props.onClickMoveDetail}
 		>
 			{props.data?.file_masking_name === null ? (
 				<S.ReCommOnlyText>{props.data.content}</S.ReCommOnlyText>
