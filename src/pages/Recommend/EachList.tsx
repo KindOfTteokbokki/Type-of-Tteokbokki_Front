@@ -9,7 +9,7 @@ interface EachListProps {
 
 export default function EachList(props: EachListProps) {
 	const navigate = useNavigate();
-	const onClickMoveDetail = (id: string) => {
+	const onClickMoveDetail = () => {
 		navigate(`/recommend/${props.data.review_seq}`);
 	};
 

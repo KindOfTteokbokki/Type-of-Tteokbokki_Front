@@ -4,7 +4,7 @@ import { constants } from '../../constants/constants';
 import { useNavigate, useParams } from 'react-router-dom';
 import { usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
-import { Action } from '../../slice/findStoreSlice';
+import { useMoveLogin } from '../../hooks/useMoveLogin';
 
 export default function MyTaste() {
 	const postFunc = usePost(`${baseUrl}/viewOneFromMyTaste`);
@@ -17,6 +17,7 @@ export default function MyTaste() {
 		navigator(-1);
 	};
 
+	useMoveLogin();
 	useEffect(() => {
 		postFunc({ store_seq: id }).then((res: any) => {
 			setData(res.data);

@@ -16,13 +16,11 @@ export default function EachListView(props: EachListProps) {
 			}}
 		>
 			{props.data?.file_masking_name === null ? (
-				<S.ReCommOnlyText border={props.data.my_recommend ? '1px solid #D54400' : ''}>
-					{props.data.content}
-				</S.ReCommOnlyText>
+				<S.ReCommOnlyText>{props.data.content}</S.ReCommOnlyText>
 			) : (
 				<>
 					<S.RecommImg src={props.data?.file_path + props.data?.file_masking_name} />
-					<S.RecommText border="1px solid #D54400">{props.data?.content}</S.RecommText>
+					<S.RecommText>{props.data?.content}</S.RecommText>
 				</>
 			)}
 		</S.RecommList>

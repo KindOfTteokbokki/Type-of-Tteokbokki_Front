@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import MyPageView from './view/MyPageView';
 import { constants } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
-import { useGet } from '../../api/useFetch';
+import { useGet, usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import { useMoveLogin } from '../../hooks/useMoveLogin';
+import { ReviewData } from './view/ReviewListView';
 
 export default function MyPage() {
 	const token = useSelector((state: RootStateType) => {
@@ -14,9 +16,10 @@ export default function MyPage() {
 
 	const getTitleFunc = useGet(`${baseUrl}/haveTitle`);
 	const getNameFunc = useGet(`${baseUrl}/myInfo`);
+	const getMyReviewFunc = usePost(`${baseUrl}/getRecommendToPageInMyinfo`);
 	const [nickName, setNickName] = useState('');
 	const [count, setCount] = useState<number>(0);
-	const [data, setData] = useState(['후기', '후기', '후기']);
+	const [reviewData, setReviewData] = useState([]);
 	const navigate = useNavigate();
 
 	const onClickBack = () => {
@@ -29,6 +32,8 @@ export default function MyPage() {
 	const onClickMoveRecommend = () => {
 		navigate('/recommend');
 	};
+
+	useMoveLogin();
 
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
@@ -46,12 +51,12 @@ export default function MyPage() {
 	return (
 		<MyPageView
 			text={constants.MYPAGE}
-			data={data}
 			onClickBack={onClickBack}
 			onClickMoveRecommend={onClickMoveRecommend}
 			nickName={nickName}
 			count={count}
 			onClickMoveProfileEdit={onClickMoveProfileEdit}
+			reviewData={reviewData}
 		/>
 	);
 }

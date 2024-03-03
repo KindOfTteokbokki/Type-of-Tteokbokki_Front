@@ -25,40 +25,39 @@ interface EachListProps {
 		ANSWER_2: string;
 	};
 	deletePost: () => void;
+	onClickMoveDetail: () => void;
 }
 
 export default function EachListView(props: EachListProps) {
 	return (
-		<>
-			<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
-				<S.ReviewImg
-					src={props.item.file_masking_name ? props.item.file_path + props.item.file_masking_name : basicReviewImg}
-					alt={props.item.file_masking_name ? '떡볶이 사진' : '떡볶이 캐릭터 아이콘 사진(기본 이미지)'}
+		<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray} onClick={props.onClickMoveDetail}>
+			<S.ReviewImg
+				src={props.item.file_masking_name ? props.item.file_path + props.item.file_masking_name : basicReviewImg}
+				alt={props.item.file_masking_name ? '떡볶이 사진' : '떡볶이 캐릭터 아이콘 사진(기본 이미지)'}
+			/>
+			<S.ReviewText>{props.item.content}</S.ReviewText>
+			<S.ReviewIcon onClick={props.onClickButton} role="moreIcon" />
+			{props.editAndRemoveButton ? (
+				<S.EditAndRemoveBtnCont ref={props.listRef}>
+					<S.RemoveButton onClick={props.onClickRemoveModal}>삭제</S.RemoveButton>
+					<S.EditButton onClick={props.onClickEdit}>수정</S.EditButton>
+				</S.EditAndRemoveBtnCont>
+			) : null}
+			{props.keyboard ? (
+				<RecommendWrite setKeyBoard={props.onClickEdit} originData={props.item} onClickButton={props.onClickButton} />
+			) : null}
+			{props.modal ? (
+				<ModalView
+					modalRef={props.modalRef}
+					modalHeader={props.modalText.header}
+					modalAnswerWhite={props.modalText.ANSWER_1}
+					modalAnswerRed={props.modalText.ANSWER_2}
+					onClickModal={props.onClickRemoveModal}
+					onClickRedBtn={props.onClickRemoveModal}
+					onClickWhiteBtn={props.deletePost}
+					modalIcon={modalIcon}
 				/>
-				<S.ReviewText>{props.item.content}</S.ReviewText>
-				<S.ReviewIcon onClick={props.onClickButton} role="moreIcon" />
-				{props.editAndRemoveButton ? (
-					<S.EditAndRemoveBtnCont ref={props.listRef}>
-						<S.RemoveButton onClick={props.onClickRemoveModal}>삭제</S.RemoveButton>
-						<S.EditButton onClick={props.onClickEdit}>수정</S.EditButton>
-					</S.EditAndRemoveBtnCont>
-				) : null}
-				{props.keyboard ? (
-					<RecommendWrite setKeyBoard={props.onClickEdit} originData={props.item} onClickButton={props.onClickButton} />
-				) : null}
-				{props.modal ? (
-					<ModalView
-						modalRef={props.modalRef}
-						modalHeader={props.modalText.header}
-						modalAnswerWhite={props.modalText.ANSWER_1}
-						modalAnswerRed={props.modalText.ANSWER_2}
-						onClickModal={props.onClickRemoveModal}
-						onClickRedBtn={props.onClickRemoveModal}
-						onClickWhiteBtn={props.deletePost}
-						modalIcon={modalIcon}
-					/>
-				) : null}
-			</S.MyReviewList>
-		</>
+			) : null}
+		</S.MyReviewList>
 	);
 }

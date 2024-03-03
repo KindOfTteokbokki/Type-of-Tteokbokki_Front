@@ -6,6 +6,7 @@ import { useGet, usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import { useMoveLogin } from '../../hooks/useMoveLogin';
 
 export default function ProfileEdit() {
 	const [nickName, setNickName] = useState('');
@@ -19,6 +20,7 @@ export default function ProfileEdit() {
 	const getNameFunc = useGet(`${baseUrl}/myInfo`);
 	const editPostFunc = usePost(`${baseUrl}/regiNickname`);
 
+	useMoveLogin();
 	useEffect(() => {
 		getValidFunc().then((res: any) => {
 			setInValidName(res.data);
@@ -27,7 +29,6 @@ export default function ProfileEdit() {
 
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
-			setNickName(res.data);
 			setOriginName(res.data);
 		});
 	}, []);

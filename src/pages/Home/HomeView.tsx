@@ -9,6 +9,7 @@ import { constants } from '../../constants/constants';
 import { RedButton } from '../../components/Button/RedButton/style';
 import LoginUserTasteView from './LoginUserTasteView';
 import NonLoginUserView from './NonLoginUserView';
+import BasicImg from '../../assets/기본이미지.svg';
 
 interface Props {
 	onClickMove(): void;
@@ -19,6 +20,7 @@ interface Props {
 	lockTaste: string[];
 	onClickMoveTaste: (id: number) => void;
 	homeTitle: string;
+	homeIcon: string;
 }
 
 export default function HomeView(props: Props) {
@@ -45,7 +47,9 @@ export default function HomeView(props: Props) {
 		<>
 			<S.Section>
 				<S.Title>
-					{titleStore.value.title_name ? (
+					{props.homeIcon ? (
+						<S.Icon src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name} />
+					) : titleStore.value.title_name ? (
 						<S.Icon src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name} />
 					) : (
 						<S.Icon />
@@ -84,7 +88,7 @@ export default function HomeView(props: Props) {
 						{newRecommArray.map((data: any) => {
 							return (
 								<S.MyRecommedImg
-									src={data.file_path + data.file_masking_name}
+									src={data.file_masking_name ? data.file_path + data.file_masking_name : BasicImg}
 									onClick={() => {
 										navigator(`/recommend/${data.review_seq}`);
 									}}
