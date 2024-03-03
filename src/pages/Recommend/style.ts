@@ -76,6 +76,7 @@ export const RecommCont = styled.ul`
 	row-gap: 16px;
 	column-gap: 20px;
 	position: relative;
+	background-color: #fff;
 `;
 
 export const RecommList = styled.li<{ border: string }>`

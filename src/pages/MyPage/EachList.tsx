@@ -66,7 +66,7 @@ export default function EachList(props: EachListProps) {
 	};
 
 	const onClickMoveDetail = () => {
-		navigator(`/mytaste/${props.item.review_seq}`);
+		navigator(`/recommend/${props.item.review_seq}`);
 	};
 
 	useEffect(() => {
