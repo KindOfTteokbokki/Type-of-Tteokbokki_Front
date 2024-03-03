@@ -85,7 +85,7 @@ export const RecommList = styled.li<{ border: string }>`
 	border: ${(props) => props.border};
 `;
 
-export const RecommText = styled.div<{ border: string }>`
+export const RecommText = styled.div`
 	width: 100%;
 	height: 92px;
 	font-size: 14px;
@@ -93,15 +93,13 @@ export const RecommText = styled.div<{ border: string }>`
 	padding: 16px;
 	background-color: #fff;
 	border-radius: 0 0 16px 16px;
-	border: ${(props) => props.border};
 `;
 
-export const ReCommOnlyText = styled(RecommText)<{ border: string }>`
+export const ReCommOnlyText = styled(RecommText)`
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	line-height: 20px;
 	height: 100%;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
-	border: ${(props) => props.border};
 `;
 
 export const RecommImg = styled.img`

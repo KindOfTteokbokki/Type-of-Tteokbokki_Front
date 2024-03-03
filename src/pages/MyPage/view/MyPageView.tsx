@@ -4,6 +4,7 @@ import Navigation from '../../../components/Navigation/Navigation';
 import IconView from './IconView';
 import NonDataView from './NonDataView';
 import ReviewList from '../ReviewList';
+import { ReviewData } from './ReviewListView';
 
 export interface MyPageProps {
 	text: {
@@ -17,13 +18,12 @@ export interface MyPageProps {
 	onClickBack: () => void;
 	onClickMoveProfileEdit: () => void;
 	onClickMoveRecommend: () => void;
-	data: string[];
 	count: number;
 	nickName: string;
+	reviewData: ReviewData[];
 }
 
 export default function MyPageView(props: MyPageProps) {
-	console.log(props.data);
 	return (
 		<>
 			<S.Section>
@@ -39,10 +39,10 @@ export default function MyPageView(props: MyPageProps) {
 						</S.MyNameAndButtonCont>
 						<IconView text={props.text} count={props.count} />
 					</S.MyInfoAndReviewCont>
-					<S.MyInfoAndReviewCont padding={props.data.length ? '16px 0' : undefined}>
+					<S.MyInfoAndReviewCont padding={props.reviewData.length ? '16px 0' : undefined}>
 						<S.MyReviewTitle>{props.text.REVIEW}</S.MyReviewTitle>
-						{props.data.length >= 1 ? (
-							<ReviewList data={props.data} />
+						{props.reviewData[0]?.content ? (
+							<ReviewList reviewData={props.reviewData} />
 						) : (
 							<NonDataView text={props.text} onClickMoveRecommend={props.onClickMoveRecommend} />
 						)}

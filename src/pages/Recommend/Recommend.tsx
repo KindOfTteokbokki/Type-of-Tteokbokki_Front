@@ -1,7 +1,8 @@
 import React from 'react';
 import RecommendView from './view/RecommendView';
-import { useNavigate } from 'react-router-dom';
+import { useMoveLogin } from '../../hooks/useMoveLogin';
 
 export default function Recommend() {
+	useMoveLogin();
 	return <RecommendView />;
 }

@@ -19,7 +19,6 @@ export default function RecommendList() {
 
 	useEffect(() => {
 		postFunc(postData, { Authorization: `Bearer ${token}` }).then((res) => {
-			console.log(res);
 			setReviewData(res?.data);
 		});
 	}, []);

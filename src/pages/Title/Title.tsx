@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { baseUrl } from '../../api/useAxios';
+import { useMoveLogin } from '../../hooks/useMoveLogin';
 
 export default function Title() {
 	const getTitleFunc = useGet(`${baseUrl}/haveTitle`);
@@ -29,6 +30,7 @@ export default function Title() {
 	const [title, setTitle] = useState<any>();
 	const role = ['firstList', 'secondList', 'thirdList'];
 
+	useMoveLogin();
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			setNickName(res.data);

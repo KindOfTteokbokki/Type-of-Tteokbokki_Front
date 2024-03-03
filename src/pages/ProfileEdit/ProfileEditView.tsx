@@ -37,19 +37,17 @@ export default function ProfileEditView(props: ProfileEdit) {
 						<S.Label>
 							{props.text.NICK_NAME}
 							<S.Input
-								defaultValue={props.nickName}
+								placeholder={props.nickName}
 								onChange={(e) => {
 									props.onChangeNickName(e.target.value);
 								}}
 							/>
 
-							<S.InvalidName>
-								{props.originName !== props.nickName && props.invalidName ? (
-									<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
-								) : (
-									<S.ValidName>{props.text.VALIDATION.TRUE}</S.ValidName>
-								)}
-							</S.InvalidName>
+							{props.originName !== props.nickName && props.invalidName ? (
+								<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
+							) : (
+								<S.ValidName>{props.text.VALIDATION.TRUE}</S.ValidName>
+							)}
 						</S.Label>
 					</MyInfoAndReviewCont>
 				</Main>

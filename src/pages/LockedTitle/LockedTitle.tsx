@@ -6,6 +6,7 @@ import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 import { constants } from '../../constants/constants';
+import { useMoveLogin } from '../../hooks/useMoveLogin';
 
 export default function LockedTitle() {
 	const token = useSelector((state: RootStateType) => {
@@ -22,6 +23,8 @@ export default function LockedTitle() {
 	const onClickMoveReturn = () => {
 		navigator('/pick-types');
 	};
+
+	useMoveLogin();
 
 	useEffect(() => {
 		getFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {

@@ -19,7 +19,6 @@ export default function RecommendListView(props: RecommendListProps) {
 	return (
 		<S.RecommCont>
 			{props.reviewData?.map((data: any) => {
-				console.log(data);
 				return <EachList data={data} />;
 			})}
 		</S.RecommCont>

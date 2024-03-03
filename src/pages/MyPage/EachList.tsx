@@ -6,6 +6,7 @@ import { usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import { useNavigate } from 'react-router-dom';
 
 interface EachListProps {
 	item: ReviewData;
@@ -14,6 +15,7 @@ interface EachListProps {
 }
 
 export default function EachList(props: EachListProps) {
+	const navigator = useNavigate();
 	const [editAndRemoveButton, setEditAndRemoveButton] = useState(false);
 	const [keyBoard, setKeyBoard] = useState(false);
 	const [modal, setModal] = useState(false);
@@ -63,6 +65,10 @@ export default function EachList(props: EachListProps) {
 		});
 	};
 
+	const onClickMoveDetail = () => {
+		navigator(`/mytaste/${props.item.review_seq}`);
+	};
+
 	useEffect(() => {
 		document.addEventListener('mousedown', handler);
 
@@ -85,6 +91,7 @@ export default function EachList(props: EachListProps) {
 			modalRef={modalRef}
 			modalText={constants.MYPAGE.REMOVE_MODAL}
 			deletePost={deletePost}
+			onClickMoveDetail={onClickMoveDetail}
 		/>
 	);
 }

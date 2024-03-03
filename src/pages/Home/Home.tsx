@@ -18,6 +18,7 @@ export default function Home() {
 	const [myTaste, setMyTaste] = useState([]);
 	const [lockTaste, setLockTaste] = useState<any>([]);
 	const [homeTitle, setHomeTitle] = useState<string>('');
+	const [homeIcon, setHomeIcon] = useState('');
 
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
@@ -76,6 +77,7 @@ export default function Home() {
 				'Content-Type': 'application/json',
 			}).then((res) => {
 				if (res.data.haveTitle.length >= 1) {
+					setHomeIcon(res.data.haveTitle[0].icorn_file_path + res.data.haveTitle[0].icorn_file_masking_name);
 					setHomeTitle(res.data.haveTitle[0].title_name);
 				}
 			});
@@ -88,6 +90,7 @@ export default function Home() {
 			combiImgList={combiImgList}
 			nickName={constants.HOME.NICK_NAME[randIndex]}
 			homeTitle={homeTitle}
+			homeIcon={homeIcon}
 			myRecommData={myRecommData}
 			myTaste={myTaste}
 			lockTaste={lockTaste}

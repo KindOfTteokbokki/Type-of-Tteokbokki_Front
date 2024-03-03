@@ -1,6 +1,5 @@
 import React from 'react';
 import * as S from '../style';
-import { ReviewListProps } from '../ReviewList';
 import EachList from '../EachList';
 
 export interface ReviewData {
@@ -14,7 +13,11 @@ export interface ReviewData {
 	user_id: number;
 }
 
-export default function ReviewListView(props: { reviewData: ReviewData[] }) {
+interface ReviewListProps {
+	reviewData: ReviewData[];
+}
+
+export default function ReviewListView(props: ReviewListProps) {
 	return (
 		<S.MyReviewCont>
 			{props.reviewData.map((item: ReviewData, index: any) => {
