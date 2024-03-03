@@ -1,6 +1,5 @@
 import React from 'react';
 import EachListView from './view/EachListView';
-import { RecommendListProps } from './view/RecommendListView';
 import { useNavigate } from 'react-router-dom';
 
 interface EachListProps {

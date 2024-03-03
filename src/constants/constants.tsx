@@ -3,8 +3,14 @@ export const constants = {
 		header: ['말만해,', '내가 다 골라줄게!'],
 		KAKAO: '카카오로 시작하기',
 		NAVER: '네이버로 시작하기',
-		GOOGLE: '구글로 시작하기',
 		GUEST: '로그인 없이 둘러보기',
+	},
+	SETTING: {
+		header: ['앞으로 뭐라고 부르면 좋을까?', '닉네임을 입력해줘!'],
+		placeholder: '닉네임(한글 10자 이내)',
+		ERROR_INVALID: '공백없이 한글 10자 이내로만 가능해!',
+		ERROR_DUPLICATE: '이미 사용 중인 닉네임이야!',
+		button: '사용하기',
 	},
 	PICK_TYPES: {
 		header: '같이 떡볶이 고르는 중',

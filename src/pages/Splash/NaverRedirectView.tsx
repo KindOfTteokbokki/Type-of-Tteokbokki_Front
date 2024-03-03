@@ -16,7 +16,7 @@ export default function NaverRedirectView() {
 	useEffect(() => {
 		getFunc().then((res: any) => {
 			dispatch(setUserToken(res.data.accessToken));
-			navigate('/home');
+			navigate('/setting');
 		});
 	}, []);
 
