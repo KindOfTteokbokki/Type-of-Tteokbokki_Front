@@ -1,11 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootStateType } from '../../store';
 import * as S from './style';
 import lock from '../../assets/아이콘/자물쇠.svg';
+import { Action } from '../../slice/findStoreSlice';
 
 interface NonLoginUserProps {
-	store: string;
+	store: Action;
+	onClickMoveTaste: (id: number) => void;
 }
 
 export default function NonLoginUserView(props: NonLoginUserProps) {
@@ -14,7 +13,13 @@ export default function NonLoginUserView(props: NonLoginUserProps) {
 		<>
 			{props.store ? (
 				<>
-					<S.MyTypeImg src={props.store} alt="떡볶이 사진" />
+					<S.MyTypeImg
+						src={props.store.file_path + props.store.file_masking_name}
+						alt="떡볶이 사진"
+						onClick={() => {
+							props.onClickMoveTaste(props.store.store_seq);
+						}}
+					/>
 					<S.LockCont>
 						<S.LockImg src={lock} alt="자물쇠 아이콘" />
 					</S.LockCont>

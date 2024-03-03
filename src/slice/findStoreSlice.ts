@@ -7,6 +7,7 @@ export const initialState: Action = {
 	review: '',
 	file_path: '',
 	file_masking_name: '',
+	store_seq: -1,
 };
 
 export interface Action {
@@ -16,6 +17,7 @@ export interface Action {
 	review: string;
 	file_path: string;
 	file_masking_name: string;
+	store_seq: number;
 }
 
 export const findStoreSlice = createSlice({

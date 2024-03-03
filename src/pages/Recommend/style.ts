@@ -91,7 +91,6 @@ export const RecommText = styled.div`
 	font-size: 14px;
 	line-height: 20px;
 	padding: 16px;
-	background-color: #fff;
 	border-radius: 0 0 16px 16px;
 `;
 
