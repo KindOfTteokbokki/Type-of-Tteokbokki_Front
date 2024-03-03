@@ -46,6 +46,10 @@ export default function MyPage() {
 		}).then((res) => {
 			setCount(res.data.countTitle.count);
 		});
+
+		getMyReviewFunc({ pageNum: 0, size: 15 }, { Authorization: `Bearer ${token}` }).then((res: any) => {
+			setReviewData(res.data);
+		});
 	}, []);
 
 	return (

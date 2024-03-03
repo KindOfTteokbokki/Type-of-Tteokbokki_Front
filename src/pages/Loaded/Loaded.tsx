@@ -48,7 +48,6 @@ export default function Loaded() {
 	useEffect(() => {
 		if (token) {
 			postFunc(postData, { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res: any) => {
-				console.log(res);
 				setData(res.data);
 				dispatch(addStore(res.data));
 			});

@@ -30,7 +30,7 @@ export default function HomeView(props: Props) {
 	});
 
 	const store = useSelector((state: RootStateType) => {
-		return state.store.value.file_path + state.store.value.file_masking_name;
+		return state.store.value;
 	});
 
 	const token = useSelector((state: RootStateType) => {
@@ -48,11 +48,14 @@ export default function HomeView(props: Props) {
 			<S.Section>
 				<S.Title>
 					{props.homeIcon ? (
-						<S.Icon src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name} />
+						<S.Icon src={props.homeIcon} alt="최근에 받은 칭호 아이콘" />
 					) : titleStore.value.title_name ? (
-						<S.Icon src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name} />
+						<S.Icon
+							src={titleStore.value.icorn_file_path + titleStore.value.icorn_file_masking_name}
+							alt="칭호 아이콘"
+						/>
 					) : (
-						<S.Icon />
+						<S.Icon src={BasicImg} alt="기본 가래떡 캐릭터 아이콘" />
 					)}
 					{props.homeTitle !== '' ? props.homeTitle : titleStore.value.title_name}
 				</S.Title>
@@ -71,7 +74,7 @@ export default function HomeView(props: Props) {
 								onClickMoveTaste={props.onClickMoveTaste}
 							/>
 						) : (
-							<NonLoginUserView store={store} />
+							<NonLoginUserView store={store} onClickMoveTaste={props.onClickMoveTaste} />
 						)}
 					</S.FlexCont>
 				</S.Cont>
@@ -88,10 +91,11 @@ export default function HomeView(props: Props) {
 						{newRecommArray.map((data: any) => {
 							return (
 								<S.MyRecommedImg
-									src={data.file_masking_name ? data.file_path + data.file_masking_name : BasicImg}
+									src={data.file_masking_name == false || 'null' ? BasicImg : data.file_path + data.file_masking_name}
 									onClick={() => {
 										navigator(`/recommend/${data.review_seq}`);
 									}}
+									alt="후기 이미지"
 								/>
 							);
 						})}
