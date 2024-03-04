@@ -29,11 +29,15 @@ export default function SettingView(props: Setting) {
 				}}
 			/>
 			<S.ErrorName>
-				{!props.valid ? constants.SETTING.ERROR_INVALID : props.duplicated ? constants.SETTING.ERROR_DUPLICATE : null}
+				{!props.nickName && !props.valid
+					? constants.SETTING.ERROR_INVALID
+					: props.duplicated
+					? constants.SETTING.ERROR_DUPLICATE
+					: null}
 			</S.ErrorName>
 
 			{props.valid && !props.duplicated ? (
-				<S.RedShadowButton onClick={props.onClickMovehome} />
+				<S.RedShadowButton onClick={props.onClickMovehome}>{constants.SETTING.button}</S.RedShadowButton>
 			) : (
 				<S.GrayShadowButton>{constants.SETTING.button}</S.GrayShadowButton>
 			)}

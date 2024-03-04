@@ -5,11 +5,11 @@ import { baseUrl } from '../../api/useAxios';
 import { useNavigate } from 'react-router-dom';
 
 export default function Setting() {
-	const [valid, setValid] = useState(true);
-	const [duplicated, setDuplicated] = useState(false);
+	const [valid, setValid] = useState(false);
+	const [duplicated, setDuplicated] = useState(true);
 	const [nickName, setNickName] = useState('');
 	const korean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{0,9}$/;
-	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
+	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
 	const navigator = useNavigate();
 
 	const checkValidName = () => {
@@ -25,7 +25,7 @@ export default function Setting() {
 	};
 
 	const onClickMovehome = () => {
-		navigator('/home');
+		navigator('/home', { state: { nickName: nickName } });
 	};
 
 	useEffect(() => {

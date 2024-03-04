@@ -35,6 +35,23 @@ export const Main = styled.main`
 
 export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
+	max-height: 470px;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		display: block;
+		width: 5px;
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: ${(props) => props.theme.color.gray};
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: ${(props) => props.theme.color.white};
+	}
+
 	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
 	background-color: ${(props) => props.theme.color.white};
 	border-radius: ${(props) => props.theme.borderRadius.lv4};

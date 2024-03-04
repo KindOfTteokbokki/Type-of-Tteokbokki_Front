@@ -32,7 +32,9 @@ export default function EachListView(props: EachListProps) {
 	return (
 		<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
 			<S.ReviewImg
-				src={props.item.file_masking_name ? props.item.file_path + props.item.file_masking_name : basicReviewImg}
+				src={
+					props.item.file_masking_name != null ? props.item.file_path + props.item.file_masking_name : basicReviewImg
+				}
 				alt={props.item.file_masking_name ? '떡볶이 사진' : '떡볶이 캐릭터 아이콘 사진(기본 이미지)'}
 				onClick={props.onClickMoveDetail}
 			/>

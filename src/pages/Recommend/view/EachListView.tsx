@@ -13,7 +13,7 @@ export default function EachListView(props: EachListProps) {
 			role="review"
 			onClick={props.onClickMoveDetail}
 		>
-			{props.data?.file_masking_name === null ? (
+			{props.data?.file_masking_name == null ? (
 				<S.ReCommOnlyText>{props.data.content}</S.ReCommOnlyText>
 			) : (
 				<>
