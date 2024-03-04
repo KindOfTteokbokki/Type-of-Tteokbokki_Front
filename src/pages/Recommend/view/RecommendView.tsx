@@ -39,6 +39,7 @@ export default function RecommendView() {
 						setKeyBoard(true);
 					}}
 				/>
+
 				{renderWrite()}
 			</S.Layout>
 			<Navigation />

@@ -10,17 +10,22 @@ import { RedButton } from '../../components/Button/RedButton/style';
 import LoginUserTasteView from './LoginUserTasteView';
 import NonLoginUserView from './NonLoginUserView';
 import BasicImg from '../../assets/기본이미지.svg';
+import Setting from '../Setting/Setting';
+import StartModal from './StartModal';
 
 interface Props {
 	onClickMove(): void;
 	combiImgList: any;
-	nickName: string;
+	memberName: string;
 	myRecommData: string[];
 	myTaste: string[];
 	lockTaste: string[];
 	onClickMoveTaste: (id: number) => void;
 	homeTitle: string;
 	homeIcon: string;
+	nickName: string;
+	modal: boolean;
+	onClickDeleteModal: () => void;
 }
 
 export default function HomeView(props: Props) {
@@ -45,6 +50,9 @@ export default function HomeView(props: Props) {
 
 	return (
 		<>
+			{props.nickName && props.modal ? (
+				<StartModal nickName={props.nickName} onClickDeleteModal={props.onClickDeleteModal} />
+			) : null}
 			<S.Section>
 				<S.Title>
 					{props.homeIcon ? (
@@ -107,7 +115,7 @@ export default function HomeView(props: Props) {
 				</S.Cont>
 				<S.Cont>
 					<S.Text>
-						{props.nickName}
+						{props.memberName}
 						{constants.HOME.COMBINATION}
 					</S.Text>
 					<S.FlexCont>
@@ -117,7 +125,9 @@ export default function HomeView(props: Props) {
 										<S.CombiImg
 											src={imageFile?.file_path + imageFile?.file_masking_name}
 											onClick={() => {
-												navigator(`/combination/${imageFile.combination_seq}`, { state: { nickName: props.nickName } });
+												navigator(`/combination/${imageFile.combination_seq}`, {
+													state: { nickName: props.memberName },
+												});
 											}}
 										/>
 									);
@@ -126,7 +136,7 @@ export default function HomeView(props: Props) {
 									return (
 										<S.EmptyCombiImg
 											onClick={() => {
-												navigator('/combination', { state: { nickName: props.nickName } });
+												navigator('/combination', { state: { nickName: props.memberName } });
 											}}
 										/>
 									);

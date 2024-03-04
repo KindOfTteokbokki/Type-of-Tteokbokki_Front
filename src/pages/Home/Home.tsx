@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HomeView from './HomeView';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useAxios, { baseUrl } from '../../api/useAxios';
 import { constants } from '../../constants/constants';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,6 +19,9 @@ export default function Home() {
 	const [lockTaste, setLockTaste] = useState<any>([]);
 	const [homeTitle, setHomeTitle] = useState<string>('');
 	const [homeIcon, setHomeIcon] = useState('');
+	const [modal, setModal] = useState(true);
+	const location = useLocation();
+	const nickName = location.state.nickName;
 
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
@@ -32,6 +35,10 @@ export default function Home() {
 
 	const onClickMoveTaste = (id: number) => {
 		navigator(`/mytaste/${id}`);
+	};
+
+	const onClickDeleteModal = () => {
+		setModal(!modal);
 	};
 
 	const { response } = useAxios({
@@ -51,6 +58,10 @@ export default function Home() {
 	};
 
 	useEffect(() => {
+		if (nickName) {
+			setModal(true);
+		}
+
 		const filteredData: any = [];
 		postFunc(postData).then((res: any) => {
 			console.log(res.data);
@@ -88,13 +99,16 @@ export default function Home() {
 		<HomeView
 			onClickMove={onClickMove}
 			combiImgList={combiImgList}
-			nickName={constants.HOME.NICK_NAME[randIndex]}
+			memberName={constants.HOME.NICK_NAME[randIndex]}
 			homeTitle={homeTitle}
 			homeIcon={homeIcon}
 			myRecommData={myRecommData}
 			myTaste={myTaste}
 			lockTaste={lockTaste}
 			onClickMoveTaste={onClickMoveTaste}
+			nickName={nickName}
+			modal={modal}
+			onClickDeleteModal={onClickDeleteModal}
 		/>
 	);
 }

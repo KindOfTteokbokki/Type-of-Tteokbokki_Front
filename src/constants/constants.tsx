@@ -49,6 +49,10 @@ export const constants = {
 		message: '당신은',
 	},
 	HOME: {
+		START_MODAL: {
+			header: '반가워,',
+			button: '확인',
+		},
 		NICK_NAME: ['제이드', '만두', '개구리', '빵태'],
 		NAVIGATION: ['홈', '추천 후기', '칭호', '내 정보'],
 		COMBINATION: '가 추천하는 꿀조합',

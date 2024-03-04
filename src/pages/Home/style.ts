@@ -147,3 +147,7 @@ export const Alter = styled.h1`
 	font-size: 18px;
 	font-weight: 600;
 `;
+
+export const ButtonCont = styled.div`
+	margin: 0 auto;
+`;

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { constants } from '../../../constants/constants';
 import ModalView from './view/ModalView';
 
