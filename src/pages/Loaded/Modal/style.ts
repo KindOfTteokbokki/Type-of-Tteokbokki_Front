@@ -17,7 +17,7 @@ export const ModalText = styled.p`
 	font-size: ${(props) => props.theme.fontSize.lv3};
 	font-weight: 500;
 	height: 32px;
-	line-height: 32px;
+	line-height: 140%;
 	margin-bottom: 32px;
 `;
 

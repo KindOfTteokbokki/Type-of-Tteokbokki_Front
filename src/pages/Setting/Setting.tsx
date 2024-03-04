@@ -31,6 +31,7 @@ export default function Setting() {
 	useEffect(() => {
 		onChangeValid(checkValidName());
 		getValidFunc().then((res: any) => {
+			console.log(res);
 			setDuplicated(res.data);
 		});
 	}, [nickName]);

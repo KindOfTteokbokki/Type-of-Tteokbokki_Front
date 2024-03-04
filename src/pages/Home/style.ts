@@ -36,6 +36,7 @@ export const Section = styled.section`
 export const MainCont = styled.section`
 	width: 100%;
 	height: 756px;
+
 	padding: 16px 0;
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	background-color: #fff;
@@ -150,4 +151,5 @@ export const Alter = styled.h1`
 
 export const ButtonCont = styled.div`
 	margin: 0 auto;
+	text-align: center;
 `;
