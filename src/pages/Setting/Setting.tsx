@@ -28,13 +28,12 @@ export default function Setting() {
 		navigator('/home', { state: { nickName: nickName } });
 	};
 
-	useEffect(() => {
-		onChangeValid(checkValidName());
+	const onClickCheck = () => {
 		getValidFunc().then((res: any) => {
 			console.log(res);
 			setDuplicated(res.data);
 		});
-	}, [nickName]);
+	};
 
 	return (
 		<SettingView
@@ -45,6 +44,7 @@ export default function Setting() {
 			onChangeValid={onChangeValid}
 			duplicated={duplicated}
 			onClickMovehome={onClickMovehome}
+			onClickCheck={onClickCheck}
 		/>
 	);
 }

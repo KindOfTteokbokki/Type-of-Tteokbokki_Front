@@ -11,6 +11,7 @@ interface Setting {
 	onChangeValid: (value: boolean) => void;
 	duplicated: boolean;
 	onClickMovehome: () => void;
+	onClickCheck: () => void;
 }
 
 export default function SettingView(props: Setting) {
@@ -33,11 +34,11 @@ export default function SettingView(props: Setting) {
 			</S.ErrorName>
 
 			{props.valid && !props.duplicated ? (
-				<S.RedShadowButton onClick={props.onClickMovehome} type="submit">
+				<S.RedShadowButton onClick={props.onClickCheck} type="submit">
 					{constants.SETTING.button}
 				</S.RedShadowButton>
 			) : (
-				<S.GrayShadowButton onClick={} type="submit">
+				<S.GrayShadowButton onClick={props.onClickCheck} type="submit">
 					{constants.SETTING.button}
 				</S.GrayShadowButton>
 			)}
