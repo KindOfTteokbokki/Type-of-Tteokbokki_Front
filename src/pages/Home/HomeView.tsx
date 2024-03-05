@@ -23,7 +23,7 @@ interface Props {
 	onClickMoveTaste: (id: number) => void;
 	homeTitle: string;
 	homeIcon: string;
-	nickName: string;
+	nickName?: string;
 	modal: boolean;
 	onClickDeleteModal: () => void;
 }
@@ -50,7 +50,7 @@ export default function HomeView(props: Props) {
 
 	return (
 		<>
-			{props.nickName && props.modal ? (
+			{props?.nickName && props.modal ? (
 				<StartModal nickName={props.nickName} onClickDeleteModal={props.onClickDeleteModal} />
 			) : null}
 			<S.Section>
