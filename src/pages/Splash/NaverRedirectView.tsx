@@ -20,7 +20,7 @@ export default function NaverRedirectView() {
 
 			getUseNameFunc({ Authorization: `Bearer ${res.data.accessToken}` }).then((res) => {
 				if (res.data) {
-					navigate('/home');
+					navigate('/home', { state: { nickName: undefined } });
 				} else {
 					navigate('/setting');
 				}
