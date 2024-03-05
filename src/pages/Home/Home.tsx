@@ -21,7 +21,7 @@ export default function Home() {
 	const [homeIcon, setHomeIcon] = useState('');
 	const [modal, setModal] = useState(true);
 	const location = useLocation();
-	const nickName = location.state.nickName;
+	const nickName = location?.state.nickName;
 
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {

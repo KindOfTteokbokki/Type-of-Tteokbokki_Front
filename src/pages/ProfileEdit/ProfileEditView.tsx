@@ -37,7 +37,7 @@ export default function ProfileEditView(props: ProfileEdit) {
 						<S.Label>
 							{props.text.NICK_NAME}
 							<S.Input
-								placeholder={props.nickName}
+								placeholder={props.originName}
 								onChange={(e) => {
 									props.onChangeNickName(e.target.value);
 								}}
