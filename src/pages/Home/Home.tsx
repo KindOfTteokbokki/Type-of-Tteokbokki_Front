@@ -21,6 +21,7 @@ export default function Home() {
 	const [homeIcon, setHomeIcon] = useState('');
 	const [modal, setModal] = useState(true);
 	const location = useLocation();
+	const [nickName, setNickName] = useState<string>('');
 
 	const [myRecommData, setMyRecommData]: any = useState([]);
 	const token = useSelector((state: RootStateType) => {
@@ -58,6 +59,7 @@ export default function Home() {
 
 	useEffect(() => {
 		if (location?.state.nickName) {
+			setNickName(location?.state.nickName);
 			setModal(true);
 		}
 
@@ -105,7 +107,7 @@ export default function Home() {
 			myTaste={myTaste}
 			lockTaste={lockTaste}
 			onClickMoveTaste={onClickMoveTaste}
-			nickName={location?.state.nickName}
+			nickName={nickName}
 			modal={modal}
 			onClickDeleteModal={onClickDeleteModal}
 		/>
