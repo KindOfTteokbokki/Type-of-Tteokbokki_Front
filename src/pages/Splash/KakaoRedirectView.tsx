@@ -9,12 +9,20 @@ export default function KakaoRedirectView() {
 	const dispatch = useDispatch();
 	const code = new URL(window.location.href).searchParams.get('code');
 	const getFunc = useGet(`${baseUrl}/auth/kakao/?code=${code}`);
+	const getUseNameFunc = useGet(`${baseUrl}/useCheckNickName`);
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		getFunc().then((res: any) => {
 			dispatch(setUserToken(res.data.accessToken));
-			navigate('/setting');
+
+			getUseNameFunc({ Authorization: `Bearer ${res.data.accessToken}` }).then((res) => {
+				if (res.data) {
+					navigate('/home');
+				} else {
+					navigate('/setting');
+				}
+			});
 		});
 	}, []);
 

@@ -13,6 +13,7 @@ export const ModalCont = styled.article`
 `;
 
 export const ModalText = styled.p`
+	font-family: 'Pretendard-Medium';
 	text-align: center;
 	font-size: ${(props) => props.theme.fontSize.lv3};
 	font-weight: 500;

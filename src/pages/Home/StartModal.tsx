@@ -13,7 +13,7 @@ export default function StartModal(props: StartProps) {
 	return (
 		<DropBack>
 			<S.ModalCont>
-				<S.ModalText>{constants.HOME.START_MODAL.header + props.nickName + '!'}</S.ModalText>
+				<S.ModalText>{`${constants.HOME.START_MODAL.header} ${props.nickName}!`}</S.ModalText>
 				<ButtonCont>
 					<S.ModalRedButton onClick={props.onClickDeleteModal}>{constants.HOME.START_MODAL.button}</S.ModalRedButton>
 				</ButtonCont>

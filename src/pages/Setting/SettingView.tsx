@@ -12,6 +12,7 @@ interface Setting {
 	duplicated: boolean;
 	onClickMovehome: () => void;
 	onClickCheck: () => void;
+	check: boolean;
 }
 
 export default function SettingView(props: Setting) {
@@ -30,11 +31,21 @@ export default function SettingView(props: Setting) {
 				}}
 			/>
 			<S.ErrorName>
-				{!props.valid ? constants.SETTING.ERROR_INVALID : props.duplicated ? constants.SETTING.ERROR_DUPLICATE : null}
+				{props.check
+					? !props.valid
+						? constants.SETTING.ERROR_INVALID
+						: props.duplicated
+					: constants.SETTING.ERROR_DUPLICATE}
 			</S.ErrorName>
 
 			{props.valid && !props.duplicated ? (
-				<S.RedShadowButton onClick={props.onClickCheck} type="submit">
+				<S.RedShadowButton
+					onClick={() => {
+						props.onClickCheck();
+						props.onClickMovehome();
+					}}
+					type="submit"
+				>
 					{constants.SETTING.button}
 				</S.RedShadowButton>
 			) : (

@@ -12,11 +12,19 @@ export default function NaverRedirectView() {
 
 	console.log(code);
 	const getFunc = useGet(`${baseUrl}/auth/naver/?code=${code}`);
+	const getUseNameFunc = useGet(`${baseUrl}/useCheckNickName`);
 
 	useEffect(() => {
 		getFunc().then((res: any) => {
 			dispatch(setUserToken(res.data.accessToken));
-			navigate('/setting');
+
+			getUseNameFunc({ Authorization: `Bearer ${res.data.accessToken}` }).then((res) => {
+				if (res.data) {
+					navigate('/home');
+				} else {
+					navigate('/setting');
+				}
+			});
 		});
 	}, []);
 
