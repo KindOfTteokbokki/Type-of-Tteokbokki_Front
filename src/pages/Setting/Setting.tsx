@@ -9,7 +9,7 @@ export default function Setting() {
 	const [valid, setValid] = useState(true);
 	const [duplicated, setDuplicated] = useState(false);
 	const [nickName, setNickName] = useState('');
-	const korean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{0,9}$/;
+	const korean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{1,9}$/;
 	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
 	const navigator = useNavigate();
 
