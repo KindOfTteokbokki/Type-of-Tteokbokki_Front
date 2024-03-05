@@ -22,7 +22,7 @@ export default function ProfileEdit() {
 
 	useMoveLogin();
 	useEffect(() => {
-		getValidFunc().then((res: any) => {
+		getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
 			console.log(res);
 			setInValidName(res.data);
 		});
