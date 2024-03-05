@@ -43,11 +43,13 @@ export default function ProfileEditView(props: ProfileEdit) {
 								}}
 							/>
 
-							{props.originName !== props.nickName && props.invalidName ? (
-								<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
-							) : (
-								<S.ValidName>{props.text.VALIDATION.TRUE}</S.ValidName>
-							)}
+							{props.originName !== props.nickName ? (
+								props.invalidName ? (
+									<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
+								) : (
+									<S.ValidName>{props.text.VALIDATION.TRUE}</S.ValidName>
+								)
+							) : null}
 						</S.Label>
 					</MyInfoAndReviewCont>
 				</Main>
