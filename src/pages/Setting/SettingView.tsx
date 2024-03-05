@@ -35,14 +35,16 @@ export default function SettingView(props: Setting) {
 					? !props.valid
 						? constants.SETTING.ERROR_INVALID
 						: props.duplicated
-					: constants.SETTING.ERROR_DUPLICATE}
+						? constants.SETTING.ERROR_DUPLICATE
+						: null
+					: null}
 			</S.ErrorName>
 
 			{props.valid && !props.duplicated ? (
 				<S.RedShadowButton
 					onClick={() => {
 						props.onClickCheck();
-						props.onClickMovehome();
+						// props.onClickMovehome();
 					}}
 					type="submit"
 				>

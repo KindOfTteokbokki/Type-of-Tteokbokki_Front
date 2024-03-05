@@ -38,7 +38,7 @@ export default function Home() {
 	};
 
 	const onClickDeleteModal = () => {
-		setModal(!modal);
+		setModal(false);
 	};
 
 	const { response } = useAxios({
@@ -58,7 +58,7 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		if (location?.state.nickName) {
+		if (location.state?.nickName) {
 			setNickName(location?.state.nickName);
 			setModal(true);
 		}
