@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
-import { NavLayout } from '../../components/Layout/MainLayout.jsx/style';
 import { BackButton } from '../Recommend/style';
 import Icon from '../../assets/내후기관리.svg';
 
@@ -35,21 +34,10 @@ export const Main = styled.main`
 
 export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
-	max-height: 430px;
 	overflow-y: scroll;
 
 	&::-webkit-scrollbar {
-		display: block;
-		width: 5px;
-		background-color: ${(props) => props.theme.color.gray};
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: ${(props) => props.theme.color.gray};
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: ${(props) => props.theme.color.white};
+		display: none;
 	}
 
 	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
@@ -137,6 +125,8 @@ export const MyReviewCont = styled.ul`
 	width: 100%;
 	border-top: 3px solid ${(props) => props.theme.color.gray};
 	margin-top: 16px;
+	overflow: visible;
+	max-height: 360px;
 `;
 
 export const MyReviewList = styled.li<{ border?: string | undefined }>`
@@ -147,6 +137,7 @@ export const MyReviewList = styled.li<{ border?: string | undefined }>`
 	padding: 0 16px;
 	border-bottom: ${(props) => (props.border ? `0.3px solid ${props.border}` : null)};
 	position: relative;
+	overflow-y: visible;
 `;
 
 export const ReviewImg = styled.img`
@@ -177,6 +168,7 @@ export const EditAndRemoveBtnCont = styled.div`
 	position: absolute;
 	right: 16px;
 	top: 60px;
+	overflow: visible;
 	background-color: ${(props) => props.theme.color.white};
 	z-index: 10;
 `;

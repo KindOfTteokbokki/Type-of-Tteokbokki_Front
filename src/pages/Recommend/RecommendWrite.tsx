@@ -28,7 +28,7 @@ export default function RecommendWrite(props: any) {
 	useEffect(() => {
 		const handler = (e: any) => {
 			if (writeRef.current && !writeRef.current.contains(e.target)) {
-				props.setKeyBoard(false);
+				props?.setKeyBoard(false);
 				props?.onClickButton();
 			}
 		};
@@ -41,7 +41,9 @@ export default function RecommendWrite(props: any) {
 
 	const saveReview = async () => {
 		formData.append('content', text);
-		formData.append('file', imgUrl);
+		if (imgUrl) {
+			formData.append('file', imgUrl);
+		}
 
 		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
 			(response) => {
@@ -53,7 +55,9 @@ export default function RecommendWrite(props: any) {
 
 	const editReview = async () => {
 		formData.append('content', text);
-		formData.append('file', imgUrl);
+		if (imgUrl) {
+			formData.append('file', imgUrl);
+		}
 		formData.append('user_id', props.originData.user_id);
 		formData.append('file_path', props.originData.file_path);
 		formData.append('file_original_name', props.originData.file_original_name);

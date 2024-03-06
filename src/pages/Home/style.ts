@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import plus from '../../assets/아이콘_나도추천할래/나도추천할래플러스.svg';
 
 export const Layout = styled.section`
@@ -63,14 +63,38 @@ export const Icon = styled.img`
 	position: relative;
 	top: 10px;
 	margin-right: 8px;
+	display: inline-block;
+`;
+
+export const Move = (distance: number) => keyframes`
+		0% {
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+		}
+		100% {
+			-webkit-transform: translateX(${distance}px);
+			transform: translateX(${distance}px);
+		}
 `;
 
 export const Title = styled.p`
-	font-family: 'DNFBitBitv2';
-	font-size: 24px;
 	height: 56px;
 	line-height: 56px;
+	display: flex;
+`;
+
+export const TextCont = styled.div`
+	overflow: hidden;
+`;
+
+export const H1 = styled.h1<{ move: number }>`
+	font-family: 'DNFBitBitv2';
+	font-size: 24px;
+	line-height: 56px;
 	display: inline-block;
+	transition: transform 1s linear;
+	animation: ${(props) => Move(Number(props.move) < 0 ? props.move : 0)} 2s infinite;
+	white-space: nowrap;
 `;
 
 export const MainImg = styled.img`

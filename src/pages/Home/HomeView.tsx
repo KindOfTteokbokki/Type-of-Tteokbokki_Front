@@ -11,6 +11,7 @@ import LoginUserTasteView from './LoginUserTasteView';
 import NonLoginUserView from './NonLoginUserView';
 import BasicImg from '../../assets/기본이미지.svg';
 import StartModal from './StartModal';
+import { callbackify } from 'util';
 
 interface Props {
 	onClickMove(): void;
@@ -28,6 +29,8 @@ interface Props {
 }
 
 export default function HomeView(props: Props) {
+	const content = document.getElementById('content');
+	const result = 307 - Number(content?.clientWidth);
 	const navigator = useNavigate();
 	const titleStore = useSelector((state: RootStateType) => {
 		return state.title;
@@ -47,6 +50,7 @@ export default function HomeView(props: Props) {
 		})
 		.slice(0, 4);
 
+	console.log(content?.clientWidth);
 	return (
 		<>
 			{props?.nickName && props.modal ? (
@@ -64,7 +68,11 @@ export default function HomeView(props: Props) {
 					) : (
 						<S.Icon src={BasicImg} alt="기본 가래떡 캐릭터 아이콘" />
 					)}
-					{props.homeTitle !== '' ? props.homeTitle : titleStore.value.title_name}
+					<S.TextCont>
+						<S.H1 id="content" move={result}>
+							{props.homeTitle !== '' ? props.homeTitle : titleStore.value.title_name}
+						</S.H1>
+					</S.TextCont>
 				</S.Title>
 				<S.MainCont>
 					<S.MainText>어떤 떡볶이가 먹고싶어?</S.MainText>

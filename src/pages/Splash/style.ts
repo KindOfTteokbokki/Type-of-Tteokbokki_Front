@@ -9,6 +9,7 @@ export const Layout = styled.section`
 	text-align: center;
 	padding: 277px 0 152px;
 	background-image: url(${Background});
+	position: relative;
 `;
 
 export const LogoCont = styled.h1`
@@ -70,4 +71,15 @@ export const NonLoginText = styled.button`
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	font-weight: ${(props) => props.theme.fontWeight.regular};
 	color: #333;
+	font-family: 'Pretendard-Regular';
+`;
+
+export const SuggestText = styled.a`
+	display: block;
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	font-family: 'Pretendard-Regular';
+	font-size: ${(props) => props.theme.fontSize.lv1};
 `;
