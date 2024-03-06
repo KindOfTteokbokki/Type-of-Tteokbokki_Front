@@ -35,7 +35,7 @@ export const Main = styled.main`
 
 export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
-	max-height: 470px;
+	max-height: 430px;
 	overflow-y: scroll;
 
 	&::-webkit-scrollbar {
