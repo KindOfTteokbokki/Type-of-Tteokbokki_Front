@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.b9b5c613.js",
+    "main.js": "/static/js/main.1ead9e65.js",
     "static/media/Logo.svg": "/static/media/Logo.1ce1487ccaf0f95c88e43e476f5cfc68.svg",
     "static/media/어떡로고.svg": "/static/media/어떡로고.ea3c920e31f0e162a465515b97ebbde6.svg",
     "static/media/캐릭터.svg": "/static/media/캐릭터.5ce92998d6d462c9f435912d6b2bf4e0.svg",
@@ -38,9 +38,9 @@
     "index.html": "/index.html",
     "static/media/카카오 로고.svg": "/static/media/카카오 로고.ad0f2f0a27ed6f940879435c88d82de8.svg",
     "static/media/네이버 로고.svg": "/static/media/네이버 로고.81a79a59d8aad25c8d43539dc97092c4.svg",
-    "main.b9b5c613.js.map": "/static/js/main.b9b5c613.js.map"
+    "main.1ead9e65.js.map": "/static/js/main.1ead9e65.js.map"
   },
   "entrypoints": [
-    "static/js/main.b9b5c613.js"
+    "static/js/main.1ead9e65.js"
   ]
 }

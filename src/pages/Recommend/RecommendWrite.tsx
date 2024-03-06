@@ -74,6 +74,13 @@ export default function RecommendWrite(props: any) {
 		);
 	};
 
+	const isOriginImage = () => {
+		if (props.originData?.file_path + props.originData?.file_masking_name == imgUrl) {
+			return true;
+		}
+		return false;
+	};
+
 	return (
 		<S.RecommDropBack role="dropBack">
 			<S.WriteCont>
@@ -99,7 +106,7 @@ export default function RecommendWrite(props: any) {
 					/>
 					{imgUrl ? (
 						<S.PreloadCont onClick={onClickDelete}>
-							<S.PreloadImg src={props.originData?.file_masking_name != null ? imgUrl : URL.createObjectURL(imgUrl)} />
+							<S.PreloadImg src={isOriginImage() ? imgUrl : URL.createObjectURL(imgUrl)} />
 							<S.PreloadDeleteIcon />
 						</S.PreloadCont>
 					) : (
