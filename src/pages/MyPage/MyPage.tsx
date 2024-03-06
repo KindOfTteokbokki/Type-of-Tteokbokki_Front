@@ -37,7 +37,6 @@ export default function MyPage() {
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' })
 			.then((res) => {
-				console.log(res);
 				setNickName(res.data);
 			})
 			.catch((err) => {
@@ -48,12 +47,10 @@ export default function MyPage() {
 			Authorization: `Bearer ${token}`,
 			'Content-Type': 'application/json',
 		}).then((res) => {
-			console.log(res);
 			setCount(res.data.countTitle.count);
 		});
 
 		getMyReviewFunc({ pageNum: 0, size: 15 }, { Authorization: `Bearer ${token}` }).then((res: any) => {
-			console.log(res);
 			setReviewData(res.data);
 		});
 	}, []);

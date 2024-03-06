@@ -20,7 +20,6 @@ export default function RecommendDetail() {
 
 	useEffect(() => {
 		postFunc({ review_seq: id }).then((res: any) => {
-			console.log(res);
 			setData(res.data);
 		});
 	}, []);

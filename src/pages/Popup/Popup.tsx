@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PopupView from './PopupView';
 import { useNavigate } from 'react-router-dom';
-import useAxios, { baseUrl } from '../../api/useAxios';
-import { constants } from '../../constants/constants';
+import { baseUrl } from '../../api/useAxios';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
-import { UseSelector } from 'react-redux';
 import { addTitle } from '../../slice/findTitleSlice';
 import { usePost } from '../../api/useFetch';
 

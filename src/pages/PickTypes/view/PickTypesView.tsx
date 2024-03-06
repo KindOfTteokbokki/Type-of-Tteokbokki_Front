@@ -5,10 +5,6 @@ import PickTypesList from '../PickTypesList';
 import BigRedButton from '../../../components/Button/BigRedButton/BigRedButton';
 
 export default function PickTypesView(props: Props) {
-	const onClickScroll = (index: number) => {
-		window.scrollTo(0, index);
-	};
-
 	return (
 		<S.Cont>
 			<S.Layout id="pickType">
@@ -18,7 +14,7 @@ export default function PickTypesView(props: Props) {
 				<S.Main>
 					<S.MessageLayout>{props.alertText}</S.MessageLayout>
 					<S.FlexLayout>
-						<PickTypesList onClickScroll={onClickScroll} onClickDelete={props.onClickDelete} />
+						<PickTypesList onClickDelete={props.onClickDelete} />
 					</S.FlexLayout>
 				</S.Main>
 				<S.ResultLayout>

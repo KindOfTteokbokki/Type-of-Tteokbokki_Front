@@ -121,10 +121,7 @@ export const ResultChipLayout = styled.div`
 
 export const ResultButtonLayout = styled.div`
 	width: 100%;
-	backdrop-filter: opacity(0.5);
 	text-align: center;
 	padding: 37px 0 41px;
-	-webkit-backdrop-filter: blur(50px);
-	backdrop-filter: blur(50px);
 	height: 100%;
 `;

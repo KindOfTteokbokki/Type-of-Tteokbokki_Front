@@ -53,7 +53,6 @@ export default function Loaded() {
 			});
 		} else {
 			postFunc(postData).then((res: any) => {
-				console.log(res);
 				setData(res.data);
 				dispatch(addStore(res.data));
 			});

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Props } from '../PickTypesList';
 import * as S from '../style';
 import { Response } from '../PickTypes';
@@ -19,7 +19,6 @@ export default function PickTypesListView(props: PickTypeListProps) {
 						questionIndex={questionIndex}
 						answerList={props.answerList}
 						onClickDelete={props.onClickDelete}
-						onClickScroll={props.onClickScroll}
 					/>
 				);
 			})}

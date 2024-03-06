@@ -10,7 +10,6 @@ export default function Splash() {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
-	console.log(token);
 
 	const onClickMove = () => {
 		navigator('/pick-types');
