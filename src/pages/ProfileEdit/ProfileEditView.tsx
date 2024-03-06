@@ -45,7 +45,7 @@ export default function ProfileEditView(props: ProfileEdit) {
 								}}
 							/>
 
-							{props.originName !== props.nickName ? (
+							{props.originName != props.nickName ? (
 								props.invalidName ? (
 									<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
 								) : props.duplicated ? (

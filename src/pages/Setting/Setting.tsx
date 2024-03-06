@@ -36,21 +36,17 @@ export default function Setting() {
 		navigator('/home', { state: { nickName: nickName } });
 	};
 
+	useEffect(() => {
+		setValid(checkValidName());
+		getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
+			setDuplicated(res.data);
+		});
+	}, [nickName]);
+
 	const onClickCheck = () => {
-		setCheck(true);
-		if (!checkValidName()) {
-			setValid(false);
-		} else {
-			setValid(true);
-			getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
-				setDuplicated(res.data);
-				if (!res.data) {
-					registerFunc({ utteok_nickname: nickName }, { Authorization: `Bearer ${token}` }).then(() => {
-						onClickMovehome();
-					});
-				}
-			});
-		}
+		registerFunc({ utteok_nickname: nickName }, { Authorization: `Bearer ${token}` }).then(() => {
+			onClickMovehome();
+		});
 	};
 
 	return (
