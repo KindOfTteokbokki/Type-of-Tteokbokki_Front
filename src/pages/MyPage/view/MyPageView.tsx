@@ -24,7 +24,6 @@ export interface MyPageProps {
 }
 
 export default function MyPageView(props: MyPageProps) {
-	console.log(props.reviewData);
 	return (
 		<>
 			<S.Section>

@@ -10,8 +10,8 @@ interface ProfileEdit {
 		NICK_NAME: string;
 		VALIDATION: {
 			TRUE: string;
-			FALSE: string;
 			ERROR_DUPLICATE: string;
+			ERROR_INVALID: string;
 		};
 		button: string;
 	};
@@ -47,7 +47,7 @@ export default function ProfileEditView(props: ProfileEdit) {
 
 							{props.originName != props.nickName ? (
 								props.invalidName ? (
-									<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
+									<S.InvalidName>{props.text.VALIDATION.ERROR_INVALID}</S.InvalidName>
 								) : props.duplicated ? (
 									<S.InvalidName>{props.text.VALIDATION.ERROR_DUPLICATE}</S.InvalidName>
 								) : (

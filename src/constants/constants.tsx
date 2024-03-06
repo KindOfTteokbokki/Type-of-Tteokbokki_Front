@@ -94,8 +94,8 @@ export const constants = {
 		NICK_NAME: '닉네임',
 		VALIDATION: {
 			TRUE: '사용 가능한 닉네임이야!',
-			FALSE: '사용할 수 없는 닉네임이야!',
 			ERROR_DUPLICATE: '이미 사용 중인 닉네임이야!',
+			ERROR_INVALID: '공백없이 한글 10자 이내로만 가능해!',
 		},
 	},
 };

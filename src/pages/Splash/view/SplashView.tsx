@@ -19,6 +19,7 @@ export default function SplashView(props: Props) {
 			</S.LogoCont>
 			<LoginButtons />
 			<S.NonLoginText onClick={props.onClickMove}>{props.guestText}</S.NonLoginText>
+			<S.SuggestText href="mailto:utteok401@gmail.com">불편 및 문의사항 보내기</S.SuggestText>
 		</S.Layout>
 	);
 }
