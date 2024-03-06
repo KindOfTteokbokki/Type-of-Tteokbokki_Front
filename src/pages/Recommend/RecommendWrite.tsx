@@ -41,6 +41,12 @@ export default function RecommendWrite(props: any) {
 		};
 	});
 
+	const getURL = () => {
+		const newBlob = new Blob([new Uint8Array(imgUrl)]);
+		const newFile = new File([newBlob], props?.originData.file_original_name);
+		return newFile;
+	};
+
 	const saveReview = async () => {
 		formData.append('content', text);
 		if (imgUrl) {
@@ -58,7 +64,7 @@ export default function RecommendWrite(props: any) {
 	const editReview = async () => {
 		formData.append('content', text);
 		if (imgUrl) {
-			formData.append('file', imgUrl);
+			formData.append('file', isOriginImage() ? getURL() : imgUrl);
 		}
 		formData.append('user_id', props.originData.user_id);
 		formData.append('file_path', props.originData.file_path);
