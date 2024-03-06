@@ -40,7 +40,10 @@ export default function MyPageView(props: MyPageProps) {
 						</S.MyNameAndButtonCont>
 						<IconView text={props.text} count={props.count} />
 					</S.MyInfoAndReviewCont>
-					<S.MyInfoAndReviewCont padding={props.reviewData.length ? '16px 0' : undefined}>
+					<S.MyInfoAndReviewCont
+						minHeight={props.reviewData.length ? '310px' : undefined}
+						padding={props.reviewData.length ? '16px 0' : undefined}
+					>
 						<S.MyReviewTitle>{props.text.REVIEW}</S.MyReviewTitle>
 						{props.reviewData[0] ? (
 							<ReviewList reviewData={props.reviewData} />
