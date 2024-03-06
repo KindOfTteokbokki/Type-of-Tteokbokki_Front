@@ -33,7 +33,7 @@ export const Main = styled.main`
 	gap: 16px;
 `;
 
-export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
+export const MyInfoAndReviewCont = styled.section<{ padding?: string; minHeight?: string }>`
 	width: 100%;
 	max-height: 430px;
 	overflow-y: scroll;
@@ -56,6 +56,7 @@ export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	background-color: ${(props) => props.theme.color.white};
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	margin: 0 auto;
+	min-height : ${(props)=>props.minHeight ? props.minHeight : undefined};
 `;
 
 export const MyNameAndButtonCont = styled.section`
