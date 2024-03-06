@@ -3,6 +3,8 @@ import SettingView from './SettingView';
 import { useGet } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootStateType } from '../../store';
 
 export default function Setting() {
 	const [check, setCheck] = useState(false);
@@ -10,6 +12,9 @@ export default function Setting() {
 	const [duplicated, setDuplicated] = useState(false);
 	const [nickName, setNickName] = useState('');
 	const korean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{1,9}$/;
+	const token = useSelector((state: RootStateType) => {
+		return state.persistedReducer.token.value;
+	});
 	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
 	const navigator = useNavigate();
 
@@ -30,7 +35,7 @@ export default function Setting() {
 	};
 
 	const onClickCheck = () => {
-		getValidFunc().then((res: any) => {
+		getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
 			console.log(res);
 
 			setCheck(true);
