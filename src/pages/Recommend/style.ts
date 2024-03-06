@@ -17,7 +17,6 @@ export const Layout = styled(Cont)`
 	height: 756px;
 	background-color: ${(props) => props.theme.color.lightGray};
 	overflow-y: scroll;
-	position: relative;
 
 	&::-webkit-scrollbar {
 		display: block;
@@ -120,9 +119,9 @@ export const Button = styled.button`
 	height: 72px;
 	background-image: url(${icon});
 	background-repeat: no-repeat;
-	position: absolute;
-	right: 15px;
+	position: sticky;
 	bottom: 40px;
+	left : 100%;
 `;
 
 export const TextField = styled.div`

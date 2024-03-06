@@ -20,6 +20,13 @@ export const H1 = styled.h1`
 export const Ul = styled.ul`
 	width: 100%;
 	max-height: 396px;
+	overflow-y: scroll;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
+	}
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
