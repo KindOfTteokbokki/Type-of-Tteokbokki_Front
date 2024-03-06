@@ -41,6 +41,7 @@ export default function ProfileEdit() {
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' }).then((res) => {
 			setOriginName(res.data);
+			setNickName(res.data);
 		});
 	}, []);
 

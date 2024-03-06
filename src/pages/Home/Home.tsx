@@ -61,6 +61,7 @@ export default function Home() {
 		if (location.state?.nickName) {
 			setNickName(location?.state.nickName);
 			setModal(true);
+			location.state.nickName = undefined;
 		}
 
 		const filteredData: any = [];
