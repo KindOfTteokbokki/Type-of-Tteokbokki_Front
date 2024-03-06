@@ -18,7 +18,6 @@ export const Layout = styled(Cont)`
 	background-color: ${(props) => props.theme.color.lightGray};
 	overflow-y: scroll;
 	position: relative;
-	height: 100%;
 
 	&::-webkit-scrollbar {
 		display: block;
@@ -55,6 +54,7 @@ export const RecommHeadText = styled(HeadText)`
 `;
 
 export const Main = styled.main`
+	height: 680px;
 	padding: 16px 15px 0;
 `;
 
@@ -72,11 +72,13 @@ export const BoldText = styled.span`
 `;
 
 export const RecommCont = styled.ul`
+	max-height: 648px;
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
 	row-gap: 16px;
 	column-gap: 20px;
+	position: relative;
 `;
 
 export const RecommList = styled.li<{ border: string }>`
@@ -118,10 +120,9 @@ export const Button = styled.button`
 	height: 72px;
 	background-image: url(${icon});
 	background-repeat: no-repeat;
-	position: sticky;
+	position: absolute;
+	right: 15px;
 	bottom: 40px;
-	left: 100%;
-	right: 0;
 `;
 
 export const TextField = styled.div`

@@ -33,15 +33,15 @@ export default function RecommendView() {
 						후기들이야!
 					</S.Message>
 					<RecommendList />
+					<S.Button
+						onClick={() => {
+							setKeyBoard(true);
+						}}
+					/>
 				</S.Main>
-				<S.Button
-					onClick={() => {
-						setKeyBoard(true);
-					}}
-				/>
-
 				{renderWrite()}
 			</S.Layout>
+
 			<Navigation />
 		</>
 	);

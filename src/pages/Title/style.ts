@@ -19,6 +19,7 @@ export const H1 = styled.h1`
 
 export const Ul = styled.ul`
 	width: 100%;
+	max-height: 396px;
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
