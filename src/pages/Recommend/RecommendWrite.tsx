@@ -13,8 +13,8 @@ export default function RecommendWrite(props: any) {
 	const [text, setText] = useState(props.originData ? props.originData.content : '');
 
 	const [imgUrl, setImgUrl] = useState<any>(
-		props.originData.file_masking_name != null
-			? props.originData.file_path + props.originData.file_masking_name
+		props.originData?.file_masking_name != null
+			? props.originData?.file_path + props.originData?.file_masking_name
 			: undefined
 	);
 	const [modal, setModal] = useState(false);
@@ -99,7 +99,7 @@ export default function RecommendWrite(props: any) {
 					/>
 					{imgUrl ? (
 						<S.PreloadCont onClick={onClickDelete}>
-							<S.PreloadImg src={props.originData.file_masking_name != null ? imgUrl : URL.createObjectURL(imgUrl)} />
+							<S.PreloadImg src={props.originData?.file_masking_name != null ? imgUrl : URL.createObjectURL(imgUrl)} />
 							<S.PreloadDeleteIcon />
 						</S.PreloadCont>
 					) : (
