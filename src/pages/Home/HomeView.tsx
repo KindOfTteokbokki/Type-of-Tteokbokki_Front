@@ -10,7 +10,6 @@ import { RedButton } from '../../components/Button/RedButton/style';
 import LoginUserTasteView from './LoginUserTasteView';
 import NonLoginUserView from './NonLoginUserView';
 import BasicImg from '../../assets/기본이미지.svg';
-import Setting from '../Setting/Setting';
 import StartModal from './StartModal';
 
 interface Props {

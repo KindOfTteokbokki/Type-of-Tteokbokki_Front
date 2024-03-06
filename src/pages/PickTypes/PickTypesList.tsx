@@ -4,7 +4,6 @@ import PickTypesListView from './view/PickTypesListView';
 import useAxios, { baseUrl } from '../../api/useAxios';
 
 export interface Props {
-	onClickScroll: (index: number) => void;
 	onClickDelete(type: string): void;
 }
 
@@ -44,7 +43,6 @@ export default function PickTypesList(props: Props) {
 			questionList={questionList}
 			answerList={createNewAnswerList()}
 			onClickDelete={props.onClickDelete}
-			onClickScroll={props.onClickScroll}
 		/>
 	);
 }

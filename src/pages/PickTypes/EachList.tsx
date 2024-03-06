@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import EachListView from './view/EachListView';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
@@ -9,10 +9,14 @@ export interface Props {
 	questionIndex: number;
 	answerList: Response[][];
 	onClickDelete: (type: string) => void;
-	onClickScroll: (index: number) => void;
 }
 
 export default function EachList(props: Props) {
+	const element = useRef<HTMLLIElement>(null);
+	const onMoveBox = () => {
+		element.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+	};
+
 	const selector = useSelector((state: RootStateType) => {
 		return state.userPick;
 	});
@@ -39,11 +43,12 @@ export default function EachList(props: Props) {
 
 	return (
 		<EachListView
+			element={element}
+			onMoveBox={onMoveBox}
 			question={props.question}
 			questionIndex={props.questionIndex}
 			answerList={props.answerList}
 			onClickDelete={props.onClickDelete}
-			onClickScroll={props.onClickScroll}
 			isHiddenOptions={isHiddenOptions}
 			isBlockLayout={isBlockLayout}
 		/>

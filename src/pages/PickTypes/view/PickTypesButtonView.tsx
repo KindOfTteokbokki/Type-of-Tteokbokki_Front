@@ -5,7 +5,6 @@ import { PickButton, UnPickButton } from '../style';
 interface Props {
 	answer: Response;
 	onClickDelete: (type: string) => void;
-	onClickScroll: (index: number) => void;
 	onClickAdd: () => void;
 	isButtonSelected: () => boolean;
 	questionIndex: number;
@@ -19,7 +18,6 @@ export default function PickTypesButtonView(props: Props) {
 					id="button"
 					onClick={() => {
 						props.onClickDelete(`${(props.questionIndex + 1).toString()}`);
-						props.onClickScroll(100 * props.questionIndex);
 					}}
 				>
 					{props.answer.name_ko}
@@ -29,7 +27,6 @@ export default function PickTypesButtonView(props: Props) {
 					id="button"
 					onClick={() => {
 						props.onClickAdd();
-						props.onClickScroll(100 * props.questionIndex);
 					}}
 				>
 					{props.answer.name_ko}

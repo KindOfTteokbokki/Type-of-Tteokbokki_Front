@@ -12,7 +12,7 @@ module.exports = function (app) {
 	app.use(
 		'/we',
 		createProxyMiddleware({
-			target: 'we://dev.utteok.com/',
+			target: 'we://www.utteok.com/',
 			ws: true,
 			changeOrigin: true,
 		})

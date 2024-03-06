@@ -8,7 +8,6 @@ import PickTypesButtonView from './view/PickTypesButtonView';
 interface Props {
 	answer: Response;
 	onClickDelete: (type: string) => void;
-	onClickScroll: (index: number) => void;
 	questionIndex: number;
 }
 
@@ -45,7 +44,6 @@ export default function PickTypesButton(props: Props) {
 		<PickTypesButtonView
 			answer={props.answer}
 			onClickDelete={props.onClickDelete}
-			onClickScroll={props.onClickScroll}
 			onClickAdd={onClickAdd}
 			isButtonSelected={isButtonSelected}
 			questionIndex={props.questionIndex}
