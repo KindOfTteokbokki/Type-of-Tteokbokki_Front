@@ -37,17 +37,7 @@ export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	overflow-y: scroll;
 
 	&::-webkit-scrollbar {
-		display: block;
-		width: 5px;
-		background-color: ${(props) => props.theme.color.gray};
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background-color: ${(props) => props.theme.color.gray};
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: ${(props) => props.theme.color.white};
+		display: none;
 	}
 
 	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
