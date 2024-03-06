@@ -19,7 +19,7 @@ export default function Home() {
 	const [lockTaste, setLockTaste] = useState<any>([]);
 	const [homeTitle, setHomeTitle] = useState<string>('');
 	const [homeIcon, setHomeIcon] = useState('');
-	const [modal, setModal] = useState(true);
+	const [modal, setModal] = useState(false);
 	const location = useLocation();
 	const [nickName, setNickName] = useState<string>('');
 

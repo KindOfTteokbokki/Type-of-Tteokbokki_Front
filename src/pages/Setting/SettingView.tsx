@@ -31,7 +31,7 @@ export default function SettingView(props: Setting) {
 				}}
 			/>
 			<S.ErrorName>
-				{props.check
+				{props.nickName
 					? !props.valid
 						? constants.SETTING.ERROR_INVALID
 						: props.duplicated
@@ -50,9 +50,7 @@ export default function SettingView(props: Setting) {
 					{constants.SETTING.button}
 				</S.RedShadowButton>
 			) : (
-				<S.GrayShadowButton onClick={props.onClickCheck} type="submit">
-					{constants.SETTING.button}
-				</S.GrayShadowButton>
+				<S.GrayShadowButton>{constants.SETTING.button}</S.GrayShadowButton>
 			)}
 		</S.Layout>
 	);
