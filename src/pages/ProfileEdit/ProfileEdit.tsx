@@ -12,20 +12,30 @@ export default function ProfileEdit() {
 	const [nickName, setNickName] = useState('');
 	const [originName, setOriginName] = useState('');
 	const [invalidName, setInValidName] = useState(false);
+	const [duplicated, setDuplicated] = useState(false);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
 
-	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
+	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
 	const getNameFunc = useGet(`${baseUrl}/myInfo`);
 	const editPostFunc = usePost(`${baseUrl}/regiNickname`);
+	const korean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{1,9}$/;
+
+	const checkValidName = () => {
+		return korean.test(nickName);
+	};
 
 	useMoveLogin();
 	useEffect(() => {
-		getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
-			console.log(res);
-			setInValidName(res.data);
-		});
+		if (!checkValidName()) {
+			setInValidName(true);
+		} else {
+			setInValidName(false);
+			getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
+				setDuplicated(res.data);
+			});
+		}
 	}, [nickName]);
 
 	useEffect(() => {
@@ -61,6 +71,7 @@ export default function ProfileEdit() {
 			onChangeNickName={onChangeNickName}
 			invalidName={invalidName}
 			editNickName={editNickName}
+			duplicated={duplicated}
 		/>
 	);
 }

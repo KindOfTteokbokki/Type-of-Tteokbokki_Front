@@ -11,6 +11,7 @@ interface ProfileEdit {
 		VALIDATION: {
 			TRUE: string;
 			FALSE: string;
+			ERROR_DUPLICATE: string;
 		};
 		button: string;
 	};
@@ -20,6 +21,7 @@ interface ProfileEdit {
 	onChangeNickName: (name: string) => void;
 	invalidName: boolean;
 	editNickName: () => void;
+	duplicated: boolean;
 }
 
 export default function ProfileEditView(props: ProfileEdit) {
@@ -46,6 +48,8 @@ export default function ProfileEditView(props: ProfileEdit) {
 							{props.originName !== props.nickName ? (
 								props.invalidName ? (
 									<S.InvalidName>{props.text.VALIDATION.FALSE}</S.InvalidName>
+								) : props.duplicated ? (
+									<S.InvalidName>{props.text.VALIDATION.ERROR_DUPLICATE}</S.InvalidName>
 								) : (
 									<S.ValidName>{props.text.VALIDATION.TRUE}</S.ValidName>
 								)

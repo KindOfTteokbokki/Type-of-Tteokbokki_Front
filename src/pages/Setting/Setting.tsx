@@ -1,6 +1,6 @@
 import React, { ReactEventHandler, useEffect, useState } from 'react';
 import SettingView from './SettingView';
-import { useGet } from '../../api/useFetch';
+import { useGet, usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -15,6 +15,8 @@ export default function Setting() {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
+
+	const registerFunc = usePost(`${baseUrl}/regiNickname`);
 	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
 	const navigator = useNavigate();
 
@@ -35,11 +37,20 @@ export default function Setting() {
 	};
 
 	const onClickCheck = () => {
-		getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
-			console.log(res);
-
-			setCheck(true);
-		});
+		setCheck(true);
+		if (!checkValidName()) {
+			setValid(false);
+		} else {
+			setValid(true);
+			getValidFunc({ Authorization: `Bearer ${token}` }).then((res: any) => {
+				setDuplicated(res.data);
+				if (!res.data) {
+					registerFunc({ utteok_nickname: nickName }, { Authorization: `Bearer ${token}` }).then(() => {
+						onClickMovehome();
+					});
+				}
+			});
+		}
 	};
 
 	return (
