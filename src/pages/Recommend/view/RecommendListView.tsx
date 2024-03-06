@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { SetStateAction, useState } from 'react';
 import * as S from '../style';
 import EachList from '../EachList';
 
@@ -13,6 +13,7 @@ export interface RecommendListProps {
 		review_seq: number;
 		user_id: string | null;
 	}[];
+	setKeyBoard: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export default function RecommendListView(props: RecommendListProps) {
@@ -21,6 +22,11 @@ export default function RecommendListView(props: RecommendListProps) {
 			{props.reviewData?.map((data: any) => {
 				return <EachList data={data} />;
 			})}
+			<S.Button
+				onClick={() => {
+					props.setKeyBoard(true);
+				}}
+			/>
 		</S.RecommCont>
 	);
 }

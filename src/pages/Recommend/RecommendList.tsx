@@ -5,7 +5,11 @@ import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
 
-export default function RecommendList() {
+interface RecommendListProps {
+	setKeyBoard: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function RecommendList(props: RecommendListProps) {
 	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
 	const [reviewData, setReviewData] = useState([]);
 	const token = useSelector((state: RootStateType) => {
@@ -23,5 +27,5 @@ export default function RecommendList() {
 		});
 	}, []);
 
-	return <RecommendListView reviewData={reviewData} />;
+	return <RecommendListView reviewData={reviewData} setKeyBoard={props.setKeyBoard} />;
 }
