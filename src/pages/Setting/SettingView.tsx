@@ -44,7 +44,6 @@ export default function SettingView(props: Setting) {
 				<S.RedShadowButton
 					onClick={() => {
 						props.onClickCheck();
-						// props.onClickMovehome();
 					}}
 					type="submit"
 				>
