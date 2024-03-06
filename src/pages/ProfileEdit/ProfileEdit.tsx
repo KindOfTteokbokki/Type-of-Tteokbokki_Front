@@ -17,7 +17,7 @@ export default function ProfileEdit() {
 		return state.persistedReducer.token.value;
 	});
 
-	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
+	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
 	const getNameFunc = useGet(`${baseUrl}/myInfo`);
 	const editPostFunc = usePost(`${baseUrl}/regiNickname`);
 	const korean = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{1,9}$/;

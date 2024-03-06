@@ -17,7 +17,7 @@ export default function Setting() {
 	});
 
 	const registerFunc = usePost(`${baseUrl}/regiNickname`);
-	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${encodeURI(encodeURIComponent(nickName))}`);
+	const getValidFunc = useGet(`${baseUrl}/checkNickname?nickname=${nickName}`);
 	const navigator = useNavigate();
 
 	const checkValidName = () => {
