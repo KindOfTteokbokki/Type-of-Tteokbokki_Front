@@ -16,14 +16,6 @@ export const Layout = styled(Cont)`
 	width: 100%;
 	height: 756px;
 	background-color: ${(props) => props.theme.color.lightGray};
-	overflow-y: scroll;
-
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
-
-	::-webkit-scrollbar {
-		display: none; /* Chrome, Safari, Opera*/
-	}
 `;
 
 export const Head = styled(Header)`
@@ -71,6 +63,14 @@ export const RecommCont = styled.ul`
 	grid-template-columns: 1fr 1fr;
 	row-gap: 16px;
 	column-gap: 20px;
+	overflow-y: scroll;
+
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
+	}
 `;
 
 export const RecommList = styled.li<{ border: string }>`
