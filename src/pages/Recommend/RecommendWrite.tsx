@@ -41,12 +41,6 @@ export default function RecommendWrite(props: any) {
 		};
 	});
 
-	const getURL = () => {
-		const newBlob = new Blob([new Uint8Array(imgUrl)]);
-		const newFile = new File([newBlob], props?.originData.file_original_name);
-		return newFile;
-	};
-
 	const saveReview = async () => {
 		formData.append('content', text);
 		if (imgUrl) {
@@ -64,12 +58,12 @@ export default function RecommendWrite(props: any) {
 	const editReview = async () => {
 		formData.append('content', text);
 		if (imgUrl) {
-			formData.append('file', isOriginImage() ? getURL() : imgUrl);
+			formData.append('file', imgUrl);
 		}
 		formData.append('user_id', props.originData.user_id);
-		formData.append('file_path', props.originData.file_path);
-		formData.append('file_original_name', props.originData.file_original_name);
-		formData.append('file_masking_name', props.originData.file_masking_name);
+		formData.append('file_path', !imgUrl ? null : props.originData.file_path);
+		formData.append('file_original_name', !imgUrl ? null : props.originData.file_original_name);
+		formData.append('file_masking_name', !imgUrl ? null : props.originData.file_masking_name);
 		formData.append('review_seq', props.originData.review_seq);
 
 		await editPostFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
