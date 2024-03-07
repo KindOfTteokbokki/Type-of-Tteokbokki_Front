@@ -1,7 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.ccb95e99.js",
-    "static/media/main_background.svg": "/static/media/main_background.fccf0937cdc077909bdb8be19b252a7f.svg",
+    "main.js": "/static/js/main.23c51550.js",
     "static/media/backgroundBig.png": "/static/media/backgroundBig.b4fd226bb548a2ac079c.png",
     "static/media/Logo.svg": "/static/media/Logo.1ce1487ccaf0f95c88e43e476f5cfc68.svg",
     "static/media/어떡로고.svg": "/static/media/어떡로고.ea3c920e31f0e162a465515b97ebbde6.svg",
@@ -41,9 +40,9 @@
     "index.html": "/index.html",
     "static/media/카카오 로고.svg": "/static/media/카카오 로고.ad0f2f0a27ed6f940879435c88d82de8.svg",
     "static/media/네이버 로고.svg": "/static/media/네이버 로고.81a79a59d8aad25c8d43539dc97092c4.svg",
-    "main.ccb95e99.js.map": "/static/js/main.ccb95e99.js.map"
+    "main.23c51550.js.map": "/static/js/main.23c51550.js.map"
   },
   "entrypoints": [
-    "static/js/main.ccb95e99.js"
+    "static/js/main.23c51550.js"
   ]
 }

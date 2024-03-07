@@ -66,7 +66,6 @@ export default function Home() {
 
 		const filteredData: any = [];
 		postFunc(postData).then((res: any) => {
-			console.log(res.data);
 			res.data.map((data: any) => {
 				filteredData.push(data);
 			});

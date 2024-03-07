@@ -50,7 +50,6 @@ export default function HomeView(props: Props) {
 		})
 		.slice(0, 4);
 
-	console.log(content?.clientWidth);
 	return (
 		<>
 			{props?.nickName && props.modal ? (
