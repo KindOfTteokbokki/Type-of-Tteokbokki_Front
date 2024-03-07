@@ -18,18 +18,11 @@ export const Layout = styled(Cont)`
 	background-color: ${(props) => props.theme.color.lightGray};
 	overflow-y: scroll;
 
-	&::-webkit-scrollbar {
-		display: block;
-		width: 5px;
-		background-color: ${(props) => props.theme.color.gray};
-	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 
-	&::-webkit-scrollbar-thumb {
-		background-color: ${(props) => props.theme.color.gray};
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: ${(props) => props.theme.color.white};
+	::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
 	}
 `;
 
@@ -60,12 +53,13 @@ export const Main = styled.main`
 export const Message = styled(MessageLayout)`
 	width: 360px;
 	height: 56px;
-	padding: 8px 70px;
+	padding: 8px 69px;
 	font-weight: 400;
 	line-height: 21px;
 `;
 
 export const BoldText = styled.span`
+	word-break: keep-all;
 	font-size: ${(props) => props.theme.fontSize.lv1};
 	font-weight: ${(props) => props.theme.fontWeight.semiBold};
 `;
@@ -77,7 +71,6 @@ export const RecommCont = styled.ul`
 	grid-template-columns: 1fr 1fr;
 	row-gap: 16px;
 	column-gap: 20px;
-	position: relative;
 `;
 
 export const RecommList = styled.li<{ border: string }>`

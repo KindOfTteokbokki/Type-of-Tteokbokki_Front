@@ -80,11 +80,20 @@ const GlobalStyles = createGlobalStyle`
     }
     body{
         line-height: 1;
-        font-family : 'Spoqa Han Sans Neo' ,sans-serif;
+        font-family : 'Pretendard-Regular' ,sans-serif;
         font-weight : 400;
-        position : relative;
-        left : 195px;
+        margin-left : 390px;
         height : 100vh;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            line-height: 1;
+            font-family : 'Pretendard-Regular' ,sans-serif;
+            font-weight : 400;
+            margin : 0 auto;
+            height : 100vh;
+        }
     }
 
     ol, ul{

@@ -36,8 +36,11 @@ export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
 	overflow-y: scroll;
 
-	&::-webkit-scrollbar {
-		display: none;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+
+	::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
 	}
 
 	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
