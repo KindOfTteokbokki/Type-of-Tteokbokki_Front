@@ -84,15 +84,23 @@ const GlobalStyles = createGlobalStyle`
         font-weight : 400;
         margin-left : 390px;
         height : 100vh;
+
+        overflow-y: scroll;
+	    -ms-overflow-style: none; /* IE and Edge */
+	    scrollbar-width: none; /* Firefox */
+
+	    ::-webkit-scrollbar {
+		    display: none; /* Chrome, Safari, Opera*/
+	    }
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 800px) {
         body {
             line-height: 1;
-            font-family : 'Pretendard-Regular' ,sans-serif;
+            font-family :'Pretendard-Regular' ,sans-serif;
             font-weight : 400;
             margin : 0 auto;
-            height : 100vh;
+            height : 100%;
         }
     }
 

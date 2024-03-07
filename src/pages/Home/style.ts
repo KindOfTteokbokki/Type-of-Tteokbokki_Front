@@ -18,18 +18,13 @@ export const Section = styled.section`
 	overflow-x: hidden;
 	overflow-y: scroll;
 
-	&::-webkit-scrollbar {
-		display: block;
-		width: 5px;
-		background-color: ${(props) => props.theme.color.gray};
-	}
+	overflow-y: scroll;
 
-	&::-webkit-scrollbar-thumb {
-		background-color: ${(props) => props.theme.color.gray};
-	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 
-	&::-webkit-scrollbar-track {
-		background-color: ${(props) => props.theme.color.white};
+	::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera*/
 	}
 `;
 
