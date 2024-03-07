@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.js": "/static/js/main.b6a0b01a.js",
+    "main.js": "/static/js/main.2a403202.js",
+    "static/media/123대지 1.png": "/static/media/123대지 1.cc83d98ebadbe38cd9e2.png",
     "static/media/Logo.svg": "/static/media/Logo.1ce1487ccaf0f95c88e43e476f5cfc68.svg",
     "static/media/어떡로고.svg": "/static/media/어떡로고.ea3c920e31f0e162a465515b97ebbde6.svg",
+    "static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png": "/static/media/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.425feb7cc06c4d3031fa.png",
     "static/media/캐릭터.svg": "/static/media/캐릭터.5ce92998d6d462c9f435912d6b2bf4e0.svg",
     "static/media/스플래시배경.svg": "/static/media/스플래시배경.ca1a2b242bd01ca43909d8105f25ae3e.svg",
     "static/media/loading.gif": "/static/media/loading.16665a0edf00c04185d6.gif",
@@ -38,9 +40,9 @@
     "index.html": "/index.html",
     "static/media/카카오 로고.svg": "/static/media/카카오 로고.ad0f2f0a27ed6f940879435c88d82de8.svg",
     "static/media/네이버 로고.svg": "/static/media/네이버 로고.81a79a59d8aad25c8d43539dc97092c4.svg",
-    "main.b6a0b01a.js.map": "/static/js/main.b6a0b01a.js.map"
+    "main.2a403202.js.map": "/static/js/main.2a403202.js.map"
   },
   "entrypoints": [
-    "static/js/main.b6a0b01a.js"
+    "static/js/main.2a403202.js"
   ]
 }

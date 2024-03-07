@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import Background from '../assets/123대지 1.png';
+import image from '../assets/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish 1.png';
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -37,22 +39,25 @@ const GlobalStyles = createGlobalStyle`
     }
   
     html{
-        background-color : Gray;
-        
+        background-image : url(${image});
     }
 
-   
-
+    body {
+        background-image : url(${image});
+        background-position: center;
+    }
     #root {
         width: 390px;
         height : 844px;
         margin: 0 auto;
         background-color: white;
         font-family: 'Pretendard-Regular';
+       
     }
     
     html,body, main{
         height : 100vh;
+       
     }
     a{
         text-decoration: none;
