@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 export const Layout = styled.section`
 	width: 100%;
 	height: 844px;
-	margin: 0 auto;
 	text-align: center;
 	padding: 277px 0 152px;
 	background-image: url(${Background});

@@ -46,7 +46,7 @@ export default function HomeView(props: Props) {
 
 	const newRecommArray = props.myRecommData
 		.filter((data: any) => {
-			return data.file_masking_name !== null;
+			return data.file_masking_name && data.file_masking_name !== 'null';
 		})
 		.slice(0, 4);
 
