@@ -11,13 +11,16 @@ export interface DetailProps {
 }
 
 export default function DetailView(props: DetailProps) {
-	const imgUrl = props.data?.file_path + props.data?.file_masking_name;
+	const imgUrl =
+		props.data?.file_path && props.data?.file_path !== 'null'
+			? props.data?.file_path + props.data?.file_masking_name
+			: undefined;
 
 	return (
 		<S.DetailLayout>
 			<S.DetailHeader>{props.header}</S.DetailHeader>
 			<S.DetailLoadCont>
-				{props.data?.file_masking_name ? <S.DetailImg src={imgUrl} alt='떡볶이 사진'/> : <S.EmptyImg />}
+				{imgUrl ? <S.DetailImg src={imgUrl} alt="떡볶이 사진" /> : <S.EmptyImg />}
 				<S.DetailText>
 					<S.DetailIcon src={props.iconImg} alt="아이콘 사진" />
 					<S.DetailContent>{props.data.content}</S.DetailContent>
