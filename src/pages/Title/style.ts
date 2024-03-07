@@ -36,8 +36,8 @@ export const Ul = styled.ul`
 export const Li = styled.li<{ bgcolor: string }>`
 	width: 100%;
 	height: 70px;
-	line-height: 70px;
 	display: flex;
+	flex-shrink: 0;
 	gap: 16px;
 	background-color: ${(props) => props.bgcolor};
 	border-radius: 16px;
