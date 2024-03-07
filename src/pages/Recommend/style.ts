@@ -109,7 +109,7 @@ export const ReCommOnlyText = styled(RecommText)`
 export const RecommImg = styled.img`
 	width: 100%;
 	height: 87px;
-	background-color: ${(props) => props.theme.color.gray};
+	background-color: ${(props) => props.theme.color.white};
 	border-radius: 16px 16px 0 0;
 	cursor: pointer;
 `;
@@ -121,7 +121,7 @@ export const Button = styled.button`
 	background-repeat: no-repeat;
 	position: sticky;
 	bottom: 40px;
-	left : 100%;
+	left: 100%;
 `;
 
 export const TextField = styled.div`
