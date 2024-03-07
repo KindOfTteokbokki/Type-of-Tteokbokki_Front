@@ -36,14 +36,18 @@ export const Ul = styled.ul`
 export const Li = styled.li<{ bgcolor: string }>`
 	width: 100%;
 	height: 70px;
+	line-height: 70px;
 	display: flex;
 	gap: 16px;
-	line-height: 140%;
 	background-color: ${(props) => props.bgcolor};
 	border-radius: 16px;
+	align-items: center;
+`;
+
+export const ListText = styled.p`
+	line-height: 140%;
 	font-weight: 600;
 	font-size: ${theme.fontSize.lv4};
-	align-items: center;
 `;
 
 export const TitleIcon = styled.img`

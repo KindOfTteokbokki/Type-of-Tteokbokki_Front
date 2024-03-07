@@ -47,7 +47,7 @@ export default function TitleView(props: TitleProps) {
 									key={index}
 								>
 									<S.TitleIcon src={title.icorn_file_path + title.icorn_file_masking_name} alt="칭호 아이콘" />
-									{title.title_name}
+									<S.ListText>{title.title_name}</S.ListText>
 								</S.Li>
 							</>
 						);
