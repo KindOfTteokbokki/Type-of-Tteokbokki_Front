@@ -29,6 +29,7 @@ interface EachListProps {
 }
 
 export default function EachListView(props: EachListProps) {
+	console.log(props.item);
 	return (
 		<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
 			<S.ReviewImg
