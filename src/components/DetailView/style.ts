@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Header } from '../../pages/Loading/style';
 import { LoadCont } from '../../pages/Loaded/style';
 import { Layout } from '../../pages/Popup/style';
+import basicImg from '../../assets/imagesmode.png';
 
 export const DetailLayout = styled(Layout)`
 	background-color: #fff;
@@ -26,7 +27,7 @@ export const EmptyImg = styled.div`
 	width: 100%;
 	height: 286px;
 	border-radius: ${(props) => props.theme.borderRadius.lv4} ${(props) => props.theme.borderRadius.lv4} 0 0;
-	background-color: ${(props) => props.theme.color.gray};
+	background-color: ${(props) => props.theme.color.white};
 `;
 
 export const DetailText = styled.div`
