@@ -104,7 +104,7 @@ export default function RecommendWrite(props: any) {
 							setModal(true);
 						}}
 					/>
-					{imgUrl ? (
+					{imgUrl && props.originData?.file_masking_name !== 'null' ? (
 						<S.PreloadCont onClick={onClickDelete}>
 							<S.PreloadImg src={isOriginImage() ? imgUrl : URL.createObjectURL(imgUrl)} />
 							<S.PreloadDeleteIcon />
