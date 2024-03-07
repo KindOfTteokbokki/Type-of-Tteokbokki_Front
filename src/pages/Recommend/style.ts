@@ -53,9 +53,15 @@ export const Main = styled.main`
 export const Message = styled(MessageLayout)`
 	width: 360px;
 	height: 56px;
-	padding: 8px 69px;
+	padding: 8px 0;
 	font-weight: 400;
 	line-height: 21px;
+	text-align: center;
+`;
+
+export const P = styled.p`
+	font-size: ${(props) => props.theme.fontSize.lv1};
+	word-break: keep-all;
 `;
 
 export const BoldText = styled.span`
@@ -65,7 +71,7 @@ export const BoldText = styled.span`
 `;
 
 export const RecommCont = styled.ul`
-	max-height: 648px;
+	height: 648px;
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
