@@ -34,10 +34,14 @@ export const Main = styled.main`
 
 export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 	width: 100%;
+	max-height: 430px;
 	overflow-y: scroll;
 
 	&::-webkit-scrollbar {
-		display: none;
+		display: block;
+		width: 5px;
+		height: 100%;
+		background-color: ${(props) => props.theme.color.gray};
 	}
 
 	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};

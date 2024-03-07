@@ -38,7 +38,7 @@ export const Li = styled.li<{ bgcolor: string }>`
 	height: 70px;
 	display: flex;
 	gap: 16px;
-	line-height: 70px;
+	line-height: 140%;
 	background-color: ${(props) => props.bgcolor};
 	border-radius: 16px;
 	font-weight: 600;
