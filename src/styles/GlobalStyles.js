@@ -41,6 +41,8 @@ const GlobalStyles = createGlobalStyle`
         
     }
 
+   
+
     #root {
         width: 390px;
         height : 844px;
@@ -49,6 +51,9 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Pretendard-Regular';
     }
     
+    html,body, main{
+        height : 100vh;
+    }
     a{
         text-decoration: none;
         color: inherit;
