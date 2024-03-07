@@ -89,6 +89,7 @@ export default function RecommendWrite(props: any) {
 					<S.TextArea
 						placeholder="본인만의 꿀조합을 추천해줘!(30자)"
 						defaultValue={props.originData?.content}
+						maxLength={30}
 						onKeyUp={(e: any) => {
 							setText(e.target.value);
 							if (text.length >= 30) {

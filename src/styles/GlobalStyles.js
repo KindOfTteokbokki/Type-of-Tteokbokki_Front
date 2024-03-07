@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import mainImg from '../assets/main.png';
+import mainBackground from '../assets/main_background.svg';
+import backgroundPng from '../assets/backgroundBig.png';
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
@@ -38,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
     }  
 
     html {
-        background-image : url(${mainImg});
+        background-image : url(${backgroundPng});
         background-position: center;
         background-size:cover;
         background-repeat: no-repeat;
@@ -50,13 +51,8 @@ const GlobalStyles = createGlobalStyle`
         margin: 0 auto;
         background-color: white;
         font-family: 'Pretendard-Regular';
-       
     }
-    
-    html,body, main{
-        height : 100vh;
-       
-    }
+
     a{
         text-decoration: none;
         color: inherit;
@@ -86,7 +82,9 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1;
         font-family : 'Spoqa Han Sans Neo' ,sans-serif;
         font-weight : 400;
+        margin-left : 390px;
     }
+
     ol, ul{
         list-style: none;
     }
