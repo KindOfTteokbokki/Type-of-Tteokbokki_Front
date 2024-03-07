@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-import mainBackground from '../assets/main_background.svg';
 import backgroundPng from '../assets/backgroundBig.png';
 
 const GlobalStyles = createGlobalStyle`

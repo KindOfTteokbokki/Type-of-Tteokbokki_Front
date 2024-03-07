@@ -16,7 +16,6 @@ import LockedTitle from './pages/LockedTitle/LockedTitle';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEdit from './pages/ProfileEdit/ProfileEdit';
 import Setting from './pages/Setting/Setting';
-import StartModal from './pages/Home/StartModal';
 
 function App() {
 	return (
@@ -37,7 +36,6 @@ function App() {
 			<Route path="/locked-title" element={<LockedTitle />} />
 			<Route path="/mypage" element={<MyPage />} />
 			<Route path="/profile-edit" element={<ProfileEdit />} />
-			<Route path="test" element={<StartModal nickName="송예은" onClickDeleteModal={() => {}} />} />
 		</Routes>
 	);
 }
