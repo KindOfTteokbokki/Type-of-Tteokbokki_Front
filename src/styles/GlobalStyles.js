@@ -99,7 +99,8 @@ const GlobalStyles = createGlobalStyle`
             font-family :'Pretendard-Regular' ,sans-serif;
             font-weight : 400;
             margin : 0 auto;
-            height : 100%;
+            height : 100dvh;
+
         }
     }
 
