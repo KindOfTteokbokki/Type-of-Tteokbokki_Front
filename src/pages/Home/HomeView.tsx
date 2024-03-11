@@ -75,7 +75,7 @@ export default function HomeView(props: Props) {
 				</S.Title>
 				<S.MainCont>
 					<S.MainText>어떤 떡볶이가 먹고싶어?</S.MainText>
-					<S.MainImg src={character} />
+					<S.MainImg src={character} alt="어떡 캐릭터들이 모여있는 이미지" />
 					<RedButton onClick={props.onClickMove}>고르러 가기!</RedButton>
 				</S.MainCont>
 				<S.Cont>

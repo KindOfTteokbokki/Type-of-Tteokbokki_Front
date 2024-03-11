@@ -26,7 +26,7 @@ export default function DetailView(props: DetailProps) {
 					<S.DetailContent>{props.data.content}</S.DetailContent>
 				</S.DetailText>
 			</S.DetailLoadCont>
-			<Button onClick={props.onClickBack} />
+			<Button onClick={props.onClickBack} aria-label="확인 완료 버튼" />
 		</S.DetailLayout>
 	);
 }
