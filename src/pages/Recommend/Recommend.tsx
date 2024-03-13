@@ -3,6 +3,6 @@ import RecommendView from './view/RecommendView';
 import { useMoveLogin } from '../../hooks/useMoveLogin';
 
 export default function Recommend() {
-	useMoveLogin();
+	// useMoveLogin();
 	return <RecommendView />;
 }

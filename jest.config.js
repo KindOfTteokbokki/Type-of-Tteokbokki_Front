@@ -16,6 +16,8 @@ module.exports = {
 	globals: {
 		'ts-jest': {
 			tsconfig: 'tsconfig.jest.json', // tsconfig.jest.json 사용 설정
+			isolatedModules: false,
 		},
 	},
+	collectCoverageFrom: ['**/*.[jt]s?(x)', '!**/*.stories.[jt]s?(x)'],
 };
