@@ -15,6 +15,27 @@ export default function RecommendList(props: RecommendListProps) {
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
+	const [page, setPage] = useState(0);
+	const [isLoading, setIsLoading] = useState(false);
+
+	const options = {
+		root: null,
+		rootMargin: '0px 0px 0px 0px',
+		threshold: 0,
+	};
+
+	const onIntersect = (entries: IntersectionObserverEntry[], observer: HTMLElement) => {
+		const target = entries[0];
+		if (target.isIntersecting && !isLoading) {
+			setPage(page + 1);
+		}
+	};
+
+	// useEffect(() => {
+	// 	const observer = new IntersectionObserver(onIntersect, options);
+	// 	const element = document.getElementById('observer');
+	// 	observer.observe(element);
+	// }, []);
 
 	const postData = {
 		pageNum: 0,
