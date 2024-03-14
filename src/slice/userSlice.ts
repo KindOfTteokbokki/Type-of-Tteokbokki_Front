@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export const userSlice = createSlice({
 	name: 'user',
 	initialState: {
-		value: '',
-		// 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzA5MTgzODE2fQ.3uiCZnLbNfWYXCH6WKWACb0hUg8rmFmi26A6AHvuiz1-Fuy-7ixA6DdVE2QtkDi12H0vNl5ReE2MWxMU0-n-2w',
+		value:
+			'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1IiwiZXhwIjoxNzEwMzQwOTUyfQ.kAPxaYD9PacZ2bm6c9Rj0HrdiTuqBbCCnDax-k2ZFoIm5pCvoYzO4FeVLErPKQagj1pTnDG007hS8Ym1Wds4_g',
 	},
 	reducers: {
 		setUserToken(state, action: PayloadAction<string>) {

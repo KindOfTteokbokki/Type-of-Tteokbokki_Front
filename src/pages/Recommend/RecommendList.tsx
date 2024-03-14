@@ -11,40 +11,67 @@ interface RecommendListProps {
 
 export default function RecommendList(props: RecommendListProps) {
 	const postFunc = usePost(`${baseUrl}/getRecommendToPage`);
-	const [reviewData, setReviewData] = useState([]);
+	const [reviewData, setReviewData] = useState<any>([]);
 	const token = useSelector((state: RootStateType) => {
 		return state.persistedReducer.token.value;
 	});
 	const [page, setPage] = useState(0);
+
 	const [isLoading, setIsLoading] = useState(false);
 
 	const options = {
-		root: null,
+		root: document.getElementById('container'),
 		rootMargin: '0px 0px 0px 0px',
 		threshold: 0,
 	};
 
-	const onIntersect = (entries: IntersectionObserverEntry[], observer: HTMLElement) => {
+	const onIntersect = async (entries: IntersectionObserverEntry[]) => {
 		const target = entries[0];
-		if (target.isIntersecting && !isLoading) {
-			setPage(page + 1);
+
+		if (target.isIntersecting) {
+			console.log(target);
+			setPage((page) => page + 1);
+
+			console.log('페이지 추가됨');
 		}
 	};
 
 	// useEffect(() => {
-	// 	const observer = new IntersectionObserver(onIntersect, options);
 	// 	const element = document.getElementById('observer');
-	// 	observer.observe(element);
+	// 	const observer = new IntersectionObserver(onIntersect, options);
+	// 	if (element) {
+	// 		observer.observe(element);
+	// 	}
 	// }, []);
 
-	const postData = {
-		pageNum: 0,
-		size: 100,
-	};
+	// useEffect(() => {
+	// 	let postData = {
+	// 		pageNum: page,
+	// 		size: 15,
+	// 	};
+	// 	console.log(page);
+	// 	postFunc(postData, { Authorization: `Bearer ${token}` }).then((res: any) => {
+	// 		console.log(res.data);
+
+	// 		// if (res.data.length < 1 && element) {
+	// 		// 	observer.unobserve(element);
+	// 		// }
+	// 		setReviewData([...reviewData, ...res?.data]);
+	// 	});
+	// }, [page]);
 
 	useEffect(() => {
-		postFunc(postData, { Authorization: `Bearer ${token}` }).then((res) => {
-			setReviewData(res?.data);
+		let postData = {
+			pageNum: 0,
+			size: 100,
+		};
+		postFunc(postData, { Authorization: `Bearer ${token}` }).then((res: any) => {
+			console.log(res.data);
+
+			// if (res.data.length < 1 && element) {
+			// 	observer.unobserve(element);
+			// }
+			setReviewData([...reviewData, ...res?.data]);
 		});
 	}, []);
 
