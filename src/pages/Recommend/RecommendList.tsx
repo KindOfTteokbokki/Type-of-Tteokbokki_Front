@@ -36,44 +36,23 @@ export default function RecommendList(props: RecommendListProps) {
 		}
 	};
 
-	// useEffect(() => {
-	// 	const element = document.getElementById('observer');
-	// 	const observer = new IntersectionObserver(onIntersect, options);
-	// 	if (element) {
-	// 		observer.observe(element);
-	// 	}
-	// }, []);
-
-	// useEffect(() => {
-	// 	let postData = {
-	// 		pageNum: page,
-	// 		size: 15,
-	// 	};
-	// 	console.log(page);
-	// 	postFunc(postData, { Authorization: `Bearer ${token}` }).then((res: any) => {
-	// 		console.log(res.data);
-
-	// 		// if (res.data.length < 1 && element) {
-	// 		// 	observer.unobserve(element);
-	// 		// }
-	// 		setReviewData([...reviewData, ...res?.data]);
-	// 	});
-	// }, [page]);
+	useEffect(() => {
+		const element = document.getElementById('observer');
+		const observer = new IntersectionObserver(onIntersect, options);
+		if (element) {
+			observer.observe(element);
+		}
+	}, []);
 
 	useEffect(() => {
 		let postData = {
-			pageNum: 0,
-			size: 100,
+			pageNum: page,
+			size: 15,
 		};
 		postFunc(postData, { Authorization: `Bearer ${token}` }).then((res: any) => {
-			console.log(res.data);
-
-			// if (res.data.length < 1 && element) {
-			// 	observer.unobserve(element);
-			// }
 			setReviewData([...reviewData, ...res?.data]);
 		});
-	}, []);
+	}, [page]);
 
 	return <RecommendListView reviewData={reviewData} setKeyBoard={props.setKeyBoard} />;
 }
