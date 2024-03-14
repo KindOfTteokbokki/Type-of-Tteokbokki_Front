@@ -18,16 +18,16 @@ export interface RecommendListProps {
 
 export default function RecommendListView(props: RecommendListProps) {
 	return (
-		<S.RecommCont>
+		<S.RecommCont id="container">
 			{props.reviewData?.map((data: any) => {
 				return <EachList data={data} />;
 			})}
+			<div id="observer" />
 			<S.Button
 				onClick={() => {
 					props.setKeyBoard(true);
 				}}
 			/>
-			<div id="observer"></div>
 		</S.RecommCont>
 	);
 }

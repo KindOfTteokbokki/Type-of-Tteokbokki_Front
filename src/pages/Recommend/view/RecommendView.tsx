@@ -37,7 +37,6 @@ export default function RecommendView() {
 							후기들이야!
 						</S.P>
 					</S.Message>
-
 					<RecommendList setKeyBoard={setKeyBoard} />
 				</S.Main>
 				{renderWrite()}

@@ -17,7 +17,7 @@
 		"jsx": "react-jsxdev",
 		"noUnusedLocals": false
 	},
-	"include": ["src", "setupTest.js", "svgTransformer.js"],
+	"include": ["src", "setupTest.js", "svgTransformer.js", "babel.config.js"],
 	"typeRoots": ["src/types"],
 	"types": ["jest"]
 }
