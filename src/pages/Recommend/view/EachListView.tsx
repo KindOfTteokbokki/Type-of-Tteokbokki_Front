@@ -16,8 +16,8 @@ export default function EachListView(props: EachListProps) {
 		>
 			{props.data?.file_masking_name == null || props.data?.file_masking_name === 'null' ? (
 				<>
-					<S.RecommImg src={BasicImg} alt="기본 가래떡 아이콘" />
-					<S.RecommText>{props.data?.content}</S.RecommText>
+					<S.RecommImg src="/basic.svg" alt="기본 가래떡 아이콘" />
+					<S.RecommText>{props.data.content}</S.RecommText>
 				</>
 			) : (
 				<>

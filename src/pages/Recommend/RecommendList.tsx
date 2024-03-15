@@ -37,6 +37,8 @@ export default function RecommendList(props: RecommendListProps) {
 		}
 	};
 
+	// useImagePreload([BasicImage]);
+
 	useEffect(() => {
 		const element = document.getElementById('observer');
 		const observer = new IntersectionObserver(onIntersect, options);
@@ -45,8 +47,6 @@ export default function RecommendList(props: RecommendListProps) {
 			observer.observe(element);
 		}
 	}, []);
-
-	useImagePreload([BasicImage]);
 
 	useEffect(() => {
 		let postData = {
