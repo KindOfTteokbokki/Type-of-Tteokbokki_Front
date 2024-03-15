@@ -5,6 +5,7 @@ import BasicImg from '../../../assets/기본이미지_테두리없.svg';
 export interface EachListProps {
 	data: any;
 	onClickMoveDetail: () => void;
+	isImageData: () => boolean;
 }
 
 export default function EachListView(props: EachListProps) {
@@ -14,17 +15,11 @@ export default function EachListView(props: EachListProps) {
 			role="review"
 			onClick={props.onClickMoveDetail}
 		>
-			{props.data?.file_masking_name == null || props.data?.file_masking_name === 'null' ? (
-				<>
-					<S.RecommImg src="/basic.svg" alt="기본 가래떡 아이콘" />
-					<S.RecommText>{props.data.content}</S.RecommText>
-				</>
-			) : (
-				<>
-					<S.RecommImg src={props.data?.file_path + props.data?.file_masking_name} />
-					<S.RecommText>{props.data?.content}</S.RecommText>
-				</>
-			)}
+			<S.RecommImg
+				src={props.isImageData() ? props.data.file_path + props.data.file_masking_name : '/basic.svg'}
+				alt={props.isImageData() ? props.data.file_original_name : '기본 가래떡 아이콘'}
+			/>
+			<S.RecommText>{props.data.content}</S.RecommText>
 		</S.RecommList>
 	);
 }

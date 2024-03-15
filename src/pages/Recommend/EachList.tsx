@@ -12,5 +12,12 @@ export default function EachList(props: EachListProps) {
 		navigate(`/recommend/${props.data.review_seq}`);
 	};
 
-	return <EachListView data={props.data} onClickMoveDetail={onClickMoveDetail} />;
+	const isImageData = () => {
+		if (props.data?.file_masking_name == null || props.data?.file_masking_name === 'null') {
+			return false;
+		}
+		return true;
+	};
+
+	return <EachListView data={props.data} onClickMoveDetail={onClickMoveDetail} isImageData={isImageData} />;
 }
