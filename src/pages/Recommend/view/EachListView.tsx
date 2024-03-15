@@ -18,7 +18,8 @@ export default function EachListView(props: EachListProps) {
 			<picture>
 				<source
 					srcSet={props.isImageData() ? props.data.file_path + props.data.file_masking_name : '/basic.webp'}
-					type="image/webp"
+					type={props.isImageData() ? '' : 'image/webp'}
+					media={props.isImageData() ? '(max-width: 170px)' : '(max-width: 60px)'}
 				/>
 				<S.RecommImg
 					src={props.isImageData() ? props.data.file_path + props.data.file_masking_name : '/basic.svg'}
