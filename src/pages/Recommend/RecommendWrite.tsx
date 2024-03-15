@@ -27,6 +27,11 @@ export default function RecommendWrite(props: any) {
 		maxWidthOrHeight: 1920,
 	};
 
+	const getCompressedFile = (url: any) => {
+		const compressedFile = new File([url], url.name, { type: url.type });
+		return compressedFile;
+	};
+
 	const onClickDelete = () => {
 		setImgUrl(undefined);
 	};
@@ -51,7 +56,7 @@ export default function RecommendWrite(props: any) {
 			const compressionImage = await imageCompression(imgUrl, options);
 			console.log('원본이미지:', imgUrl);
 			console.log('수정이미지:', compressionImage);
-			formData.append('file', compressionImage);
+			formData.append('file', getCompressedFile(compressionImage));
 		}
 
 		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
@@ -66,7 +71,7 @@ export default function RecommendWrite(props: any) {
 		formData.append('content', text);
 		if (imgUrl) {
 			const compressionImage = await imageCompression(imgUrl, options);
-			formData.append('file', compressionImage);
+			formData.append('file', getCompressedFile(compressionImage));
 		}
 		formData.append('user_id', props.originData.user_id);
 		formData.append('file_path', !imgUrl ? null : props.originData.file_path);
