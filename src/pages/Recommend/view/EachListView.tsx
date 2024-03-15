@@ -15,10 +15,17 @@ export default function EachListView(props: EachListProps) {
 			role="review"
 			onClick={props.onClickMoveDetail}
 		>
-			<S.RecommImg
-				src={props.isImageData() ? props.data.file_path + props.data.file_masking_name : '/basic.svg'}
-				alt={props.isImageData() ? props.data.file_original_name : '기본 가래떡 아이콘'}
-			/>
+			<picture>
+				<source
+					srcSet={props.isImageData() ? props.data.file_path + props.data.file_masking_name : '/basic.webp'}
+					type="image/webp"
+				/>
+				<S.RecommImg
+					src={props.isImageData() ? props.data.file_path + props.data.file_masking_name : '/basic.svg'}
+					alt={props.isImageData() ? props.data.file_original_name : '기본 가래떡 아이콘'}
+				/>
+			</picture>
+
 			<S.RecommText>{props.data.content}</S.RecommText>
 		</S.RecommList>
 	);
