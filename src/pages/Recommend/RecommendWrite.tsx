@@ -5,6 +5,7 @@ import WriteModal from './WriteModal';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
+import imageCompression from 'browser-image-compression';
 
 export default function RecommendWrite(props: any) {
 	const token = useSelector((state: RootStateType) => {
@@ -22,6 +23,9 @@ export default function RecommendWrite(props: any) {
 	const writeRef = useRef<any>(null);
 	const postFunc = usePost(`${baseUrl}/saveRecommend`);
 	const editPostFunc = usePost(`${baseUrl}/modifyRecommend`);
+	const options = {
+		maxWidthOrHeight: 1920,
+	};
 
 	const onClickDelete = () => {
 		setImgUrl(undefined);
@@ -44,7 +48,10 @@ export default function RecommendWrite(props: any) {
 	const saveReview = async () => {
 		formData.append('content', text);
 		if (imgUrl) {
-			formData.append('file', imgUrl);
+			const compressionImage = await imageCompression(imgUrl, options);
+			console.log('원본이미지:', imgUrl);
+			console.log('수정이미지:', compressionImage);
+			formData.append('file', compressionImage);
 		}
 
 		await postFunc(formData, { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }).then(
@@ -58,7 +65,8 @@ export default function RecommendWrite(props: any) {
 	const editReview = async () => {
 		formData.append('content', text);
 		if (imgUrl) {
-			formData.append('file', imgUrl);
+			const compressionImage = await imageCompression(imgUrl, options);
+			formData.append('file', compressionImage);
 		}
 		formData.append('user_id', props.originData.user_id);
 		formData.append('file_path', !imgUrl ? null : props.originData.file_path);
