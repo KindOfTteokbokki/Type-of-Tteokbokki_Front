@@ -61,13 +61,6 @@ npm start
 ## 화면 구성
 
 ![8_IA](https://github.com/Utteok/Utteok_Front/assets/110962765/fb59e5c0-7dcf-47fe-b384-ced46571e938)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/eeb962f1-641c-4964-b91f-cdc9616811a1)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/1895e02e-0894-4f54-8071-995421465d80)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/416dec57-3919-471e-b4da-8848133ed9b0)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/a450fab6-448b-4f03-9eea-a4be5ea6e343) 
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/0b03020e-d838-4f73-9567-c35a00a4357f)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/98b72f64-e470-4e1d-8073-8462fcc09cf5)
-
 
 ## 트러블 슈팅
 
