@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.b2f0da57.js",
+    "main.js": "/static/js/main.c7334159.js",
     "static/media/backgroundBig.png": "/static/media/backgroundBig.b4fd226bb548a2ac079c.png",
     "static/media/Logo.svg": "/static/media/Logo.1ce1487ccaf0f95c88e43e476f5cfc68.svg",
     "static/media/어떡로고.svg": "/static/media/어떡로고.1ce1487ccaf0f95c88e43e476f5cfc68.svg",
@@ -32,16 +32,16 @@
     "static/media/닫기.svg": "/static/media/닫기.d6f0150da3caa243bd85def66119830f.svg",
     "static/media/btn_check.svg": "/static/media/btn_check.891d4aebef0a3008ced5b2b57618edf4.svg",
     "static/media/업로드.svg": "/static/media/업로드.1db4bbaea50b1f4334d8a3bcf1dc13de.svg",
-    "index.html": "/index.html",
     "static/media/close_small_red.svg": "/static/media/close_small_red.1521eba830cc13cab8cac8f63981f4f1.svg",
+    "index.html": "/index.html",
     "static/media/칭호추가획득유도.svg": "/static/media/칭호추가획득유도.f4560dd6dfbf0a9762815546063222d1.svg",
     "static/media/뒤로가기.svg": "/static/media/뒤로가기.4d951301594fc985a04b3d8a473f98eb.svg",
     "static/media/Food.svg": "/static/media/Food.695e2d9d2600a8d67db0f35e2ab3ff87.svg",
     "static/media/카카오 로고.svg": "/static/media/카카오 로고.ad0f2f0a27ed6f940879435c88d82de8.svg",
     "static/media/네이버 로고.svg": "/static/media/네이버 로고.81a79a59d8aad25c8d43539dc97092c4.svg",
-    "main.b2f0da57.js.map": "/static/js/main.b2f0da57.js.map"
+    "main.c7334159.js.map": "/static/js/main.c7334159.js.map"
   },
   "entrypoints": [
-    "static/js/main.b2f0da57.js"
+    "static/js/main.c7334159.js"
   ]
 }

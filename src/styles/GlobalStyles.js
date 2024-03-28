@@ -7,21 +7,21 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Pretendard-Regular';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        src: url('/Pretendard-Regular.woff') format('woff');
         font-weight: 400;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Pretendard-Medium';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+        src: url('/Pretendard-Medium.woff') format('woff');
         font-weight: 500;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Pretendard-SemiBold';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+        src: url('/Pretendard-SemiBold.woff') format('woff');
         font-weight: 600;
         font-style: normal;
     }
