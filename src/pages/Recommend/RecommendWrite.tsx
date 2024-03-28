@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './style';
-import { usePost, useGet } from '../../api/useFetch';
+import { usePost } from '../../api/useFetch';
 import WriteModal from './WriteModal';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
@@ -28,7 +28,7 @@ export default function RecommendWrite(props: any) {
 	};
 
 	const getCompressedFile = (url: any) => {
-		const compressedFile = new File([url], url.name, { type: url.type });
+		const compressedFile = new File([url], url.name, { type: 'image/png' });
 		return compressedFile;
 	};
 
