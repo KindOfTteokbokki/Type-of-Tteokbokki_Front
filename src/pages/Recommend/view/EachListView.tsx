@@ -1,6 +1,5 @@
 import React from 'react';
 import * as S from '../style';
-import BasicImg from '../../../assets/기본이미지_테두리없.svg';
 
 export interface EachListProps {
 	data: any;

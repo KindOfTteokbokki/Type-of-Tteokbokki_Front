@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from 'react';
+import React from 'react';
 import * as S from '../style';
 import EachList from '../EachList';
 

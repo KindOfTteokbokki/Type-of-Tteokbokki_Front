@@ -4,8 +4,6 @@ import { usePost } from '../../api/useFetch';
 import { baseUrl } from '../../api/useAxios';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../store';
-import BasicImage from '../../assets/기본이미지_테두리없.svg';
-import { useImagePreload } from '../../hooks/useImagePreload';
 
 interface RecommendListProps {
 	setKeyBoard: React.Dispatch<React.SetStateAction<boolean>>;
@@ -37,8 +35,6 @@ export default function RecommendList(props: RecommendListProps) {
 		}
 	};
 
-	// useImagePreload([BasicImage]);
-
 	useEffect(() => {
 		const element = document.getElementById('observer');
 		const observer = new IntersectionObserver(onIntersect, options);
@@ -53,6 +49,7 @@ export default function RecommendList(props: RecommendListProps) {
 			pageNum: page,
 			size: 15,
 		};
+
 		postFunc(postData, { Authorization: `Bearer ${token}` }).then((res: any) => {
 			setReviewData([...reviewData, ...res?.data]);
 		});
