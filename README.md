@@ -61,12 +61,25 @@ npm start
 ## 화면 구성
 
 ![8_IA](https://github.com/Utteok/Utteok_Front/assets/110962765/fb59e5c0-7dcf-47fe-b384-ced46571e938)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/eeb962f1-641c-4964-b91f-cdc9616811a1)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/1895e02e-0894-4f54-8071-995421465d80)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/416dec57-3919-471e-b4da-8848133ed9b0)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/a450fab6-448b-4f03-9eea-a4be5ea6e343)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/0b03020e-d838-4f73-9567-c35a00a4357f)
-![image](https://github.com/Utteok/Utteok_Front/assets/110962765/98b72f64-e470-4e1d-8073-8462fcc09cf5)
+
+|스플래시/로그인 화면|떡볶이 큐레이팅|큐레이팅 결과|
+|------|---|---|
+|<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/4fada1ba-b43f-47e8-8dbf-7edd0a4870e2" width="200" height="450" />|<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/70a1410d-abc5-4222-8e7c-df5060b20ec4" width="200" height="450" />|<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/44b68f76-484d-403a-97a3-87e1e56dab1f" width="200" height="450" />|
+
+칭호 결과
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/34d0ed28-5166-4b84-8be4-0ca6943c3ee5" width="200" height="450" />
+홈화면
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/eeb962f1-641c-4964-b91f-cdc9616811a1" width="200" height="450" />
+나도추천할래(후기)
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/416dec57-3919-471e-b4da-8848133ed9b0" width="200" height="450"/>
+후기 글쓰기
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/a450fab6-448b-4f03-9eea-a4be5ea6e343"  width="200" height="450"/>
+칭호
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/98b72f64-e470-4e1d-8073-8462fcc09cf5"  width="200" height="450"/>
+못받은 칭호
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/843578c0-969d-4d47-91e6-73f96249b197" width="200" height="450" />
+내 정보
+<img src="https://github.com/Utteok/Utteok_Front/assets/110962765/0b03020e-d838-4f73-9567-c35a00a4357f"  width="200" height="450"/>
 
 ## 트러블 슈팅
 
