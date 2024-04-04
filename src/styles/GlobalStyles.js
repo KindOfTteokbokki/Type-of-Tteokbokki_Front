@@ -7,21 +7,21 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Pretendard-Regular';
-        src: url('/Pretendard-Regular.woff') format('woff');
+        src: url('/Pretendard-Regular.woff2') format('woff2');
         font-weight: 400;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Pretendard-Medium';
-        src: url('/Pretendard-Medium.woff') format('woff');
+        src: url('/Pretendard-Medium.woff2') format('woff2');
         font-weight: 500;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Pretendard-SemiBold';
-        src: url('/Pretendard-SemiBold.woff') format('woff');
+        src: url('/Pretendard-SemiBold.woff2') format('woff2');
         font-weight: 600;
         font-style: normal;
     }
@@ -99,8 +99,7 @@ const GlobalStyles = createGlobalStyle`
             font-family :'Pretendard-Regular' ,sans-serif;
             font-weight : 400;
             margin : 0 auto;
-            height : 100dvh;
-
+            height : 100%;
         }
     }
 

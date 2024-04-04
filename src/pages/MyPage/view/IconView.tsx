@@ -20,12 +20,12 @@ export default function IconView(props: IconViewProps) {
 				<br />
 				<S.Span>{props.count}</S.Span>
 			</S.Li>
-			<S.Border margin="0 30px 0 32px" />
+			<S.Border $margin="0 30px 0 32px" />
 			<S.Li>
 				<S.Img src={LikeIcon} alt="하트 아이콘" />
-				<S.Span color={theme.color.gray}>{props.text.ICON[1]}</S.Span>
+				<S.Span $color={theme.color.gray}>{props.text.ICON[1]}</S.Span>
 			</S.Li>
-			<S.Border margin="0 32px 0 30px" />
+			<S.Border $margin="0 32px 0 30px" />
 			<S.Li>
 				<S.Img src={RecommendIcon} alt="매장 모양 아이콘" />
 				<S.Span color={theme.color.gray}>{props.text.ICON[2]}</S.Span>

@@ -40,14 +40,14 @@ export const LoginButtonCont = styled.section`
 	flex-direction: column;
 `;
 
-export const LoginButton = styled(Link)<{ bgColor: any }>`
+export const LoginButton = styled(Link)<{ $bgColor: any }>`
 	width: 345px;
 	height: 40px;
 	display: flex;
 	gap: 16px;
 	border-radius: ${(props) => props.theme.borderRadius.lv2};
 	margin: 0 auto;
-	background-color: ${(props) => props.bgColor};
+	background-color: ${(props) => props.$bgColor};
 	align-items: center;
 	justify-content: center;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -34,7 +34,7 @@ export default function ProfileEditView(props: ProfileEdit) {
 					<S.Span onClick={props.editNickName}>{props.text.button}</S.Span>
 				</Header>
 				<Main>
-					<MyInfoAndReviewCont padding="16px">
+					<MyInfoAndReviewCont $padding="16px">
 						<S.Profile src={profile} alt=" 기본 프로필" />
 						<S.Label>
 							{props.text.NICK_NAME}

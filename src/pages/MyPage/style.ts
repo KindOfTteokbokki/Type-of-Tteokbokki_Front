@@ -32,7 +32,7 @@ export const Main = styled.main`
 	gap: 16px;
 `;
 
-export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
+export const MyInfoAndReviewCont = styled.section<{ $padding?: string }>`
 	width: 100%;
 	overflow-y: scroll;
 
@@ -43,7 +43,7 @@ export const MyInfoAndReviewCont = styled.section<{ padding?: string }>`
 		display: none; /* Chrome, Safari, Opera*/
 	}
 
-	padding: ${(props) => (props.padding ? props.padding : '16px 0 24px')};
+	padding: ${(props) => (props.$padding ? props.$padding : '16px 0 24px')};
 	background-color: ${(props) => props.theme.color.white};
 	border-radius: ${(props) => props.theme.borderRadius.lv4};
 	margin: 0 auto;
@@ -97,19 +97,19 @@ export const Img = styled.img`
 	margin-bottom: 8px;
 `;
 
-export const Span = styled.span<{ color?: string }>`
+export const Span = styled.span<{ $color?: string }>`
 	font-size: ${theme.fontSize.lv1};
 	font-weight: ${theme.fontWeight.semiBold};
 	line-height: 140%;
 	word-break: keep-all;
-	color: ${(props) => (props.color ? props.color : theme.color.black)};
+	color: ${(props) => (props.$color ? props.$color : theme.color.black)};
 `;
 
-export const Border = styled.div<{ margin: string }>`
+export const Border = styled.div<{ $margin: string }>`
 	width: 0;
 	height: 70px;
 	border-right: 0.5px solid ${theme.color.gray};
-	margin: ${(props) => props.margin};
+	margin: ${(props) => props.$margin};
 `;
 
 export const MyReviewTitle = styled.h2`
@@ -132,13 +132,13 @@ export const MyReviewCont = styled.ul`
 	max-height: 360px;
 `;
 
-export const MyReviewList = styled.li<{ border?: string | undefined }>`
+export const MyReviewList = styled.li<{ $border?: string | undefined }>`
 	width: 100%;
 	height: 80px;
 	display: flex;
 	align-items: center;
 	padding: 0 16px;
-	border-bottom: ${(props) => (props.border ? `0.3px solid ${props.border}` : null)};
+	border-bottom: ${(props) => (props.$border ? `0.3px solid ${props.$border}` : null)};
 	position: relative;
 	overflow-y: visible;
 `;
