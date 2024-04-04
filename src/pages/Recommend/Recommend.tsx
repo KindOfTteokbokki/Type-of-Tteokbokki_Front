@@ -16,6 +16,6 @@ export default function Recommend() {
 		preload(['/basic.svg']);
 	}, []);
 
-	useMoveLogin();
+	// useMoveLogin();
 	return <RecommendView />;
 }
