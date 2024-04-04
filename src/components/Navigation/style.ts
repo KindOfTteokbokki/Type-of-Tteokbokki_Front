@@ -16,7 +16,7 @@ export const NavBar = styled.nav`
 
 type NavICon = {
 	size: string;
-	margin: string;
+	$margin: string;
 };
 
 export const Figure = styled.figure`
@@ -29,7 +29,7 @@ export const Figure = styled.figure`
 export const NavIcon = styled.img<NavICon>`
 	width: ${(props) => props.size};
 	height: ${(props) => props.size};
-	margin: ${(props) => props.margin};
+	margin: ${(props) => props.$margin};
 `;
 
 export const NavText = styled.figcaption`

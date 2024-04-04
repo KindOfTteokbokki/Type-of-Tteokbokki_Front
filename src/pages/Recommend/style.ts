@@ -79,11 +79,11 @@ export const RecommCont = styled.ul`
 	column-gap: 20px;
 `;
 
-export const RecommList = styled.li<{ border: string }>`
+export const RecommList = styled.li<{ $border: string }>`
 	width: 170px;
 	height: 179px;
 	border-radius: 16px;
-	border: ${(props) => props.border};
+	border: ${(props) => props.$border};
 	background-color: #fff;
 `;
 

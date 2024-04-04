@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import WriteModalView from './view/WriteModalView';
 import { constants } from '../../constants/constants';
 

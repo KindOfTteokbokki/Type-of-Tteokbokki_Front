@@ -1,7 +1,6 @@
 import React from 'react';
 import * as S from '../style';
 import { theme } from '../../../styles/theme';
-import Icon from '../../../assets/내후기관리.svg';
 import RecommendWrite from '../../Recommend/RecommendWrite';
 import ModalView from '../../Loaded/Modal/view/ModalView';
 import modalIcon from '../../../assets/후기삭제우는얼굴.svg';
@@ -30,7 +29,7 @@ interface EachListProps {
 
 export default function EachListView(props: EachListProps) {
 	return (
-		<S.MyReviewList border={props.isLastIndex() ? undefined : theme.color.gray}>
+		<S.MyReviewList $border={props.isLastIndex() ? undefined : theme.color.gray}>
 			<S.ReviewImg
 				src={
 					props.item.file_masking_name != null && props.item.file_masking_name !== 'null'
