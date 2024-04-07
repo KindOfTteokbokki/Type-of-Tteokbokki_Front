@@ -21,6 +21,7 @@ const title = {
 };
 const role = ['firstList', 'secondList', 'thirdList'];
 const hasLastConsonantLetter = () => true;
+const onClickMoveLock = () => {};
 
 // useNavigate 모킹
 jest.mock('react-router-dom', () => ({
@@ -40,12 +41,13 @@ describe('Title Test', () => {
 
 		render(
 			<TitleView
-				nickName="개구리"
+				nickName="만두"
 				title={title}
 				bgcolor={bgcolor}
 				role={role}
 				moveText={constants.TITLE.MOVE}
 				onClickMoveBack={onClickMoveBack}
+				onClickMoveLock={onClickMoveLock}
 				hasLastConsonantLetter={hasLastConsonantLetter}
 			/>
 		);
@@ -59,7 +61,7 @@ describe('Title Test', () => {
 	it('헤더 텍스트가 잘 나오는지 테스트', () => {
 		render(
 			<TitleView
-				nickName="개구리"
+				nickName="개굴"
 				title={title}
 				bgcolor={bgcolor}
 				role={role}
@@ -68,8 +70,8 @@ describe('Title Test', () => {
 			/>
 		);
 
-		const elementFirst = screen.getByText('개구리가 모은');
-		const elementSecond = screen.getByText('칭호는 5개야!');
+		const elementFirst = screen.getByText('개굴이 모은');
+		const elementSecond = screen.getByText('칭호는 6개야!');
 
 		expect(elementFirst).toBeInTheDocument();
 		expect(elementSecond).toBeInTheDocument();
@@ -83,6 +85,7 @@ describe('Title Test', () => {
 				bgcolor={bgcolor}
 				role={role}
 				moveText={constants.TITLE.MOVE}
+				onClickMoveLock={onClickMoveLock}
 				hasLastConsonantLetter={hasLastConsonantLetter}
 			/>
 		);
@@ -112,6 +115,7 @@ describe('Title Test', () => {
 				bgcolor={bgcolor}
 				role={role}
 				moveText={constants.TITLE.MOVE}
+				onClickMoveLock={onClickMoveLock}
 				hasLastConsonantLetter={hasLastConsonantLetter}
 			/>
 		);
@@ -142,15 +146,5 @@ describe('Title Test', () => {
 
 		fireEvent.click(element);
 		expect(mockNavigate).toBeCalledWith('/locked-title');
-	});
-
-	it('HaveTitle api returns what axios get returns', async () => {
-		const token = useSelector((state: RootStateType) => {
-			return state.persistedReducer.token.value;
-		});
-
-		axios.get = jest.fn().mockResolvedValue({
-			Authorization: token,
-		});
 	});
 });
