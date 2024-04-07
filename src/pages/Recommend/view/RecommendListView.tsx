@@ -32,8 +32,8 @@ export default function RecommendListView(props: RecommendListProps) {
 						props.setKeyBoard(true);
 					}}
 				/>
+				<div id="observer" />
 			</S.RecommCont>
-			<div id="observer" />
 		</>
 	);
 }
