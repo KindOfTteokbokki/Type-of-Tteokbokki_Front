@@ -22,16 +22,18 @@ export interface RecommendListProps {
 
 export default function RecommendListView(props: RecommendListProps) {
 	return (
-		<S.RecommCont id="container">
-			{props.reviewData?.map((data: any) => {
-				return <EachList data={data} key={data.review_seq} />;
-			})}
-			<S.Button
-				onClick={() => {
-					props.setKeyBoard(true);
-				}}
-			/>
+		<>
+			<S.RecommCont id="container">
+				{props.reviewData?.map((data: any) => {
+					return <EachList data={data} key={data.review_seq} />;
+				})}
+				<S.Button
+					onClick={() => {
+						props.setKeyBoard(true);
+					}}
+				/>
+			</S.RecommCont>
 			<div id="observer" />
-		</S.RecommCont>
+		</>
 	);
 }
