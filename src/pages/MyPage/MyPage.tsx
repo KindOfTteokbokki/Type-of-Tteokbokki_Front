@@ -32,7 +32,7 @@ export default function MyPage() {
 		navigate('/recommend');
 	};
 
-	// useMoveLogin();
+	useMoveLogin();
 
 	useEffect(() => {
 		getNameFunc({ Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' })

@@ -5,12 +5,27 @@ import { constants } from '../../../constants/constants';
 import { useNavigate } from 'react-router-dom';
 import NonDataView from '../view/NonDataView';
 import EachList from '../EachList';
+import React from 'react';
+import { Provider } from 'react-redux';
+import store, { persistor } from '../../../store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const text = constants.MYPAGE;
+const nickName = '개구리';
+const count = 1;
 const onClickMoveRecommend = () => {};
 const onClickBack = () => {};
 const onClickMoveProfileEdit = () => {};
-const data = ['후기', '후기', '후기'];
+const reviewData = {
+	content: '',
+	create_date: '',
+	file_masking_name: '',
+	file_original_name: '',
+	file_path: '',
+	my_recommend: false,
+	review_seq: 1,
+	user_id: 1,
+};
 
 jest.mock('react-router-dom', () => ({
 	...jest.requireActual('react-router-dom'),
@@ -23,13 +38,19 @@ const mockNavigate = jest.fn();
 describe('MyPage Test', () => {
 	it('Header text is rendered', () => {
 		render(
-			<MyPageView
-				text={text}
-				onClickMoveRecommend={onClickMoveRecommend}
-				data={data}
-				onClickBack={onClickBack}
-				onClickMoveProfileEdit={onClickMoveProfileEdit}
-			/>
+			<Provider store={store}>
+				<PersistGate persistor={persistor}>
+					<MyPageView
+						text={text}
+						onClickMoveRecommend={onClickMoveRecommend}
+						nickName={nickName}
+						count={count}
+						reviewData={[reviewData]}
+						onClickBack={onClickBack}
+						onClickMoveProfileEdit={onClickMoveProfileEdit}
+					/>
+				</PersistGate>
+			</Provider>
 		);
 
 		const element = screen.getByRole('header');
@@ -39,13 +60,19 @@ describe('MyPage Test', () => {
 
 	it('Icon text is rendered', () => {
 		render(
-			<MyPageView
-				text={text}
-				onClickMoveRecommend={onClickMoveRecommend}
-				data={data}
-				onClickBack={onClickBack}
-				onClickMoveProfileEdit={onClickMoveProfileEdit}
-			/>
+			<Provider store={store}>
+				<PersistGate persistor={persistor}>
+					<MyPageView
+						text={text}
+						onClickMoveRecommend={onClickMoveRecommend}
+						nickName={nickName}
+						count={count}
+						reviewData={[reviewData]}
+						onClickBack={onClickBack}
+						onClickMoveProfileEdit={onClickMoveProfileEdit}
+					/>
+				</PersistGate>
+			</Provider>
 		);
 
 		const iconFirst = screen.getByText(constants.MYPAGE.ICON[0]);
@@ -59,13 +86,19 @@ describe('MyPage Test', () => {
 
 	it('My review header is rendered', () => {
 		render(
-			<MyPageView
-				text={text}
-				onClickMoveRecommend={onClickMoveRecommend}
-				data={data}
-				onClickBack={onClickBack}
-				onClickMoveProfileEdit={onClickMoveProfileEdit}
-			/>
+			<Provider store={store}>
+				<PersistGate persistor={persistor}>
+					<MyPageView
+						text={text}
+						onClickMoveRecommend={onClickMoveRecommend}
+						nickName={nickName}
+						count={count}
+						reviewData={[reviewData]}
+						onClickBack={onClickBack}
+						onClickMoveProfileEdit={onClickMoveProfileEdit}
+					/>
+				</PersistGate>
+			</Provider>
 		);
 
 		const element = screen.getByText(constants.MYPAGE.REVIEW);
@@ -88,15 +121,20 @@ describe('MyPage Test', () => {
 	});
 
 	it('When review is none, empty text is rendered', () => {
-		const data: any = [];
 		render(
-			<MyPageView
-				text={text}
-				onClickMoveRecommend={onClickMoveRecommend}
-				data={data}
-				onClickBack={onClickBack}
-				onClickMoveProfileEdit={onClickMoveProfileEdit}
-			/>
+			<Provider store={store}>
+				<PersistGate persistor={persistor}>
+					<MyPageView
+						text={text}
+						onClickMoveRecommend={onClickMoveRecommend}
+						nickName={nickName}
+						count={count}
+						reviewData={[reviewData]}
+						onClickBack={onClickBack}
+						onClickMoveProfileEdit={onClickMoveProfileEdit}
+					/>
+				</PersistGate>
+			</Provider>
 		);
 
 		const emptyText = screen.getByText(constants.MYPAGE.NON_DATA);
@@ -107,7 +145,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('When moreIcon is pressed, open the more button. When edit button is pressed, open the edit box.', () => {
-		render(<EachList item={'후기입니다아라닐ㄴ'} index={1} length={3} />);
+		render(<EachList item={reviewData} index={1} length={3} />);
 
 		const moreIcon = screen.getByRole('moreIcon');
 		fireEvent.click(moreIcon);
@@ -121,7 +159,7 @@ describe('MyPage Test', () => {
 	});
 
 	it('When moreIcon is pressed, open the more button. When remove button is pressed, open the modal.', () => {
-		render(<EachList item={'후기입니다아라닐ㄴ'} index={1} length={3} />);
+		render(<EachList item={reviewData} index={1} length={3} />);
 
 		const moreIcon = screen.getByRole('moreIcon');
 		fireEvent.click(moreIcon);
