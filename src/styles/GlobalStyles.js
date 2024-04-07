@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Pretendard-Regular';
+        font-display: SWAP;
         src: url('/Pretendard-Regular.woff2') format('woff2');
         font-weight: 400;
         font-style: normal;
@@ -14,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Pretendard-Medium';
+        font-display: SWAP;
         src: url('/Pretendard-Medium.woff2') format('woff2');
         font-weight: 500;
         font-style: normal;
@@ -21,6 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
         font-family: 'Pretendard-SemiBold';
+        font-display: SWAP;
         src: url('/Pretendard-SemiBold.woff2') format('woff2');
         font-weight: 600;
         font-style: normal;
@@ -28,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face{
         font-family:'DNFBitBitv2';
+        font-display: SWAP;
         font-style:normal;
         font-weight:400;
         src:url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype');

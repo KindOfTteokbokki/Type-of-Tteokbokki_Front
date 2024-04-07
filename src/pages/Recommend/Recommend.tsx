@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import RecommendView from './view/RecommendView';
 import { useMoveLogin } from '../../hooks/useMoveLogin';
+import { constants } from '../../constants/constants';
 
 export default function Recommend() {
 	let images: HTMLImageElement[] = [];
@@ -16,6 +17,7 @@ export default function Recommend() {
 		preload(['/basic.svg']);
 	}, []);
 
-	// useMoveLogin();
-	return <RecommendView />;
+	useMoveLogin();
+
+	return <RecommendView header={constants.RECOMMEND.header} header2={constants.RECOMMEND.header_2} />;
 }

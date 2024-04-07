@@ -57,6 +57,10 @@ export const constants = {
 		NAVIGATION: ['홈', '추천 후기', '칭호', '내 정보'],
 		COMBINATION: '가 추천하는 꿀조합',
 	},
+	RECOMMEND: {
+		header: '나도 추천할래',
+		header_2: ['어떡 이용자들이 ', '직접 먹어보고 추천', '하는', '내돈내산 ', '후기들이야!'],
+	},
 	RECOMMEND_DETAIL: {
 		header: '이렇게 먹어도 맛있대!',
 	},

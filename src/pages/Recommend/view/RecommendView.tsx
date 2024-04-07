@@ -5,7 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import RecommendList from '../RecommendList';
 import Navigation from '../../../components/Navigation/Navigation';
 
-export default function RecommendView() {
+interface RecommendViewProps {
+	header: string;
+	header2: string[];
+}
+
+export default function RecommendView(props: RecommendViewProps) {
 	const [keyboard, setKeyBoard] = useState(false);
 
 	const navigator = useNavigate();
@@ -25,16 +30,18 @@ export default function RecommendView() {
 							navigator(-1);
 						}}
 					/>
-					<S.RecommHeadText>나도 추천할래</S.RecommHeadText>
+					<S.RecommHeadText>{props.header}</S.RecommHeadText>
 				</S.Head>
 				<S.Main>
 					<S.Message>
 						<S.P>
-							어떡 이용자들이 <S.BoldText>직접 먹어보고 추천</S.BoldText>하는
+							{props.header2[0]}
+							<S.BoldText>{props.header2[1]}</S.BoldText>
+							{props.header2[2]}
 						</S.P>
 						<S.P>
-							<S.BoldText>내돈내산 </S.BoldText>
-							후기들이야!
+							<S.BoldText>{props.header2[3]}</S.BoldText>
+							{props.header2[4]}
 						</S.P>
 					</S.Message>
 					<RecommendList setKeyBoard={setKeyBoard} />

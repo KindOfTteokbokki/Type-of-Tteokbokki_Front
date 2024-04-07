@@ -26,12 +26,12 @@ export default function RecommendListView(props: RecommendListProps) {
 			{props.reviewData?.map((data: any) => {
 				return <EachList data={data} key={data.review_seq} />;
 			})}
-			<div id="observer" />
 			<S.Button
 				onClick={() => {
 					props.setKeyBoard(true);
 				}}
 			/>
+			<div id="observer" />
 		</S.RecommCont>
 	);
 }
