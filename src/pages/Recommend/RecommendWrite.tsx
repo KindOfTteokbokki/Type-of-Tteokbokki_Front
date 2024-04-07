@@ -52,10 +52,9 @@ export default function RecommendWrite(props: any) {
 
 	const saveReview = async () => {
 		formData.append('content', text);
+		console.log(imgUrl);
 		if (imgUrl) {
 			const compressionImage = await imageCompression(imgUrl, options);
-			console.log('원본이미지:', imgUrl);
-			console.log('수정이미지:', compressionImage);
 			formData.append('file', getCompressedFile(compressionImage));
 		}
 
